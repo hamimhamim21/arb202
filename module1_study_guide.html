@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1 - Arabic Study Guide | الوحدة الأولى</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.4);
+            transform: translateY(-2px);
+        }
+        .nav-links .nav-ar {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .nav-links .nav-en {
+            font-size: 12px;
+            opacity: 0.85;
+            font-family: Georgia, serif;
+        }
+
+        /* Main Title */
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 {
+            font-size: 48px;
+            margin: 0 0 10px 0;
+        }
+        .main-title .subtitle {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px;
+            color: #1a5276;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .section-subtitle {
+            font-size: 28px;
+            color: #2980b9;
+            margin: 25px 0 15px 0;
+        }
+
+        /* Arabic Text Styles */
+        .arabic-large {
+            font-size: 42px;
+            color: #1a5276;
+            font-weight: 700;
+            line-height: 2.2;
+        }
+        .arabic-medium {
+            font-size: 32px;
+            color: #2c3e50;
+            line-height: 2;
+        }
+        .arabic-text {
+            font-size: 28px;
+            color: #2c3e50;
+            line-height: 1.9;
+        }
+        .english-text {
+            font-family: Georgia, serif;
+            direction: ltr;
+            text-align: left;
+            color: #555;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .translit-text {
+            font-family: Georgia, serif;
+            font-style: italic;
+            color: #888;
+            direction: ltr;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        /* Grammar Boxes */
+        .grammar-box {
+            background: linear-gradient(135deg, #e8f8f5 0%, #d5f4e6 100%);
+            border-right: 5px solid #27ae60;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-right: 5px solid #f1c40f;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #fdedec 0%, #fadbd8 100%);
+            border-right: 5px solid #e74c3c;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #eaf2f8 0%, #d4e6f1 100%);
+            border-right: 5px solid #3498db;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 22px;
+        }
+        th {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        tr:hover {
+            background: #e8f4f8;
+        }
+        .table-header-blue {
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+        }
+        .table-header-green {
+            background: linear-gradient(135deg, #1e8449 0%, #27ae60 100%);
+        }
+
+        /* Dialogue */
+        .dialogue {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .dialogue-line {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .speaker-teacher {
+            background: linear-gradient(135deg, #d5f4e6 0%, #a9dfbf 100%);
+            border-right: 4px solid #27ae60;
+        }
+        .speaker-student {
+            background: linear-gradient(135deg, #d4e6f1 0%, #aed6f1 100%);
+            border-right: 4px solid #3498db;
+        }
+        .speaker-name {
+            font-weight: bold;
+            color: #1a5276;
+            font-size: 24px;
+        }
+
+        /* I'rab Analysis */
+        .irab-container {
+            background: linear-gradient(135deg, #f4ecf7 0%, #e8daef 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .irab-word {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .irab-analysis {
+            font-size: 20px;
+            color: #6c3483;
+        }
+
+        /* Conjugation Table */
+        .conj-table {
+            font-size: 20px;
+        }
+        .conj-table th {
+            font-size: 22px;
+        }
+        .pronoun-cell {
+            background: linear-gradient(135deg, #fdebd0 0%, #f9e79f 100%);
+            font-weight: bold;
+            color: #b7950b;
+        }
+
+        /* Quranic Examples */
+        .quran-box {
+            background: linear-gradient(135deg, #fdf2e9 0%, #fae5d3 100%);
+            border: 2px solid #d35400;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .quran-text {
+            font-size: 36px;
+            color: #8e44ad;
+            line-height: 2.2;
+        }
+        .surah-name {
+            font-size: 20px;
+            color: #7d3c98;
+            margin-top: 10px;
+        }
+
+        /* Item Cards */
+        .item-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .item-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Comparison Tables */
+        .comparison-table {
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .comparison-table th {
+            font-size: 24px;
+        }
+        .before-col {
+            background: #e8f8f5 !important;
+        }
+        .after-col {
+            background: #fef9e7 !important;
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .summary-box h3 {
+            color: #f1c40f;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .summary-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .summary-box li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 22px;
+        }
+        .summary-box li:last-child {
+            border-bottom: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .arabic-text { font-size: 22px; }
+            .section-title { font-size: 28px; }
+            table { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav-container">
+    <div class="nav-title">الوحدة الأولى - Module 1</div>
+    <div class="nav-links">
+        <a href="#intro"><span class="nav-ar">المقدمة</span><span class="nav-en">Introduction</span></a>
+        <a href="#word-types"><span class="nav-ar">أنواع الكلمة</span><span class="nav-en">Word Types</span></a>
+        <a href="#sentence-types"><span class="nav-ar">أنواع الجملة</span><span class="nav-en">Sentence Types</span></a>
+        <a href="#verb-types"><span class="nav-ar">أنواع الفعل</span><span class="nav-en">Verb Types</span></a>
+        <a href="#conjugation"><span class="nav-ar">تصريف الأفعال</span><span class="nav-en">Conjugation</span></a>
+        <a href="#dictionary"><span class="nav-ar">البحث في المعاجم</span><span class="nav-en">Dictionary</span></a>
+        <a href="#dialogue"><span class="nav-ar">الحوار</span><span class="nav-en">Dialogue</span></a>
+        <a href="#inna"><span class="nav-ar">إنَّ وأخواتها</span><span class="nav-en">Inna & Sisters</span></a>
+        <a href="#dhu"><span class="nav-ar">ذو وذات</span><span class="nav-en">Dhu & Dhat</span></a>
+        <a href="#irab"><span class="nav-ar">الإعراب</span><span class="nav-en">I'rab</span></a>
+        <a href="#quran"><span class="nav-ar">أمثلة قرآنية</span><span class="nav-en">Quran Examples</span></a>
+        <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
+    </div>
+</nav>
+
+<!-- Main Title -->
+<header class="main-title">
+    <h1>الوحدة الأولى</h1>
+    <div class="subtitle">Module 1 - First Unit</div>
+    <div class="subtitle" style="font-size: 20px; margin-top: 15px;">
+        الدَّوْرَةُ الثَّالِثَةُ - مِنْ كِتَابِ المَدِينَةِ - الجُزْءُ الثَّانِي
+    </div>
+    <div class="english-text" style="color: white; opacity: 0.9;">
+        Third Course - From Madinah Book - Part 2
+    </div>
+</header>
+
+<!-- Introduction Section -->
+<section id="intro" class="section">
+    <h2 class="section-title">مُقَدِّمَةٌ - Introduction</h2>
+    <div class="info-box">
+        <p class="arabic-text">دَرَسْنَا قَبْلَ ذٰلِكَ</p>
+        <p class="english-text">We studied before this (in previous courses)</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-medium">سَنَعْرِفُ فِي هٰذَا الدَّرْسِ</p>
+        <p class="english-text">We will learn in this lesson</p>
+    </div>
+</section>
+
+<!-- Word Types Section -->
+<section id="word-types" class="section">
+    <h2 class="section-title">أَنْوَاعُ الكَلِمَةِ فِي اللُّغَةِ العَرَبِيَّةِ</h2>
+    <p class="english-text">Types of Words in the Arabic Language</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 30px 0;">
+        <div class="item-card" style="flex: 1; min-width: 250px; text-align: center; background: linear-gradient(135deg, #d5f4e6, #a9dfbf);">
+            <div class="arabic-large">اِسْمٌ</div>
+            <div class="english-text" style="font-size: 20px;">Noun (Ism)</div>
+            <div class="translit-text">A word that indicates a meaning by itself without time</div>
+        </div>
+        <div class="item-card" style="flex: 1; min-width: 250px; text-align: center; background: linear-gradient(135deg, #d4e6f1, #aed6f1);">
+            <div class="arabic-large">فِعْلٌ</div>
+            <div class="english-text" style="font-size: 20px;">Verb (Fi'l)</div>
+            <div class="translit-text">A word indicating action with time</div>
+        </div>
+        <div class="item-card" style="flex: 1; min-width: 250px; text-align: center; background: linear-gradient(135deg, #fdebd0, #f9e79f);">
+            <div class="arabic-large">حَرْفٌ</div>
+            <div class="english-text" style="font-size: 20px;">Particle (Harf)</div>
+            <div class="translit-text">A word that has meaning only with others</div>
+        </div>
+    </div>
+</section>
+
+<!-- Sentence Types Section -->
+<section id="sentence-types" class="section">
+    <h2 class="section-title">أَنْوَاعُ الجُمْلَةِ - Types of Sentences</h2>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; margin: 30px 0;">
+        <!-- Nominal Sentence -->
+        <div class="item-card" style="flex: 1; min-width: 300px;">
+            <h3 class="section-subtitle">الجُمْلَةُ الاِسْمِيَّةُ</h3>
+            <p class="english-text">The Nominal Sentence</p>
+            <div class="grammar-box">
+                <div style="display: flex; justify-content: center; gap: 40px;">
+                    <div style="text-align: center;">
+                        <div class="arabic-medium">مُبْتَدَأٌ</div>
+                        <div class="english-text">Subject</div>
+                    </div>
+                    <div style="font-size: 40px; color: #27ae60;">+</div>
+                    <div style="text-align: center;">
+                        <div class="arabic-medium">خَبَرٌ</div>
+                        <div class="english-text">Predicate</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <p class="arabic-text">الكِتَابُ جَدِيدٌ</p>
+                <p class="english-text">The book is new</p>
+                <p class="translit-text">al-kitaabu jadiidun</p>
+            </div>
+        </div>
+
+        <!-- Verbal Sentence -->
+        <div class="item-card" style="flex: 1; min-width: 300px;">
+            <h3 class="section-subtitle">الجُمْلَةُ الفِعْلِيَّةُ</h3>
+            <p class="english-text">The Verbal Sentence</p>
+            <div class="grammar-box">
+                <div style="display: flex; justify-content: center; gap: 40px;">
+                    <div style="text-align: center;">
+                        <div class="arabic-medium">فِعْلٌ</div>
+                        <div class="english-text">Verb</div>
+                    </div>
+                    <div style="font-size: 40px; color: #27ae60;">+</div>
+                    <div style="text-align: center;">
+                        <div class="arabic-medium">فَاعِلٌ</div>
+                        <div class="english-text">Subject</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <p class="arabic-text">خَرَجَ الفَلَّاحُ مِنَ البَيْتِ</p>
+                <p class="english-text">The farmer went out from the house</p>
+                <p class="translit-text">kharaja al-fallaahu min al-bayti</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Verb Types Section -->
+<section id="verb-types" class="section">
+    <h2 class="section-title">أَنْوَاعُ الفِعْلِ - Types of Verbs</h2>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 30px 0;">
+        <!-- Past Tense -->
+        <div class="item-card" style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #fef9e7, #fcf3cf);">
+            <h3 class="section-subtitle" style="text-align: center;">أَوَّلًا: الفِعْلُ المَاضِي</h3>
+            <p class="english-text" style="text-align: center;">First: The Past Tense Verb</p>
+            <div class="rule-box">
+                <p class="arabic-text">الفِعْلُ المَاضِي هُوَ الَّذِي يُشِيرُ إِلَى فِعْلٍ حَدَثَ وَانْتَهَى فِي الزَّمَنِ المَاضِي</p>
+                <p class="english-text">The past tense verb describes actions or events that have already occurred</p>
+            </div>
+            <div class="info-box">
+                <p class="arabic-text">وَيَكُونُ الفِعْلُ المَاضِي مَبْنِيًّا عَلَى الفَتْحِ</p>
+                <p class="english-text">The past tense verb is fixed (mabniyy) on fatha</p>
+            </div>
+            <div class="irab-container">
+                <p class="arabic-medium" style="text-align: center;">خَرَجَ الفَلَّاحُ مِنَ البَيْتِ</p>
+                <p class="irab-analysis">خَرَجَ: فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى الفَتْحِ</p>
+                <p class="irab-analysis">الفَلَّاحُ: فَاعِلٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ</p>
+                <p class="irab-analysis">مِنْ: حَرْفُ جَرٍّ</p>
+                <p class="irab-analysis">البَيْتِ: اسْمٌ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ الظَّاهِرَةُ</p>
+            </div>
+        </div>
+
+        <!-- Present Tense -->
+        <div class="item-card" style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #eaf2f8, #d4e6f1);">
+            <h3 class="section-subtitle" style="text-align: center;">ثَانِيًا: الفِعْلُ المُضَارِعُ</h3>
+            <p class="english-text" style="text-align: center;">Second: The Present Tense Verb</p>
+            <div class="rule-box">
+                <p class="arabic-text">الفِعْلُ المُضَارِعُ يَدُلُّ عَلَى حَدَثٍ يَحْدُثُ فِي الزَّمَنِ الحَاضِرِ</p>
+                <p class="english-text">The present tense verb indicates an action happening in the present time</p>
+            </div>
+            <div class="grammar-box">
+                <p class="arabic-text">يَبْدَأُ الفِعْلُ المُضَارِعُ بِوَاحِدٍ مِنَ الحُرُوفِ الأَرْبَعَةِ:</p>
+                <p class="arabic-large" style="text-align: center; color: #e74c3c;">أَنَيْتُ = أ، ن، ي، ت</p>
+                <p class="english-text">The present tense verb begins with one of four letters (حُرُوفُ المُضَارَعَةِ)</p>
+            </div>
+            <div class="info-box">
+                <p class="arabic-text">أ = أَنَا (I)</p>
+                <p class="arabic-text">ن = نَحْنُ (we)</p>
+                <p class="arabic-text">ي = هُوَ/هُمْ (he/they masc.)</p>
+                <p class="arabic-text">ت = أَنْتَ/أَنْتِ/هِيَ (you/she)</p>
+            </div>
+            <div class="rule-box">
+                <p class="arabic-text">الفِعْلُ المُضَارِعُ يَكُونُ مَرْفُوعًا</p>
+                <p class="english-text">The present tense verb is in the nominative case (marfoo')</p>
+            </div>
+            <p class="arabic-text" style="text-align: center;">يَلْعَبُ - أَشْرَبُ - نَأْكُلُ - تَذْهَبُ</p>
+        </div>
+
+        <!-- Command Verb -->
+        <div class="item-card" style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #fdedec, #fadbd8);">
+            <h3 class="section-subtitle" style="text-align: center;">ثَالِثًا: فِعْلُ الأَمْرِ</h3>
+            <p class="english-text" style="text-align: center;">Third: The Command Verb (Imperative)</p>
+            <div class="rule-box">
+                <p class="arabic-text">يُسْتَخْدَمُ الفِعْلُ الأَمْرُ فِي طَلَبِ شَيْءٍ</p>
+                <p class="english-text">The command verb is used to demand an action</p>
+            </div>
+            <div class="warning-box">
+                <p class="arabic-text">يُسْتَخْدَمُ الفِعْلُ الأَمْرُ مَعَ المُخَاطَبِ فَقَطْ</p>
+                <p class="english-text">The imperative verb is used with second person only (singular, dual, or plural)</p>
+                <p class="arabic-text">أَنْتَ - أَنْتِ - أَنْتُمَا - أَنْتُمْ - أَنْتُنَّ</p>
+            </div>
+            <div class="grammar-box">
+                <p class="arabic-large" style="text-align: center;">فِعْلُ الأَمْرِ مَبْنِيٌّ عَلَى السُّكُونِ</p>
+                <p class="english-text">The command verb is built on sukoon</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Verb Conjugation Section -->
+<section id="conjugation" class="section">
+    <h2 class="section-title">تَصْرِيفُ الأَفْعَالِ - Verb Conjugation</h2>
+    <h3 class="section-subtitle">الفِعْلُ: كَتَبَ (to write)</h3>
+
+    <table class="conj-table comparison-table">
+        <thead>
+            <tr class="table-header-blue">
+                <th>الضَّمِيرُ<br>Pronoun</th>
+                <th>الفِعْلُ المَاضِي<br>Past</th>
+                <th>الفِعْلُ المُضَارِعُ<br>Present</th>
+                <th>فِعْلُ الأَمْرِ<br>Command</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">هُوَ</td>
+                <td>كَتَبَ</td>
+                <td>يَكْتُبُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هِيَ</td>
+                <td>كَتَبَتْ</td>
+                <td>تَكْتُبُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (م)</td>
+                <td>كَتَبَا</td>
+                <td>يَكْتُبَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (ف)</td>
+                <td>كَتَبَتَا</td>
+                <td>تَكْتُبَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمْ</td>
+                <td>كَتَبُوا</td>
+                <td>يَكْتُبُونَ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُنَّ</td>
+                <td>كَتَبْنَ</td>
+                <td>يَكْتُبْنَ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتَ</td>
+                <td>كَتَبْتَ</td>
+                <td>تَكْتُبُ</td>
+                <td>اُكْتُبْ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتِ</td>
+                <td>كَتَبْتِ</td>
+                <td>تَكْتُبِينَ</td>
+                <td>اُكْتُبِي</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمَا</td>
+                <td>كَتَبْتُمَا</td>
+                <td>تَكْتُبَانِ</td>
+                <td>اُكْتُبَا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمْ</td>
+                <td>كَتَبْتُمْ</td>
+                <td>تَكْتُبُونَ</td>
+                <td>اُكْتُبُوا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُنَّ</td>
+                <td>كَتَبْتُنَّ</td>
+                <td>تَكْتُبْنَ</td>
+                <td>اُكْتُبْنَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنَا</td>
+                <td>كَتَبْتُ</td>
+                <td>أَكْتُبُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">نَحْنُ</td>
+                <td>كَتَبْنَا</td>
+                <td>نَكْتُبُ</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <table class="comparison-table">
+        <thead>
+            <tr class="table-header-green">
+                <th>الضَّمِيرُ</th>
+                <th>المَاضِي</th>
+                <th>المُضَارِعُ</th>
+                <th>الأَمْرُ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">أَنْتَ</td>
+                <td>كَتَبْتَ الدَّرْسَ</td>
+                <td>تَكْتُبُ الدَّرْسَ</td>
+                <td>اُكْتُبِ الدَّرْسَ يَا وَلَدُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمْ</td>
+                <td>كَتَبْتُمُ الدَّرْسَ</td>
+                <td>تَكْتُبُونَ الدَّرْسَ</td>
+                <td>اُكْتُبُوا الدَّرْسَ يَا أَوْلَادُ</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Dictionary Search Section -->
+<section id="dictionary" class="section">
+    <h2 class="section-title">البَحْثُ فِي المَعَاجِمِ - Searching in Dictionaries</h2>
+
+    <div class="rule-box">
+        <p class="arabic-medium">حِينَمَا نُرِيدُ أَنْ نَبْحَثَ عَنِ الأَفْعَالِ فِي المَعَاجِمِ العَرَبِيَّةِ، فَإِنَّ الفِعْلَ يَجِبُ أَنْ يَكُونَ:</p>
+        <p class="english-text">When we want to search for verbs in Arabic dictionaries, the verb must be:</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
+        <div class="item-card" style="flex: 1; min-width: 200px; text-align: center;">
+            <div class="arabic-medium">١- مُفْرَدًا</div>
+            <div class="english-text">Singular</div>
+        </div>
+        <div class="item-card" style="flex: 1; min-width: 200px; text-align: center;">
+            <div class="arabic-medium">٢- مُذَكَّرًا</div>
+            <div class="english-text">Masculine</div>
+        </div>
+        <div class="item-card" style="flex: 1; min-width: 200px; text-align: center;">
+            <div class="arabic-medium">٣- مَعَ الضَّمِيرِ هُوَ</div>
+            <div class="english-text">With the pronoun هُوَ</div>
+        </div>
+        <div class="item-card" style="flex: 1; min-width: 200px; text-align: center;">
+            <div class="arabic-medium">٤- فِي صِيغَةِ المَاضِي</div>
+            <div class="english-text">In the past tense form</div>
+        </div>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text">وَهٰذَا يَعْنِي أَنَّنَا لَا نَسْتَطِيعُ أَنْ نَبْحَثَ عَنِ الفِعْلِ فِي الزَّمَنِ المُضَارِعِ أَوْ زَمَنِ الأَمْرِ</p>
+        <p class="english-text">This means we can't search for the verb in the present or imperative forms</p>
+    </div>
+
+    <h3 class="section-subtitle">تَمْرِينٌ - Exercise</h3>
+    <p class="arabic-text">كَيْفَ تَبْحَثُ فِي المُعْجَمِ عَنِ الأَفْعَالِ التَّالِيَةِ؟</p>
+    <p class="english-text">How do you search in the dictionary for the following verbs?</p>
+
+    <table class="comparison-table">
+        <thead>
+            <tr class="table-header-blue">
+                <th>الفِعْلُ</th>
+                <th>نَبْحَثُ عَنْهُ فِي</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>يَلْعَبُ</td>
+                <td>لَعِبَ</td>
+            </tr>
+            <tr>
+                <td>سَمِعَا</td>
+                <td>سَمِعَ</td>
+            </tr>
+            <tr>
+                <td>اُسْكُتْ</td>
+                <td>سَكَتَ</td>
+            </tr>
+            <tr>
+                <td>أَكَلْنَ</td>
+                <td>أَكَلَ</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Dialogue Section -->
+<section id="dialogue" class="section">
+    <h2 class="section-title">الدَّرْسُ الأَوَّلُ - الحِوَارُ</h2>
+    <p class="english-text">Lesson One - Dialogue</p>
+
+    <div class="dialogue">
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ.</p>
+            <p class="english-text">Peace be upon you and the mercy of Allah and His blessings.</p>
+        </div>
+
+        <div class="dialogue-line speaker-teacher">
+            <span class="speaker-name">المُدَرِّسُ:</span>
+            <p class="arabic-text">وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ.</p>
+            <p class="english-text">And upon you be peace and the mercy of Allah and His blessings.</p>
+        </div>
+
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">كَيْفَ حَالُكَ يَا أُسْتَاذُ؟ لَعَلَّكَ بِخَيْرٍ.</p>
+            <p class="english-text">How are you, teacher? Perhaps you are well.</p>
+        </div>
+
+        <div class="dialogue-line speaker-teacher">
+            <span class="speaker-name">المُدَرِّسُ:</span>
+            <p class="arabic-text">الحَمْدُ للهِ. وَكَيْفَ حَالُكَ أَنْتَ يَا هَاشِمُ؟ أَنَا أُحِبُّكَ كَثِيرًا يَا هَاشِمُ. إِنَّكَ طَالِبٌ ذَكِيٌّ وَمُجْتَهِدٌ وَذُو خُلُقٍ... أَمِنْ بَاكِسْتَانَ أَنْتَ أَمْ مِنَ الهِنْدِ يَا هَاشِمُ؟</p>
+            <p class="english-text">Praise be to Allah. And how are you, Hashim? I love you very much, Hashim. Indeed, you are an intelligent and hardworking student with good character... Are you from Pakistan or from India, Hashim?</p>
+        </div>
+
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">إِنِّي مِنَ الهِنْدِ.</p>
+            <p class="english-text">Indeed, I am from India.</p>
+        </div>
+
+        <div class="dialogue-line speaker-teacher">
+            <span class="speaker-name">المُدَرِّسُ:</span>
+            <p class="arabic-text">وَزَمِيلُكَ الَّذِي خَرَجَ مَعَكَ الآنَ مِنَ الفَصْلِ، أَهُوَ أَيْضًا مِنَ الهِنْدِ؟</p>
+            <p class="english-text">And your classmate who just left the class with you, is he also from India?</p>
+        </div>
+
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">لَا، إِنَّهُ مِنْ بَاكِسْتَانَ.</p>
+            <p class="english-text">No, indeed he is from Pakistan.</p>
+        </div>
+
+        <div class="dialogue-line speaker-teacher">
+            <span class="speaker-name">المُدَرِّسُ:</span>
+            <p class="arabic-text">إِنَّ سَاعَتَكَ جَمِيلَةٌ يَا هَاشِمُ. أَمِنَ اليَابَانِ هِيَ؟</p>
+            <p class="english-text">Indeed, your watch is beautiful, Hashim. Is it from Japan?</p>
+        </div>
+
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">لَا، إِنَّهَا مِنَ الهِنْدِ.</p>
+            <p class="english-text">No, indeed it is from India.</p>
+        </div>
+
+        <div class="dialogue-line speaker-teacher">
+            <span class="speaker-name">المُدَرِّسُ:</span>
+            <p class="arabic-text">أَغَالِيَةٌ هِيَ أَمْ رَخِيصَةٌ؟</p>
+            <p class="english-text">Is it expensive or cheap?</p>
+        </div>
+
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">إِنَّهَا رَخِيصَةٌ جِدًّا. إِنَّهَا بِمِائَةِ رُوبِيَّةٍ فَقَطْ.</p>
+            <p class="english-text">Indeed, it is very cheap. Indeed, it is only 100 rupees.</p>
+        </div>
+
+        <div class="dialogue-line speaker-teacher">
+            <span class="speaker-name">المُدَرِّسُ:</span>
+            <p class="arabic-text">كَمْ أَخًا لَكَ يَا هَاشِمُ؟</p>
+            <p class="english-text">How many brothers do you have, Hashim?</p>
+        </div>
+
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">لِي ثَلَاثَةُ إِخْوَةٍ.</p>
+            <p class="english-text">I have three brothers.</p>
+        </div>
+
+        <div class="dialogue-line speaker-teacher">
+            <span class="speaker-name">المُدَرِّسُ:</span>
+            <p class="arabic-text">أَطُلَّابٌ هُمْ؟</p>
+            <p class="english-text">Are they students?</p>
+        </div>
+
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">لَا، إِنَّهُمْ تُجَّارٌ.</p>
+            <p class="english-text">No, indeed they are merchants.</p>
+        </div>
+
+        <div class="dialogue-line speaker-teacher">
+            <span class="speaker-name">المُدَرِّسُ:</span>
+            <p class="arabic-text">وَكَمْ أُخْتًا لَكَ؟</p>
+            <p class="english-text">And how many sisters do you have?</p>
+        </div>
+
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">لِي أَرْبَعُ أَخَوَاتٍ.</p>
+            <p class="english-text">I have four sisters.</p>
+        </div>
+
+        <div class="dialogue-line speaker-teacher">
+            <span class="speaker-name">المُدَرِّسُ:</span>
+            <p class="arabic-text">أَفِي الهِنْدِ هُنَّ الآنَ؟</p>
+            <p class="english-text">Are they in India now?</p>
+        </div>
+
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">لَا، إِنَّهُنَّ هُنَا بِالمَدِينَةِ المُنَوَّرَةِ مَعَ أَبِي وَأُمِّي.</p>
+            <p class="english-text">No, indeed they are here in Madinah al-Munawwarah with my father and mother.</p>
+        </div>
+
+        <div class="dialogue-line speaker-teacher">
+            <span class="speaker-name">المُدَرِّسُ:</span>
+            <p class="arabic-text">أَطَالِبَاتٌ هُنَّ؟</p>
+            <p class="english-text">Are they students?</p>
+        </div>
+
+        <div class="dialogue-line speaker-student">
+            <span class="speaker-name">هَاشِمٌ:</span>
+            <p class="arabic-text">لَا، إِنَّهُنَّ مُدَرِّسَاتٌ بِالمَدْرَسَةِ الثَّانَوِيَّةِ.</p>
+            <p class="english-text">No, indeed they are teachers at the secondary school.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Inna and Sisters Section -->
+<section id="inna" class="section">
+    <h2 class="section-title">إِنَّ وَأَخَوَاتُهَا - Inna and Its Sisters</h2>
+
+    <div class="rule-box">
+        <p class="arabic-large" style="text-align: center;">إِنَّ تَنْصِبُ المُبْتَدَأَ وَتَرْفَعُ الخَبَرَ</p>
+        <p class="english-text" style="text-align: center;">Inna puts the subject in the accusative case and keeps the predicate in the nominative case</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text">إِنَّ حَرْفُ تَوْكِيدٍ وَنَصْبٍ</p>
+        <p class="english-text">إِنَّ is a particle of emphasis and accusative</p>
+        <ul style="font-size: 20px;">
+            <li><strong>تَوْكِيد</strong> - Means emphasis - its meaning is "indeed" or "surely" or "no doubt"</li>
+            <li><strong>نَصْب</strong> - Means: it makes the المبتدأ in the accusative case (منصوب)</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">إِنَّ تَأْتِي دَائِمًا فِي بِدَايَةِ الجُمْلَةِ</p>
+        <p class="english-text">إِنَّ is always found at the beginning of the sentence</p>
+        <p class="arabic-text">المُبْتَدَأُ سَيَكُونُ مَنْصُوبًا وَيُسَمَّى اسْمَ إِنَّ</p>
+        <p class="english-text">The subject will be in accusative and is called اسم إنَّ</p>
+        <p class="arabic-text">الخَبَرُ سَيَكُونُ مَرْفُوعًا وَيُسَمَّى خَبَرَ إِنَّ</p>
+        <p class="english-text">The predicate will be in nominative and is called خبر إنَّ</p>
+    </div>
+
+    <h3 class="section-subtitle">أَخَوَاتُ إِنَّ - Sisters of Inna</h3>
+
+    <table class="comparison-table">
+        <thead>
+            <tr class="table-header-green">
+                <th>Arabic</th>
+                <th>Translation</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="arabic-medium">إِنَّ</td>
+                <td>indeed / surely</td>
+                <td class="arabic-text">إِنَّ اللهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ</td>
+            </tr>
+            <tr>
+                <td class="arabic-medium">أَنَّ</td>
+                <td>that</td>
+                <td class="arabic-text">عَلِمْتُ أَنَّ الأُسْتَاذَ فِي الفَصْلِ</td>
+            </tr>
+            <tr>
+                <td class="arabic-medium">لَعَلَّ</td>
+                <td>may / perhaps</td>
+                <td class="arabic-text">لَعَلَّكَ بِخَيْرٍ</td>
+            </tr>
+            <tr>
+                <td class="arabic-medium">لٰكِنَّ</td>
+                <td>but</td>
+                <td class="arabic-text">هٰذَا كِتَابٌ قَدِيمٌ لٰكِنَّهُ مُفِيدٌ</td>
+            </tr>
+            <tr>
+                <td class="arabic-medium">كَأَنَّ</td>
+                <td>as if</td>
+                <td class="arabic-text">كَأَنَّ القِطَّ أَسَدٌ</td>
+            </tr>
+            <tr>
+                <td class="arabic-medium">لَيْتَ</td>
+                <td>wish / if only</td>
+                <td class="arabic-text">لَيْتَ الكِتَابَ سَهْلٌ</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>الفَرْقُ بَيْنَ "إِنَّ" وَ "أَنَّ":</strong></p>
+        <p class="arabic-text">هُوَ أَنَّ "إِنَّ" تَأْتِي فِي بِدَايَةِ الجُمْلَةِ، أَمَّا "أَنَّ" فَتَأْتِي فِي وَسَطِ الجُمْلَةِ</p>
+        <p class="english-text">The difference is that إِنَّ comes at the beginning of the sentence, while أَنَّ comes in the middle of the sentence</p>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ المُقَارَنَةِ - Comparison Table</h3>
+    <p class="english-text">Notice how the endings change with إِنَّ:</p>
+
+    <table class="comparison-table">
+        <thead>
+            <tr class="table-header-blue">
+                <th class="before-col">بِدُونِ إِنَّ (Without)</th>
+                <th class="after-col">مَعَ إِنَّ (With)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="before-col arabic-text">مُحَمَّدٌ مُجْتَهِدٌ</td>
+                <td class="after-col arabic-text">إِنَّ مُحَمَّدًا مُجْتَهِدٌ</td>
+            </tr>
+            <tr>
+                <td class="before-col arabic-text">الكِتَابُ جَدِيدٌ</td>
+                <td class="after-col arabic-text">إِنَّ الكِتَابَ جَدِيدٌ</td>
+            </tr>
+            <tr>
+                <td class="before-col arabic-text">البَيْتُ قَدِيمٌ</td>
+                <td class="after-col arabic-text">إِنَّ البَيْتَ قَدِيمٌ</td>
+            </tr>
+            <tr>
+                <td class="before-col arabic-text">المُسْلِمُونَ مُجْتَهِدُونَ</td>
+                <td class="after-col arabic-text">إِنَّ المُسْلِمِينَ مُجْتَهِدُونَ</td>
+            </tr>
+            <tr>
+                <td class="before-col arabic-text">الطَّالِبَانِ جَدِيدَانِ</td>
+                <td class="after-col arabic-text">إِنَّ الطَّالِبَيْنِ جَدِيدَانِ</td>
+            </tr>
+            <tr>
+                <td class="before-col arabic-text">الطُّلَّابُ جُدُدٌ</td>
+                <td class="after-col arabic-text">إِنَّ الطُّلَّابَ جُدُدٌ</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="warning-box">
+        <h4>التَّغْيِيرَاتُ الهَامَّةُ - Important Changes:</h4>
+        <p class="arabic-text">• المُفْرَدُ: ُ ← َ (الضَّمَّةُ تَتَحَوَّلُ إِلَى فَتْحَةٍ)</p>
+        <p class="english-text">Singular: damma (ُ) changes to fatha (َ)</p>
+        <p class="arabic-text">• جَمْعُ المُذَكَّرِ السَّالِمُ: ونَ ← ينَ (الوَاوُ تَتَحَوَّلُ إِلَى يَاءٍ)</p>
+        <p class="english-text">Sound Masculine Plural: waw (ون) changes to yaa (ين)</p>
+        <p class="arabic-text">• المُثَنَّى: انِ ← يْنِ (الأَلِفُ تَتَحَوَّلُ إِلَى يَاءٍ)</p>
+        <p class="english-text">Dual: alif (ان) changes to yaa (ين)</p>
+    </div>
+
+    <h3 class="section-subtitle">إِنَّ مَعَ الضَّمَائِرِ - Inna with Pronouns</h3>
+
+    <table class="comparison-table">
+        <thead>
+            <tr class="table-header-green">
+                <th>بِدُونِ إِنَّ</th>
+                <th>مَعَ إِنَّ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="arabic-text">أَنْتَ مُجْتَهِدٌ</td>
+                <td class="arabic-text">إِنَّكَ مُجْتَهِدٌ</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">هُوَ مُجْتَهِدٌ</td>
+                <td class="arabic-text">إِنَّهُ مُجْتَهِدٌ</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">هِيَ مُجْتَهِدَةٌ</td>
+                <td class="arabic-text">إِنَّهَا مُجْتَهِدَةٌ</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">المُسْلِمُونَ مُجْتَهِدُونَ</td>
+                <td class="arabic-text">إِنَّهُمْ مُجْتَهِدُونَ</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">الطَّالِبَانِ مُجْتَهِدَانِ</td>
+                <td class="arabic-text">إِنَّهُمَا مُجْتَهِدَانِ</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">الطَّالِبَاتُ مُجْتَهِدَاتٌ</td>
+                <td class="arabic-text">إِنَّهُنَّ مُجْتَهِدَاتٌ</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">أَنْتُمْ مُجْتَهِدُونَ</td>
+                <td class="arabic-text">إِنَّكُمْ مُجْتَهِدُونَ</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">أَنْتُنَّ مُجْتَهِدَاتٌ</td>
+                <td class="arabic-text">إِنَّكُنَّ مُجْتَهِدَاتٌ</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">الطَّالِبَتَانِ مُجْتَهِدَتَانِ</td>
+                <td class="arabic-text">أَنْتُمَا مُجْتَهِدَتَانِ</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">أَنَا مُجْتَهِدٌ</td>
+                <td class="arabic-text">إِنِّي (إِنَّنِي) مُجْتَهِدٌ</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- I'rab Section -->
+<section id="irab" class="section">
+    <h2 class="section-title">تَدْرِيبٌ عَلَى الإِعْرَابِ - I'rab Practice</h2>
+
+    <div class="irab-container">
+        <h4 class="arabic-medium" style="color: #6c3483;">● الكِتَابُ جَدِيدٌ</h4>
+        <p class="irab-analysis">الكِتَابُ: مُبْتَدَأٌ مَرْفُوعٌ بِالضَّمَّةِ الظَّاهِرَةِ</p>
+        <p class="english-text">Al-kitaabu: Subject, nominative with visible damma</p>
+        <p class="irab-analysis">جَدِيدٌ: خَبَرٌ مَرْفُوعٌ بِالضَّمَّةِ الظَّاهِرَةِ</p>
+        <p class="english-text">Jadiidun: Predicate, nominative with visible damma</p>
+    </div>
+
+    <div class="irab-container">
+        <h4 class="arabic-medium" style="color: #6c3483;">● إِنَّ الكِتَابَ جَدِيدٌ</h4>
+        <p class="irab-analysis">إِنَّ: حَرْفُ تَوْكِيدٍ وَنَصْبٍ</p>
+        <p class="english-text">Inna: Particle of emphasis and accusative</p>
+        <p class="irab-analysis">الكِتَابَ: اسْمُ إِنَّ مَنْصُوبٌ بِالفَتْحَةِ الظَّاهِرَةِ</p>
+        <p class="english-text">Al-kitaaba: Noun of inna, accusative with visible fatha</p>
+        <p class="irab-analysis">جَدِيدٌ: خَبَرُ إِنَّ مَرْفُوعٌ بِالضَّمَّةِ الظَّاهِرَةِ</p>
+        <p class="english-text">Jadiidun: Predicate of inna, nominative with visible damma</p>
+    </div>
+
+    <div class="irab-container">
+        <h4 class="arabic-medium" style="color: #6c3483;">● المُسْلِمُونَ فِي المَسْجِدِ</h4>
+        <p class="irab-analysis">المُسْلِمُونَ: مُبْتَدَأٌ مَرْفُوعٌ بِالوَاوِ لِأَنَّهُ جَمْعُ مُذَكَّرٍ سَالِمٌ</p>
+        <p class="english-text">Al-muslimoona: Subject, nominative with waw because it's sound masculine plural</p>
+        <p class="irab-analysis">فِي المَسْجِدِ: فِي حَرْفُ جَرٍّ وَالمَسْجِدِ اسْمٌ مَجْرُورٌ بِالكَسْرَةِ، وَالجَارُّ وَالمَجْرُورُ شِبْهُ جُمْلَةٍ خَبَرٌ</p>
+        <p class="english-text">Fi al-masjidi: Fi is a preposition, al-masjid is genitive with kasra, and the prepositional phrase is the predicate</p>
+    </div>
+
+    <div class="irab-container">
+        <h4 class="arabic-medium" style="color: #6c3483;">● إِنَّ المُسْلِمِينَ فِي المَسْجِدِ</h4>
+        <p class="irab-analysis">إِنَّ: حَرْفُ تَوْكِيدٍ وَنَصْبٍ</p>
+        <p class="irab-analysis">المُسْلِمِينَ: اسْمُ إِنَّ مَنْصُوبٌ بِاليَاءِ لِأَنَّهُ جَمْعُ مُذَكَّرٍ سَالِمٌ</p>
+        <p class="english-text">Al-muslimeena: Noun of inna, accusative with yaa because it's sound masculine plural</p>
+        <p class="irab-analysis">فِي المَسْجِدِ: جَارٌّ وَمَجْرُورٌ شِبْهُ جُمْلَةٍ خَبَرُ إِنَّ</p>
+    </div>
+
+    <div class="irab-container">
+        <h4 class="arabic-medium" style="color: #6c3483;">● الطَّالِبَانِ جَدِيدَانِ</h4>
+        <p class="irab-analysis">الطَّالِبَانِ: مُبْتَدَأٌ مَرْفُوعٌ بِالأَلِفِ لِأَنَّهُ مُثَنَّى</p>
+        <p class="english-text">At-taalibaani: Subject, nominative with alif because it's dual</p>
+        <p class="irab-analysis">جَدِيدَانِ: خَبَرٌ مَرْفُوعٌ بِالأَلِفِ لِأَنَّهُ مُثَنَّى</p>
+        <p class="english-text">Jadiidaani: Predicate, nominative with alif because it's dual</p>
+    </div>
+
+    <div class="irab-container">
+        <h4 class="arabic-medium" style="color: #6c3483;">● إِنَّ الطَّالِبَيْنِ جَدِيدَانِ</h4>
+        <p class="irab-analysis">إِنَّ: حَرْفُ تَوْكِيدٍ وَنَصْبٍ</p>
+        <p class="irab-analysis">الطَّالِبَيْنِ: اسْمُ إِنَّ مَنْصُوبٌ بِاليَاءِ لِأَنَّهُ مُثَنَّى</p>
+        <p class="english-text">At-taalibayn: Noun of inna, accusative with yaa because it's dual</p>
+        <p class="irab-analysis">جَدِيدَانِ: خَبَرُ إِنَّ مَرْفُوعٌ بِالأَلِفِ لِأَنَّهُ مُثَنَّى</p>
+        <p class="english-text">Jadiidaani: Predicate of inna, nominative with alif because it's dual</p>
+    </div>
+
+    <div class="irab-container">
+        <h4 class="arabic-medium" style="color: #6c3483;">● مُحَمَّدٌ فِي الفَصْلِ، إِنَّهُ طَالِبٌ</h4>
+        <p class="irab-analysis">مُحَمَّدٌ: مُبْتَدَأٌ مَرْفُوعٌ بِالضَّمَّةِ</p>
+        <p class="irab-analysis">فِي الفَصْلِ: جَارٌّ وَمَجْرُورٌ شِبْهُ جُمْلَةٍ خَبَرٌ</p>
+        <p class="irab-analysis">إِنَّ: حَرْفُ تَوْكِيدٍ وَنَصْبٍ</p>
+        <p class="irab-analysis">الهَاءُ: ضَمِيرٌ مُتَّصِلٌ اسْمُ إِنَّ</p>
+        <p class="english-text">The ه is a connected pronoun, acting as the noun of inna</p>
+        <p class="irab-analysis">طَالِبٌ: خَبَرُ إِنَّ مَرْفُوعٌ بِالضَّمَّةِ</p>
+    </div>
+</section>
+
+<!-- Dhu and Dhat Section -->
+<section id="dhu" class="section">
+    <h2 class="section-title">ذُو وَذَاتُ - Possessing/Owner of</h2>
+
+    <div class="grammar-box">
+        <p class="arabic-text">تُسْتَعْمَلُ كَلِمَةُ «ذُو» مَعَ المُذَكَّرِ، وَمَعْنَاهَا Possessing or owning وَجَمْعُهَا «ذَوُو»</p>
+        <p class="english-text">The word ذُو is used with masculine, meaning "possessing" or "owner of", and its plural is ذَوُو</p>
+        <p class="arabic-text">أَمَّا كَلِمَةُ «ذَات» فَهِيَ تُسْتَخْدَمُ مَعَ المُؤَنَّثِ، وَجَمْعُهَا «ذَوَات»</p>
+        <p class="english-text">As for ذَات, it is used with feminine, and its plural is ذَوَات</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text">وَالكَلِمَةُ الَّتِي بَعْدَ «ذُو» وَ«ذَات» فَإِنَّهَا تُعْرَبُ مُضَافًا إِلَيْهِ دَائِمًا</p>
+        <p class="english-text">The word after ذُو and ذَات is always in the genitive case (mudaaf ilayh)</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+
+    <table class="comparison-table">
+        <thead>
+            <tr class="table-header-blue">
+                <th>المِثَالُ</th>
+                <th>المَعْنَى</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="arabic-text">هٰذَا طَالِبٌ ذُو خُلُقٍ</td>
+                <td class="english-text">This student is possessor of good character (well-mannered)</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">هٰذِهِ طَالِبَةٌ ذَاتُ خُلُقٍ</td>
+                <td class="english-text">This (female) student is possessor of good character</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">هٰؤُلَاءِ طُلَّابٌ ذَوُو خُلُقٍ</td>
+                <td class="english-text">These students are possessors of good character</td>
+            </tr>
+            <tr>
+                <td class="arabic-text">هٰؤُلَاءِ طَالِبَاتٌ ذَوَاتُ خُلُقٍ</td>
+                <td class="english-text">These (female) students are possessors of good character</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <h4>تَصْرِيفُ ذُو - Declension of ذُو</h4>
+        <table style="width: 100%; margin-top: 10px;">
+            <tr>
+                <th>الحَالَةُ</th>
+                <th>المُذَكَّرُ المُفْرَدُ</th>
+                <th>المُذَكَّرُ الجَمْعُ</th>
+                <th>المُؤَنَّثُ المُفْرَدُ</th>
+                <th>المُؤَنَّثُ الجَمْعُ</th>
+            </tr>
+            <tr>
+                <td>مَرْفُوعٌ</td>
+                <td class="arabic-text">ذُو</td>
+                <td class="arabic-text">ذَوُو</td>
+                <td class="arabic-text">ذَاتُ</td>
+                <td class="arabic-text">ذَوَاتُ</td>
+            </tr>
+            <tr>
+                <td>مَنْصُوبٌ</td>
+                <td class="arabic-text">ذَا</td>
+                <td class="arabic-text">ذَوِي</td>
+                <td class="arabic-text">ذَاتَ</td>
+                <td class="arabic-text">ذَوَاتِ</td>
+            </tr>
+            <tr>
+                <td>مَجْرُورٌ</td>
+                <td class="arabic-text">ذِي</td>
+                <td class="arabic-text">ذَوِي</td>
+                <td class="arabic-text">ذَاتِ</td>
+                <td class="arabic-text">ذَوَاتِ</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- Quranic Examples Section -->
+<section id="quran" class="section">
+    <h2 class="section-title">أَمْثِلَةٌ مِنَ القُرْآنِ الكَرِيمِ</h2>
+    <p class="english-text">Examples from the Noble Quran</p>
+
+    <div class="quran-box">
+        <h4 class="section-subtitle">المِثَالُ الأَوَّلُ - سُورَةُ آلِ عِمْرَانَ</h4>
+        <p class="quran-text">إِنَّ اللَّهَ لَا يُخْلِفُ الْمِيعَادَ</p>
+        <p class="english-text">"Indeed, Allah does not fail in His promise" (3:9)</p>
+        <div class="irab-container" style="text-align: right; margin-top: 15px;">
+            <p class="irab-analysis">إِنَّ: حَرْفُ تَوْكِيدٍ وَنَصْبٍ</p>
+            <p class="irab-analysis">اللَّهَ: لَفْظُ الجَلَالَةِ اسْمُ إِنَّ مَنْصُوبٌ بِالفَتْحَةِ الظَّاهِرَةِ</p>
+            <p class="irab-analysis">لَا يُخْلِفُ: فِعْلٌ مُضَارِعٌ مَرْفُوعٌ</p>
+            <p class="irab-analysis">المِيعَادَ: مَفْعُولٌ بِهِ مَنْصُوبٌ</p>
+        </div>
+    </div>
+
+    <div class="quran-box">
+        <h4 class="section-subtitle">المِثَالُ الثَّانِي - سُورَةُ العَصْرِ</h4>
+        <p class="quran-text">وَالْعَصْرِ ۝ إِنَّ الْإِنسَانَ لَفِي خُسْرٍ</p>
+        <p class="english-text">"By Time! Indeed, mankind is in loss" (103:1-2)</p>
+        <div class="irab-container" style="text-align: right; margin-top: 15px;">
+            <p class="irab-analysis">وَالعَصْرِ: الوَاوُ حَرْفُ قَسَمٍ، العَصْرِ مُقْسَمٌ بِهِ مَجْرُورٌ</p>
+            <p class="irab-analysis">إِنَّ: حَرْفُ تَوْكِيدٍ وَنَصْبٍ</p>
+            <p class="irab-analysis">الإِنْسَانَ: اسْمُ إِنَّ مَنْصُوبٌ بِالفَتْحَةِ الظَّاهِرَةِ</p>
+            <p class="irab-analysis">لَفِي خُسْرٍ: اللَّامُ لَامُ التَّوْكِيدِ، فِي خُسْرٍ جَارٌّ وَمَجْرُورٌ خَبَرُ إِنَّ</p>
+        </div>
+    </div>
+</section>
+
+<!-- Summary Section -->
+<section id="summary" class="section">
+    <h2 class="section-title">خُلَاصَةُ الوَحْدَةِ الأُولَى - Module 1 Summary</h2>
+
+    <div class="summary-box">
+        <h3>مَا تَعَلَّمْنَاهُ - What We Learned</h3>
+        <ul>
+            <li>
+                <span>✓ أَنْوَاعُ الكَلِمَةِ: اسْمٌ، فِعْلٌ، حَرْفٌ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Word Types: Noun, Verb, Particle</span>
+            </li>
+            <li>
+                <span>✓ أَنْوَاعُ الجُمْلَةِ: الجُمْلَةُ الاِسْمِيَّةُ وَالجُمْلَةُ الفِعْلِيَّةُ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Sentence Types: Nominal Sentence & Verbal Sentence</span>
+            </li>
+            <li>
+                <span>✓ أَنْوَاعُ الفِعْلِ: المَاضِي، المُضَارِعُ، الأَمْرُ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Verb Types: Past, Present, Command</span>
+            </li>
+            <li>
+                <span>✓ حُرُوفُ المُضَارَعَةِ: أَنَيْتُ (أ، ن، ي، ت)</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Present Tense Letters: ANYT (Alif, Noon, Yaa, Taa)</span>
+            </li>
+            <li>
+                <span>✓ البَحْثُ فِي المَعَاجِمِ: الفِعْلُ يَجِبُ أَنْ يَكُونَ مُفْرَدًا، مُذَكَّرًا، مَاضِيًا، مَعَ هُوَ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Dictionary Search: Verb must be singular, masculine, past tense, with "he"</span>
+            </li>
+            <li>
+                <span>✓ إِنَّ وَأَخَوَاتُهَا: إِنَّ، أَنَّ، لَعَلَّ، لٰكِنَّ، كَأَنَّ، لَيْتَ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Inna & Sisters: indeed, that, perhaps, but, as if, wish</span>
+            </li>
+            <li>
+                <span>✓ إِنَّ تَنْصِبُ المُبْتَدَأَ وَتَرْفَعُ الخَبَرَ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Inna puts subject in accusative & keeps predicate in nominative</span>
+            </li>
+            <li>
+                <span>✓ ذُو وَذَاتُ: لِلدَّلَالَةِ عَلَى المِلْكِيَّةِ أَوِ الصِّفَةِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Dhu & Dhat: For indicating possession or attribute</span>
+            </li>
+            <li>
+                <span>✓ تَصْرِيفُ الأَفْعَالِ مَعَ جَمِيعِ الضَّمَائِرِ الثَّلَاثَةَ عَشَرَ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Verb Conjugation with all 13 pronouns</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <h3 class="section-subtitle">القَوَاعِدُ الأَسَاسِيَّةُ - Key Rules</h3>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">إِنَّ تَنْصِبُ المُبْتَدَأَ وَتَرْفَعُ الخَبَرَ</p>
+            <p class="english-text" style="text-align: center;">Inna puts the subject in accusative and keeps the predicate in nominative</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">فِعْلُ الأَمْرِ مَبْنِيٌّ عَلَى السُّكُونِ</p>
+            <p class="english-text" style="text-align: center;">The command verb is built on sukoon</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">الفِعْلُ المَاضِي مَبْنِيٌّ عَلَى الفَتْحِ</p>
+            <p class="english-text" style="text-align: center;">The past tense verb is built on fatha</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">الفِعْلُ المُضَارِعُ يَكُونُ مَرْفُوعًا</p>
+            <p class="english-text" style="text-align: center;">The present tense verb is in the nominative case (marfoo')</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer style="text-align: center; padding: 30px; margin-top: 30px; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; border-radius: 15px;">
+    <p style="font-size: 24px;">الوَحْدَةُ الأُولَى - Module 1</p>
+    <p style="font-size: 18px;">دَوْرَةُ ARB202 - دُرُوسُ اللُّغَةِ العَرَبِيَّةِ</p>
+    <p style="font-size: 16px; opacity: 0.8;">مِنْ كِتَابِ المَدِينَةِ - الجُزْءُ الثَّانِي</p>
+    <p style="font-size: 14px; margin-top: 20px; opacity: 0.6;">Created for personal study use</p>
+</footer>
+
+</body>
+</html>

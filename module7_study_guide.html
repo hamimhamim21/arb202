@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 7 - Arabic Study Guide | الوحدة السابعة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            min-height: 100vh;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #6a1b9a 0%, #9c27b0 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #4a148c 0%, #9c27b0 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px;
+            color: #6a1b9a;
+            border-bottom: 4px solid #9c27b0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .section-subtitle { font-size: 28px; color: #7b1fa2; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #4a148c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .translit-text { font-family: Georgia, serif; font-style: italic; color: #888; direction: ltr; text-align: left; font-size: 16px; }
+        .grammar-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-right: 5px solid #9c27b0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-right: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-right: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-right: 5px solid #2196f3;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f3e5f5; }
+        tr:hover { background: #e1bee7; }
+        .pronoun-cell { background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); font-weight: bold; color: #f57f17; }
+        .quran-box {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border: 2px solid #c2185b;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .quran-text { font-size: 36px; color: #880e4f; line-height: 2.2; }
+        .surah-ref { font-size: 18px; color: #ad1457; margin-top: 10px; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .vocab-item {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .number-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .summary-box {
+            background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .summary-box h3 { color: #ffeb3b; font-size: 28px; margin-bottom: 20px; }
+        .summary-box ul { list-style: none; padding: 0; }
+        .summary-box li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 22px; }
+        .comparison-table { border: 2px solid #9c27b0; border-radius: 10px; overflow: hidden; }
+        @media (max-width: 768px) {
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .arabic-text { font-size: 22px; }
+            .section-title { font-size: 28px; }
+            table { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav-container">
+    <div class="nav-title">الوحدة السابعة - Module 7</div>
+    <div class="nav-links">
+        <a href="#conjugation"><span class="nav-ar">تصريف بَحَثَ</span><span class="nav-en">Verb Conjugation</span></a>
+        <a href="#laam-ibtida"><span class="nav-ar">لام الابتداء</span><span class="nav-en">Laam of Beginning</span></a>
+        <a href="#laam-muzahlaqa"><span class="nav-ar">اللام المُزَحْلَقَة</span><span class="nav-en">Skating Laam</span></a>
+        <a href="#numbers-1-10"><span class="nav-ar">الأعداد ١-١٠</span><span class="nav-en">Numbers 1-10</span></a>
+        <a href="#ordinal"><span class="nav-ar">العدد الترتيبي</span><span class="nav-en">Ordinal Numbers</span></a>
+        <a href="#numbers-11-19"><span class="nav-ar">الأعداد ١١-١٩</span><span class="nav-en">Numbers 11-19</span></a>
+        <a href="#quran"><span class="nav-ar">أمثلة قرآنية</span><span class="nav-en">Quranic Examples</span></a>
+        <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
+    </div>
+</nav>
+
+<!-- Main Title -->
+<header class="main-title">
+    <h1>الوحدة السابعة</h1>
+    <div class="subtitle">Module 7 - Seventh Unit</div>
+    <div class="subtitle" style="font-size: 20px; margin-top: 15px;">
+        الدَّوْرَةُ الثَّالِثَةُ - المُحَاضَرَةُ السَّابِعَةُ
+    </div>
+    <div class="english-text" style="color: white; opacity: 0.9;">
+        Third Course - Seventh Lecture
+    </div>
+</header>
+
+<!-- Verb Conjugation Section -->
+<section id="conjugation" class="section">
+    <h2 class="section-title">تَصْرِيفُ الفِعْلِ: بَحَثَ - Verb Conjugation: To Search</h2>
+
+    <div class="info-box">
+        <p class="arabic-medium">بَحَثَ - يَبْحَثُ - اِبْحَثْ</p>
+        <p class="english-text">bahatha - yabhath - ibhath (to search - he searches - search!)</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text">هٰذَا الفِعْلُ لَهُ مَعْنَيَانِ:</p>
+        <p class="english-text">This verb has two meanings:</p>
+        <p class="arabic-text"><strong>المَعْنَى الأَوَّلُ:</strong> أَنْ يَكُونَ بِمَعْنَى (فَتَّشَ) أَيْ Look for</p>
+        <p class="english-text"><strong>First meaning:</strong> To look for / search for something</p>
+        <p class="arabic-text"><strong>المَعْنَى الثَّانِي:</strong> البَحْثُ الخَاصُّ بِالعِلْمِ أَيْ Research</p>
+        <p class="english-text"><strong>Second meaning:</strong> To research (academic/scientific)</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>الضَّمِيرُ<br>Pronoun</th>
+                <th>المَاضِي<br>Past</th>
+                <th>المُضَارِعُ<br>Present</th>
+                <th>الأَمْرُ<br>Command</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">هُوَ</td>
+                <td>بَحَثَ</td>
+                <td>يَبْحَثُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هِيَ</td>
+                <td>بَحَثَتْ</td>
+                <td>تَبْحَثُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (م)</td>
+                <td>بَحَثَا</td>
+                <td>يَبْحَثَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (ف)</td>
+                <td>بَحَثَتَا</td>
+                <td>تَبْحَثَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمْ</td>
+                <td>بَحَثُوا</td>
+                <td>يَبْحَثُونَ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُنَّ</td>
+                <td>بَحَثْنَ</td>
+                <td>يَبْحَثْنَ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتَ</td>
+                <td>بَحَثْتَ</td>
+                <td>تَبْحَثُ</td>
+                <td>اِبْحَثْ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتِ</td>
+                <td>بَحَثْتِ</td>
+                <td>تَبْحَثِينَ</td>
+                <td>اِبْحَثِي</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمَا</td>
+                <td>بَحَثْتُمَا</td>
+                <td>تَبْحَثَانِ</td>
+                <td>اِبْحَثَا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمْ</td>
+                <td>بَحَثْتُمْ</td>
+                <td>تَبْحَثُونَ</td>
+                <td>اِبْحَثُوا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُنَّ</td>
+                <td>بَحَثْتُنَّ</td>
+                <td>تَبْحَثْنَ</td>
+                <td>اِبْحَثْنَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنَا</td>
+                <td>بَحَثْتُ</td>
+                <td>أَبْحَثُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">نَحْنُ</td>
+                <td>بَحَثْنَا</td>
+                <td>نَبْحَثُ</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">خَالِدٌ: يَا سَمِيرُ، هَلْ رَأَيْتَ الكِتَابَ؟</p>
+        <p class="english-text">Khalid: O Samir, did you see the book?</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">سَمِيرٌ: لَا، اِبْحَثْ عَنْهُ يَا خَالِدُ</p>
+        <p class="english-text">Samir: No, search for it O Khalid</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">يَا زَيْنَبُ، اِبْحَثِي مَعِي عَنْ قَلَمِي الجَدِيدِ</p>
+        <p class="english-text">O Zainab, search with me for my new pen</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">تِلْكَ الفَتَاةُ تَبْحَثُ عَنْ أُخْتِهَا الصَّغِيرَةِ</p>
+        <p class="english-text">That girl is searching for her little sister</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">هٰؤُلَاءِ الطُّلَّابُ يَبْحَثُونَ فِي المَعَاجِمِ عَنِ الكَلِمَاتِ الجَدِيدَةِ</p>
+        <p class="english-text">These students are researching in dictionaries for new words</p>
+    </div>
+</section>
+
+<!-- Laam Al-Ibtida Section -->
+<section id="laam-ibtida" class="section">
+    <h2 class="section-title">لَامُ الاِبْتِدَاءِ - Laam of Beginning</h2>
+
+    <div class="rule-box">
+        <p class="arabic-text">عَرَفْنَا قَبْلَ ذٰلِكَ أَنَّ المُبْتَدَأَ يَكُونُ مَرْفُوعًا وَأَيْضًا الخَبَرُ يَكُونُ مَرْفُوعًا</p>
+        <p class="english-text">We knew before that the subject (mubtada) is nominative and also the predicate (khabar) is nominative</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">وَلٰكِنْ إِذَا أَرَدْتَ أَنْ تَجْعَلَ الجُمْلَةَ أَكْثَرَ تَأْكِيدًا فَيُمْكِنُ أَنْ تَأْتِي بِلَامٍ مَفْتُوحَةٍ (أَيْ عَلَيْهَا فَتْحَة) وَهٰذِهِ اللَّامُ تَكُونُ قَبْلَ المُبْتَدَأِ</p>
+        <p class="english-text">But if you want to make the sentence more emphatic, you can use a laam with fatha, and this laam comes before the subject</p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text"><strong>الفَرْقُ بَيْنَ لَامِ الجَرِّ وَلَامِ الاِبْتِدَاءِ:</strong></p>
+        <p class="english-text"><strong>Difference between Laam of Jarr and Laam of Beginning:</strong></p>
+        <p class="arabic-text">• لَامُ الجَرِّ: مَكْسُورَةٌ (تَحْتَهَا كَسْرَة) - الكِتَابُ لِعَلِيٍّ</p>
+        <p class="english-text">• Laam of Jarr: Has kasra underneath - The book belongs to Ali</p>
+        <p class="arabic-text">• لَامُ الاِبْتِدَاءِ: مَفْتُوحَةٌ - وَالاِسْمُ الَّذِي بَعْدَهَا يُعْرَبُ مُبْتَدَأً مَرْفُوعًا</p>
+        <p class="english-text">• Laam of Beginning: Has fatha - The noun after it is parsed as nominative subject</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">بَيْتُكَ جَدِيدٌ ← لَبَيْتُكَ جَدِيدٌ</p>
+        <p class="english-text">Your house is new → Indeed your house is new</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">الكِتَابُ سَهْلٌ ← لَلْكِتَابُ سَهْلٌ</p>
+        <p class="english-text">The book is easy → Indeed the book is easy</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">حَدِيقَتُنَا وَاسِعَةٌ ← لَحَدِيقَتُنَا وَاسِعَةٌ</p>
+        <p class="english-text">Our garden is spacious → Indeed our garden is spacious</p>
+    </div>
+</section>
+
+<!-- Laam Al-Muzahlaqa Section -->
+<section id="laam-muzahlaqa" class="section">
+    <h2 class="section-title">اللَّامُ المُزَحْلَقَةُ - The Skating Laam</h2>
+
+    <div class="rule-box">
+        <p class="arabic-text">تَدْخُلُ اللَّامُ عَلَى خَبَرِ إِنَّ وَتَدْخُلُ أَيْضًا عَلَى اسْمِ إِنَّ إِذَا جَاءَ مُؤَخَّرًا عَنْ خَبَرِهَا</p>
+        <p class="english-text">The Laam enters on the predicate of Inna, and also on the subject of Inna if it comes after its predicate</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">وَاللَّامُ هُنَا أَيْضًا تُفِيدُ التَّوْكِيدَ، وَالعَرَبُ يُسَمُّونَ هٰذِهِ اللَّامَ بِاسْمِ (اللَّامِ المُزَحْلَقَةِ) - The skating LAM</p>
+        <p class="english-text">This Laam also gives emphasis, and Arabs call it "The Skating Laam" because it slides from before Inna to after it</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">إِنَّ مُحَمَّدًا <strong>لَـ</strong>طَالِبٌ مُجْتَهِدٌ (دَخَلَتِ اللَّامُ عَلَى الخَبَرِ)</p>
+        <p class="english-text">Indeed Muhammad is certainly a hardworking student (Laam entered on the predicate)</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">إِنَّ فَوْقَ الشَّجَرَةِ <strong>لَـ</strong>عُصْفُورًا (دَخَلَتِ اللَّامُ عَلَى اسْمِ «إِنَّ» المُؤَخَّرِ)</p>
+        <p class="english-text">Indeed above the tree is certainly a bird (Laam entered on delayed subject of Inna)</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ مِنَ القُرْآنِ الكَرِيمِ - Quranic Examples</h3>
+    <div class="quran-box">
+        <p class="quran-text">إِنَّ فِي ذٰلِكَ <strong>لَـ</strong>آيَةً لِلْمُؤْمِنِينَ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">Most surely there is a sign in this for the believers</p>
+        <p class="surah-ref">سورة الحجر ١٥:٧٧</p>
+    </div>
+    <div class="quran-box">
+        <p class="quran-text">إِنَّ فِي السَّمَاوَاتِ وَالأَرْضِ <strong>لَـ</strong>آيَاتٍ لِلْمُؤْمِنِينَ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">Verily in the heavens and the earth are Signs for the believers</p>
+        <p class="surah-ref">سورة الجاثية ٤٥:٣</p>
+    </div>
+    <div class="quran-box">
+        <p class="quran-text">إِنَّ المُنَافِقِينَ <strong>لَـ</strong>كَاذِبُونَ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">The hypocrites are surely liars</p>
+        <p class="surah-ref">سورة المنافقون ٦٣:١</p>
+    </div>
+    <div class="quran-box">
+        <p class="quran-text">وَإِنَّ رَبَّكَ <strong>لَـ</strong>هُوَ العَزِيزُ الرَّحِيمُ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">And verily your Lord is the Mighty, the Merciful</p>
+        <p class="surah-ref">سورة الشعراء ٢٦:٩</p>
+    </div>
+    <div class="quran-box">
+        <p class="quran-text">وَالعَصْرِ إِنَّ الإِنْسَانَ <strong>لَـ</strong>فِي خُسْرٍ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">By the declining day, Verily Man is in loss</p>
+        <p class="surah-ref">سورة العصر ١٠٣:١-٢</p>
+    </div>
+</section>
+
+<!-- Numbers 1-10 Section -->
+<section id="numbers-1-10" class="section">
+    <h2 class="section-title">الأَعْدَادُ مِنْ ١ إِلَى ١٠ - Numbers 1 to 10</h2>
+
+    <div class="rule-box">
+        <p class="arabic-text">عَرَفْنَا أَنَّ الأَعْدَادَ مِنْ ثَلَاثَةٍ إِلَى عَشَرَةٍ تُخَالِفُ التَّمْيِيزَ (المَعْدُودَ)</p>
+        <p class="english-text">We learned that numbers 3-10 have OPPOSITE gender to the counted noun</p>
+    </div>
+
+    <h3 class="section-subtitle">النَّوْعُ الأَوَّلُ: وَاحِدٌ وَاثْنَانِ - Type 1: One and Two</h3>
+    <div class="info-box">
+        <p class="arabic-text">العَدَدَانِ وَاحِدٌ وَاثْنَانِ يُوَافِقَانِ المَعْدُودَ فِي التَّذْكِيرِ وَالتَّأْنِيثِ</p>
+        <p class="english-text">Numbers 1 and 2 AGREE with the counted noun in gender</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">طَالِبٌ وَاحِدٌ / طَالِبَةٌ وَاحِدَةٌ</p>
+        <p class="english-text">One (male) student / One (female) student</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">طَالِبَانِ اثْنَانِ / طَالِبَتَانِ اثْنَتَانِ</p>
+        <p class="english-text">Two (male) students / Two (female) students</p>
+    </div>
+
+    <h3 class="section-subtitle">النَّوْعُ الثَّانِي: مِنْ ثَلَاثَةٍ إِلَى عَشَرَةٍ - Type 2: Three to Ten</h3>
+    <div class="warning-box">
+        <p class="arabic-text">الأَعْدَادُ مِنْ ثَلَاثَةٍ إِلَى عَشَرَةٍ تُخَالِفُ التَّمْيِيزَ (المَعْدُودَ)</p>
+        <p class="english-text">Numbers 3-10 have OPPOSITE gender to the counted noun</p>
+        <p class="arabic-text">• إِذَا كَانَ التَّمْيِيزُ مُذَكَّرًا فَإِنَّ العَدَدَ يُضَافُ إِلَيْهِ (التَّاءُ المَرْبُوطَةُ)</p>
+        <p class="english-text">• If counted noun is masculine, the number takes taa marbuta (ة)</p>
+        <p class="arabic-text">• وَإِذَا كَانَ المَعْدُودُ مُؤَنَّثًا فَإِنَّ العَدَدَ تُحْذَفُ مِنْهُ التَّاءُ المَرْبُوطَةُ</p>
+        <p class="english-text">• If counted noun is feminine, the number loses taa marbuta</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>العَدَدُ<br>Number</th>
+                <th>مَعَ المُذَكَّرِ<br>With Masculine</th>
+                <th>مَعَ المُؤَنَّثِ<br>With Feminine</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">٣</td>
+                <td>ثَلَاثَةُ طُلَّابٍ</td>
+                <td>ثَلَاثُ طَالِبَاتٍ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">٤</td>
+                <td>أَرْبَعَةُ طُلَّابٍ</td>
+                <td>أَرْبَعُ طَالِبَاتٍ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">٥</td>
+                <td>خَمْسَةُ طُلَّابٍ</td>
+                <td>خَمْسُ طَالِبَاتٍ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">٦</td>
+                <td>سِتَّةُ طُلَّابٍ</td>
+                <td>سِتُّ طَالِبَاتٍ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">٧</td>
+                <td>سَبْعَةُ طُلَّابٍ</td>
+                <td>سَبْعُ طَالِبَاتٍ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">٨</td>
+                <td>ثَمَانِيَةُ طُلَّابٍ</td>
+                <td>ثَمَانِي طَالِبَاتٍ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">٩</td>
+                <td>تِسْعَةُ طُلَّابٍ</td>
+                <td>تِسْعُ طَالِبَاتٍ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٠</td>
+                <td>عَشَرَةُ طُلَّابٍ</td>
+                <td>عَشْرُ طَالِبَاتٍ</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ قُرْآنِيَّةٌ - Quranic Examples</h3>
+    <div class="quran-box">
+        <p class="quran-text">إِنَّ رَبَّكُمُ اللهُ الَّذِي خَلَقَ السَّمَاوَاتِ وَالأَرْضَ فِي <strong>سِتَّةِ أَيَّامٍ</strong></p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">Your Fosterer is certainly Allah Who created the skies and the earth in six periods</p>
+        <p class="surah-ref">سورة الأعراف ٧:٥٤</p>
+    </div>
+    <div class="quran-box">
+        <p class="quran-text">إِنِّي أَرَى <strong>سَبْعَ بَقَرَاتٍ</strong> سِمَانٍ يَأْكُلُهُنَّ <strong>سَبْعٌ عِجَافٌ</strong></p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">I see seven fat cows which seven lean ones were consuming</p>
+        <p class="surah-ref">سورة يوسف ١٢:٤٣</p>
+    </div>
+    <div class="quran-box">
+        <p class="quran-text">لَهَا <strong>سَبْعَةُ أَبْوَابٍ</strong></p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">There are seven gates for it</p>
+        <p class="surah-ref">سورة الحجر ١٥:٤٤</p>
+    </div>
+    <div class="quran-box">
+        <p class="quran-text"><strong>ثَمَانِيَةَ أَزْوَاجٍ</strong> مِنَ الضَّأْنِ اثْنَيْنِ وَمِنَ المَعْزِ اثْنَيْنِ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">Eight pairs, two of sheep and two of goats</p>
+        <p class="surah-ref">سورة الأنعام ٦:١٤٣</p>
+    </div>
+    <div class="quran-box">
+        <p class="quran-text">وَلَقَدْ آتَيْنَا مُوسَى <strong>تِسْعَ آيَاتٍ</strong> بَيِّنَاتٍ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">And We did give to Musa nine signs (as) clear proofs</p>
+        <p class="surah-ref">سورة الإسراء ١٧:١٠١</p>
+    </div>
+</section>
+
+<!-- Ordinal Numbers Section -->
+<section id="ordinal" class="section">
+    <h2 class="section-title">العَدَدُ التَّرْتِيبِيُّ - Ordinal Numbers</h2>
+
+    <div class="info-box">
+        <p class="arabic-text">العَدَدُ التَّرْتِيبِيُّ (The ordinal number) يَكُونُ عَلَى وَزْنِ (فَاعِل)</p>
+        <p class="english-text">The ordinal number follows the pattern فَاعِل (faa'il)</p>
+        <p class="arabic-text">مَا عَدَا مَعَ العَدَدِ وَاحِدٍ فَقَطْ: الأَوَّلُ (مُذَكَّر) / الأُولَى (مُؤَنَّث)</p>
+        <p class="english-text">Except for number one: الأَوَّل (masculine) / الأُولَى (feminine) meaning "The first"</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>العَدَدُ<br>Number</th>
+                <th>المُذَكَّرُ<br>Masculine</th>
+                <th>المُؤَنَّثُ<br>Feminine</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">First</td>
+                <td>الأَوَّلُ</td>
+                <td>الأُولَى</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Second</td>
+                <td>الثَّانِي</td>
+                <td>الثَّانِيَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Third</td>
+                <td>الثَّالِثُ</td>
+                <td>الثَّالِثَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Fourth</td>
+                <td>الرَّابِعُ</td>
+                <td>الرَّابِعَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Fifth</td>
+                <td>الخَامِسُ</td>
+                <td>الخَامِسَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Sixth</td>
+                <td>السَّادِسُ</td>
+                <td>السَّادِسَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Seventh</td>
+                <td>السَّابِعُ</td>
+                <td>السَّابِعَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Eighth</td>
+                <td>الثَّامِنُ</td>
+                <td>الثَّامِنَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Ninth</td>
+                <td>التَّاسِعُ</td>
+                <td>التَّاسِعَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Tenth</td>
+                <td>العَاشِرُ</td>
+                <td>العَاشِرَةُ</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">أَبُو بَكْرٍ الصِّدِّيقُ رَضِيَ اللهُ عَنْهُ هُوَ أَوَّلُ مَنْ دَخَلَ فِي الإِسْلَامِ مِنَ الرِّجَالِ</p>
+        <p class="english-text">Abu Bakr Al-Siddiq (may Allah be pleased with him) was the first of the men to enter Islam</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">خَدِيجَةُ بِنْتُ خُوَيْلِدٍ رَضِيَ اللهُ عَنْهَا أُولَى النِّسَاءِ دُخُولًا فِي الإِسْلَامِ</p>
+        <p class="english-text">Khadijah bint Khuwaylid (may Allah be pleased with her) was the first of women to enter Islam</p>
+    </div>
+</section>
+
+<!-- Numbers 11-19 Section -->
+<section id="numbers-11-19" class="section">
+    <h2 class="section-title">الأَعْدَادُ مِنْ ١١ إِلَى ١٩ - Numbers 11 to 19</h2>
+
+    <div class="rule-box">
+        <p class="arabic-text">النَّوْعُ الثَّالِثُ: الأَعْدَادُ المُرَكَّبَةُ مِنْ أَحَدَ عَشَرَ إِلَى تِسْعَةَ عَشَرَ</p>
+        <p class="english-text">Type 3: Compound numbers from eleven to nineteen</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">يَتَكَوَّنُ العَدَدُ (أَحَدَ عَشَرَ) مِنْ جُزْأَيْنِ: الجُزْءُ الأَوَّلُ (أَحَدٌ) وَيَكُونُ مَعَ المَعْدُودِ المُذَكَّرِ (أَحَدٌ) وَمَعَ المُؤَنَّثِ (إِحْدَى)</p>
+        <p class="english-text">The number (eleven) consists of two parts: First part agrees with the gender of the counted noun</p>
+        <p class="arabic-text">وَالجُزْءُ الثَّانِي (عَشَرَ) يُوَافِقُ المَعْدُودَ أَيْضًا</p>
+        <p class="english-text">The second part (ten) also agrees with the counted noun's gender</p>
+    </div>
+
+    <h3 class="section-subtitle">١١ وَ ١٢ - Eleven and Twelve</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">جَاءَ أَحَدَ عَشَرَ رَجُلًا / جَاءَتْ إِحْدَى عَشْرَةَ بِنْتًا</p>
+        <p class="english-text">Eleven men came / Eleven girls came</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">جَاءَ اثْنَا عَشَرَ طَالِبًا / جَاءَتِ اثْنَتَا عَشْرَةَ طَالِبَةً</p>
+        <p class="english-text">Twelve (male) students came / Twelve (female) students came</p>
+    </div>
+
+    <h3 class="section-subtitle">١٣ إِلَى ١٩ - Thirteen to Nineteen</h3>
+    <div class="warning-box">
+        <p class="arabic-text">الجُزْءُ الأَوَّلُ مِنَ الأَعْدَادِ ١٣-١٩ يُخَالِفُ المَعْدُودَ (كَمَا فِي ٣-١٠)</p>
+        <p class="english-text">The first part of 13-19 DISAGREES with the counted noun (like 3-10)</p>
+        <p class="arabic-text">الجُزْءُ الثَّانِي (عَشَرَ) يُوَافِقُ المَعْدُودَ</p>
+        <p class="english-text">The second part (عَشَر) AGREES with the counted noun</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text">ثَلَاثَةَ عَشَرَ طَالِبًا / ثَلَاثَ عَشْرَةَ طَالِبَةً</p>
+        <p class="english-text">Thirteen (male) students / Thirteen (female) students</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">أَرْبَعَةَ عَشَرَ وَلَدًا / أَرْبَعَ عَشْرَةَ بِنْتًا</p>
+        <p class="english-text">Fourteen boys / Fourteen girls</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-text">إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَا أَبَتِ إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا وَالشَّمْسَ وَالقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">When Joseph said to his father, "Father! I saw eleven planets, and the sun and the moon, I saw them prostrating before me"</p>
+        <p class="surah-ref">سورة يوسف ١٢:٤</p>
+    </div>
+</section>
+
+<!-- Quranic Examples Section -->
+<section id="quran" class="section">
+    <h2 class="section-title">أَمْثِلَةٌ قُرْآنِيَّةٌ إِضَافِيَّةٌ - Additional Quranic Examples</h2>
+
+    <div class="quran-box">
+        <p class="quran-text">سَخَّرَهَا عَلَيْهِمْ <strong>سَبْعَ لَيَالٍ</strong> وَ<strong>ثَمَانِيَةَ أَيَّامٍ</strong> حُسُومًا</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">Which He imposed on them for seven nights and eight days continuously</p>
+        <p class="surah-ref">سورة الحاقة ٦٩:٧</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-text">إِنَّ عِدَّةَ الشُّهُورِ عِنْدَ اللهِ <strong>اثْنَا عَشَرَ شَهْرًا</strong></p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">Indeed the number of months with Allah is twelve months</p>
+        <p class="surah-ref">سورة التوبة ٩:٣٦</p>
+    </div>
+</section>
+
+<!-- Summary Section -->
+<section id="summary" class="section">
+    <h2 class="section-title">خُلَاصَةُ الوَحْدَةِ السَّابِعَةِ - Module 7 Summary</h2>
+
+    <div class="summary-box">
+        <h3>مَا تَعَلَّمْنَاهُ - What We Learned</h3>
+        <ul>
+            <li>
+                <span>✓ تَصْرِيفُ الفِعْلِ بَحَثَ - يَبْحَثُ - اِبْحَثْ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Conjugation of the verb "to search" in all 13 pronoun forms</span>
+            </li>
+            <li>
+                <span>✓ مَعْنَيَانِ لِلْفِعْلِ بَحَثَ: فَتَّشَ (Look for) وَالبَحْثُ العِلْمِيُّ (Research)</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Two meanings: Look for something & Academic research</span>
+            </li>
+            <li>
+                <span>✓ لَامُ الاِبْتِدَاءِ: لَامٌ مَفْتُوحَةٌ تَدْخُلُ عَلَى المُبْتَدَأِ لِلتَّوْكِيدِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Laam of Beginning: Emphatic laam with fatha before the subject</span>
+            </li>
+            <li>
+                <span>✓ اللَّامُ المُزَحْلَقَةُ: تَدْخُلُ عَلَى خَبَرِ إِنَّ أَوْ اسْمِهَا المُؤَخَّرِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Skating Laam: Enters on predicate of Inna or its delayed subject</span>
+            </li>
+            <li>
+                <span>✓ الأَعْدَادُ ١ وَ ٢: تُوَافِقُ المَعْدُودَ فِي الجِنْسِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Numbers 1 & 2: Agree with counted noun in gender</span>
+            </li>
+            <li>
+                <span>✓ الأَعْدَادُ ٣-١٠: تُخَالِفُ المَعْدُودَ فِي الجِنْسِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Numbers 3-10: Disagree with counted noun in gender</span>
+            </li>
+            <li>
+                <span>✓ العَدَدُ التَّرْتِيبِيُّ: الأَوَّلُ، الثَّانِي، الثَّالِثُ... العَاشِرُ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Ordinal numbers: First, Second, Third... Tenth</span>
+            </li>
+            <li>
+                <span>✓ الأَعْدَادُ ١١-١٩: أَعْدَادٌ مُرَكَّبَةٌ مِنْ جُزْأَيْنِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Numbers 11-19: Compound numbers with two parts</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <h3 class="section-subtitle">القَوَاعِدُ الأَسَاسِيَّةُ - Key Rules</h3>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">وَاحِدٌ وَاثْنَانِ = يُوَافِقَانِ المَعْدُودَ</p>
+            <p class="english-text" style="text-align: center;">1 and 2 = Agree with counted noun</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">٣-١٠ = يُخَالِفُ المَعْدُودَ</p>
+            <p class="english-text" style="text-align: center;">3-10 = Disagree with counted noun (opposite gender)</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">١١-١٢ = كِلَا الجُزْأَيْنِ يُوَافِقَانِ</p>
+            <p class="english-text" style="text-align: center;">11-12 = Both parts agree with counted noun</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">١٣-١٩ = الجُزْءُ الأَوَّلُ يُخَالِفُ، الثَّانِي يُوَافِقُ</p>
+            <p class="english-text" style="text-align: center;">13-19 = First part disagrees, second part agrees</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer style="text-align: center; padding: 30px; margin-top: 30px; background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%); color: white; border-radius: 15px;">
+    <p style="font-size: 24px;">الوَحْدَةُ السَّابِعَةُ - Module 7</p>
+    <p style="font-size: 18px;">دَوْرَةُ ARB202 - دُرُوسُ اللُّغَةِ العَرَبِيَّةِ</p>
+    <p style="font-size: 16px; opacity: 0.8;">مِنْ كِتَابِ المَدِينَةِ - الجُزْءُ الثَّانِي</p>
+    <p style="font-size: 14px; margin-top: 20px; opacity: 0.6;">Created for personal study use</p>
+</footer>
+
+</body>
+</html>

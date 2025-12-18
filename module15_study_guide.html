@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 15 - Arabic Study Guide | الوحدة الخامسة عشرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            min-height: 100vh;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #5e35b1 0%, #7e57c2 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #4527a0 0%, #5e35b1 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px;
+            color: #5e35b1;
+            border-bottom: 4px solid #7e57c2;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .section-subtitle { font-size: 28px; color: #673ab7; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #4527a0; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .translit-text { font-family: Georgia, serif; font-style: italic; color: #888; direction: ltr; text-align: left; font-size: 16px; }
+        .grammar-box {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            border-right: 5px solid #7e57c2;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-right: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-right: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 5px solid #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #4527a0 0%, #5e35b1 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #ede7f6; }
+        tr:hover { background: #d1c4e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%); font-weight: bold; color: #5e35b1; }
+        .quran-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .quran-text { font-size: 36px; color: #1b5e20; line-height: 2.2; }
+        .surah-ref { font-size: 18px; color: #2e7d32; margin-top: 10px; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .vocab-item {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .dialogue-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #ff9800;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .speaker-a { color: #5e35b1; font-weight: bold; }
+        .speaker-b { color: #c62828; font-weight: bold; }
+        .summary-box {
+            background: linear-gradient(135deg, #4527a0 0%, #5e35b1 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .summary-box h3 { color: #ffeb3b; font-size: 28px; margin-bottom: 20px; }
+        .summary-box ul { list-style: none; padding: 0; }
+        .summary-box li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 22px; }
+        .comparison-table { border: 2px solid #7e57c2; border-radius: 10px; overflow: hidden; }
+        .radical-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .arabic-text { font-size: 22px; }
+            .section-title { font-size: 28px; }
+            table { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav-container">
+    <div class="nav-title">الوحدة الخامسة عشرة - Module 15</div>
+    <div class="nav-links">
+        <a href="#conjugation"><span class="nav-ar">تصريف ضَرَبَ</span><span class="nav-en">Verb Conjugation</span></a>
+        <a href="#transitive"><span class="nav-ar">اللازم والمتعدي</span><span class="nav-en">Trans/Intrans</span></a>
+        <a href="#trilateral"><span class="nav-ar">الفعل الثلاثي</span><span class="nav-en">Trilateral Verb</span></a>
+        <a href="#sakinayn"><span class="nav-ar">التقاء الساكنين</span><span class="nav-en">Two Sukoons</span></a>
+        <a href="#dialogue"><span class="nav-ar">الحوار</span><span class="nav-en">Dialogue</span></a>
+        <a href="#quran"><span class="nav-ar">أمثلة قرآنية</span><span class="nav-en">Quranic Examples</span></a>
+        <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
+    </div>
+</nav>
+
+<!-- Main Title -->
+<header class="main-title">
+    <h1>الوحدة الخامسة عشرة</h1>
+    <div class="subtitle">Module 15 - Fifteenth Unit</div>
+    <div class="subtitle" style="font-size: 20px; margin-top: 15px;">
+        الدَّوْرَةُ الثَّالِثَةُ - المُحَاضَرَةُ الخَامِسَةَ عَشْرَةَ
+    </div>
+    <div class="english-text" style="color: white; opacity: 0.9;">
+        Third Course - Fifteenth Lecture
+    </div>
+    <div class="subtitle" style="font-size: 18px; margin-top: 10px;">
+        مِنْ كِتَابِ المَدِينَةِ - الدَّرْسُ الخَامِسُ (تَابِعٌ)
+    </div>
+</header>
+
+<!-- Verb Conjugation Section -->
+<section id="conjugation" class="section">
+    <h2 class="section-title">تَصْرِيفُ الفِعْلِ: ضَرَبَ - Verb Conjugation: To Hit</h2>
+
+    <div class="info-box">
+        <p class="arabic-large" style="text-align: center;">ضَرَبَ - يَضْرِبُ - اِضْرِبْ</p>
+        <p class="english-text" style="text-align: center;">daraba - yadribu - idrib (to hit - he hits - hit!)</p>
+        <p class="translit-text" style="text-align: center;">Form I verb - Pattern: فَعَلَ - يَفْعِلُ</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>الضَّمِيرُ<br>Pronoun</th>
+                <th>المَاضِي<br>Past</th>
+                <th>المُضَارِعُ<br>Present</th>
+                <th>الأَمْرُ<br>Command</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">أَنَا</td>
+                <td>ضَرَبْتُ</td>
+                <td>أَضْرِبُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">نَحْنُ</td>
+                <td>ضَرَبْنَا</td>
+                <td>نَضْرِبُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتَ</td>
+                <td>ضَرَبْتَ</td>
+                <td>تَضْرِبُ</td>
+                <td>اِضْرِبْ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتِ</td>
+                <td>ضَرَبْتِ</td>
+                <td>تَضْرِبِينَ</td>
+                <td>اِضْرِبِي</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمَا</td>
+                <td>ضَرَبْتُمَا</td>
+                <td>تَضْرِبَانِ</td>
+                <td>اِضْرِبَا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمْ</td>
+                <td>ضَرَبْتُمْ</td>
+                <td>تَضْرِبُونَ</td>
+                <td>اِضْرِبُوا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُنَّ</td>
+                <td>ضَرَبْتُنَّ</td>
+                <td>تَضْرِبْنَ</td>
+                <td>اِضْرِبْنَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُوَ</td>
+                <td>ضَرَبَ</td>
+                <td>يَضْرِبُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هِيَ</td>
+                <td>ضَرَبَتْ</td>
+                <td>تَضْرِبُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (مُذَكَّرٌ)</td>
+                <td>ضَرَبَا</td>
+                <td>يَضْرِبَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (مُؤَنَّثٌ)</td>
+                <td>ضَرَبَتَا</td>
+                <td>تَضْرِبَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمْ</td>
+                <td>ضَرَبُوا</td>
+                <td>يَضْرِبُونَ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُنَّ</td>
+                <td>ضَرَبْنَ</td>
+                <td>يَضْرِبْنَ</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">يَا أُسْتَاذُ، اِضْرِبْ هَذَا الطَّالِبَ المُخْطِئَ</p>
+        <p class="english-text">O teacher, hit this student who made a mistake</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">لِمَاذَا ضَرَبْتَ أُخْتَكَ يَا عَلِيُّ؟</p>
+        <p class="english-text">Why did you hit your sister, O Ali?</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">ضَرَبْتُهَا لِأَنَّهَا لَمْ تُصَلِّ العَصْرَ</p>
+        <p class="english-text">I hit her because she didn't pray Asr</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">يَضْرِبُ الأُسْتَاذُ خَالِدٌ الطَّالِبَ الكَسْلَانَ فِي اللُّغَةِ العَرَبِيَّةِ</p>
+        <p class="english-text">Teacher Khalid hits the lazy student in the Arabic language class</p>
+    </div>
+</section>
+
+<!-- Transitive and Intransitive Verbs Section -->
+<section id="transitive" class="section">
+    <h2 class="section-title">مُرَاجَعَةٌ: الفِعْلُ اللَّازِمُ وَالفِعْلُ المُتَعَدِّي - Review: Intransitive & Transitive</h2>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>الفِعْلُ اللَّازِمُ (Intransitive Verb):</strong></p>
+        <p class="arabic-text">هُوَ الفِعْلُ الَّذِي يَرْفَعُ فَاعِلًا فَقَطْ، وَلَا يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ، وَقَدْ يَأْتِي مَعَهُ حَرْفُ جَرٍّ</p>
+        <p class="english-text">A verb that only takes a subject and does NOT need a direct object. It may come with a preposition.</p>
+        <p class="arabic-text">مِثْلُ: خَرَجَ مُحَمَّدٌ، وَذَهَبَ سَعِيدٌ إِلَى أَبِيهِ</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>الفِعْلُ المُتَعَدِّي (Transitive Verb):</strong></p>
+        <p class="arabic-text">هُوَ الفِعْلُ الَّذِي يَرْفَعُ فَاعِلًا وَيَحْتَاجُ إِلَى مَفْعُولٍ بِهِ أَوْ أَكْثَرَ حَتَّى يَتِمَّ المَعْنَى</p>
+        <p class="english-text">A verb that takes a subject AND needs a direct object (or more) to complete its meaning</p>
+        <p class="arabic-text">مِثْلُ: فَهِمَ الطُّلَّابُ دَرْسَ النَّحْوِ، وَجَعَلَتْ أُمِّي البُرْتُقَالَ عَصِيرًا</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>الفِعْلُ اللَّازِمُ<br>Intransitive</th>
+                <th>الفِعْلُ المُتَعَدِّي<br>Transitive</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>لَا يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ</td>
+                <td class="pronoun-cell">يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ</td>
+            </tr>
+            <tr>
+                <td>خَرَجَ، ذَهَبَ، رَجَعَ، مَاتَ، عَاشَ</td>
+                <td class="pronoun-cell">ضَرَبَ، فَهِمَ، أَكَلَ، كَسَرَ، جَعَلَ</td>
+            </tr>
+            <tr>
+                <td>خَرَجَ مُحَمَّدٌ (complete)</td>
+                <td class="pronoun-cell">ضَرَبَ الوَلَدُ... (incomplete - needs object)</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Trilateral Verb Section -->
+<section id="trilateral" class="section">
+    <h2 class="section-title">الفِعْلُ الثُّلَاثِيُّ - The Trilateral Verb</h2>
+
+    <div class="info-box">
+        <p class="arabic-text">مُعْظَمُ الأَفْعَالِ العَرَبِيَّةِ تَتَكَوَّنُ مِنْ ثَلَاثَةِ أَحْرُفٍ، وَيَكُونُ أَصْلُ الفِعْلِ عَلَى وَزْنِ (فَعَلَ)</p>
+        <p class="english-text">Most Arabic verbs consist of three letters, and the verb root follows the pattern (فَعَلَ)</p>
+    </div>
+
+    <h3 class="section-subtitle">الحُرُوفُ الثَّلَاثَةُ - The Three Radicals</h3>
+
+    <div class="radical-box">
+        <p class="arabic-large">خَرَجَ = خ + ر + ج</p>
+        <p class="arabic-large">فَعَلَ = ف + ع + ل</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>الحَرْفُ</th>
+                <th>الاسْمُ</th>
+                <th>المِثَالُ (خَرَجَ)</th>
+                <th>English</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">الأَوَّلُ</td>
+                <td>فَاءُ الكَلِمَةِ</td>
+                <td>خ</td>
+                <td>First Radical</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">الثَّانِي</td>
+                <td>عَيْنُ الكَلِمَةِ</td>
+                <td>ر</td>
+                <td>Second Radical</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">الثَّالِثُ</td>
+                <td>لَامُ الكَلِمَةِ</td>
+                <td>ج</td>
+                <td>Third Radical</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">قَوَاعِدُ الحَرَكَاتِ - Vowel Rules</h3>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>فَاءُ الكَلِمَةِ (الحَرْفُ الأَوَّلُ):</strong> يَكُونُ دَائِمًا مَفْتُوحًا</p>
+        <p class="english-text">The first radical is ALWAYS with fatha (open)</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>لَامُ الكَلِمَةِ (الحَرْفُ الثَّالِثُ):</strong> يَكُونُ دَائِمًا مَفْتُوحًا</p>
+        <p class="english-text">The third radical is ALWAYS with fatha (open)</p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text"><strong>عَيْنُ الكَلِمَةِ (الحَرْفُ الثَّانِي):</strong> قَدْ يَكُونُ مَفْتُوحًا أَوْ مَضْمُومًا أَوْ مَكْسُورًا</p>
+        <p class="english-text">The second radical can have fatha, damma, or kasra</p>
+    </div>
+
+    <h3 class="section-subtitle">أَنْوَاعُ الفِعْلِ الثُّلَاثِيِّ - Types of Trilateral Verbs</h3>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>النَّوْعُ</th>
+                <th>الوَزْنُ</th>
+                <th>أَمْثِلَةٌ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">مَفْتُوحُ العَيْنِ</td>
+                <td>فَعَلَ (فَـ عَـ لَ)</td>
+                <td>كَتَبَ، أَكَلَ، قَرَأَ، ضَرَبَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">مَضْمُومُ العَيْنِ</td>
+                <td>فَعُلَ (فَـ عُـ لَ)</td>
+                <td>كَرُمَ (to be honored)</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">مَكْسُورُ العَيْنِ</td>
+                <td>فَعِلَ (فَـ عِـ لَ)</td>
+                <td>سَمِعَ، فَهِمَ، حَفِظَ</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Iltiqaa al-Sakinayn Section -->
+<section id="sakinayn" class="section">
+    <h2 class="section-title">اِلْتِقَاءُ السَّاكِنَيْنِ - Meeting of Two Sukoons</h2>
+
+    <div class="warning-box">
+        <p class="arabic-text"><strong>القَاعِدَةُ:</strong> فِي اللُّغَةِ العَرَبِيَّةِ لَا يَجُوزُ أَنْ يَلْتَقِيَ حَرْفَانِ سَاكِنَانِ</p>
+        <p class="english-text"><strong>Rule:</strong> In Arabic, two consecutive vowelless (sukoon) letters are NOT allowed</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>الحَلُّ:</strong> إِذَا جَاءَ حَرْفَانِ سَاكِنَانِ فَيَجِبُ أَنْ يَتَغَيَّرَ أَحَدُهُمَا مِنَ السُّكُونِ إِلَى حَرَكَةٍ أُخْرَى</p>
+        <p class="english-text"><strong>Solution:</strong> If two sukoons meet, one must change from sukoon to a vowel</p>
+    </div>
+
+    <h3 class="section-subtitle">مِثَالٌ: تَاءُ التَّأْنِيثِ - Example: Feminine Taa</h3>
+
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>إِذَا جَاءَتْ كَلِمَةٌ بَعْدَهَا تَبْدَأُ بِسَاكِنٍ:</strong></p>
+        <p class="arabic-text">قَالَتْ فَاطِمَةُ ← التَّاءُ سَاكِنَةٌ، وَالفَاءُ مَفْتُوحَةٌ (لَا مُشْكِلَةَ)</p>
+        <p class="english-text">قَالَتْ فَاطِمَةُ → The taa has sukoon, and the faa has fatha (no problem)</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text">قَالَتِ المُعَلِّمَةُ ← التَّاءُ تَتَغَيَّرُ إِلَى كَسْرَةٍ لِأَنَّ الأَلِفَ وَاللَّامَ سَاكِنَةٌ</p>
+        <p class="english-text">قَالَتِ المُعَلِّمَةُ → The taa changes to kasra because alif-laam is sukoon</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>مُلَخَّصٌ:</strong></p>
+        <p class="arabic-text">• قَالَتْ فَاطِمَةُ (تْ + فَـ) ← لَا تَغْيِيرَ</p>
+        <p class="arabic-text">• قَالَتِ المُعَلِّمَةُ (تْ + الـ) ← تَتَغَيَّرُ إِلَى (تِ)</p>
+        <p class="english-text">When the next word starts with "ال" (which has sukoon), the taa must take kasra</p>
+    </div>
+</section>
+
+<!-- Dialogue Section -->
+<section id="dialogue" class="section">
+    <h2 class="section-title">الحِوَارُ - Dialogue (Lesson 5 Continued)</h2>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">المُدَرِّسُ:</span> مَنْ فَتَحَ بَابَ الفَصْلِ؟</p>
+        <p class="english-text"><strong>Teacher:</strong> Who opened the classroom door?</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">حَامِدٌ:</span> أَنَا فَتَحْتُهُ</p>
+        <p class="english-text"><strong>Hamid:</strong> I opened it</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">المُدَرِّسُ:</span> وَمَنْ فَتَحَ النَّوَافِذَ؟</p>
+        <p class="english-text"><strong>Teacher:</strong> And who opened the windows?</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">عَلِيٌّ:</span> أَنَا فَتَحْتُهَا</p>
+        <p class="english-text"><strong>Ali:</strong> I opened them</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">المُدَرِّسُ:</span> مَنْ كَسَرَ هَذَا المَكْتَبَ؟ أَأَنْتَ كَسَرْتَهُ يَا هَاشِمُ؟</p>
+        <p class="english-text"><strong>Teacher:</strong> Who broke this desk? Did you break it, O Hashim?</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">هَاشِمٌ:</span> لَا، إِنِّي مَا كَسَرْتُهُ</p>
+        <p class="english-text"><strong>Hashim:</strong> No, I did not break it</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">المُدَرِّسُ:</span> أَرَجَعَ زَكَرِيَّا وَحَمْزَةُ وَعُثْمَانُ مِنْ مَكَّةَ؟</p>
+        <p class="english-text"><strong>Teacher:</strong> Did Zakariya, Hamza, and Uthman return from Makkah?</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">حَامِدٌ:</span> لَا، مَا رَجَعُوا</p>
+        <p class="english-text"><strong>Hamid:</strong> No, they did not return</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">المُدَرِّسُ:</span> أَفَهِمْتَ الدَّرْسَ يَا طَلْحَةُ؟</p>
+        <p class="english-text"><strong>Teacher:</strong> Did you understand the lesson, O Talha?</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">طَلْحَةُ:</span> نَعَمْ، فَهِمْتُهُ جَيِّدًا</p>
+        <p class="english-text"><strong>Talha:</strong> Yes, I understood it well</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">المُدَرِّسُ:</span> أَحَفِظْتَ سُورَةَ الفَجْرِ يَا إِبْرَاهِيمُ؟</p>
+        <p class="english-text"><strong>Teacher:</strong> Did you memorize Surah Al-Fajr, O Ibrahim?</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">إِبْرَاهِيمُ:</span> نَعَمْ، حَفِظْتُهَا، وَحَفِظْتُ سُورَةَ التِّينِ أَيْضًا</p>
+        <p class="english-text"><strong>Ibrahim:</strong> Yes, I memorized it, and I also memorized Surah At-Teen</p>
+    </div>
+    <div class="dialogue-box">
+        <p class="arabic-text">خَرَجَ الطُّلَّابُ الجُدُدُ وَذَهَبُوا إِلَى المُدِيرِ</p>
+        <p class="english-text">The new students left and went to the principal</p>
+    </div>
+</section>
+
+<!-- Quranic Examples Section -->
+<section id="quran" class="section">
+    <h2 class="section-title">أَمْثِلَةٌ مِنَ القُرْآنِ الكَرِيمِ - Quranic Examples</h2>
+
+    <div class="quran-box">
+        <p class="quran-text">اقْتَرَبَتِ السَّاعَةُ وَانْشَقَّ القَمَرُ</p>
+        <p class="english-text" style="text-align: center; color: #1b5e20;">The Hour has drawn near and the moon has split</p>
+        <p class="surah-ref">سورة القمر ٥٤:١</p>
+        <div class="info-box" style="margin-top: 15px;">
+            <p class="arabic-text"><strong>الإِعْرَابُ:</strong></p>
+            <p class="arabic-text">اقْتَرَبَتِ: فِعْلٌ مَاضٍ لَازِمٌ (التَّاءُ تَحَرَّكَتْ بِالكَسْرَةِ لِالْتِقَاءِ السَّاكِنَيْنِ)</p>
+            <p class="arabic-text">انْشَقَّ: فِعْلٌ مَاضٍ لَازِمٌ</p>
+            <p class="english-text">اقْتَرَبَتِ and انْشَقَّ are both intransitive verbs. The taa has kasra due to meeting of two sukoons.</p>
+        </div>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-text">أَفَمِنْ هَذَا الحَدِيثِ تَعْجَبُونَ</p>
+        <p class="english-text" style="text-align: center; color: #1b5e20;">Then at this statement do you wonder?</p>
+        <p class="surah-ref">سورة النجم ٥٣:٥٩</p>
+        <div class="info-box" style="margin-top: 15px;">
+            <p class="arabic-text"><strong>الإِعْرَابُ:</strong></p>
+            <p class="arabic-text">تَعْجَبُونَ: فِعْلٌ مُضَارِعٌ لَازِمٌ - مِنْ عَجِبَ (فِعْلٌ لَازِمٌ)</p>
+            <p class="english-text">تَعْجَبُونَ is from عَجِبَ (to wonder) - an intransitive verb</p>
+        </div>
+    </div>
+</section>
+
+<!-- Summary Section -->
+<section id="summary" class="section">
+    <h2 class="section-title">خُلَاصَةُ الوَحْدَةِ الخَامِسَةَ عَشْرَةَ - Module 15 Summary</h2>
+
+    <div class="summary-box">
+        <h3>مَا تَعَلَّمْنَاهُ - What We Learned</h3>
+        <ul>
+            <li>
+                <span>✓ تَصْرِيفُ الفِعْلِ ضَرَبَ - يَضْرِبُ - اِضْرِبْ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Full conjugation of "to hit" in all pronoun forms</span>
+            </li>
+            <li>
+                <span>✓ مُرَاجَعَةُ الفِعْلِ اللَّازِمِ وَالفِعْلِ المُتَعَدِّي</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Review of intransitive and transitive verbs</span>
+            </li>
+            <li>
+                <span>✓ الفِعْلُ الثُّلَاثِيُّ: فَاءُ الكَلِمَةِ، عَيْنُ الكَلِمَةِ، لَامُ الكَلِمَةِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Trilateral verb: First, Second, and Third radicals</span>
+            </li>
+            <li>
+                <span>✓ أَنْوَاعُ عَيْنِ الكَلِمَةِ: مَفْتُوحٌ، مَضْمُومٌ، مَكْسُورٌ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Types based on second radical: فَعَلَ، فَعُلَ، فَعِلَ</span>
+            </li>
+            <li>
+                <span>✓ اِلْتِقَاءُ السَّاكِنَيْنِ: لَا يَجُوزُ فِي العَرَبِيَّةِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Two consecutive sukoons are not allowed in Arabic</span>
+            </li>
+            <li>
+                <span>✓ الحِوَارُ: أَسْئِلَةٌ وَأَجْوِبَةٌ فِي الفَصْلِ (تَابِعٌ)</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Dialogue: Questions and answers in the classroom (continued)</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <h3 class="section-subtitle">القَوَاعِدُ الأَسَاسِيَّةُ - Key Rules</h3>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">الفِعْلُ الثُّلَاثِيُّ = فَاءُ الكَلِمَةِ + عَيْنُ الكَلِمَةِ + لَامُ الكَلِمَةِ</p>
+            <p class="english-text" style="text-align: center;">Trilateral verb = 1st radical + 2nd radical + 3rd radical</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">فَاءُ الكَلِمَةِ وَلَامُهَا دَائِمًا مَفْتُوحَتَانِ</p>
+            <p class="english-text" style="text-align: center;">First and third radicals always have fatha</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">لَا يَجُوزُ اِلْتِقَاءُ حَرْفَيْنِ سَاكِنَيْنِ</p>
+            <p class="english-text" style="text-align: center;">Two consecutive sukoons are not allowed</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">قَالَتْ فَاطِمَةُ ← قَالَتِ المُعَلِّمَةُ</p>
+            <p class="english-text" style="text-align: center;">Taa takes kasra when followed by word starting with sukoon</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer style="text-align: center; padding: 30px; margin-top: 30px; background: linear-gradient(135deg, #4527a0 0%, #5e35b1 100%); color: white; border-radius: 15px;">
+    <p style="font-size: 24px;">الوَحْدَةُ الخَامِسَةَ عَشْرَةَ - Module 15</p>
+    <p style="font-size: 18px;">دَوْرَةُ ARB202 - دُرُوسُ اللُّغَةِ العَرَبِيَّةِ</p>
+    <p style="font-size: 16px; opacity: 0.8;">مِنْ كِتَابِ المَدِينَةِ - الجُزْءُ الثَّانِي</p>
+    <p style="font-size: 14px; margin-top: 20px; opacity: 0.6;">Created for personal study use</p>
+</footer>
+
+</body>
+</html>

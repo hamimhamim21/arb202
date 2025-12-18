@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 8 - Arabic Study Guide | الوحدة الثامنة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            min-height: 100vh;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #e65100 0%, #ff9800 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #bf360c 0%, #ff9800 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px;
+            color: #e65100;
+            border-bottom: 4px solid #ff9800;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .section-subtitle { font-size: 28px; color: #f57c00; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #bf360c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .translit-text { font-family: Georgia, serif; font-style: italic; color: #888; direction: ltr; text-align: left; font-size: 16px; }
+        .grammar-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-right: 5px solid #ff9800;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-right: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-right: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-right: 5px solid #2196f3;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #bf360c 0%, #e65100 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #fff3e0; }
+        tr:hover { background: #ffe0b2; }
+        .pronoun-cell { background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); font-weight: bold; color: #f57f17; }
+        .quran-box {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border: 2px solid #c2185b;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .quran-text { font-size: 36px; color: #880e4f; line-height: 2.2; }
+        .surah-ref { font-size: 18px; color: #ad1457; margin-top: 10px; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .vocab-item {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .irab-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .summary-box {
+            background: linear-gradient(135deg, #bf360c 0%, #e65100 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .summary-box h3 { color: #ffeb3b; font-size: 28px; margin-bottom: 20px; }
+        .summary-box ul { list-style: none; padding: 0; }
+        .summary-box li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 22px; }
+        .comparison-table { border: 2px solid #ff9800; border-radius: 10px; overflow: hidden; }
+        @media (max-width: 768px) {
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .arabic-text { font-size: 22px; }
+            .section-title { font-size: 28px; }
+            table { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav-container">
+    <div class="nav-title">الوحدة الثامنة - Module 8</div>
+    <div class="nav-links">
+        <a href="#conjugation"><span class="nav-ar">تصريف فَتَحَ</span><span class="nav-en">Verb Conjugation</span></a>
+        <a href="#number-types"><span class="nav-ar">أنواع الأعداد</span><span class="nav-en">Types of Numbers</span></a>
+        <a href="#ordinal"><span class="nav-ar">العدد الترتيبي</span><span class="nav-en">Ordinal Numbers</span></a>
+        <a href="#compound-11-12"><span class="nav-ar">١١ و ١٢</span><span class="nav-en">11 & 12</span></a>
+        <a href="#compound-13-19"><span class="nav-ar">١٣ - ١٩</span><span class="nav-en">13-19</span></a>
+        <a href="#irab"><span class="nav-ar">الإعراب</span><span class="nav-en">I'rab Practice</span></a>
+        <a href="#quran"><span class="nav-ar">أمثلة قرآنية</span><span class="nav-en">Quranic Examples</span></a>
+        <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
+    </div>
+</nav>
+
+<!-- Main Title -->
+<header class="main-title">
+    <h1>الوحدة الثامنة</h1>
+    <div class="subtitle">Module 8 - Eighth Unit</div>
+    <div class="subtitle" style="font-size: 20px; margin-top: 15px;">
+        الدَّوْرَةُ الثَّالِثَةُ - المُحَاضَرَةُ الثَّامِنَةُ
+    </div>
+    <div class="english-text" style="color: white; opacity: 0.9;">
+        Third Course - Eighth Lecture
+    </div>
+</header>
+
+<!-- Verb Conjugation Section -->
+<section id="conjugation" class="section">
+    <h2 class="section-title">تَصْرِيفُ الفِعْلِ: فَتَحَ - Verb Conjugation: To Open</h2>
+
+    <div class="info-box">
+        <p class="arabic-medium">فَتَحَ - يَفْتَحُ - اِفْتَحْ</p>
+        <p class="english-text">fataha - yaftahu - iftah (to open - he opens - open!)</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text">الفِعْلُ فَتَحَ فِي اللُّغَةِ العَرَبِيَّةِ لَهُ مَعْنَيَانِ:</p>
+        <p class="english-text">The verb فَتَحَ in Arabic has two meanings:</p>
+        <p class="arabic-text"><strong>المَعْنَى الأَوَّلُ:</strong> فَتْحُ البَابِ أَوِ الحَقِيبَةِ، بِمَعْنَى To open</p>
+        <p class="english-text"><strong>First meaning:</strong> To open a door or bag - physical opening</p>
+        <p class="arabic-text"><strong>المَعْنَى الثَّانِي:</strong> فَتَحَ البِلَادَ؛ بِمَعْنَى To conquer</p>
+        <p class="english-text"><strong>Second meaning:</strong> To conquer (lands/territories)</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>الضَّمِيرُ<br>Pronoun</th>
+                <th>المَاضِي<br>Past</th>
+                <th>المُضَارِعُ<br>Present</th>
+                <th>الأَمْرُ<br>Command</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">هُوَ</td>
+                <td>فَتَحَ</td>
+                <td>يَفْتَحُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هِيَ</td>
+                <td>فَتَحَتْ</td>
+                <td>تَفْتَحُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (م)</td>
+                <td>فَتَحَا</td>
+                <td>يَفْتَحَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (ف)</td>
+                <td>فَتَحَتَا</td>
+                <td>تَفْتَحَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمْ</td>
+                <td>فَتَحُوا</td>
+                <td>يَفْتَحُونَ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُنَّ</td>
+                <td>فَتَحْنَ</td>
+                <td>يَفْتَحْنَ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتَ</td>
+                <td>فَتَحْتَ</td>
+                <td>تَفْتَحُ</td>
+                <td>اِفْتَحْ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتِ</td>
+                <td>فَتَحْتِ</td>
+                <td>تَفْتَحِينَ</td>
+                <td>اِفْتَحِي</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمَا</td>
+                <td>فَتَحْتُمَا</td>
+                <td>تَفْتَحَانِ</td>
+                <td>اِفْتَحَا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمْ</td>
+                <td>فَتَحْتُمْ</td>
+                <td>تَفْتَحُونَ</td>
+                <td>اِفْتَحُوا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُنَّ</td>
+                <td>فَتَحْتُنَّ</td>
+                <td>تَفْتَحْنَ</td>
+                <td>اِفْتَحْنَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنَا</td>
+                <td>فَتَحْتُ</td>
+                <td>أَفْتَحُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">نَحْنُ</td>
+                <td>فَتَحْنَا</td>
+                <td>نَفْتَحُ</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">فَتَحَ المُدِيرُ بَابَ السَّيَّارَةِ</p>
+        <p class="english-text">The director opened the car door</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">يَا عَمَّارُ، اِفْتَحِ النَّافِذَةَ</p>
+        <p class="english-text">O Ammar, open the window</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">يَا أَوْلَادُ، اِفْتَحُوا كُتُبَكُمْ</p>
+        <p class="english-text">O children, open your books</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">فَتَحَتْ خَدِيجَةُ عَيْنَهَا</p>
+        <p class="english-text">Khadijah opened her eyes</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">فَتَحَ المُسْلِمُونَ مِصْرَ فِي عَامِ وَاحِدٍ وَعِشْرِينَ (٢١) بَعْدَ الهِجْرَةِ</p>
+        <p class="english-text">The Muslims conquered Egypt in the year 21 after Hijrah</p>
+    </div>
+</section>
+
+<!-- Types of Numbers Section -->
+<section id="number-types" class="section">
+    <h2 class="section-title">مِنْ أَنْوَاعِ الأَعْدَادِ - Types of Numbers</h2>
+
+    <div class="info-box">
+        <p class="arabic-text" style="text-align: center; font-size: 28px;"><strong>ثَلَاثَةُ أَنْوَاعٍ لِلْأَعْدَادِ:</strong></p>
+        <p class="english-text" style="text-align: center;">Three types of numbers:</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align: center;">١. العَدَدُ المُفْرَدُ</p>
+        <p class="english-text" style="text-align: center;"><strong>One-word Numbers</strong> (1-10)</p>
+        <p class="arabic-text">الأَعْدَادُ مِنْ (١) إِلَى (١٠) تُسَمَّى بِالأَعْدَادِ المُفْرَدَةِ</p>
+        <p class="english-text">Numbers from 1 to 10 are called one-word numbers because each is a single word</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align: center;">٢. العَدَدُ المُرَكَّبُ</p>
+        <p class="english-text" style="text-align: center;"><strong>Compound Numbers</strong> (11-19)</p>
+        <p class="arabic-text">الأَعْدَادُ مِنْ أَحَدَ عَشَرَ إِلَى تِسْعَةَ عَشَرَ تُسَمَّى بِالأَعْدَادِ المُرَكَّبَةِ</p>
+        <p class="english-text">Numbers 11-19 are called compound numbers because they consist of two parts</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align: center;">٣. أَلْفَاظُ العُقُودِ</p>
+        <p class="english-text" style="text-align: center;"><strong>Decades Numbers</strong> (20, 30, 40...)</p>
+        <p class="arabic-text">عِشْرُونَ(٢٠) - ثَلَاثُونَ(٣٠) - أَرْبَعُونَ(٤٠) - خَمْسُونَ(٥٠) - سِتُّونَ(٦٠) - سَبْعُونَ(٧٠) - ثَمَانُونَ(٨٠) - تِسْعُونَ(٩٠)</p>
+        <p class="english-text">Called "decade numbers" because العَقْد means ten years</p>
+    </div>
+</section>
+
+<!-- Ordinal Numbers Section -->
+<section id="ordinal" class="section">
+    <h2 class="section-title">العَدَدُ التَّرْتِيبِيُّ - Ordinal Numbers</h2>
+
+    <div class="info-box">
+        <p class="arabic-text">العَدَدُ التَّرْتِيبِيُّ (The ordinal number) يَكُونُ عَلَى وَزْنِ (فَاعِل)</p>
+        <p class="english-text">Ordinal numbers follow the pattern فَاعِل (faa'il), except for "first"</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>المُذَكَّرُ<br>Masculine</th>
+                <th>المُؤَنَّثُ<br>Feminine</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">First</td>
+                <td>الأَوَّلُ</td>
+                <td>الأُولَى</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Second</td>
+                <td>الثَّانِي</td>
+                <td>الثَّانِيَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Third</td>
+                <td>الثَّالِثُ</td>
+                <td>الثَّالِثَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Fourth</td>
+                <td>الرَّابِعُ</td>
+                <td>الرَّابِعَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Fifth</td>
+                <td>الخَامِسُ</td>
+                <td>الخَامِسَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Sixth</td>
+                <td>السَّادِسُ</td>
+                <td>السَّادِسَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Seventh</td>
+                <td>السَّابِعُ</td>
+                <td>السَّابِعَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Eighth</td>
+                <td>الثَّامِنُ</td>
+                <td>الثَّامِنَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Ninth</td>
+                <td>التَّاسِعُ</td>
+                <td>التَّاسِعَةُ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">Tenth</td>
+                <td>العَاشِرُ</td>
+                <td>العَاشِرَةُ</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="quran-box">
+        <p class="quran-text">هُوَ الأَوَّلُ وَالآخِرُ وَالظَّاهِرُ وَالبَاطِنُ وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">He is the First and the Last, the Manifest and the Hidden, and He has knowledge of all things</p>
+        <p class="surah-ref">سورة الحديد ٥٧:٣</p>
+    </div>
+</section>
+
+<!-- Compound Numbers 11-12 Section -->
+<section id="compound-11-12" class="section">
+    <h2 class="section-title">العَدَدَانِ أَحَدَ عَشَرَ وَاثْنَا عَشَرَ - Numbers 11 & 12</h2>
+
+    <div class="rule-box">
+        <p class="arabic-text">القَاعِدَةُ فِي العَدَدَيْنِ (أَحَدَ عَشَرَ) وَ(اثْنَا عَشَرَ): أَنَّهُمَا يُوَافِقَانِ المَعْدُودَ</p>
+        <p class="english-text"><strong>Rule:</strong> Both parts of 11 and 12 AGREE with the counted noun in gender</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">فَإِذَا كَانَ المَعْدُودُ مُذَكَّرًا فَإِنَّ الجُزْءَ الأَوَّلَ مِنَ العَدَدَيْنِ يَكُونُ مُذَكَّرًا</p>
+        <p class="english-text">If counted noun is masculine, the first part is masculine</p>
+        <p class="arabic-text">وَإِذَا كَانَ المَعْدُودُ مُؤَنَّثًا فَإِنَّ الجُزْءَ الأَوَّلَ يَكُونُ مُؤَنَّثًا</p>
+        <p class="english-text">If counted noun is feminine, the first part is feminine</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>العَدَدُ<br>Number</th>
+                <th>مَعَ المُذَكَّرِ<br>With Masculine</th>
+                <th>مَعَ المُؤَنَّثِ<br>With Feminine</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">١١</td>
+                <td>أَحَدَ عَشَرَ</td>
+                <td>إِحْدَى عَشْرَةَ</td>
+                <td class="english-text">Both parts agree</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٢ (Nom.)</td>
+                <td>اثْنَا عَشَرَ</td>
+                <td>اثْنَتَا عَشْرَةَ</td>
+                <td class="english-text">Nominative case</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٢ (Acc./Gen.)</td>
+                <td>اثْنَيْ عَشَرَ</td>
+                <td>اثْنَتَيْ عَشْرَةَ</td>
+                <td class="english-text">Accusative & Genitive</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">جَاءَ أَحَدَ عَشَرَ رَجُلًا</p>
+        <p class="english-text">Eleven men came</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">جَاءَتْ إِحْدَى عَشْرَةَ بِنْتًا</p>
+        <p class="english-text">Eleven girls came</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">جَاءَ اثْنَا عَشَرَ طَالِبًا</p>
+        <p class="english-text">Twelve (male) students came (nominative)</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">رَأَيْتُ اثْنَيْ عَشَرَ طَالِبًا</p>
+        <p class="english-text">I saw twelve (male) students (accusative)</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-text">إِنَّ عِدَّةَ الشُّهُورِ عِنْدَ اللهِ <strong>اثْنَا عَشَرَ شَهْرًا</strong> فِي كِتَابِ اللهِ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">Indeed the number of months with Allah is twelve months in Allah's Book</p>
+        <p class="surah-ref">سورة التوبة ٩:٣٦</p>
+    </div>
+</section>
+
+<!-- Compound Numbers 13-19 Section -->
+<section id="compound-13-19" class="section">
+    <h2 class="section-title">الأَعْدَادُ مِنْ ١٣ إِلَى ١٩ - Numbers 13 to 19</h2>
+
+    <div class="warning-box">
+        <p class="arabic-text"><strong>القَاعِدَةُ:</strong> الجُزْءُ الأَوَّلُ فِي الأَعْدَادِ مِنْ ١٣ إِلَى ١٩ يُخَالِفُ المَعْدُودَ</p>
+        <p class="english-text"><strong>Rule:</strong> The first part of 13-19 DISAGREES with the counted noun</p>
+        <p class="arabic-text">أَمَّا الجُزْءُ الثَّانِي (عَشَرَ) فَهُوَ يُوَافِقُ المَعْدُودَ</p>
+        <p class="english-text">But the second part (عَشَر) AGREES with the counted noun</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>العَدَدُ<br>Number</th>
+                <th>مَعَ المُذَكَّرِ<br>With Masculine</th>
+                <th>مَعَ المُؤَنَّثِ<br>With Feminine</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">١٣</td>
+                <td>ثَلَاثَةَ عَشَرَ</td>
+                <td>ثَلَاثَ عَشْرَةَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٤</td>
+                <td>أَرْبَعَةَ عَشَرَ</td>
+                <td>أَرْبَعَ عَشْرَةَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٥</td>
+                <td>خَمْسَةَ عَشَرَ</td>
+                <td>خَمْسَ عَشْرَةَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٦</td>
+                <td>سِتَّةَ عَشَرَ</td>
+                <td>سِتَّ عَشْرَةَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٧</td>
+                <td>سَبْعَةَ عَشَرَ</td>
+                <td>سَبْعَ عَشْرَةَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٨</td>
+                <td>ثَمَانِيَةَ عَشَرَ</td>
+                <td>ثَمَانِيَ عَشْرَةَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٩</td>
+                <td>تِسْعَةَ عَشَرَ</td>
+                <td>تِسْعَ عَشْرَةَ</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">ثَلَاثَ عَشْرَةَ طَالِبَةً / ثَلَاثَةَ عَشَرَ طَالِبًا</p>
+        <p class="english-text">13 female students / 13 male students</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">أَرْبَعَ عَشْرَةَ بِنْتًا / أَرْبَعَةَ عَشَرَ وَلَدًا</p>
+        <p class="english-text">14 girls / 14 boys</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">قَرَأْتُ ثَلَاثَةَ عَشَرَ كِتَابًا</p>
+        <p class="english-text">I read 13 books</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">وَجَدْتُ فِي ثَلَاثَةَ عَشَرَ كِتَابًا</p>
+        <p class="english-text">I found in 13 books</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-text">وَقَطَّعْنَاهُمُ <strong>اثْنَتَيْ عَشْرَةَ</strong> أَسْبَاطًا أُمَمًا</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">And We split them up into twelve tribal communities</p>
+        <p class="surah-ref">سورة الأعراف ٧:١٦٠</p>
+    </div>
+</section>
+
+<!-- I'rab Practice Section -->
+<section id="irab" class="section">
+    <h2 class="section-title">تَدْرِيبٌ عَلَى الإِعْرَابِ - I'rab Practice</h2>
+
+    <div class="info-box">
+        <p class="arabic-text">تُعْرَبُ الأَعْدَادُ مِنْ (١١) إِلَى (١٩) حَسَبَ مَوْقِعِهَا فِي الجُمْلَةِ</p>
+        <p class="english-text">Numbers 11-19 are parsed according to their position in the sentence</p>
+        <p class="arabic-text">وَلٰكِنَّنَا نَقُولُ فِي إِعْرَابِهَا إِنَّهَا: مَبْنِيَّةٌ عَلَى فَتْحِ الجُزْأَيْنِ فِي مَحَلِّ نَصْبٍ أَوْ رَفْعٍ أَوْ جَرٍّ</p>
+        <p class="english-text">We say they are: Built on fatha of both parts, in the position of accusative, nominative, or genitive</p>
+    </div>
+
+    <h3 class="section-subtitle">مِثَالٌ ١ - Example 1</h3>
+    <div class="irab-box">
+        <p class="arabic-large" style="text-align: center;">دَخَلَ أَرْبَعَةَ عَشَرَ طَالِبًا الفَصْلَ</p>
+        <p class="english-text" style="text-align: center;">Fourteen students entered the classroom</p>
+        <table style="font-size: 20px; margin-top: 15px;">
+            <tr>
+                <th>الكَلِمَةُ</th>
+                <th>إِعْرَابُهَا</th>
+            </tr>
+            <tr>
+                <td>دَخَلَ</td>
+                <td class="english-text">فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى الفَتْحِ - Past verb built on fatha</td>
+            </tr>
+            <tr>
+                <td>أَرْبَعَةَ عَشَرَ</td>
+                <td class="english-text">عَدَدٌ مُرَكَّبٌ مَبْنِيٌّ عَلَى فَتْحِ الجُزْأَيْنِ فِي مَحَلِّ رَفْعِ فَاعِلٍ - Compound number, in position of subject (nominative)</td>
+            </tr>
+            <tr>
+                <td>طَالِبًا</td>
+                <td class="english-text">تَمْيِيزٌ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ - Tamyeez (specifier), accusative</td>
+            </tr>
+            <tr>
+                <td>الفَصْلَ</td>
+                <td class="english-text">مَفْعُولٌ بِهِ مَنْصُوبٌ - Direct object, accusative</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3 class="section-subtitle">مِثَالٌ ٢ - Example 2</h3>
+    <div class="irab-box">
+        <p class="arabic-large" style="text-align: center;">رَأَيْتُ أَحَدَ عَشَرَ عُصْفُورًا</p>
+        <p class="english-text" style="text-align: center;">I saw eleven birds</p>
+        <table style="font-size: 20px; margin-top: 15px;">
+            <tr>
+                <th>الكَلِمَةُ</th>
+                <th>إِعْرَابُهَا</th>
+            </tr>
+            <tr>
+                <td>رَأَيْتُ</td>
+                <td class="english-text">فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى السُّكُونِ، وَالتَّاءُ ضَمِيرٌ فِي مَحَلِّ رَفْعِ فَاعِلٍ - Past verb, تُ is pronoun as subject</td>
+            </tr>
+            <tr>
+                <td>أَحَدَ عَشَرَ</td>
+                <td class="english-text">عَدَدٌ مُرَكَّبٌ مَبْنِيٌّ عَلَى فَتْحِ الجُزْأَيْنِ فِي مَحَلِّ نَصْبٍ مَفْعُولٌ بِهِ - Compound number, in position of object (accusative)</td>
+            </tr>
+            <tr>
+                <td>عُصْفُورًا</td>
+                <td class="english-text">تَمْيِيزٌ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ - Tamyeez, accusative</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3 class="section-subtitle">مِثَالٌ ٣ - Example 3</h3>
+    <div class="irab-box">
+        <p class="arabic-large" style="text-align: center;">سَلَّمْتُ عَلَى اثْنَيْ عَشَرَ أُسْتَاذًا</p>
+        <p class="english-text" style="text-align: center;">I greeted twelve teachers</p>
+        <table style="font-size: 20px; margin-top: 15px;">
+            <tr>
+                <th>الكَلِمَةُ</th>
+                <th>إِعْرَابُهَا</th>
+            </tr>
+            <tr>
+                <td>سَلَّمْتُ</td>
+                <td class="english-text">فِعْلٌ مَاضٍ، وَالتَّاءُ فَاعِلٌ - Past verb, تُ is subject</td>
+            </tr>
+            <tr>
+                <td>عَلَى</td>
+                <td class="english-text">حَرْفُ جَرٍّ - Preposition</td>
+            </tr>
+            <tr>
+                <td>اثْنَيْ عَشَرَ</td>
+                <td class="english-text">(اثْنَيْ) اسْمٌ مَجْرُورٌ بِالْيَاءِ لِأَنَّهُ مُلْحَقٌ بِالمُثَنَّى، وَعَشَرَ عَدَدٌ مَبْنِيٌّ عَلَى الفَتْحِ - (اثْنَيْ) is genitive with yaa because it follows dual pattern</td>
+            </tr>
+            <tr>
+                <td>أُسْتَاذًا</td>
+                <td class="english-text">تَمْيِيزٌ مَنْصُوبٌ - Tamyeez, accusative</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- Quranic Examples Section -->
+<section id="quran" class="section">
+    <h2 class="section-title">أَمْثِلَةٌ قُرْآنِيَّةٌ - Quranic Examples</h2>
+
+    <div class="quran-box">
+        <p class="quran-text">إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَا أَبَتِ إِنِّي رَأَيْتُ <strong>أَحَدَ عَشَرَ كَوْكَبًا</strong> وَالشَّمْسَ وَالقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">When Joseph said to his father, "Father! I saw eleven planets, and the sun and the moon, I saw them prostrating before me"</p>
+        <p class="surah-ref">سورة يوسف ١٢:٤</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-text">سَيَقُولُونَ ثَلَاثَةٌ رَابِعُهُمْ كَلْبُهُمْ وَيَقُولُونَ خَمْسَةٌ سَادِسُهُمْ كَلْبُهُمْ</p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">They will say, "[They are] three, and their fourth is their dog." And they say, "[They are] five, and their sixth is their dog."</p>
+        <p class="surah-ref">سورة الكهف ١٨:٢٢ - The Companions of the Cave</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-text">إِنَّ عِدَّةَ الشُّهُورِ عِنْدَ اللهِ <strong>اثْنَا عَشَرَ شَهْرًا</strong></p>
+        <p class="english-text" style="text-align: center; color: #880e4f;">Indeed the number of months with Allah is twelve months</p>
+        <p class="surah-ref">سورة التوبة ٩:٣٦</p>
+    </div>
+</section>
+
+<!-- Summary Section -->
+<section id="summary" class="section">
+    <h2 class="section-title">خُلَاصَةُ الوَحْدَةِ الثَّامِنَةِ - Module 8 Summary</h2>
+
+    <div class="summary-box">
+        <h3>مَا تَعَلَّمْنَاهُ - What We Learned</h3>
+        <ul>
+            <li>
+                <span>✓ تَصْرِيفُ الفِعْلِ فَتَحَ - يَفْتَحُ - اِفْتَحْ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Conjugation of the verb "to open" in all 13 pronoun forms</span>
+            </li>
+            <li>
+                <span>✓ مَعْنَيَانِ لِلْفِعْلِ فَتَحَ: فَتْحُ البَابِ (To open) وَفَتْحُ البِلَادِ (To conquer)</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Two meanings: Physical opening & Conquering lands</span>
+            </li>
+            <li>
+                <span>✓ أَنْوَاعُ الأَعْدَادِ: المُفْرَدُ، المُرَكَّبُ، أَلْفَاظُ العُقُودِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Types of numbers: One-word, Compound, Decades</span>
+            </li>
+            <li>
+                <span>✓ العَدَدُ التَّرْتِيبِيُّ: الأَوَّلُ إِلَى العَاشِرِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Ordinal numbers: First through Tenth</span>
+            </li>
+            <li>
+                <span>✓ العَدَدَانِ ١١ وَ ١٢: كِلَا الجُزْأَيْنِ يُوَافِقَانِ المَعْدُودَ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Numbers 11 & 12: Both parts agree with counted noun</span>
+            </li>
+            <li>
+                <span>✓ الأَعْدَادُ ١٣-١٩: الجُزْءُ الأَوَّلُ يُخَالِفُ، الثَّانِي يُوَافِقُ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Numbers 13-19: First part disagrees, second agrees</span>
+            </li>
+            <li>
+                <span>✓ إِعْرَابُ الأَعْدَادِ المُرَكَّبَةِ: مَبْنِيَّةٌ عَلَى فَتْحِ الجُزْأَيْنِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">I'rab of compound numbers: Built on fatha of both parts</span>
+            </li>
+            <li>
+                <span>✓ التَّمْيِيزُ بَعْدَ الأَعْدَادِ ١١-١٩: مُفْرَدٌ مَنْصُوبٌ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Tamyeez after 11-19: Singular and accusative</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <h3 class="section-subtitle">القَوَاعِدُ الأَسَاسِيَّةُ - Key Rules</h3>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">١١ وَ ١٢ = كِلَا الجُزْأَيْنِ يُوَافِقَانِ المَعْدُودَ</p>
+            <p class="english-text" style="text-align: center;">11 & 12 = Both parts agree with counted noun</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">١٣-١٩ = الجُزْءُ الأَوَّلُ يُخَالِفُ + الثَّانِي يُوَافِقُ</p>
+            <p class="english-text" style="text-align: center;">13-19 = First part disagrees + Second part agrees</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">التَّمْيِيزُ بَعْدَ ١١-١٩ = مُفْرَدٌ مَنْصُوبٌ</p>
+            <p class="english-text" style="text-align: center;">Counted noun after 11-19 = Singular accusative (تَمْيِيز)</p>
+        </div>
+        <div class="rule-box">
+            <p class="arabic-large" style="text-align: center;">١٢ فِي حَالَةِ الجَرِّ وَالنَّصْبِ = اثْنَيْ / اثْنَتَيْ</p>
+            <p class="english-text" style="text-align: center;">12 in genitive/accusative = اثْنَيْ (masc.) / اثْنَتَيْ (fem.)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer style="text-align: center; padding: 30px; margin-top: 30px; background: linear-gradient(135deg, #bf360c 0%, #e65100 100%); color: white; border-radius: 15px;">
+    <p style="font-size: 24px;">الوَحْدَةُ الثَّامِنَةُ - Module 8</p>
+    <p style="font-size: 18px;">دَوْرَةُ ARB202 - دُرُوسُ اللُّغَةِ العَرَبِيَّةِ</p>
+    <p style="font-size: 16px; opacity: 0.8;">مِنْ كِتَابِ المَدِينَةِ - الجُزْءُ الثَّانِي</p>
+    <p style="font-size: 14px; margin-top: 20px; opacity: 0.6;">Created for personal study use</p>
+</footer>
+
+</body>
+</html>
