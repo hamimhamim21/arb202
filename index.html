@@ -15,7 +15,7 @@
             color: white;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         header {
@@ -43,7 +43,7 @@
         }
         .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -62,19 +62,28 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             border-color: #e94560;
         }
+        .module-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
         .module-number {
             font-size: 42px;
             font-weight: bold;
             color: #e94560;
-            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .module-info {
+            flex: 1;
         }
         .module-title {
-            font-size: 24px;
-            margin-bottom: 8px;
+            font-size: 22px;
+            margin-bottom: 5px;
         }
         .module-english {
             font-family: Georgia, serif;
-            font-size: 16px;
+            font-size: 14px;
             opacity: 0.8;
             direction: ltr;
             text-align: left;
@@ -84,41 +93,38 @@
             background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
             padding: 5px 15px;
             border-radius: 20px;
-            font-size: 18px;
-            margin-top: 10px;
+            font-size: 16px;
+            margin-top: 8px;
         }
-        .verbs-section {
-            background: linear-gradient(135deg, #233554 0%, #2d4a6f 100%);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
+        .concepts-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
         }
-        .verbs-section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #e94560;
-            text-align: center;
+        .concepts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
-        .verbs-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        .verb-item {
+        .concept-item {
             background: rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
         }
-        .verb-arabic {
-            font-size: 22px;
-            color: #ff6b6b;
+        .concept-ar {
+            font-size: 16px;
+            color: #ffcdd2;
         }
-        .verb-english {
+        .concept-en {
             font-family: Georgia, serif;
-            font-size: 14px;
-            opacity: 0.8;
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
             direction: ltr;
+            text-align: right;
         }
         footer {
             text-align: center;
@@ -132,7 +138,8 @@
             header h1 { font-size: 36px; }
             header p { font-size: 20px; }
             .module-number { font-size: 32px; }
-            .module-title { font-size: 20px; }
+            .module-title { font-size: 18px; }
+            .modules-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -145,95 +152,309 @@
         </header>
 
         <div class="modules-grid">
+            <!-- Module 1 -->
             <a href="module1_study_guide.html" class="module-card">
-                <div class="module-number">١</div>
-                <div class="module-title">الوَحْدَةُ الأُولَى</div>
-                <div class="module-english">Module 1</div>
-                <span class="verb-badge">كَتَبَ - يَكْتُبُ</span>
+                <div class="module-header">
+                    <div class="module-number">١</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الأُولَى</div>
+                        <div class="module-english">Module 1</div>
+                        <span class="verb-badge">كَتَبَ - يَكْتُبُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">أنواع الكلمة</span><span class="concept-en">Word Types (Noun/Verb/Particle)</span></div>
+                        <div class="concept-item"><span class="concept-ar">أنواع الجملة</span><span class="concept-en">Sentence Types (Nominal/Verbal)</span></div>
+                        <div class="concept-item"><span class="concept-ar">إنَّ وأخواتها</span><span class="concept-en">Inna & Its Sisters</span></div>
+                        <div class="concept-item"><span class="concept-ar">ذو وذات</span><span class="concept-en">Dhu & Dhat (Possessing)</span></div>
+                        <div class="concept-item"><span class="concept-ar">الإعراب</span><span class="concept-en">I'rab Basics</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 2 -->
             <a href="module2_study_guide.html" class="module-card">
-                <div class="module-number">٢</div>
-                <div class="module-title">الوَحْدَةُ الثَّانِيَةُ</div>
-                <div class="module-english">Module 2</div>
-                <span class="verb-badge">ذَهَبَ - يَذْهَبُ</span>
+                <div class="module-header">
+                    <div class="module-number">٢</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الثَّانِيَةُ</div>
+                        <div class="module-english">Module 2</div>
+                        <span class="verb-badge">ذَهَبَ - يَذْهَبُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">إنَّ في القرآن</span><span class="concept-en">Inna in Quran</span></div>
+                        <div class="concept-item"><span class="concept-ar">إنَّ مع الضمائر</span><span class="concept-en">Inna with Pronouns</span></div>
+                        <div class="concept-item"><span class="concept-ar">ذو وذات</span><span class="concept-en">Dhu & Dhat</span></div>
+                        <div class="concept-item"><span class="concept-ar">الأعداد: مِائَة وَأَلْف</span><span class="concept-en">Numbers: 100 & 1000</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 3 -->
             <a href="module3_study_guide.html" class="module-card">
-                <div class="module-number">٣</div>
-                <div class="module-title">الوَحْدَةُ الثَّالِثَةُ</div>
-                <div class="module-english">Module 3</div>
-                <span class="verb-badge">شَرِبَ - يَشْرَبُ</span>
+                <div class="module-header">
+                    <div class="module-number">٣</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الثَّالِثَةُ</div>
+                        <div class="module-english">Module 3</div>
+                        <span class="verb-badge">شَرِبَ - يَشْرَبُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">الاسم المنقوص</span><span class="concept-en">Deficient Nouns</span></div>
+                        <div class="concept-item"><span class="concept-ar">مِائَة وَأَلْف</span><span class="concept-en">Hundred & Thousand</span></div>
+                        <div class="concept-item"><span class="concept-ar">كان وأخواتها</span><span class="concept-en">Kaana & Its Sisters</span></div>
+                        <div class="concept-item"><span class="concept-ar">لَيْسَ</span><span class="concept-en">Laysa (Negation)</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 4 -->
             <a href="module4_study_guide.html" class="module-card">
-                <div class="module-number">٤</div>
-                <div class="module-title">الوَحْدَةُ الرَّابِعَةُ</div>
-                <div class="module-english">Module 4</div>
-                <span class="verb-badge">كَانَ - يَكُونُ</span>
+                <div class="module-header">
+                    <div class="module-number">٤</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الرَّابِعَةُ</div>
+                        <div class="module-english">Module 4</div>
+                        <span class="verb-badge">كَانَ - يَكُونُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">تصريف كَانَ</span><span class="concept-en">Kaana Conjugation (Hollow Verb)</span></div>
+                        <div class="concept-item"><span class="concept-ar">تصريف لَيْسَ</span><span class="concept-en">Laysa Conjugation (Inert Verb)</span></div>
+                        <div class="concept-item"><span class="concept-ar">كان وأخواتها</span><span class="concept-en">Kaana & Its Sisters</span></div>
+                        <div class="concept-item"><span class="concept-ar">الباء الزائدة</span><span class="concept-en">Additional Ba in Khabar</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 5 -->
             <a href="module5_study_guide.html" class="module-card">
-                <div class="module-number">٥</div>
-                <div class="module-title">الوَحْدَةُ الخَامِسَةُ</div>
-                <div class="module-english">Module 5</div>
-                <span class="verb-badge">حَفِظَ - يَحْفَظُ</span>
+                <div class="module-header">
+                    <div class="module-number">٥</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الخَامِسَةُ</div>
+                        <div class="module-english">Module 5</div>
+                        <span class="verb-badge">حَفِظَ - يَحْفَظُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">اسم التفضيل</span><span class="concept-en">Comparative/Superlative (أَفْعَل)</span></div>
+                        <div class="concept-item"><span class="concept-ar">لٰكِنَّ وَكَأَنَّ</span><span class="concept-en">But & As If</span></div>
+                        <div class="concept-item"><span class="concept-ar">الاستفهام المنفي</span><span class="concept-en">Negative Interrogative</span></div>
+                        <div class="concept-item"><span class="concept-ar">نَعَمْ وَ بَلَى</span><span class="concept-en">Na'am vs Bala</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 6 -->
             <a href="module6_study_guide.html" class="module-card">
-                <div class="module-number">٦</div>
-                <div class="module-title">الوَحْدَةُ السَّادِسَةُ</div>
-                <div class="module-english">Module 6</div>
-                <span class="verb-badge">قَرَأَ - يَقْرَأُ</span>
+                <div class="module-header">
+                    <div class="module-number">٦</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ السَّادِسَةُ</div>
+                        <div class="module-english">Module 6</div>
+                        <span class="verb-badge">قَرَأَ - يَقْرَأُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">واحد واثنان</span><span class="concept-en">Numbers One & Two</span></div>
+                        <div class="concept-item"><span class="concept-ar">الأعداد ٣ إلى ١٠</span><span class="concept-en">Numbers 3 to 10</span></div>
+                        <div class="concept-item"><span class="concept-ar">ثَمَانٍ</span><span class="concept-en">Eight (Special Defective)</span></div>
+                        <div class="concept-item"><span class="concept-ar">اسم التفضيل</span><span class="concept-en">Comparative Form</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 7 -->
             <a href="module7_study_guide.html" class="module-card">
-                <div class="module-number">٧</div>
-                <div class="module-title">الوَحْدَةُ السَّابِعَةُ</div>
-                <div class="module-english">Module 7</div>
-                <span class="verb-badge">بَحَثَ - يَبْحَثُ</span>
+                <div class="module-header">
+                    <div class="module-number">٧</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ السَّابِعَةُ</div>
+                        <div class="module-english">Module 7</div>
+                        <span class="verb-badge">بَحَثَ - يَبْحَثُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">لام الابتداء</span><span class="concept-en">Laam of Beginning</span></div>
+                        <div class="concept-item"><span class="concept-ar">اللام المُزَحْلَقَة</span><span class="concept-en">Skating Laam</span></div>
+                        <div class="concept-item"><span class="concept-ar">الأعداد ١-١٠</span><span class="concept-en">Numbers 1-10</span></div>
+                        <div class="concept-item"><span class="concept-ar">العدد الترتيبي</span><span class="concept-en">Ordinal Numbers</span></div>
+                        <div class="concept-item"><span class="concept-ar">الأعداد ١١-١٩</span><span class="concept-en">Numbers 11-19</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 8 -->
             <a href="module8_study_guide.html" class="module-card">
-                <div class="module-number">٨</div>
-                <div class="module-title">الوَحْدَةُ الثَّامِنَةُ</div>
-                <div class="module-english">Module 8</div>
-                <span class="verb-badge">فَتَحَ - يَفْتَحُ</span>
+                <div class="module-header">
+                    <div class="module-number">٨</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الثَّامِنَةُ</div>
+                        <div class="module-english">Module 8</div>
+                        <span class="verb-badge">فَتَحَ - يَفْتَحُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">أنواع الأعداد</span><span class="concept-en">Types of Numbers</span></div>
+                        <div class="concept-item"><span class="concept-ar">العدد الترتيبي</span><span class="concept-en">Ordinal Numbers</span></div>
+                        <div class="concept-item"><span class="concept-ar">أَحَدَ عَشَرَ وَاثْنَا عَشَرَ</span><span class="concept-en">Numbers 11 & 12</span></div>
+                        <div class="concept-item"><span class="concept-ar">الأعداد ١٣-١٩</span><span class="concept-en">Numbers 13-19</span></div>
+                        <div class="concept-item"><span class="concept-ar">تدريب الإعراب</span><span class="concept-en">I'rab Practice</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 9 -->
             <a href="module9_study_guide.html" class="module-card">
-                <div class="module-number">٩</div>
-                <div class="module-title">الوَحْدَةُ التَّاسِعَةُ</div>
-                <div class="module-english">Module 9</div>
-                <span class="verb-badge">غَسَلَ - يَغْسِلُ</span>
+                <div class="module-header">
+                    <div class="module-number">٩</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ التَّاسِعَةُ</div>
+                        <div class="module-english">Module 9</div>
+                        <span class="verb-badge">غَسَلَ - يَغْسِلُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">أنواع الأعداد</span><span class="concept-en">Types of Numbers</span></div>
+                        <div class="concept-item"><span class="concept-ar">الأعداد ١-١٩</span><span class="concept-en">Numbers 1-19</span></div>
+                        <div class="concept-item"><span class="concept-ar">ألفاظ العقود</span><span class="concept-en">Decades (20-90)</span></div>
+                        <div class="concept-item"><span class="concept-ar">تدريب الإعراب</span><span class="concept-en">I'rab Practice</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 10 -->
             <a href="module10_study_guide.html" class="module-card">
-                <div class="module-number">١٠</div>
-                <div class="module-title">الوَحْدَةُ العَاشِرَةُ</div>
-                <div class="module-english">Module 10</div>
-                <span class="verb-badge">فَهِمَ - يَفْهَمُ</span>
+                <div class="module-header">
+                    <div class="module-number">١٠</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ العَاشِرَةُ</div>
+                        <div class="module-english">Module 10</div>
+                        <span class="verb-badge">فَهِمَ - يَفْهَمُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">حذف النون</span><span class="concept-en">Dropping Noon</span></div>
+                        <div class="concept-item"><span class="concept-ar">اسم التفضيل</span><span class="concept-en">Comparative Form</span></div>
+                        <div class="concept-item"><span class="concept-ar">لَكِنَّ</span><span class="concept-en">But/However</span></div>
+                        <div class="concept-item"><span class="concept-ar">كَأَنَّ</span><span class="concept-en">As If/Looks Like</span></div>
+                        <div class="concept-item"><span class="concept-ar">العدد الترتيبي</span><span class="concept-en">Ordinal Numbers</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 11 -->
             <a href="module11_study_guide.html" class="module-card">
-                <div class="module-number">١١</div>
-                <div class="module-title">الوَحْدَةُ الحَادِيَةَ عَشْرَةَ</div>
-                <div class="module-english">Module 11</div>
-                <span class="verb-badge">طَلَبَ - يَطْلُبُ</span>
+                <div class="module-header">
+                    <div class="module-number">١١</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الحَادِيَةَ عَشْرَةَ</div>
+                        <div class="module-english">Module 11</div>
+                        <span class="verb-badge">طَلَبَ - يَطْلُبُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">الأسماء الخمسة</span><span class="concept-en">Five Nouns (أب، أخ، حم، فو، ذو)</span></div>
+                        <div class="concept-item"><span class="concept-ar">ذَهَبَ وَرَجَعَ</span><span class="concept-en">Go & Return Verbs</span></div>
+                        <div class="concept-item"><span class="concept-ar">إعراب الماضي</span><span class="concept-en">Past Verb I'rab</span></div>
+                        <div class="concept-item"><span class="concept-ar">بَلَى وَنَعَمْ</span><span class="concept-en">Bala vs Na'am</span></div>
+                        <div class="concept-item"><span class="concept-ar">المضادات</span><span class="concept-en">Antonyms</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 12 -->
             <a href="module12_study_guide.html" class="module-card">
-                <div class="module-number">١٢</div>
-                <div class="module-title">الوَحْدَةُ الثَّانِيَةَ عَشْرَةَ</div>
-                <div class="module-english">Module 12</div>
-                <span class="verb-badge">ذَهَبَ - يَذْهَبُ</span>
+                <div class="module-header">
+                    <div class="module-number">١٢</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الثَّانِيَةَ عَشْرَةَ</div>
+                        <div class="module-english">Module 12</div>
+                        <span class="verb-badge">ذَهَبَ - يَذْهَبُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">الأسماء الخمسة</span><span class="concept-en">Five Nouns</span></div>
+                        <div class="concept-item"><span class="concept-ar">إعراب الماضي</span><span class="concept-en">Past Verb I'rab</span></div>
+                        <div class="concept-item"><span class="concept-ar">نفي الماضي</span><span class="concept-en">Negation of Past Tense</span></div>
+                        <div class="concept-item"><span class="concept-ar">نَعَمْ وَبَلَى</span><span class="concept-en">Na'am vs Bala</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 13 -->
             <a href="module13_study_guide.html" class="module-card">
-                <div class="module-number">١٣</div>
-                <div class="module-title">الوَحْدَةُ الثَّالِثَةَ عَشْرَةَ</div>
-                <div class="module-english">Module 13</div>
-                <span class="verb-badge">رَجَعَ - يَرْجِعُ</span>
+                <div class="module-header">
+                    <div class="module-number">١٣</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الثَّالِثَةَ عَشْرَةَ</div>
+                        <div class="module-english">Module 13</div>
+                        <span class="verb-badge">رَجَعَ - يَرْجِعُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">اتصال الضمائر</span><span class="concept-en">Pronoun Connection</span></div>
+                        <div class="concept-item"><span class="concept-ar">لِأَنَّ</span><span class="concept-en">Because (Li'anna)</span></div>
+                        <div class="concept-item"><span class="concept-ar">نفي الماضي</span><span class="concept-en">Negation of Past</span></div>
+                        <div class="concept-item"><span class="concept-ar">نَعَمْ وَبَلَى</span><span class="concept-en">Na'am vs Bala</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 14 -->
             <a href="module14_study_guide.html" class="module-card">
-                <div class="module-number">١٤</div>
-                <div class="module-title">الوَحْدَةُ الرَّابِعَةَ عَشْرَةَ</div>
-                <div class="module-english">Module 14</div>
-                <span class="verb-badge">كَسَرَ - يَكْسِرُ</span>
+                <div class="module-header">
+                    <div class="module-number">١٤</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الرَّابِعَةَ عَشْرَةَ</div>
+                        <div class="module-english">Module 14</div>
+                        <span class="verb-badge">كَسَرَ - يَكْسِرُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">أنواع الجملة</span><span class="concept-en">Sentence Types</span></div>
+                        <div class="concept-item"><span class="concept-ar">الجملة الفعلية</span><span class="concept-en">Verbal Sentence</span></div>
+                        <div class="concept-item"><span class="concept-ar">اللازم والمتعدي</span><span class="concept-en">Transitive & Intransitive</span></div>
+                        <div class="concept-item"><span class="concept-ar">الحوار</span><span class="concept-en">Dialogue Practice</span></div>
+                    </div>
+                </div>
             </a>
+
+            <!-- Module 15 -->
             <a href="module15_study_guide.html" class="module-card">
-                <div class="module-number">١٥</div>
-                <div class="module-title">الوَحْدَةُ الخَامِسَةَ عَشْرَةَ</div>
-                <div class="module-english">Module 15</div>
-                <span class="verb-badge">ضَرَبَ - يَضْرِبُ</span>
+                <div class="module-header">
+                    <div class="module-number">١٥</div>
+                    <div class="module-info">
+                        <div class="module-title">الوَحْدَةُ الخَامِسَةَ عَشْرَةَ</div>
+                        <div class="module-english">Module 15</div>
+                        <span class="verb-badge">ضَرَبَ - يَضْرِبُ</span>
+                    </div>
+                </div>
+                <div class="concepts-section">
+                    <div class="concepts-list">
+                        <div class="concept-item"><span class="concept-ar">اللازم والمتعدي</span><span class="concept-en">Transitive & Intransitive</span></div>
+                        <div class="concept-item"><span class="concept-ar">الفعل الثلاثي</span><span class="concept-en">Trilateral Verb</span></div>
+                        <div class="concept-item"><span class="concept-ar">التقاء الساكنين</span><span class="concept-en">Meeting of Two Sukoons</span></div>
+                        <div class="concept-item"><span class="concept-ar">الحوار</span><span class="concept-en">Dialogue Practice</span></div>
+                    </div>
+                </div>
             </a>
         </div>
 
