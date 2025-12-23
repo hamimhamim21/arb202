@@ -408,20 +408,21 @@
 
         /* Key Rule Box */
         .key-rule-box {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
             border-radius: 15px;
             padding: 25px;
             margin-top: 25px;
-            color: white;
+            color: #2c3e50;
+            border: 3px solid #ffc107;
         }
         .key-rule-title {
             font-size: 24px;
             text-align: center;
-            color: #ffeb3b;
+            color: #e65100;
             margin-bottom: 15px;
         }
         .key-rule-content {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.7);
             padding: 20px;
             border-radius: 10px;
         }
@@ -618,16 +619,17 @@
             margin-top: 5px;
         }
         .key-diff-box {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
             border-radius: 15px;
             padding: 25px;
             margin-top: 25px;
-            color: white;
+            color: #2c3e50;
+            border: 3px solid #2196f3;
         }
         .key-diff-title {
             font-size: 24px;
             text-align: center;
-            color: #ffeb3b;
+            color: #1565c0;
             margin-bottom: 20px;
         }
         .key-diff-content {
@@ -640,7 +642,7 @@
             align-items: center;
             gap: 15px;
             padding: 15px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.7);
             border-radius: 10px;
         }
         .diff-label {
@@ -858,6 +860,7 @@
         <a href="#quran"><span class="nav-ar">أمثلة قرآنية</span><span class="nav-en">Quranic Examples</span></a>
         <a href="#exercises"><span class="nav-ar">التمارين</span><span class="nav-en">Exercises</span></a>
         <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
+        <a href="#quick-reference"><span class="nav-ar">مرجع سريع</span><span class="nav-en">Quick Ref</span></a>
     </div>
 </nav>
 
@@ -1946,6 +1949,91 @@
         </div>
     </div>
 
+    <!-- Category 7: الأسئلة النظرية -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٧. الأَسْئِلَةُ النَّظَرِيَّةُ - Theoretical Questions</h3>
+
+        <div class="exercise-item" id="q21">
+            <p class="exercise-question">مَا هُوَ تَعْرِيفُ الفِعْلِ اللَّازِمِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the definition of an intransitive verb (الفِعْلُ اللَّازِمُ)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q21', 0, 0)">فِعْلٌ يَكْتَفِي بِالفَاعِلِ وَلَا يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ</button>
+                <button class="option-btn" onclick="checkAnswer('q21', 1, 0)">فِعْلٌ يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ لِإِتْمَامِ مَعْنَاهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q21', 2, 0)">فِعْلٌ يَتَكَوَّنُ مِنْ ثَلَاثَةِ أَحْرُفٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q21', 3, 0)">فِعْلٌ فِي صِيغَةِ الأَمْرِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: فِعْلٌ يَكْتَفِي بِالفَاعِلِ وَلَا يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ</p>
+                <p>الفِعْلُ اللَّازِمُ هُوَ الَّذِي يَكْتَفِي بِالفَاعِلِ لِإِتْمَامِ مَعْنَاهُ دُونَ الحَاجَةِ إِلَى مَفْعُولٍ بِهِ.</p>
+                <p class="english-text">An intransitive verb is one that is complete with just the subject, without needing a direct object.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q22">
+            <p class="exercise-question">لِمَاذَا سُمِّيَ الحَرْفُ الأَوَّلُ مِنَ الفِعْلِ الثُّلَاثِيِّ "فَاءُ الكَلِمَةِ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Why is the first letter of the trilateral verb called "فَاءُ الكَلِمَةِ"?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q22', 0, 1)">لِأَنَّهُ يَبْدَأُ بِحَرَكَةِ الفَتْحَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q22', 1, 1)">لِأَنَّهُ يُقَابِلُ حَرْفَ الفَاءِ فِي الوَزْنِ "فَعَلَ"</button>
+                <button class="option-btn" onclick="checkAnswer('q22', 2, 1)">لِأَنَّهُ الحَرْفُ الأَقْوَى فِي الكَلِمَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q22', 3, 1)">لِأَنَّهُ يَأْتِي قَبْلَ الحَرْفَيْنِ الآخَرَيْنِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِأَنَّهُ يُقَابِلُ حَرْفَ الفَاءِ فِي الوَزْنِ "فَعَلَ"</p>
+                <p>سُمِّيَ "فَاءُ الكَلِمَةِ" لِأَنَّهُ يُقَابِلُ حَرْفَ الفَاءِ (ف) فِي الوَزْنِ المِعْيَارِيِّ "فَعَلَ".</p>
+                <p class="english-text">It's called "فَاءُ الكَلِمَةِ" because it corresponds to the letter ف in the standard pattern "فَعَلَ".</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q23">
+            <p class="exercise-question">مَا هِيَ القَاعِدَةُ الذَّهَبِيَّةُ فِي الفِعْلِ الثُّلَاثِيِّ المَاضِي؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the golden rule for the past tense trilateral verb?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q23', 0, 2)">جَمِيعُ الأَحْرُفِ الثَّلَاثَةِ مَفْتُوحَةٌ دَائِمًا</button>
+                <button class="option-btn" onclick="checkAnswer('q23', 1, 2)">الحَرْفُ الأَوَّلُ وَالثَّانِي مَفْتُوحَانِ فَقَطْ</button>
+                <button class="option-btn" onclick="checkAnswer('q23', 2, 2)">فَاءُ الكَلِمَةِ وَلَامُهَا مَفْتُوحَتَانِ دَائِمًا، وَعَيْنُ الكَلِمَةِ تَتَغَيَّرُ</button>
+                <button class="option-btn" onclick="checkAnswer('q23', 3, 2)">عَيْنُ الكَلِمَةِ مَفْتُوحَةٌ دَائِمًا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: فَاءُ الكَلِمَةِ وَلَامُهَا مَفْتُوحَتَانِ دَائِمًا، وَعَيْنُ الكَلِمَةِ تَتَغَيَّرُ</p>
+                <p>القَاعِدَةُ الذَّهَبِيَّةُ: فَاءُ الكَلِمَةِ (الأَوَّلُ) وَلَامُ الكَلِمَةِ (الثَّالِثُ) = دَائِمًا فَتْحَة. عَيْنُ الكَلِمَةِ (الثَّانِي) = فَتْحَة أَوْ ضَمَّة أَوْ كَسْرَة.</p>
+                <p class="english-text">Golden Rule: 1st & 3rd radicals ALWAYS have fatha. Only the 2nd radical (عين الكلمة) can change.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q24">
+            <p class="exercise-question">مَا مَعْنَى "اِلْتِقَاءُ السَّاكِنَيْنِ" وَمَا حُكْمُهُ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What does "اِلْتِقَاءُ السَّاكِنَيْنِ" mean and what is its ruling?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q24', 0, 0)">اِجْتِمَاعُ حَرْفَيْنِ سَاكِنَيْنِ مُتَتَالِيَيْنِ - غَيْرُ جَائِزٍ فِي العَرَبِيَّةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q24', 1, 0)">اِجْتِمَاعُ حَرْفَيْنِ مُتَحَرِّكَيْنِ - جَائِزٌ فِي العَرَبِيَّةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q24', 2, 0)">تَكْرَارُ نَفْسِ الحَرْفِ مَرَّتَيْنِ - وَاجِبٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q24', 3, 0)">وَضْعُ السُّكُونِ عَلَى الحَرْفِ الأَخِيرِ - مُسْتَحَبٌّ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: اِجْتِمَاعُ حَرْفَيْنِ سَاكِنَيْنِ مُتَتَالِيَيْنِ - غَيْرُ جَائِزٍ فِي العَرَبِيَّةِ</p>
+                <p>"اِلْتِقَاءُ السَّاكِنَيْنِ" يَعْنِي اِجْتِمَاعَ حَرْفَيْنِ عَلَيْهِمَا سُكُونٌ مُتَتَالِيَيْنِ، وَهٰذَا غَيْرُ جَائِزٍ فِي اللُّغَةِ العَرَبِيَّةِ.</p>
+                <p class="english-text">"اِلْتِقَاءُ السَّاكِنَيْنِ" means two consecutive letters with sukoon, which is NOT allowed in Arabic.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q25">
+            <p class="exercise-question">مَا الفَرْقُ بَيْنَ الفِعْلِ اللَّازِمِ وَالفِعْلِ المُتَعَدِّي؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the difference between intransitive and transitive verbs?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q25', 0, 1)">اللَّازِمُ يَحْتَاجُ مَفْعُولًا، المُتَعَدِّي لَا يَحْتَاجُ</button>
+                <button class="option-btn" onclick="checkAnswer('q25', 1, 1)">اللَّازِمُ يَكْتَفِي بِالفَاعِلِ، المُتَعَدِّي يَحْتَاجُ مَفْعُولًا بِهِ</button>
+                <button class="option-btn" onclick="checkAnswer('q25', 2, 1)">اللَّازِمُ ثُلَاثِيٌّ، المُتَعَدِّي رُبَاعِيٌّ</button>
+                <button class="option-btn" onclick="checkAnswer('q25', 3, 1)">لَا فَرْقَ بَيْنَهُمَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: اللَّازِمُ يَكْتَفِي بِالفَاعِلِ، المُتَعَدِّي يَحْتَاجُ مَفْعُولًا بِهِ</p>
+                <p>الفِعْلُ اللَّازِمُ: يَكْتَفِي بِالفَاعِلِ (خَرَجَ مُحَمَّدٌ). الفِعْلُ المُتَعَدِّي: يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ (ضَرَبَ مُحَمَّدٌ الكَلْبَ).</p>
+                <p class="english-text">Intransitive: Complete with subject (خَرَجَ مُحَمَّدٌ). Transitive: Needs object (ضَرَبَ مُحَمَّدٌ الكَلْبَ).</p>
+            </div>
+        </div>
+    </div>
+
     <div style="text-align: center; margin-top: 30px;">
         <button class="reset-btn" onclick="resetAllQuestions()">إِعَادَةُ التَّمَارِينِ - Reset All Exercises</button>
     </div>
@@ -1954,7 +2042,7 @@
 <script>
 let score = 0;
 let totalAnswered = 0;
-const totalQuestions = 20;
+const totalQuestions = 25;
 
 function checkAnswer(questionId, selectedOption, correctOption) {
     const questionDiv = document.getElementById(questionId);
@@ -2063,6 +2151,84 @@ function resetAllQuestions() {
             <p class="arabic-large" style="text-align: center;">قَالَتْ فَاطِمَةُ ← قَالَتِ المُعَلِّمَةُ</p>
             <p class="english-text" style="text-align: center;">Taa takes kasra when followed by word starting with sukoon</p>
         </div>
+    </div>
+</section>
+
+<!-- Quick Reference Section -->
+<section id="quick-reference" class="section">
+    <h2 class="section-title">📚 مَرْجِعٌ سَرِيعٌ - Quick Reference</h2>
+
+    <h3 class="section-subtitle">التَّعْرِيفَاتُ - Definitions</h3>
+
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>الفِعْلُ اللَّازِمُ:</strong> هُوَ الفِعْلُ الَّذِي لَا يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ لِإِتْمَامِ مَعْنَاهُ. يَكْتَفِي بِالفَاعِلِ فَقَطْ.</p>
+        <p class="english-text"><strong>Intransitive Verb:</strong> A verb that doesn't need a direct object to complete its meaning. It's sufficient with just the subject.</p>
+        <p class="translit-text">Example: خَرَجَ مُحَمَّدٌ (Muhammad exited) - Complete sentence, no object needed</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>الفِعْلُ المُتَعَدِّي:</strong> هُوَ الفِعْلُ الَّذِي يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ لِإِتْمَامِ مَعْنَاهُ. لَا يَكْتَفِي بِالفَاعِلِ.</p>
+        <p class="english-text"><strong>Transitive Verb:</strong> A verb that needs a direct object to complete its meaning. Subject alone is not sufficient.</p>
+        <p class="translit-text">Example: ضَرَبَ مُحَمَّدٌ الكَلْبَ (Muhammad hit the dog) - Needs object to make sense</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>الفِعْلُ الثُّلَاثِيُّ:</strong> هُوَ الفِعْلُ الَّذِي يَتَكَوَّنُ مِنْ ثَلَاثَةِ أَحْرُفٍ أَصْلِيَّةٍ.</p>
+        <p class="english-text"><strong>Trilateral Verb:</strong> A verb that consists of three original (root) letters.</p>
+        <p class="translit-text">Example: ضَرَبَ (ض + ر + ب), خَرَجَ (خ + ر + ج), كَتَبَ (ك + ت + ب)</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>فَاءُ الكَلِمَةِ:</strong> الحَرْفُ الأَوَّلُ مِنَ الفِعْلِ الثُّلَاثِيِّ. سُمِّيَ بِذٰلِكَ لِأَنَّهُ يُقَابِلُ "الفَاءَ" فِي الوَزْنِ "فَعَلَ".</p>
+        <p class="english-text"><strong>First Radical (فَاءُ الكَلِمَةِ):</strong> The first letter of the trilateral verb, named after "ف" in the pattern فَعَلَ.</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>عَيْنُ الكَلِمَةِ:</strong> الحَرْفُ الثَّانِي مِنَ الفِعْلِ الثُّلَاثِيِّ. سُمِّيَ بِذٰلِكَ لِأَنَّهُ يُقَابِلُ "العَيْنَ" فِي الوَزْنِ "فَعَلَ".</p>
+        <p class="english-text"><strong>Second Radical (عَيْنُ الكَلِمَةِ):</strong> The second letter of the trilateral verb, named after "ع" in the pattern فَعَلَ.</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>لَامُ الكَلِمَةِ:</strong> الحَرْفُ الثَّالِثُ مِنَ الفِعْلِ الثُّلَاثِيِّ. سُمِّيَ بِذٰلِكَ لِأَنَّهُ يُقَابِلُ "اللَّامَ" فِي الوَزْنِ "فَعَلَ".</p>
+        <p class="english-text"><strong>Third Radical (لَامُ الكَلِمَةِ):</strong> The third letter of the trilateral verb, named after "ل" in the pattern فَعَلَ.</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>اِلْتِقَاءُ السَّاكِنَيْنِ:</strong> اِجْتِمَاعُ حَرْفَيْنِ سَاكِنَيْنِ مُتَتَالِيَيْنِ، وَهُوَ غَيْرُ جَائِزٍ فِي اللُّغَةِ العَرَبِيَّةِ.</p>
+        <p class="english-text"><strong>Meeting of Two Sukoons:</strong> Two consecutive letters with sukoon, which is NOT ALLOWED in Arabic.</p>
+    </div>
+
+    <h3 class="section-subtitle">القَوَاعِدُ - Rules</h3>
+
+    <div class="rule-box">
+        <p class="arabic-large" style="text-align: center;">القَاعِدَةُ ١</p>
+        <p class="arabic-text">الفِعْلُ الثُّلَاثِيُّ = فَاءُ الكَلِمَةِ + عَيْنُ الكَلِمَةِ + لَامُ الكَلِمَةِ</p>
+        <p class="english-text"><strong>Rule 1:</strong> Trilateral verb = 1st radical + 2nd radical + 3rd radical</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-large" style="text-align: center;">القَاعِدَةُ ٢</p>
+        <p class="arabic-text">فَاءُ الكَلِمَةِ وَلَامُ الكَلِمَةِ = دَائِمًا مَفْتُوحَتَانِ (فَتْحَة)</p>
+        <p class="english-text"><strong>Rule 2:</strong> First and third radicals ALWAYS have fatha</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-large" style="text-align: center;">القَاعِدَةُ ٣</p>
+        <p class="arabic-text">عَيْنُ الكَلِمَةِ = فَتْحَة أَوْ ضَمَّة أَوْ كَسْرَة (الحَرْفُ الوَحِيدُ الَّذِي تَتَغَيَّرُ حَرَكَتُهُ)</p>
+        <p class="english-text"><strong>Rule 3:</strong> Second radical can have fatha, damma, OR kasra (the ONLY letter whose vowel changes)</p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-large" style="text-align: center;">القَاعِدَةُ ٤</p>
+        <p class="arabic-text">لَا يَجُوزُ فِي اللُّغَةِ العَرَبِيَّةِ أَنْ يَلْتَقِيَ حَرْفَانِ سَاكِنَانِ</p>
+        <p class="english-text"><strong>Rule 4:</strong> Two consecutive sukoons are NOT ALLOWED in Arabic</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-large" style="text-align: center;">القَاعِدَةُ ٥</p>
+        <p class="arabic-text">إِذَا الْتَقَى سَاكِنَانِ، نُحَرِّكُ الأَوَّلَ بِالكَسْرَةِ (غَالِبًا)</p>
+        <p class="arabic-text">مِثَالٌ: قَالَتْ فَاطِمَةُ ← قَالَتِ المُعَلِّمَةُ (التَّاءُ أَخَذَتْ كَسْرَةً)</p>
+        <p class="english-text"><strong>Rule 5:</strong> If two sukoons meet, add kasra to the first one (usually). Example: قَالَتْ + الـ → قَالَتِ المُعَلِّمَةُ</p>
     </div>
 </section>
 
