@@ -154,6 +154,284 @@
             margin: 15px 0;
             text-align: center;
         }
+        /* Cloud Chart Styles */
+        .cloud-chart-container {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8eaf6 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 3px solid #7e57c2;
+        }
+        .cloud-chart-title {
+            text-align: center;
+            font-size: 28px;
+            color: #4527a0;
+            margin-bottom: 25px;
+        }
+        .cloud-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .cloud-center {
+            background: linear-gradient(135deg, #5e35b1 0%, #7e57c2 100%);
+            padding: 25px 40px;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(94, 53, 177, 0.4);
+        }
+        .cloud-main {
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+        }
+        .cloud-main-sub {
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+            font-family: Georgia, serif;
+        }
+        .cloud-branches {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .cloud-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .cloud-bubble {
+            padding: 20px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            min-width: 140px;
+        }
+        .cloud-fa .cloud-bubble {
+            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+            color: white;
+        }
+        .cloud-ayn .cloud-bubble {
+            background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+            color: white;
+        }
+        .cloud-lam .cloud-bubble {
+            background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+            color: white;
+        }
+        .cloud-letter {
+            font-size: 42px;
+            font-weight: bold;
+        }
+        .cloud-name {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        .cloud-english {
+            font-size: 14px;
+            font-family: Georgia, serif;
+            opacity: 0.9;
+        }
+        .cloud-rule {
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .cloud-rule-en {
+            font-family: Georgia, serif;
+            font-size: 12px;
+            color: #666;
+        }
+        .cloud-variations {
+            display: flex;
+            gap: 8px;
+            margin-top: 5px;
+        }
+        .variation {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .variation.fatha { background: #4caf50; color: white; }
+        .variation.damma { background: #2196f3; color: white; }
+        .variation.kasra { background: #ff9800; color: white; }
+
+        /* Cloud Explanation */
+        .cloud-explanation {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .cloud-explanation h4 {
+            font-size: 26px;
+            color: #5e35b1;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #d1c4e9;
+            padding-bottom: 10px;
+        }
+        .explanation-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .exp-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #e0e0e0;
+        }
+        .exp-header {
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+        }
+        .fa-header { background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%); }
+        .ayn-header { background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%); }
+        .lam-header { background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%); }
+        .exp-num {
+            font-size: 28px;
+            font-weight: bold;
+            background: rgba(255,255,255,0.3);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .exp-title { font-size: 22px; }
+        .exp-content {
+            padding: 20px;
+            background: #fafafa;
+        }
+        .exp-example {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+            padding: 12px 18px;
+            border-radius: 10px;
+            margin-top: 12px;
+            font-size: 22px;
+        }
+        .exp-example .highlight {
+            color: #e94560;
+            font-weight: bold;
+            font-size: 26px;
+        }
+
+        /* Worked Examples */
+        .worked-examples {
+            margin-top: 25px;
+        }
+        .worked-examples h4 {
+            font-size: 26px;
+            color: #5e35b1;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .example-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .example-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 2px solid #d1c4e9;
+        }
+        .example-verb {
+            font-size: 42px;
+            color: #5e35b1;
+            font-weight: bold;
+        }
+        .example-meaning {
+            font-family: Georgia, serif;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .example-breakdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        .breakdown-item {
+            padding: 12px 15px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+        }
+        .breakdown-item .letter {
+            font-size: 32px;
+            font-weight: bold;
+            display: block;
+        }
+        .breakdown-item .label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        .fa-bg { background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%); }
+        .ayn-bg { background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%); }
+        .ayn-bg.kasra-style { background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%); }
+        .ayn-bg.damma-style { background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%); }
+        .lam-bg { background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%); }
+        .plus {
+            font-size: 24px;
+            color: #5e35b1;
+            font-weight: bold;
+        }
+        .example-type {
+            font-size: 18px;
+            color: #5e35b1;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #ede7f6;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        /* Key Rule Box */
+        .key-rule-box {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+            color: white;
+        }
+        .key-rule-title {
+            font-size: 24px;
+            text-align: center;
+            color: #ffeb3b;
+            margin-bottom: 15px;
+        }
+        .key-rule-content {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .cloud-branches { flex-direction: column; align-items: center; }
+            .cloud-bubble { min-width: 120px; }
+            .example-cards { grid-template-columns: 1fr; }
+            .breakdown-item .letter { font-size: 26px; }
+        }
         /* Interactive Exercise Styles */
         .exercise-section {
             background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
@@ -523,6 +801,190 @@
     </div>
 
     <h3 class="section-subtitle">الحُرُوفُ الثَّلَاثَةُ - The Three Radicals</h3>
+
+    <!-- Cloud Chart for Trilateral Verb -->
+    <div class="cloud-chart-container">
+        <h4 class="cloud-chart-title">خَرِيطَةُ الفِعْلِ الثُّلَاثِيِّ - Trilateral Verb Cloud Chart</h4>
+
+        <div class="cloud-chart">
+            <div class="cloud-center">
+                <div class="cloud-main">فَعَلَ</div>
+                <div class="cloud-main-sub">The Pattern</div>
+            </div>
+
+            <div class="cloud-branches">
+                <div class="cloud-item cloud-fa">
+                    <div class="cloud-bubble">
+                        <div class="cloud-letter">ف</div>
+                        <div class="cloud-name">فَاءُ الكَلِمَةِ</div>
+                        <div class="cloud-english">1st Radical</div>
+                    </div>
+                    <div class="cloud-rule">دَائِمًا مَفْتُوحٌ<br><span class="cloud-rule-en">Always has Fatha</span></div>
+                </div>
+
+                <div class="cloud-item cloud-ayn">
+                    <div class="cloud-bubble">
+                        <div class="cloud-letter">ع</div>
+                        <div class="cloud-name">عَيْنُ الكَلِمَةِ</div>
+                        <div class="cloud-english">2nd Radical</div>
+                    </div>
+                    <div class="cloud-rule">يَتَغَيَّرُ!<br><span class="cloud-rule-en">Can change!</span></div>
+                    <div class="cloud-variations">
+                        <span class="variation fatha">فَعَلَ</span>
+                        <span class="variation damma">فَعُلَ</span>
+                        <span class="variation kasra">فَعِلَ</span>
+                    </div>
+                </div>
+
+                <div class="cloud-item cloud-lam">
+                    <div class="cloud-bubble">
+                        <div class="cloud-letter">ل</div>
+                        <div class="cloud-name">لَامُ الكَلِمَةِ</div>
+                        <div class="cloud-english">3rd Radical</div>
+                    </div>
+                    <div class="cloud-rule">دَائِمًا مَفْتُوحٌ<br><span class="cloud-rule-en">Always has Fatha</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Explanation -->
+        <div class="cloud-explanation">
+            <h4>شَرْحٌ مُفَصَّلٌ - Detailed Explanation</h4>
+
+            <div class="explanation-grid">
+                <div class="exp-item">
+                    <div class="exp-header fa-header">
+                        <span class="exp-num">١</span>
+                        <span class="exp-title">فَاءُ الكَلِمَةِ (First Radical)</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">الحَرْفُ الأَوَّلُ مِنَ الفِعْلِ الثُّلَاثِيِّ يُسَمَّى "فَاءُ الكَلِمَةِ" لِأَنَّهُ يُقَابِلُ حَرْفَ الفَاءِ فِي الوَزْنِ "فَعَلَ"</p>
+                        <p class="english-text">The first letter of the trilateral verb is called "فَاءُ الكَلِمَةِ" because it corresponds to the letter ف in the pattern فَعَلَ</p>
+                        <div class="exp-example">
+                            <strong>أَمْثِلَةٌ:</strong> <span class="highlight">خَ</span>رَجَ، <span class="highlight">كَ</span>تَبَ، <span class="highlight">ضَ</span>رَبَ، <span class="highlight">فَ</span>هِمَ
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header ayn-header">
+                        <span class="exp-num">٢</span>
+                        <span class="exp-title">عَيْنُ الكَلِمَةِ (Second Radical)</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">الحَرْفُ الثَّانِي يُسَمَّى "عَيْنُ الكَلِمَةِ" لِأَنَّهُ يُقَابِلُ حَرْفَ العَيْنِ فِي الوَزْنِ. <strong>هَذَا الحَرْفُ هُوَ الوَحِيدُ الَّذِي تَتَغَيَّرُ حَرَكَتُهُ!</strong></p>
+                        <p class="english-text">The second letter is called "عَيْنُ الكَلِمَةِ" because it corresponds to ع in the pattern. <strong>This is the ONLY letter whose vowel can change!</strong></p>
+                        <div class="exp-example">
+                            <strong>أَمْثِلَةٌ:</strong> خَ<span class="highlight">رَ</span>جَ، كَ<span class="highlight">تَ</span>بَ، ضَ<span class="highlight">رَ</span>بَ، فَ<span class="highlight">هِ</span>مَ
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header lam-header">
+                        <span class="exp-num">٣</span>
+                        <span class="exp-title">لَامُ الكَلِمَةِ (Third Radical)</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">الحَرْفُ الثَّالِثُ يُسَمَّى "لَامُ الكَلِمَةِ" لِأَنَّهُ يُقَابِلُ حَرْفَ اللَّامِ فِي الوَزْنِ "فَعَلَ"</p>
+                        <p class="english-text">The third letter is called "لَامُ الكَلِمَةِ" because it corresponds to the letter ل in the pattern فَعَلَ</p>
+                        <div class="exp-example">
+                            <strong>أَمْثِلَةٌ:</strong> خَرَ<span class="highlight">جَ</span>، كَتَ<span class="highlight">بَ</span>، ضَرَ<span class="highlight">بَ</span>، فَهِ<span class="highlight">مَ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Worked Examples -->
+        <div class="worked-examples">
+            <h4>أَمْثِلَةٌ تَطْبِيقِيَّةٌ - Worked Examples</h4>
+
+            <div class="example-cards">
+                <div class="example-card">
+                    <div class="example-verb">ضَرَبَ</div>
+                    <div class="example-meaning">(to hit)</div>
+                    <div class="example-breakdown">
+                        <div class="breakdown-item fa-bg">
+                            <span class="letter">ض</span>
+                            <span class="label">فَاءُ الكَلِمَةِ</span>
+                        </div>
+                        <span class="plus">+</span>
+                        <div class="breakdown-item ayn-bg">
+                            <span class="letter">رَ</span>
+                            <span class="label">عَيْنُ الكَلِمَةِ</span>
+                        </div>
+                        <span class="plus">+</span>
+                        <div class="breakdown-item lam-bg">
+                            <span class="letter">بَ</span>
+                            <span class="label">لَامُ الكَلِمَةِ</span>
+                        </div>
+                    </div>
+                    <div class="example-type">نَوْعُهُ: فَعَلَ (مَفْتُوحُ العَيْنِ)</div>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-verb">فَهِمَ</div>
+                    <div class="example-meaning">(to understand)</div>
+                    <div class="example-breakdown">
+                        <div class="breakdown-item fa-bg">
+                            <span class="letter">ف</span>
+                            <span class="label">فَاءُ الكَلِمَةِ</span>
+                        </div>
+                        <span class="plus">+</span>
+                        <div class="breakdown-item ayn-bg kasra-style">
+                            <span class="letter">هِ</span>
+                            <span class="label">عَيْنُ الكَلِمَةِ</span>
+                        </div>
+                        <span class="plus">+</span>
+                        <div class="breakdown-item lam-bg">
+                            <span class="letter">مَ</span>
+                            <span class="label">لَامُ الكَلِمَةِ</span>
+                        </div>
+                    </div>
+                    <div class="example-type">نَوْعُهُ: فَعِلَ (مَكْسُورُ العَيْنِ)</div>
+                </div>
+
+                <div class="example-card">
+                    <div class="example-verb">كَرُمَ</div>
+                    <div class="example-meaning">(to be honored)</div>
+                    <div class="example-breakdown">
+                        <div class="breakdown-item fa-bg">
+                            <span class="letter">ك</span>
+                            <span class="label">فَاءُ الكَلِمَةِ</span>
+                        </div>
+                        <span class="plus">+</span>
+                        <div class="breakdown-item ayn-bg damma-style">
+                            <span class="letter">رُ</span>
+                            <span class="label">عَيْنُ الكَلِمَةِ</span>
+                        </div>
+                        <span class="plus">+</span>
+                        <div class="breakdown-item lam-bg">
+                            <span class="letter">مَ</span>
+                            <span class="label">لَامُ الكَلِمَةِ</span>
+                        </div>
+                    </div>
+                    <div class="example-type">نَوْعُهُ: فَعُلَ (مَضْمُومُ العَيْنِ)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Rule Box -->
+        <div class="key-rule-box">
+            <div class="key-rule-title">🔑 القَاعِدَةُ الذَّهَبِيَّةُ - The Golden Rule</div>
+            <div class="key-rule-content">
+                <p class="arabic-large" style="text-align: center; margin-bottom: 10px;">
+                    فَاءُ الكَلِمَةِ وَلَامُ الكَلِمَةِ = دَائِمًا <span style="color: #e94560;">فَتْحَة</span>
+                </p>
+                <p class="arabic-large" style="text-align: center; margin-bottom: 10px;">
+                    عَيْنُ الكَلِمَةِ = <span style="color: #4caf50;">فَتْحَة</span> أَوْ <span style="color: #2196f3;">ضَمَّة</span> أَوْ <span style="color: #ff9800;">كَسْرَة</span>
+                </p>
+                <p class="english-text" style="text-align: center;">
+                    1st & 3rd radicals = ALWAYS Fatha | 2nd radical = Fatha OR Damma OR Kasra
+                </p>
+            </div>
+        </div>
+    </div>
 
     <div class="radical-box">
         <p class="arabic-large">خَرَجَ = خ + ر + ج</p>
