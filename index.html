@@ -134,12 +134,55 @@
         footer a {
             color: #e94560;
         }
+        .glossary-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%);
+            border-radius: 15px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .glossary-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(123, 31, 162, 0.4);
+            border-color: #e94560;
+        }
+        .glossary-icon {
+            font-size: 48px;
+        }
+        .glossary-content {
+            flex: 1;
+        }
+        .glossary-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .glossary-subtitle {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        .glossary-desc {
+            font-family: Georgia, serif;
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
         @media (max-width: 600px) {
             header h1 { font-size: 36px; }
             header p { font-size: 20px; }
             .module-number { font-size: 32px; }
             .module-title { font-size: 18px; }
             .modules-grid { grid-template-columns: 1fr; }
+            .glossary-card { padding: 15px 20px; }
+            .glossary-icon { font-size: 36px; }
+            .glossary-title { font-size: 22px; }
         }
     </style>
 </head>
@@ -150,6 +193,16 @@
             <p>ARB202 - الدَّوْرَةُ الثَّالِثَةُ</p>
             <div class="subtitle">Madinah Arabic Book 2 - Study Guides</div>
         </header>
+
+        <!-- Glossary Link -->
+        <a href="glossary.html" class="glossary-card">
+            <div class="glossary-icon">📖</div>
+            <div class="glossary-content">
+                <div class="glossary-title">قَامُوسُ المُصْطَلَحَاتِ النَّحْوِيَّةِ</div>
+                <div class="glossary-subtitle">Arabic Grammar Glossary</div>
+                <div class="glossary-desc">100+ grammar terms from all modules with English translations</div>
+            </div>
+        </a>
 
         <div class="modules-grid">
             <!-- Module 1 -->
