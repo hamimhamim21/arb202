@@ -426,6 +426,252 @@
             border-radius: 10px;
         }
 
+        /* Sentence Types Cloud Chart Styles */
+        .sentence-cloud-container {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8eaf6 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 3px solid #7e57c2;
+        }
+        .sentence-cloud {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .sentence-center {
+            background: linear-gradient(135deg, #5e35b1 0%, #7e57c2 100%);
+            padding: 25px 50px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(94, 53, 177, 0.4);
+        }
+        .sentence-main {
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+        }
+        .sentence-main-sub {
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+            font-family: Georgia, serif;
+        }
+        .sentence-branches {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .sentence-branch {
+            flex: 1;
+            min-width: 280px;
+            max-width: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .branch-header {
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .verbal-header {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+        }
+        .nominal-header {
+            background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+        }
+        .branch-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .branch-subtitle {
+            font-size: 16px;
+            font-family: Georgia, serif;
+            opacity: 0.9;
+        }
+        .branch-items {
+            background: white;
+            padding: 20px;
+        }
+        .branch-item {
+            background: #f5f5f5;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-right: 4px solid #7e57c2;
+        }
+        .branch-item.highlight-item {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-right-color: #ffc107;
+        }
+        .item-ar {
+            font-size: 22px;
+            color: #4527a0;
+            font-weight: bold;
+        }
+        .item-en {
+            font-size: 14px;
+            font-family: Georgia, serif;
+            color: #666;
+        }
+        .branch-sub-items {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .sub-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 8px;
+            margin: 8px 0;
+        }
+        .sub-ar {
+            font-size: 18px;
+            color: #1565c0;
+        }
+        .sub-en {
+            font-size: 12px;
+            font-family: Georgia, serif;
+            color: #666;
+        }
+        .sentence-explanation {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .sentence-explanation h4 {
+            font-size: 26px;
+            color: #5e35b1;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #d1c4e9;
+            padding-bottom: 10px;
+        }
+        .explanation-columns {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .exp-column {
+            flex: 1;
+            min-width: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #e0e0e0;
+        }
+        .exp-col-header {
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+        }
+        .exp-col-num {
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(255,255,255,0.3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .exp-col-title {
+            font-size: 18px;
+        }
+        .exp-col-content {
+            padding: 20px;
+            background: #fafafa;
+        }
+        .exp-examples {
+            margin-top: 15px;
+        }
+        .exp-ex-item {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-right: 3px solid #7e57c2;
+        }
+        .example-ar {
+            font-size: 22px;
+            color: #4527a0;
+        }
+        .example-en {
+            display: block;
+            font-size: 14px;
+            font-family: Georgia, serif;
+            color: #666;
+            margin-top: 5px;
+        }
+        .key-diff-box {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+            color: white;
+        }
+        .key-diff-title {
+            font-size: 24px;
+            text-align: center;
+            color: #ffeb3b;
+            margin-bottom: 20px;
+        }
+        .key-diff-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .diff-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        .diff-label {
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            min-width: 150px;
+            text-align: center;
+        }
+        .verbal-label {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+        }
+        .nominal-label {
+            background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+        }
+        .diff-arrow {
+            font-size: 24px;
+            color: #ffeb3b;
+        }
+        .diff-text {
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .sentence-branches { flex-direction: column; align-items: center; }
+            .explanation-columns { flex-direction: column; }
+            .diff-item { flex-direction: column; text-align: center; }
+            .diff-label { min-width: auto; }
+        }
+
         @media (max-width: 768px) {
             .cloud-branches { flex-direction: column; align-items: center; }
             .cloud-bubble { min-width: 120px; }
@@ -604,6 +850,7 @@
     <div class="nav-title">الوحدة الخامسة عشرة - Module 15</div>
     <div class="nav-links">
         <a href="#conjugation"><span class="nav-ar">تصريف ضَرَبَ</span><span class="nav-en">Verb Conjugation</span></a>
+        <a href="#sentence-types"><span class="nav-ar">أنواع الجملة</span><span class="nav-en">Sentence Types</span></a>
         <a href="#transitive"><span class="nav-ar">اللازم والمتعدي</span><span class="nav-en">Trans/Intrans</span></a>
         <a href="#trilateral"><span class="nav-ar">الفعل الثلاثي</span><span class="nav-en">Trilateral Verb</span></a>
         <a href="#sakinayn"><span class="nav-ar">التقاء الساكنين</span><span class="nav-en">Two Sukoons</span></a>
@@ -746,6 +993,157 @@
     <div class="grammar-box">
         <p class="arabic-text">يَضْرِبُ الأُسْتَاذُ خَالِدٌ الطَّالِبَ الكَسْلَانَ فِي اللُّغَةِ العَرَبِيَّةِ</p>
         <p class="english-text">Teacher Khalid hits the lazy student in the Arabic language class</p>
+    </div>
+</section>
+
+<!-- Sentence Types Cloud Chart Section -->
+<section id="sentence-types" class="section">
+    <h2 class="section-title">أَنْوَاعُ الجُمْلَةِ فِي اللُّغَةِ العَرَبِيَّةِ - Types of Sentences in Arabic</h2>
+
+    <!-- Sentence Types Cloud Chart -->
+    <div class="sentence-cloud-container">
+        <h4 class="cloud-chart-title">خَرِيطَةُ أَنْوَاعِ الجُمْلَةِ - Sentence Types Cloud Chart</h4>
+
+        <div class="sentence-cloud">
+            <!-- Main Title Bubble -->
+            <div class="sentence-center">
+                <div class="sentence-main">أَنْوَاعُ الجُمْلَةِ</div>
+                <div class="sentence-main-sub">Types of Sentences</div>
+            </div>
+
+            <!-- Two Main Branches -->
+            <div class="sentence-branches">
+                <!-- Verbal Sentence Branch -->
+                <div class="sentence-branch verbal-branch">
+                    <div class="branch-header verbal-header">
+                        <div class="branch-title">الجُمْلَةُ الفِعْلِيَّةُ</div>
+                        <div class="branch-subtitle">Verbal Sentence</div>
+                    </div>
+                    <div class="branch-items">
+                        <div class="branch-item">
+                            <span class="item-ar">الفَاعِلُ</span>
+                            <span class="item-en">Subject/Doer</span>
+                        </div>
+                        <div class="branch-item">
+                            <span class="item-ar">المَفْعُولُ بِهِ</span>
+                            <span class="item-en">Direct Object</span>
+                        </div>
+                        <div class="branch-item highlight-item">
+                            <span class="item-ar">فِعْلٌ لَازِمٌ</span>
+                            <span class="item-en">Intransitive Verb</span>
+                        </div>
+                        <div class="branch-item highlight-item">
+                            <span class="item-ar">فِعْلٌ مُتَعَدٍّ</span>
+                            <span class="item-en">Transitive Verb</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nominal Sentence Branch -->
+                <div class="sentence-branch nominal-branch">
+                    <div class="branch-header nominal-header">
+                        <div class="branch-title">الجُمْلَةُ الاسْمِيَّةُ</div>
+                        <div class="branch-subtitle">Nominal Sentence</div>
+                    </div>
+                    <div class="branch-items">
+                        <div class="branch-item">
+                            <span class="item-ar">المُبْتَدَأُ</span>
+                            <span class="item-en">Subject</span>
+                        </div>
+                        <div class="branch-item">
+                            <span class="item-ar">الخَبَرُ</span>
+                            <span class="item-en">Predicate</span>
+                        </div>
+                        <div class="branch-sub-items">
+                            <div class="sub-item">
+                                <span class="sub-ar">خَبَرٌ مُفْرَدٌ</span>
+                                <span class="sub-en">Single Word</span>
+                            </div>
+                            <div class="sub-item">
+                                <span class="sub-ar">خَبَرٌ جُمْلَةٌ</span>
+                                <span class="sub-en">Sentence</span>
+                            </div>
+                            <div class="sub-item">
+                                <span class="sub-ar">خَبَرٌ شِبْهُ جُمْلَةٍ</span>
+                                <span class="sub-en">Semi-Sentence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explanation Section -->
+        <div class="sentence-explanation">
+            <h4>شَرْحٌ مُفَصَّلٌ - Detailed Explanation</h4>
+
+            <div class="explanation-columns">
+                <!-- Verbal Sentence Explanation -->
+                <div class="exp-column verbal-exp">
+                    <div class="exp-col-header verbal-header">
+                        <span class="exp-col-num">١</span>
+                        <span class="exp-col-title">الجُمْلَةُ الفِعْلِيَّةُ - Verbal Sentence</span>
+                    </div>
+                    <div class="exp-col-content">
+                        <p class="arabic-text">تَبْدَأُ بِفِعْلٍ وَتَتَكَوَّنُ مِنْ: فِعْلٍ + فَاعِلٍ (+ مَفْعُولٍ بِهِ إِنْ كَانَ الفِعْلُ مُتَعَدِّيًا)</p>
+                        <p class="english-text">Starts with a verb. Components: Verb + Subject (+ Object if verb is transitive)</p>
+                        <div class="exp-examples">
+                            <div class="exp-ex-item">
+                                <strong>فِعْلٌ لَازِمٌ:</strong> <span class="example-ar">خَرَجَ مُحَمَّدٌ</span>
+                                <span class="example-en">(Muhammad left) - No object needed</span>
+                            </div>
+                            <div class="exp-ex-item">
+                                <strong>فِعْلٌ مُتَعَدٍّ:</strong> <span class="example-ar">كَتَبَ الطَّالِبُ الدَّرْسَ</span>
+                                <span class="example-en">(The student wrote the lesson) - Object required</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nominal Sentence Explanation -->
+                <div class="exp-column nominal-exp">
+                    <div class="exp-col-header nominal-header">
+                        <span class="exp-col-num">٢</span>
+                        <span class="exp-col-title">الجُمْلَةُ الاسْمِيَّةُ - Nominal Sentence</span>
+                    </div>
+                    <div class="exp-col-content">
+                        <p class="arabic-text">تَبْدَأُ بِاسْمٍ وَتَتَكَوَّنُ مِنْ: مُبْتَدَأٍ + خَبَرٍ</p>
+                        <p class="english-text">Starts with a noun. Components: Subject (مُبْتَدَأ) + Predicate (خَبَر)</p>
+                        <div class="exp-examples">
+                            <div class="exp-ex-item">
+                                <strong>خَبَرٌ مُفْرَدٌ:</strong> <span class="example-ar">مُحَمَّدٌ طَالِبٌ</span>
+                                <span class="example-en">(Muhammad is a student) - Single word predicate</span>
+                            </div>
+                            <div class="exp-ex-item">
+                                <strong>خَبَرٌ جُمْلَةٌ:</strong> <span class="example-ar">الطَّالِبُ يَدْرُسُ</span>
+                                <span class="example-en">(The student is studying) - Sentence predicate</span>
+                            </div>
+                            <div class="exp-ex-item">
+                                <strong>خَبَرٌ شِبْهُ جُمْلَةٍ:</strong> <span class="example-ar">الكِتَابُ عَلَى المَكْتَبِ</span>
+                                <span class="example-en">(The book is on the desk) - Prepositional phrase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Differences Box -->
+        <div class="key-diff-box">
+            <div class="key-diff-title">الفَرْقُ الأَسَاسِيُّ - Key Difference</div>
+            <div class="key-diff-content">
+                <div class="diff-item">
+                    <span class="diff-label verbal-label">الجُمْلَةُ الفِعْلِيَّةُ</span>
+                    <span class="diff-arrow">←</span>
+                    <span class="diff-text">تَبْدَأُ بِـ<strong>فِعْلٍ</strong> (Starts with a VERB)</span>
+                </div>
+                <div class="diff-item">
+                    <span class="diff-label nominal-label">الجُمْلَةُ الاسْمِيَّةُ</span>
+                    <span class="diff-arrow">←</span>
+                    <span class="diff-text">تَبْدَأُ بِـ<strong>اسْمٍ</strong> (Starts with a NOUN)</span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
