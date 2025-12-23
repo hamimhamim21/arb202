@@ -465,7 +465,173 @@
             margin-bottom: 20px;
         }
 
+        /* Cloud Chart Styles */
+        .cloud-chart-container {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8eaf6 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 3px solid #3498db;
+        }
+        .cloud-chart-title {
+            text-align: center;
+            font-size: 28px;
+            color: #1a5276;
+            margin-bottom: 25px;
+        }
+        .cloud-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .cloud-center {
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            padding: 25px 40px;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(26, 82, 118, 0.4);
+        }
+        .cloud-main {
+            font-size: 42px;
+            color: white;
+            font-weight: bold;
+        }
+        .cloud-main-sub {
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+            font-family: Georgia, serif;
+        }
+        .cloud-branches {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .cloud-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .cloud-bubble {
+            padding: 20px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            min-width: 140px;
+        }
+        .cloud-bubble.green {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+        }
+        .cloud-bubble.blue {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            color: white;
+        }
+        .cloud-bubble.orange {
+            background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+            color: white;
+        }
+        .cloud-bubble.red {
+            background: linear-gradient(135deg, #e74c3c 0%, #ec7063 100%);
+            color: white;
+        }
+        .cloud-bubble.purple {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            color: white;
+        }
+        .cloud-letter {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .cloud-name {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        .cloud-english {
+            font-size: 14px;
+            font-family: Georgia, serif;
+            opacity: 0.9;
+        }
+        .cloud-rule {
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .cloud-explanation {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .cloud-explanation h4 {
+            font-size: 26px;
+            color: #1a5276;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #d4e6f1;
+            padding-bottom: 10px;
+        }
+        .exp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .exp-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #e0e0e0;
+        }
+        .exp-header {
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+        }
+        .exp-header.green { background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); }
+        .exp-header.blue { background: linear-gradient(135deg, #2980b9 0%, #3498db 100%); }
+        .exp-header.orange { background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%); }
+        .exp-header.red { background: linear-gradient(135deg, #e74c3c 0%, #ec7063 100%); }
+        .exp-header.purple { background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%); }
+        .exp-num {
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(255,255,255,0.3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .exp-title { font-size: 20px; }
+        .exp-content {
+            padding: 20px;
+            background: #fafafa;
+        }
+        .exp-example {
+            background: white;
+            padding: 12px 18px;
+            border-radius: 10px;
+            margin-top: 12px;
+            font-size: 20px;
+            border-right: 3px solid #3498db;
+        }
+
         /* Responsive */
+        @media (max-width: 768px) {
+            .cloud-branches { flex-direction: column; align-items: center; }
+            .cloud-bubble { min-width: 120px; }
+            .exp-grid { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 768px) {
             .arabic-large { font-size: 32px; }
             .arabic-medium { font-size: 26px; }
@@ -558,6 +724,92 @@
     <h2 class="section-title">أَنْوَاعُ الكَلِمَةِ فِي اللُّغَةِ العَرَبِيَّةِ</h2>
     <p class="english-text">Types of Words in the Arabic Language</p>
 
+    <!-- Word Types Cloud Chart -->
+    <div class="cloud-chart-container">
+        <h4 class="cloud-chart-title">خَرِيطَةُ أَنْوَاعِ الكَلِمَةِ - Word Types Cloud Chart</h4>
+
+        <div class="cloud-chart">
+            <div class="cloud-center">
+                <div class="cloud-main">الكَلِمَةُ</div>
+                <div class="cloud-main-sub">The Word</div>
+            </div>
+
+            <div class="cloud-branches">
+                <div class="cloud-item">
+                    <div class="cloud-bubble green">
+                        <div class="cloud-letter">اِسْمٌ</div>
+                        <div class="cloud-english">Noun</div>
+                    </div>
+                    <div class="cloud-rule">كِتَابٌ، مُحَمَّدٌ، جَمِيلٌ</div>
+                </div>
+
+                <div class="cloud-item">
+                    <div class="cloud-bubble blue">
+                        <div class="cloud-letter">فِعْلٌ</div>
+                        <div class="cloud-english">Verb</div>
+                    </div>
+                    <div class="cloud-rule">كَتَبَ، يَكْتُبُ، اُكْتُبْ</div>
+                </div>
+
+                <div class="cloud-item">
+                    <div class="cloud-bubble orange">
+                        <div class="cloud-letter">حَرْفٌ</div>
+                        <div class="cloud-english">Particle</div>
+                    </div>
+                    <div class="cloud-rule">مِنْ، إِلَى، فِي، عَلَى</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explanation -->
+        <div class="cloud-explanation">
+            <h4>شَرْحٌ مُفَصَّلٌ - Detailed Explanation</h4>
+            <div class="exp-grid">
+                <div class="exp-item">
+                    <div class="exp-header green">
+                        <span class="exp-num">١</span>
+                        <span class="exp-title">الاِسْمُ - Noun</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">كَلِمَةٌ تَدُلُّ عَلَى مَعْنًى بِذَاتِهَا بِدُونِ زَمَنٍ</p>
+                        <p class="english-text">A word that indicates meaning by itself without time</p>
+                        <div class="exp-example">
+                            <strong>أَمْثِلَةٌ:</strong> كِتَابٌ، قَلَمٌ، طَالِبٌ، مُحَمَّدٌ، جَمِيلٌ
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header blue">
+                        <span class="exp-num">٢</span>
+                        <span class="exp-title">الفِعْلُ - Verb</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">كَلِمَةٌ تَدُلُّ عَلَى حَدَثٍ مُقْتَرِنٍ بِزَمَنٍ</p>
+                        <p class="english-text">A word that indicates an action connected with time</p>
+                        <div class="exp-example">
+                            <strong>أَمْثِلَةٌ:</strong> كَتَبَ (past), يَكْتُبُ (present), اُكْتُبْ (command)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header orange">
+                        <span class="exp-num">٣</span>
+                        <span class="exp-title">الحَرْفُ - Particle</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">كَلِمَةٌ لَا تَدُلُّ عَلَى مَعْنًى إِلَّا مَعَ غَيْرِهَا</p>
+                        <p class="english-text">A word that has meaning only with other words</p>
+                        <div class="exp-example">
+                            <strong>أَمْثِلَةٌ:</strong> مِنْ، إِلَى، فِي، عَلَى، وَ، ثُمَّ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 30px 0;">
         <div class="item-card" style="flex: 1; min-width: 250px; text-align: center; background: linear-gradient(135deg, #d5f4e6, #a9dfbf);">
             <div class="arabic-large">اِسْمٌ</div>
@@ -580,6 +832,96 @@
 <!-- Sentence Types Section -->
 <section id="sentence-types" class="section">
     <h2 class="section-title">أَنْوَاعُ الجُمْلَةِ - Types of Sentences</h2>
+
+    <!-- Sentence Types Cloud Chart -->
+    <div class="cloud-chart-container">
+        <h4 class="cloud-chart-title">خَرِيطَةُ أَنْوَاعِ الجُمْلَةِ - Sentence Types Cloud Chart</h4>
+
+        <div class="cloud-chart">
+            <div class="cloud-center">
+                <div class="cloud-main">الجُمْلَةُ</div>
+                <div class="cloud-main-sub">The Sentence</div>
+            </div>
+
+            <div class="cloud-branches">
+                <!-- Nominal Sentence Branch -->
+                <div class="cloud-item">
+                    <div class="cloud-bubble green" style="min-width: 180px;">
+                        <div class="cloud-letter">الجُمْلَةُ الاِسْمِيَّةُ</div>
+                        <div class="cloud-english">Nominal Sentence</div>
+                    </div>
+                    <div class="cloud-rule">تَبْدَأُ بِاسْمٍ<br><span style="font-size: 12px;">Starts with a noun</span></div>
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <div style="background: #d5f4e6; padding: 10px 15px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 20px; color: #1e8449;">مُبْتَدَأٌ</div>
+                            <div style="font-size: 12px; color: #666;">Subject</div>
+                        </div>
+                        <div style="font-size: 24px; color: #27ae60;">+</div>
+                        <div style="background: #d5f4e6; padding: 10px 15px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 20px; color: #1e8449;">خَبَرٌ</div>
+                            <div style="font-size: 12px; color: #666;">Predicate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verbal Sentence Branch -->
+                <div class="cloud-item">
+                    <div class="cloud-bubble blue" style="min-width: 180px;">
+                        <div class="cloud-letter">الجُمْلَةُ الفِعْلِيَّةُ</div>
+                        <div class="cloud-english">Verbal Sentence</div>
+                    </div>
+                    <div class="cloud-rule">تَبْدَأُ بِفِعْلٍ<br><span style="font-size: 12px;">Starts with a verb</span></div>
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <div style="background: #d4e6f1; padding: 10px 15px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 20px; color: #1a5276;">فِعْلٌ</div>
+                            <div style="font-size: 12px; color: #666;">Verb</div>
+                        </div>
+                        <div style="font-size: 24px; color: #2980b9;">+</div>
+                        <div style="background: #d4e6f1; padding: 10px 15px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 20px; color: #1a5276;">فَاعِلٌ</div>
+                            <div style="font-size: 12px; color: #666;">Subject/Doer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explanation -->
+        <div class="cloud-explanation">
+            <h4>شَرْحٌ مُفَصَّلٌ - Detailed Explanation</h4>
+            <div class="exp-grid">
+                <div class="exp-item">
+                    <div class="exp-header green">
+                        <span class="exp-num">١</span>
+                        <span class="exp-title">الجُمْلَةُ الاِسْمِيَّةُ</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">جُمْلَةٌ تَبْدَأُ بِاسْمٍ وَتَتَكَوَّنُ مِنْ مُبْتَدَأٍ وَخَبَرٍ</p>
+                        <p class="english-text">A sentence that starts with a noun, consisting of Subject + Predicate</p>
+                        <div class="exp-example">
+                            <strong>مِثَالٌ:</strong> <span style="color: #27ae60; font-weight: bold;">الكِتَابُ</span> (مُبْتَدَأٌ) <span style="color: #27ae60; font-weight: bold;">جَدِيدٌ</span> (خَبَرٌ)
+                            <br><span style="font-size: 16px; color: #666;">The book is new</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header blue">
+                        <span class="exp-num">٢</span>
+                        <span class="exp-title">الجُمْلَةُ الفِعْلِيَّةُ</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">جُمْلَةٌ تَبْدَأُ بِفِعْلٍ وَتَتَكَوَّنُ مِنْ فِعْلٍ وَفَاعِلٍ</p>
+                        <p class="english-text">A sentence that starts with a verb, consisting of Verb + Subject</p>
+                        <div class="exp-example">
+                            <strong>مِثَالٌ:</strong> <span style="color: #2980b9; font-weight: bold;">خَرَجَ</span> (فِعْلٌ) <span style="color: #2980b9; font-weight: bold;">الفَلَّاحُ</span> (فَاعِلٌ) مِنَ البَيْتِ
+                            <br><span style="font-size: 16px; color: #666;">The farmer went out from the house</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div style="display: flex; flex-wrap: wrap; gap: 30px; margin: 30px 0;">
         <!-- Nominal Sentence -->
@@ -635,6 +977,95 @@
 <!-- Verb Types Section -->
 <section id="verb-types" class="section">
     <h2 class="section-title">أَنْوَاعُ الفِعْلِ - Types of Verbs</h2>
+
+    <!-- Verb Types Cloud Chart -->
+    <div class="cloud-chart-container">
+        <h4 class="cloud-chart-title">خَرِيطَةُ أَنْوَاعِ الفِعْلِ - Verb Types Cloud Chart</h4>
+
+        <div class="cloud-chart">
+            <div class="cloud-center">
+                <div class="cloud-main">الفِعْلُ</div>
+                <div class="cloud-main-sub">The Verb</div>
+            </div>
+
+            <div class="cloud-branches">
+                <div class="cloud-item">
+                    <div class="cloud-bubble orange" style="min-width: 160px;">
+                        <div class="cloud-letter">المَاضِي</div>
+                        <div class="cloud-english">Past Tense</div>
+                    </div>
+                    <div class="cloud-rule">حَدَثٌ وَقَعَ وَانْتَهَى<br><span style="font-size: 12px;">Action completed in the past</span></div>
+                </div>
+
+                <div class="cloud-item">
+                    <div class="cloud-bubble blue" style="min-width: 160px;">
+                        <div class="cloud-letter">المُضَارِعُ</div>
+                        <div class="cloud-english">Present Tense</div>
+                    </div>
+                    <div class="cloud-rule">حَدَثٌ يَحْدُثُ الآنَ<br><span style="font-size: 12px;">Action happening now/future</span></div>
+                </div>
+
+                <div class="cloud-item">
+                    <div class="cloud-bubble red" style="min-width: 160px;">
+                        <div class="cloud-letter">الأَمْرُ</div>
+                        <div class="cloud-english">Command</div>
+                    </div>
+                    <div class="cloud-rule">طَلَبُ فِعْلِ شَيْءٍ<br><span style="font-size: 12px;">Requesting an action</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explanation -->
+        <div class="cloud-explanation">
+            <h4>شَرْحٌ مُفَصَّلٌ - Detailed Explanation</h4>
+            <div class="exp-grid">
+                <div class="exp-item">
+                    <div class="exp-header orange">
+                        <span class="exp-num">١</span>
+                        <span class="exp-title">الفِعْلُ المَاضِي</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">يَدُلُّ عَلَى حَدَثٍ وَقَعَ وَانْتَهَى فِي الزَّمَنِ المَاضِي</p>
+                        <p class="english-text">Indicates an action that occurred and finished in the past</p>
+                        <div class="exp-example">
+                            <strong>أَمْثِلَةٌ:</strong> كَتَبَ، ذَهَبَ، خَرَجَ، أَكَلَ
+                            <br><span style="font-size: 16px; color: #666;">مَبْنِيٌّ عَلَى الفَتْحِ (Built on fatha)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header blue">
+                        <span class="exp-num">٢</span>
+                        <span class="exp-title">الفِعْلُ المُضَارِعُ</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">يَدُلُّ عَلَى حَدَثٍ يَحْدُثُ فِي الحَاضِرِ أَوِ المُسْتَقْبَلِ</p>
+                        <p class="english-text">Indicates an action happening in present or future</p>
+                        <div class="exp-example">
+                            <strong>أَمْثِلَةٌ:</strong> يَكْتُبُ، يَذْهَبُ، يَخْرُجُ، يَأْكُلُ
+                            <br><span style="font-size: 16px; color: #666;">يَبْدَأُ بِـ: أَنَيْتُ (أ، ن، ي، ت)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header red">
+                        <span class="exp-num">٣</span>
+                        <span class="exp-title">فِعْلُ الأَمْرِ</span>
+                    </div>
+                    <div class="exp-content">
+                        <p class="arabic-text">يُسْتَخْدَمُ لِطَلَبِ فِعْلِ شَيْءٍ مِنَ المُخَاطَبِ</p>
+                        <p class="english-text">Used to request/command an action from the addressee</p>
+                        <div class="exp-example">
+                            <strong>أَمْثِلَةٌ:</strong> اُكْتُبْ، اِذْهَبْ، اُخْرُجْ، كُلْ
+                            <br><span style="font-size: 16px; color: #666;">مَبْنِيٌّ عَلَى السُّكُونِ (Built on sukoon)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 30px 0;">
         <!-- Past Tense -->
