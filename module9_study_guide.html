@@ -160,7 +160,132 @@
             .section-title { font-size: 28px; }
             table { font-size: 18px; }
         }
-            .home-btn {
+        /* Interactive Exercise Styles */
+        .exercise-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .exercise-section-title {
+            font-size: 36px;
+            color: #2e7d32;
+            border-bottom: 4px solid #66bb6a;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .exercise-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .exercise-category-title {
+            font-size: 28px;
+            color: #1b5e20;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c8e6c9;
+        }
+        .exercise-item {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .exercise-question {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .exercise-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 15px 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background: white;
+            font-size: 22px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            text-align: right;
+            transition: all 0.3s;
+        }
+        .option-btn:hover:not(:disabled) {
+            border-color: #66bb6a;
+            background: #e8f5e9;
+        }
+        .option-btn.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+            color: #1e8449;
+        }
+        .option-btn.incorrect {
+            border-color: #e74c3c;
+            background: #fadbd8;
+            color: #c0392b;
+        }
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .explanation.show {
+            display: block;
+        }
+        .explanation.correct-exp {
+            background: linear-gradient(135deg, #d5f4e6 0%, #a9dfbf 100%);
+            border-right: 5px solid #27ae60;
+        }
+        .explanation.incorrect-exp {
+            background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%);
+            border-right: 5px solid #e74c3c;
+        }
+        .explanation-title {
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .reset-btn {
+            background: linear-gradient(135deg, #2e7d32 0%, #66bb6a 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4);
+        }
+        .score-display {
+            text-align: center;
+            font-size: 24px;
+            color: #1b5e20;
+            padding: 15px;
+            background: #e8f5e9;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .home-btn {
             position: fixed;
             top: 20px;
             left: 20px;
@@ -207,6 +332,7 @@
         <a href="#irab"><span class="nav-ar">الإعراب</span><span class="nav-en">I'rab Practice</span></a>
         <a href="#quran"><span class="nav-ar">أمثلة قرآنية</span><span class="nav-en">Quranic Examples</span></a>
         <a href="#dialogue"><span class="nav-ar">الحوار</span><span class="nav-en">Dialogue</span></a>
+        <a href="#exercises"><span class="nav-ar">التمارين</span><span class="nav-en">Exercises</span></a>
         <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
     </div>
 </nav>
@@ -778,6 +904,429 @@
         <p class="english-text">My handwriting is beautiful and your handwriting is more beautiful</p>
     </div>
 </section>
+
+<!-- Exercises Section -->
+<section id="exercises" class="exercise-section">
+    <h2 class="exercise-section-title">تَمَارِينُ الوَحْدَةِ التَّاسِعَةِ - Module 9 Exercises</h2>
+
+    <div class="score-display" id="scoreDisplay">
+        أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions
+    </div>
+
+    <!-- Category 1: تصريف غَسَلَ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">١. تَصْرِيفُ الفِعْلِ غَسَلَ - Verb Conjugation</h3>
+
+        <div class="exercise-item" id="q1">
+            <p class="exercise-question">أَكْمِلِ الفَرَاغَ: هُوَ _____ المَلَابِسَ (المضارع)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete the blank: He _____ the clothes (present tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q1', 0, 0)">يَغْسِلُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 1, 0)">تَغْسِلُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 2, 0)">أَغْسِلُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 3, 0)">يَغْسِلُونَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: يَغْسِلُ</p>
+                <p>الضَّمِيرُ "هُوَ" لِلْمُذَكَّرِ الغَائِبِ المُفْرَدِ، فَيَكُونُ المُضَارِعُ "يَغْسِلُ" بِحَرْفِ المُضَارَعَةِ "يـ".</p>
+                <p class="english-text">"هُوَ" (he) is third person masculine singular, so the present tense is "يَغْسِلُ" with prefix يـ.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q2">
+            <p class="exercise-question">أَكْمِلِ الفَرَاغَ: البَنَاتُ _____ المَنَادِيلَ (المضارع)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete the blank: The girls _____ the handkerchiefs (present tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q2', 0, 2)">تَغْسِلُ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 1, 2)">يَغْسِلُونَ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 2, 2)">يَغْسِلْنَ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 3, 2)">نَغْسِلُ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: يَغْسِلْنَ</p>
+                <p>"البَنَاتُ" جَمْعُ مُؤَنَّثٍ، فَيَكُونُ المُضَارِعُ "يَغْسِلْنَ" مَعَ نُونِ النِّسْوَةِ.</p>
+                <p class="english-text">"البَنَاتُ" is feminine plural, so the verb takes نون النسوة: "يَغْسِلْنَ".</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q3">
+            <p class="exercise-question">مَا هُوَ فِعْلُ الأَمْرِ مِنْ "غَسَلَ" لِلضَّمِيرِ "أَنْتِ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the command form of "غَسَلَ" (to wash) for "أَنْتِ" (you - fem. sing.)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q3', 0, 1)">اِغْسِلْ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 1, 1)">اِغْسِلِي</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 2, 1)">اِغْسِلُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 3, 1)">اِغْسِلَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: اِغْسِلِي</p>
+                <p>فِعْلُ الأَمْرِ لِلْمُخَاطَبَةِ المُفْرَدَةِ (أَنْتِ) يَكُونُ "اِغْسِلِي" مَعَ يَاءِ المُخَاطَبَةِ.</p>
+                <p class="english-text">The command for feminine singular "you" (أَنْتِ) is "اِغْسِلِي" with ياء المخاطبة.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q4">
+            <p class="exercise-question">أَكْمِلِ: نَحْنُ _____ أَيْدِيَنَا قَبْلَ الأَكْلِ (الماضي)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: We _____ our hands before eating (past tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q4', 0, 2)">غَسَلْتُ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 1, 2)">غَسَلُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 2, 2)">غَسَلْنَا</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 3, 2)">غَسَلْتُمْ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: غَسَلْنَا</p>
+                <p>الضَّمِيرُ "نَحْنُ" لِلْمُتَكَلِّمِ الجَمْعِ، فَيَكُونُ الفِعْلُ المَاضِي "غَسَلْنَا" مَعَ "نَا" الفَاعِلِينَ.</p>
+                <p class="english-text">"نَحْنُ" (we) uses "نَا" الفاعلين, making it "غَسَلْنَا".</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 2: أنواع الأعداد -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٢. أَنْوَاعُ الأَعْدَادِ - Types of Numbers</h3>
+
+        <div class="exercise-item" id="q5">
+            <p class="exercise-question">مَا هِيَ الأَعْدَادُ المُفْرَدَةُ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What are the "one-word numbers" (الأَعْدَادُ المُفْرَدَةُ)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q5', 0, 0)">الأَعْدَادُ مِنْ ١ إِلَى ١٠</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 1, 0)">الأَعْدَادُ مِنْ ١١ إِلَى ١٩</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 2, 0)">الأَعْدَادُ ٢٠، ٣٠، ٤٠...</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 3, 0)">الأَعْدَادُ مِنْ ١٠٠ فَأَكْثَرَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: الأَعْدَادُ مِنْ ١ إِلَى ١٠</p>
+                <p>الأَعْدَادُ المُفْرَدَةُ (One-word numbers) هِيَ الأَعْدَادُ مِنْ ١ إِلَى ١٠، لِأَنَّ كُلَّ عَدَدٍ مِنْهَا كَلِمَةٌ وَاحِدَةٌ.</p>
+                <p class="english-text">One-word numbers are 1-10, because each is a single word.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q6">
+            <p class="exercise-question">لِمَاذَا تُسَمَّى أَعْدَادُ ٢٠-٩٠ بِـ "أَلْفَاظِ العُقُودِ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Why are the numbers 20-90 called "أَلْفَاظُ العُقُودِ" (decade numbers)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q6', 0, 1)">لِأَنَّهَا أَعْدَادٌ كَبِيرَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 1, 1)">لِأَنَّ "العَقْد" مَعْنَاهُ عَشْرُ سَنَوَاتٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 2, 1)">لِأَنَّهَا أَعْدَادٌ مُرَكَّبَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 3, 1)">لِأَنَّهَا تَنْتَهِي بِالنُّونِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِأَنَّ "العَقْد" مَعْنَاهُ عَشْرُ سَنَوَاتٍ</p>
+                <p>تُسَمَّى "أَلْفَاظَ العُقُودِ" (Decade numbers) لِأَنَّ "العَقْد" فِي اللُّغَةِ العَرَبِيَّةِ يَعْنِي عَشْرَ سَنَوَاتٍ.</p>
+                <p class="english-text">Called "Decade numbers" because "العَقْد" means ten years in Arabic.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q7">
+            <p class="exercise-question">مَا هِيَ الأَعْدَادُ المُرَكَّبَةُ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What are the "compound numbers" (الأَعْدَادُ المُرَكَّبَةُ)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q7', 0, 1)">الأَعْدَادُ مِنْ ١ إِلَى ١٠</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 1, 1)">الأَعْدَادُ مِنْ ١١ إِلَى ١٩</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 2, 1)">الأَعْدَادُ ٢٠، ٣٠، ٤٠...</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 3, 1)">مِائَةٌ وَأَلْفٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: الأَعْدَادُ مِنْ ١١ إِلَى ١٩</p>
+                <p>الأَعْدَادُ المُرَكَّبَةُ (Compound numbers) هِيَ مِنْ ١١ إِلَى ١٩، لِأَنَّهَا تَتَكَوَّنُ مِنْ جُزْأَيْنِ (مِثْلُ: أَحَدَ عَشَرَ).</p>
+                <p class="english-text">Compound numbers are 11-19, because they consist of two parts (like: أَحَدَ عَشَرَ).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 3: الأعداد 1-10 -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٣. الأَعْدَادُ مِنْ ١ إِلَى ١٠ - Numbers 1-10</h3>
+
+        <div class="exercise-item" id="q8">
+            <p class="exercise-question">كَيْفَ يُعْرَبُ العَدَدَانِ "وَاحِد" وَ"اثْنَان"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">How are the numbers "one" and "two" parsed grammatically?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q8', 0, 0)">صِفَةٌ تُوَافِقُ المَعْدُودَ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 1, 0)">مُضَافٌ إِلَيْهِ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 2, 0)">تَمْيِيزٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 3, 0)">حَالٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: صِفَةٌ تُوَافِقُ المَعْدُودَ</p>
+                <p>العَدَدَانِ (١) وَ(٢) يُعْرَبَانِ صِفَةً وَيُوَافِقَانِ المَعْدُودَ فِي التَّذْكِيرِ وَالتَّأْنِيثِ: كِتَابٌ وَاحِدٌ، طَالِبَةٌ وَاحِدَةٌ.</p>
+                <p class="english-text">Numbers 1 and 2 are parsed as adjectives and agree with the counted noun in gender.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q9">
+            <p class="exercise-question">مَا قَاعِدَةُ الأَعْدَادِ مِنْ ٣ إِلَى ٩ مَعَ المَعْدُودِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the rule for numbers 3 to 9 with the counted noun?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q9', 0, 1)">تُوَافِقُ المَعْدُودَ فِي الجِنْسِ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 1, 1)">تُخَالِفُ المَعْدُودَ فِي الجِنْسِ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 2, 1)">تَكُونُ مُذَكَّرَةً دَائِمًا</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 3, 1)">تَكُونُ مُؤَنَّثَةً دَائِمًا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: تُخَالِفُ المَعْدُودَ فِي الجِنْسِ</p>
+                <p>الأَعْدَادُ ٣-٩ تُخَالِفُ المَعْدُودَ: إِذَا كَانَ المَعْدُودُ مُذَكَّرًا تَكُونُ بِالتَّاءِ (ثَلَاثَةُ كُتُبٍ)، وَإِذَا كَانَ مُؤَنَّثًا تَكُونُ بِدُونِ تَاءٍ (ثَلَاثُ بَنَاتٍ).</p>
+                <p class="english-text">Numbers 3-9 DISAGREE with the counted noun in gender.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q10">
+            <p class="exercise-question">كَيْفَ يَكُونُ تَمْيِيزُ الأَعْدَادِ مِنْ ٣ إِلَى ١٠؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What form does the counted noun take for numbers 3 to 10?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q10', 0, 0)">نَكِرَةٌ جَمْعٌ مَجْرُورٌ (مُضَافٌ إِلَيْهِ)</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 1, 0)">نَكِرَةٌ مُفْرَدٌ مَنْصُوبٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 2, 0)">مَعْرِفَةٌ جَمْعٌ مَرْفُوعٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 3, 0)">نَكِرَةٌ مُثَنَّى مَجْرُورٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: نَكِرَةٌ جَمْعٌ مَجْرُورٌ (مُضَافٌ إِلَيْهِ)</p>
+                <p>تَمْيِيزُ الأَعْدَادِ ٣-١٠ يَكُونُ نَكِرَةً جَمْعًا مَجْرُورًا عَلَى أَنَّهُ مُضَافٌ إِلَيْهِ: خَمْسَةُ كُتُبٍ، سِتُّ طَالِبَاتٍ.</p>
+                <p class="english-text">The counted noun for 3-10 is indefinite, plural, and genitive (as مُضَاف إِلَيْه).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 4: الأعداد 11-19 -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٤. الأَعْدَادُ مِنْ ١١ إِلَى ١٩ - Numbers 11-19</h3>
+
+        <div class="exercise-item" id="q11">
+            <p class="exercise-question">كَيْفَ تُعْرَبُ الأَعْدَادُ مِنْ ١١ إِلَى ١٩؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">How are the numbers 11 to 19 parsed grammatically?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q11', 0, 0)">مَبْنِيَّةٌ عَلَى فَتْحِ الجُزْأَيْنِ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 1, 0)">مَبْنِيَّةٌ عَلَى الضَّمِّ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 2, 0)">مُعْرَبَةٌ بِالحَرَكَاتِ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 3, 0)">مُعْرَبَةٌ بِالحُرُوفِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مَبْنِيَّةٌ عَلَى فَتْحِ الجُزْأَيْنِ</p>
+                <p>الأَعْدَادُ ١١-١٩ مَبْنِيَّةٌ عَلَى فَتْحِ الجُزْأَيْنِ (أَحَدَ عَشَرَ) فِي مَحَلِّ رَفْعٍ أَوْ نَصْبٍ أَوْ جَرٍّ، مَا عَدَا العَدَدَ ١٢.</p>
+                <p class="english-text">Numbers 11-19 are built on fatha of both parts, except for 12 which changes.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q12">
+            <p class="exercise-question">كَيْفَ يَكُونُ تَمْيِيزُ الأَعْدَادِ مِنْ ١١ إِلَى ١٩؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What form does the counted noun take for numbers 11 to 19?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q12', 0, 1)">نَكِرَةٌ جَمْعٌ مَجْرُورٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 1, 1)">نَكِرَةٌ مُفْرَدٌ مَنْصُوبٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 2, 1)">مَعْرِفَةٌ مُفْرَدٌ مَرْفُوعٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 3, 1)">نَكِرَةٌ مُثَنَّى مَنْصُوبٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: نَكِرَةٌ مُفْرَدٌ مَنْصُوبٌ</p>
+                <p>تَمْيِيزُ الأَعْدَادِ ١١-١٩ يَكُونُ نَكِرَةً مُفْرَدًا مَنْصُوبًا: أَحَدَ عَشَرَ كِتَابًا، اثْنَتَا عَشْرَةَ طَالِبَةً.</p>
+                <p class="english-text">The counted noun for 11-19 is indefinite, singular, and accusative (تَمْيِيز).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q13">
+            <p class="exercise-question">كَيْفَ نَقُولُ "سِتَّةَ عَشَرَ سُورَةً" لِلْمُؤَنَّثِ (سُورَة)؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">How do we say "sixteen surahs" for the feminine noun (سُورَة)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q13', 0, 1)">سِتَّةَ عَشَرَ سُورَةً</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 1, 1)">سِتَّ عَشْرَةَ سُورَةً</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 2, 1)">سِتَّةَ عَشْرَةَ سُورَةً</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 3, 1)">سِتَّ عَشَرَ سُورَةً</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: سِتَّ عَشْرَةَ سُورَةً</p>
+                <p>"سُورَة" مُؤَنَّثٌ: الجُزْءُ الأَوَّلُ يُخَالِفُ (سِتَّ بِدُونِ تَاءٍ)، وَالجُزْءُ الثَّانِي يُوَافِقُ (عَشْرَةَ بِالتَّاءِ).</p>
+                <p class="english-text">"سُورَة" is feminine: first part disagrees (سِتَّ without ة), second part agrees (عَشْرَةَ with ة).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q14">
+            <p class="exercise-question">مَا الفَرْقُ فِي إِعْرَابِ العَدَدِ ١٢ عَنْ بَاقِي الأَعْدَادِ المُرَكَّبَةِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the difference in parsing the number 12 from other compound numbers?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q14', 0, 0)">الجُزْءُ الأَوَّلُ (اثْنَا/اثْنَيْ) يَتَغَيَّرُ حَسَبَ الإِعْرَابِ</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 1, 0)">الجُزْءُ الثَّانِي يَتَغَيَّرُ</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 2, 0)">لَا فَرْقَ بَيْنَهُمَا</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 3, 0)">يَكُونُ مَبْنِيًّا عَلَى الضَّمِّ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: الجُزْءُ الأَوَّلُ (اثْنَا/اثْنَيْ) يَتَغَيَّرُ حَسَبَ الإِعْرَابِ</p>
+                <p>العَدَدُ ١٢ يَتَغَيَّرُ جُزْؤُهُ الأَوَّلُ: "اثْنَا" لِلرَّفْعِ، "اثْنَيْ" لِلنَّصْبِ وَالجَرِّ (كَالمُثَنَّى).</p>
+                <p class="english-text">Number 12 changes its first part: "اثْنَا" for nominative, "اثْنَيْ" for accusative/genitive (like dual).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 5: ألفاظ العقود -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٥. أَلْفَاظُ العُقُودِ (٢٠-٩٠) - Decades Numbers</h3>
+
+        <div class="exercise-item" id="q15">
+            <p class="exercise-question">كَيْفَ تُعْرَبُ أَلْفَاظُ العُقُودِ (٢٠-٩٠)؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">How are the decade numbers (20-90) parsed grammatically?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q15', 0, 0)">تُعْرَبُ إِعْرَابَ جَمْعِ المُذَكَّرِ السَّالِمِ (وَاو لِلرَّفْعِ، يَاء لِلنَّصْبِ وَالجَرِّ)</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 1, 0)">مَبْنِيَّةٌ عَلَى الفَتْحِ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 2, 0)">مُعْرَبَةٌ بِالحَرَكَاتِ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 3, 0)">تُعْرَبُ إِعْرَابَ المُثَنَّى</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: تُعْرَبُ إِعْرَابَ جَمْعِ المُذَكَّرِ السَّالِمِ (وَاو لِلرَّفْعِ، يَاء لِلنَّصْبِ وَالجَرِّ)</p>
+                <p>أَلْفَاظُ العُقُودِ مُلْحَقَةٌ بِجَمْعِ المُذَكَّرِ السَّالِمِ: عِشْرُونَ (رَفْع)، عِشْرِينَ (نَصْب/جَرّ).</p>
+                <p class="english-text">Decades are attached to sound masculine plural: واو for nominative, ياء for accusative/genitive.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q16">
+            <p class="exercise-question">أَكْمِلِ الفَرَاغَ: قَرَأْتُ _____ كِتَابًا (٣٠)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete the blank: I read _____ books (30)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q16', 0, 1)">ثَلَاثُونَ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 1, 1)">ثَلَاثِينَ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 2, 1)">ثَلَاثِينِ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 3, 1)">ثَلَاثُونُ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: ثَلَاثِينَ</p>
+                <p>"ثَلَاثِينَ" مَفْعُولٌ بِهِ مَنْصُوبٌ، وَعَلَامَةُ نَصْبِهِ الْيَاءُ لِأَنَّهُ مُلْحَقٌ بِجَمْعِ المُذَكَّرِ السَّالِمِ.</p>
+                <p class="english-text">"ثَلَاثِينَ" is a direct object (accusative), and its sign is ياء because it follows the sound masculine plural pattern.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q17">
+            <p class="exercise-question">كَيْفَ يَكُونُ تَمْيِيزُ أَلْفَاظِ العُقُودِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What form does the counted noun take for decade numbers?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q17', 0, 1)">نَكِرَةٌ جَمْعٌ مَجْرُورٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 1, 1)">نَكِرَةٌ مُفْرَدٌ مَنْصُوبٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 2, 1)">مَعْرِفَةٌ جَمْعٌ مَرْفُوعٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 3, 1)">نَكِرَةٌ مُثَنَّى مَجْرُورٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: نَكِرَةٌ مُفْرَدٌ مَنْصُوبٌ</p>
+                <p>تَمْيِيزُ أَلْفَاظِ العُقُودِ (٢٠-٩٠) يَكُونُ نَكِرَةً مُفْرَدًا مَنْصُوبًا: عِشْرُونَ طَالِبًا، ثَلَاثُونَ سَيَّارَةً.</p>
+                <p class="english-text">The counted noun for decades (20-90) is indefinite, singular, and accusative.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 6: الإعراب والتطبيق -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٦. الإِعْرَابُ وَالتَّطْبِيقُ - I'rab & Application</h3>
+
+        <div class="exercise-item" id="q18">
+            <p class="exercise-question">مَا إِعْرَابُ "عِشْرُونَ" فِي: "هَذِهِ عِشْرُونَ سَيَّارَةً"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the grammatical case of "عِشْرُونَ" in: "These are twenty cars"?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q18', 0, 0)">خَبَرٌ مَرْفُوعٌ بِالوَاوِ</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 1, 0)">مُبْتَدَأٌ مَرْفُوعٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 2, 0)">مَفْعُولٌ بِهِ مَنْصُوبٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 3, 0)">فَاعِلٌ مَرْفُوعٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: خَبَرٌ مَرْفُوعٌ بِالوَاوِ</p>
+                <p>"هَذِهِ" مُبْتَدَأٌ، وَ"عِشْرُونَ" خَبَرٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الوَاوُ لِأَنَّهُ مُلْحَقٌ بِجَمْعِ المُذَكَّرِ السَّالِمِ.</p>
+                <p class="english-text">"هَذِهِ" is the subject, and "عِشْرُونَ" is the predicate (nominative with واو).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q19">
+            <p class="exercise-question">مَا إِعْرَابُ "سَيَّارَةً" فِي: "هَذِهِ عِشْرُونَ سَيَّارَةً"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the grammatical case of "سَيَّارَةً" in: "These are twenty cars"?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q19', 0, 1)">مُضَافٌ إِلَيْهِ مَجْرُورٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 1, 1)">تَمْيِيزٌ مَنْصُوبٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 2, 1)">مَفْعُولٌ بِهِ مَنْصُوبٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 3, 1)">حَالٌ مَنْصُوبٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: تَمْيِيزٌ مَنْصُوبٌ</p>
+                <p>"سَيَّارَةً" تَمْيِيزٌ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ (تَمْيِيزُ أَلْفَاظِ العُقُودِ يَكُونُ مُفْرَدًا مَنْصُوبًا).</p>
+                <p class="english-text">"سَيَّارَةً" is تَمْيِيز (specifier), accusative with apparent fatha.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q20">
+            <p class="exercise-question">أَيُّ الجُمَلِ التَّالِيَةِ صَحِيحَةٌ نَحْوِيًّا؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Which of the following sentences is grammatically correct?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q20', 0, 2)">قَرَأْتُ أَرْبَعَةُ كُتُبٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 1, 2)">قَرَأْتُ أَرْبَعَ كُتُبًا</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 2, 2)">قَرَأْتُ أَرْبَعَةَ كُتُبٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 3, 2)">قَرَأْتُ أَرْبَعَةً كِتَابًا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: قَرَأْتُ أَرْبَعَةَ كُتُبٍ</p>
+                <p>"كُتُب" مُذَكَّرٌ فَالعَدَدُ يُخَالِفُ (أَرْبَعَةَ بِالتَّاءِ)، وَهُوَ مَنْصُوبٌ بِالفَتْحَةِ، وَ"كُتُبٍ" مُضَافٌ إِلَيْهِ مَجْرُورٌ جَمْعٌ.</p>
+                <p class="english-text">"كُتُب" is masculine, so the number disagrees (أَرْبَعَةَ with ة). The counted noun is plural genitive.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="reset-btn" onclick="resetAllQuestions()">إِعَادَةُ التَّمَارِينِ - Reset All Exercises</button>
+    </div>
+</section>
+
+<script>
+let score = 0;
+let totalAnswered = 0;
+const totalQuestions = 20;
+
+function checkAnswer(questionId, selectedOption, correctOption) {
+    const questionDiv = document.getElementById(questionId);
+    const options = questionDiv.querySelectorAll('.option-btn');
+    const explanation = questionDiv.querySelector('.explanation');
+
+    options.forEach((btn, index) => {
+        btn.disabled = true;
+        if (index === correctOption) {
+            btn.classList.add('correct');
+        } else if (index === selectedOption && selectedOption !== correctOption) {
+            btn.classList.add('incorrect');
+        }
+    });
+
+    explanation.classList.add('show');
+    if (selectedOption === correctOption) {
+        explanation.classList.add('correct-exp');
+        score++;
+    } else {
+        explanation.classList.add('incorrect-exp');
+    }
+
+    totalAnswered++;
+    updateScore();
+}
+
+function updateScore() {
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const percentage = Math.round((score / totalAnswered) * 100);
+    scoreDisplay.innerHTML = `النَّتِيجَةُ: ${score} مِنْ ${totalAnswered} (${percentage}%) - Score: ${score} out of ${totalAnswered}`;
+}
+
+function resetAllQuestions() {
+    score = 0;
+    totalAnswered = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionDiv = document.getElementById('q' + i);
+        if (questionDiv) {
+            const options = questionDiv.querySelectorAll('.option-btn');
+            const explanation = questionDiv.querySelector('.explanation');
+
+            options.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct', 'incorrect');
+            });
+
+            explanation.classList.remove('show', 'correct-exp', 'incorrect-exp');
+        }
+    }
+
+    document.getElementById('scoreDisplay').innerHTML = 'أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions';
+}
+</script>
 
 <!-- Summary Section -->
 <section id="summary" class="section">

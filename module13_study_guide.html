@@ -160,7 +160,132 @@
             .section-title { font-size: 28px; }
             table { font-size: 18px; }
         }
-            .home-btn {
+        /* Interactive Exercise Styles */
+        .exercise-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .exercise-section-title {
+            font-size: 36px;
+            color: #3949ab;
+            border-bottom: 4px solid #5c6bc0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .exercise-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .exercise-category-title {
+            font-size: 28px;
+            color: #283593;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c5cae9;
+        }
+        .exercise-item {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .exercise-question {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .exercise-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 15px 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background: white;
+            font-size: 22px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            text-align: right;
+            transition: all 0.3s;
+        }
+        .option-btn:hover:not(:disabled) {
+            border-color: #5c6bc0;
+            background: #e8eaf6;
+        }
+        .option-btn.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+            color: #1e8449;
+        }
+        .option-btn.incorrect {
+            border-color: #e74c3c;
+            background: #fadbd8;
+            color: #c0392b;
+        }
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .explanation.show {
+            display: block;
+        }
+        .explanation.correct-exp {
+            background: linear-gradient(135deg, #d5f4e6 0%, #a9dfbf 100%);
+            border-right: 5px solid #27ae60;
+        }
+        .explanation.incorrect-exp {
+            background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%);
+            border-right: 5px solid #e74c3c;
+        }
+        .explanation-title {
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .reset-btn {
+            background: linear-gradient(135deg, #3949ab 0%, #5c6bc0 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(57, 73, 171, 0.4);
+        }
+        .score-display {
+            text-align: center;
+            font-size: 24px;
+            color: #283593;
+            padding: 15px;
+            background: #e8eaf6;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .home-btn {
             position: fixed;
             top: 20px;
             left: 20px;
@@ -759,73 +884,427 @@
 </section>
 
 <!-- Exercises Section -->
-<section id="exercises" class="section">
-    <h2 class="section-title">التَّمَارِينُ - Exercises</h2>
+<section id="exercises" class="exercise-section">
+    <h2 class="exercise-section-title">تَمَارِينُ الوَحْدَةِ الثَّالِثَةَ عَشْرَةَ - Module 13 Exercises</h2>
 
-    <h3 class="section-subtitle">التَّمْرِينُ الأَوَّلُ: صَرِّفِ الفِعْلَ رَجَعَ</h3>
-    <p class="english-text">Exercise 1: Conjugate the verb رَجَعَ</p>
-    <div class="exercise-box">
-        <p class="arabic-text">مِثَالٌ: هُوَ رَجَعَ مِنَ المَدْرَسَةِ</p>
-        <p class="arabic-text">هِيَ رَجَعَتْ مِنَ المَدْرَسَةِ | هُمَا رَجَعَا مِنَ المَدْرَسَةِ | هُمْ رَجَعُوا مِنَ المَدْرَسَةِ</p>
-        <p class="arabic-text">أَنَا رَجَعْتُ مِنَ المَدْرَسَةِ | نَحْنُ رَجَعْنَا مِنَ المَدْرَسَةِ</p>
+    <div class="score-display" id="scoreDisplay">
+        أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions
     </div>
 
-    <h3 class="section-subtitle">التَّمْرِينُ الثَّانِي: أَدْخِلْ (مَا) لِلنَّفْيِ</h3>
-    <p class="english-text">Exercise 2: Add (مَا) for negation</p>
-    <div class="exercise-box">
-        <p class="arabic-text">(١) ذَهَبَ الطَّالِبُ إِلَى الجَامِعَةِ ← مَا ذَهَبَ الطَّالِبُ إِلَى الجَامِعَةِ</p>
-        <p class="arabic-text">(٢) فَهِمْتُ الدَّرْسَ ← مَا فَهِمْتُ الدَّرْسَ</p>
-        <p class="arabic-text">(٣) رَجَعَتِ البِنْتُ مِنَ السُّوقِ ← مَا رَجَعَتِ البِنْتُ مِنَ السُّوقِ</p>
-        <p class="arabic-text">(٤) سَمِعُوا الأَذَانَ ← مَا سَمِعُوا الأَذَانَ</p>
+    <!-- Category 1: تصريف رَجَعَ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">١. تَصْرِيفُ الفِعْلِ رَجَعَ - Verb Conjugation</h3>
+
+        <div class="exercise-item" id="q1">
+            <p class="exercise-question">أَكْمِلِ الفَرَاغَ: هُوَ _____ مِنَ السَّفَرِ (المضارع)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete the blank: He _____ from the journey (present tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q1', 0, 0)">يَرْجِعُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 1, 0)">تَرْجِعُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 2, 0)">أَرْجِعُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 3, 0)">يَرْجِعُونَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: يَرْجِعُ</p>
+                <p>الضَّمِيرُ \"هُوَ\" لِلْمُذَكَّرِ الغَائِبِ المُفْرَدِ، فَيَكُونُ المُضَارِعُ \"يَرْجِعُ\" بِحَرْفِ المُضَارَعَةِ \"يـ\".</p>
+                <p class="english-text">\"هُوَ\" (he) is third person masculine singular, so the present tense is \"يَرْجِعُ\" with prefix يـ.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q2">
+            <p class="exercise-question">أَكْمِلِ الفَرَاغَ: نَحْنُ _____ مِنَ المَدْرَسَةِ أَمْسِ (الماضي)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete the blank: We _____ from school yesterday (past tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q2', 0, 2)">رَجَعْتُ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 1, 2)">رَجَعُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 2, 2)">رَجَعْنَا</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 3, 2)">رَجَعْتُمْ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: رَجَعْنَا</p>
+                <p>الضَّمِيرُ \"نَحْنُ\" لِلْمُتَكَلِّمِ الجَمْعِ، فَيَكُونُ الفِعْلُ المَاضِي \"رَجَعْنَا\" مَعَ \"نَا\" الفَاعِلِينَ.</p>
+                <p class="english-text">\"نَحْنُ\" (we) uses \"نَا\" الفاعلين, making it \"رَجَعْنَا\".</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q3">
+            <p class="exercise-question">مَا هُوَ فِعْلُ الأَمْرِ مِنْ \"رَجَعَ\" لِلضَّمِيرِ \"أَنْتُمْ\"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the command form of "رَجَعَ" (to return) for the pronoun "أَنْتُمْ" (you masc. pl.)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q3', 0, 2)">اِرْجِعْ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 1, 2)">اِرْجِعِي</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 2, 2)">اِرْجِعُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 3, 2)">اِرْجِعَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: اِرْجِعُوا</p>
+                <p>فِعْلُ الأَمْرِ لِجَمَاعَةِ الذُّكُورِ (أَنْتُمْ) يَكُونُ \"اِرْجِعُوا\" مَعَ وَاوِ الجَمَاعَةِ.</p>
+                <p class="english-text">The command for masculine plural \"you\" (أَنْتُمْ) is \"اِرْجِعُوا\" with واو الجماعة.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q4">
+            <p class="exercise-question">أَكْمِلِ: هُنَّ _____ مِنَ السُّوقِ (الماضي)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: They (fem.) _____ from the market (past tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q4', 0, 1)">رَجَعَتْ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 1, 1)">رَجَعْنَ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 2, 1)">رَجَعُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 3, 1)">رَجَعَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: رَجَعْنَ</p>
+                <p>\"هُنَّ\" جَمْعُ مُؤَنَّثٍ، فَيَكُونُ المَاضِي \"رَجَعْنَ\" مَعَ نُونِ النِّسْوَةِ.</p>
+                <p class="english-text">\"هُنَّ\" is feminine plural, so the past verb takes نون النسوة: \"رَجَعْنَ\".</p>
+            </div>
+        </div>
     </div>
 
-    <h3 class="section-subtitle">التَّمْرِينُ الثَّالِثُ: أَجِبْ بِاسْتِخْدَامِ (لِأَنَّ)</h3>
-    <p class="english-text">Exercise 3: Answer using (لِأَنَّ)</p>
-    <div class="exercise-box">
-        <p class="arabic-text">(١) لِمَاذَا مَا ذَهَبْتَ إِلَى المَدْرَسَةِ؟ ← مَا ذَهَبْتُ لِأَنِّي مَرِيضٌ</p>
-        <p class="arabic-text">(٢) لِمَاذَا رَجَعَ أَبُوكَ؟ ← رَجَعَ لِأَنَّهُ اشْتَاقَ إِلَى أُمِّي</p>
-        <p class="arabic-text">(٣) لِمَاذَا لَمْ تَأْتِ فَاطِمَةُ؟ ← لَمْ تَأْتِ لِأَنَّهَا مَشْغُولَةٌ</p>
-        <p class="arabic-text">(٤) لِمَاذَا نَامَ الأَوْلَادُ مُبَكِّرًا؟ ← نَامُوا لِأَنَّهُمْ تَعِبُونَ</p>
+    <!-- Category 2: اتصال الضمائر -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٢. اتِّصَالُ الضَّمَائِرِ بِالكَلِمَاتِ - Connecting Pronouns</h3>
+
+        <div class="exercise-item" id="q5">
+            <p class="exercise-question">مَا نَتِيجَةُ: كِتَابٌ + هُوَ = ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the result of: book + he (his) = ?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q5', 0, 0)">كِتَابُهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 1, 0)">كِتَابُهَا</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 2, 0)">كِتَابِي</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 3, 0)">كِتَابُنَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: كِتَابُهُ</p>
+                <p>الضَّمِيرُ \"هُوَ\" يَتَّصِلُ بِالاسْمِ فَيَصِيرُ \"ـهُ\": كِتَابٌ + هُوَ = كِتَابُهُ (his book).</p>
+                <p class="english-text">The pronoun \"هُوَ\" attaches to nouns as \"ـهُ\": كِتَابُهُ (his book).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q6">
+            <p class="exercise-question">مَا نَتِيجَةُ: مِنْ + أَنَا = ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the result of: from + I = ?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q6', 0, 1)">مِنْهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 1, 1)">مِنِّي</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 2, 1)">مِنْكَ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 3, 1)">مِنَّا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مِنِّي</p>
+                <p>حَرْفُ الجَرِّ \"مِنْ\" يَتَّصِلُ بِضَمِيرِ المُتَكَلِّمِ \"أَنَا\" فَيَصِيرُ \"مِنِّي\" (from me).</p>
+                <p class="english-text">The preposition \"مِنْ\" attaches to \"أَنَا\" becoming \"مِنِّي\" (from me).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q7">
+            <p class="exercise-question">مَا نَتِيجَةُ: عِنْدَ + نَحْنُ = ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the result of: at/with + we = ?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q7', 0, 2)">عِنْدِي</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 1, 2)">عِنْدَهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 2, 2)">عِنْدَنَا</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 3, 2)">عِنْدَكُمْ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: عِنْدَنَا</p>
+                <p>الظَّرْفُ \"عِنْدَ\" يَتَّصِلُ بِـ \"نَحْنُ\" فَيَصِيرُ \"عِنْدَنَا\" (with us/at our place).</p>
+                <p class="english-text">The adverb \"عِنْدَ\" attaches to \"نَحْنُ\" becoming \"عِنْدَنَا\" (with us).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q8">
+            <p class="exercise-question">مَا نَتِيجَةُ: إِلَى + هِيَ = ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the result of: to + she = ?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q8', 0, 1)">إِلَيْهِ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 1, 1)">إِلَيْهَا</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 2, 1)">إِلَيْكَ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 3, 1)">إِلَيَّ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: إِلَيْهَا</p>
+                <p>حَرْفُ الجَرِّ \"إِلَى\" يَتَّصِلُ بِـ \"هِيَ\" فَيَصِيرُ \"إِلَيْهَا\" (to her).</p>
+                <p class="english-text">The preposition \"إِلَى\" attaches to \"هِيَ\" becoming \"إِلَيْهَا\" (to her).</p>
+            </div>
+        </div>
     </div>
 
-    <h3 class="section-subtitle">التَّمْرِينُ الرَّابِعُ: صِلِ الضَّمِيرَ بِالكَلِمَةِ</h3>
-    <p class="english-text">Exercise 4: Connect the pronoun to the word</p>
-    <div class="exercise-box">
-        <p class="arabic-text">(١) بَيْتٌ + هُوَ = بَيْتُهُ</p>
-        <p class="arabic-text">(٢) مِنْ + أَنَا = مِنِّي</p>
-        <p class="arabic-text">(٣) عِنْدَ + نَحْنُ = عِنْدَنَا</p>
-        <p class="arabic-text">(٤) إِلَى + هِيَ = إِلَيْهَا</p>
-        <p class="arabic-text">(٥) كِتَابٌ + أَنْتُمْ = كِتَابُكُمْ</p>
-        <p class="arabic-text">(٦) لِأَنَّ + هُمْ = لِأَنَّهُمْ</p>
+    <!-- Category 3: لِأَنَّ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٣. لِأَنَّ - Because</h3>
+
+        <div class="exercise-item" id="q9">
+            <p class="exercise-question">مِمَّ تَتَكَوَّنُ \"لِأَنَّ\"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is "لِأَنَّ" (because) composed of?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q9', 0, 0)">لِـ + أَنَّ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 1, 0)">لَـ + إِنَّ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 2, 0)">لِـ + كَأَنَّ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 3, 0)">لَـ + أَنْ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِـ + أَنَّ</p>
+                <p>\"لِأَنَّ\" تَتَكَوَّنُ مِنْ حَرْفِ الجَرِّ \"لِـ\" (for/because) + \"أَنَّ\" مِنْ أَخَوَاتِ إِنَّ.</p>
+                <p class="english-text">\"لِأَنَّ\" is composed of the preposition \"لِـ\" + \"أَنَّ\" from إِنَّ and its sisters.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q10">
+            <p class="exercise-question">مَا نَتِيجَةُ: لِأَنَّ + أَنَا = ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the result of: because + I = ?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q10', 0, 0)">لِأَنِّي / لِأَنَّنِي</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 1, 0)">لِأَنَّهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 2, 0)">لِأَنَّكَ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 3, 0)">لِأَنَّنَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِأَنِّي / لِأَنَّنِي</p>
+                <p>\"لِأَنَّ\" تَتَّصِلُ بِيَاءِ المُتَكَلِّمِ فَتَصِيرُ \"لِأَنِّي\" أَوْ \"لِأَنَّنِي\" (because I).</p>
+                <p class="english-text">\"لِأَنَّ\" attaches to ياء المتكلم becoming \"لِأَنِّي\" or \"لِأَنَّنِي\" (because I).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q11">
+            <p class="exercise-question">أَكْمِلِ: لِمَاذَا لَمْ يَأْتِ الطُّلَّابُ؟ لَمْ يَأْتُوا _____ مَرْضَى</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: Why didn't the students come? They didn't come _____ they are sick</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q11', 0, 2)">لِأَنِّي</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 1, 2)">لِأَنَّهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 2, 2)">لِأَنَّهُمْ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 3, 2)">لِأَنَّهَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِأَنَّهُمْ</p>
+                <p>الضَّمِيرُ يَعُودُ عَلَى \"الطُّلَّاب\" وَهُمْ جَمْعُ مُذَكَّرٍ، فَنَقُولُ \"لِأَنَّهُمْ مَرْضَى\".</p>
+                <p class="english-text">The pronoun refers to \"الطُّلَّاب\" (masculine plural), so we say \"لِأَنَّهُمْ مَرْضَى\" (because they are sick).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q12">
+            <p class="exercise-question">أَكْمِلِ: لِمَاذَا مَا ذَهَبَتْ فَاطِمَةُ؟ مَا ذَهَبَتْ _____ مَشْغُولَةٌ</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: Why didn't Fatimah go? She didn't go _____ she is busy</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q12', 0, 1)">لِأَنَّهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 1, 1)">لِأَنَّهَا</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 2, 1)">لِأَنَّهُمْ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 3, 1)">لِأَنِّي</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِأَنَّهَا</p>
+                <p>الضَّمِيرُ يَعُودُ عَلَى \"فَاطِمَة\" وَهِيَ مُؤَنَّثٌ، فَنَقُولُ \"لِأَنَّهَا مَشْغُولَةٌ\".</p>
+                <p class="english-text">The pronoun refers to \"فَاطِمَة\" (feminine), so we say \"لِأَنَّهَا مَشْغُولَةٌ\" (because she is busy).</p>
+            </div>
+        </div>
     </div>
 
-    <h3 class="section-subtitle">التَّمْرِينُ الخَامِسُ: أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ</h3>
-    <p class="english-text">Exercise 5: Answer the following questions</p>
-    <div class="exercise-box">
-        <p class="arabic-text">(١) أَرَجَعَ أَبُوكَ مِنَ السَّفَرِ؟ ← نَعَمْ، رَجَعَ أَبِي مِنَ السَّفَرِ</p>
-        <p class="arabic-text">(٢) أَمَا رَجَعَ أَبُوكَ مِنَ السَّفَرِ؟ ← بَلَى، رَجَعَ أَبِي مِنَ السَّفَرِ</p>
-        <p class="arabic-text">(٣) أَفَهِمْتَ الدَّرْسَ؟ ← نَعَمْ، فَهِمْتُ الدَّرْسَ</p>
-        <p class="arabic-text">(٤) أَمَا فَهِمْتَ الدَّرْسَ؟ ← بَلَى، فَهِمْتُ الدَّرْسَ</p>
+    <!-- Category 4: نفي الماضي -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٤. نَفْيُ الفِعْلِ المَاضِي - Negation of Past Verb</h3>
+
+        <div class="exercise-item" id="q13">
+            <p class="exercise-question">مَا أَدَاةُ نَفْيِ الفِعْلِ المَاضِي؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the negation particle for the past tense verb?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q13', 0, 0)">مَا</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 1, 0)">لَا</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 2, 0)">لَنْ</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 3, 0)">لَمْ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مَا</p>
+                <p>نَنْفِي الفِعْلَ المَاضِيَ بِأَدَاةِ النَّفْيِ \"مَا\": رَجَعَ ← مَا رَجَعَ.</p>
+                <p class="english-text">We negate the past verb with \"مَا\": رَجَعَ ← مَا رَجَعَ (did not return).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q14">
+            <p class="exercise-question">كَيْفَ نَنْفِي: \"ذَهَبَ الطَّالِبُ إِلَى الجَامِعَةِ\"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">How do we negate: "The student went to the university"?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q14', 0, 1)">لَا ذَهَبَ الطَّالِبُ إِلَى الجَامِعَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 1, 1)">مَا ذَهَبَ الطَّالِبُ إِلَى الجَامِعَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 2, 1)">لَنْ ذَهَبَ الطَّالِبُ إِلَى الجَامِعَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 3, 1)">لَيْسَ ذَهَبَ الطَّالِبُ إِلَى الجَامِعَةِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مَا ذَهَبَ الطَّالِبُ إِلَى الجَامِعَةِ</p>
+                <p>لِنَفْيِ الفِعْلِ المَاضِي نَسْتَخْدِمُ \"مَا\" قَبْلَ الفِعْلِ: مَا ذَهَبَ الطَّالِبُ.</p>
+                <p class="english-text">To negate the past verb, we use \"مَا\" before the verb: مَا ذَهَبَ الطَّالِبُ (The student did not go).</p>
+            </div>
+        </div>
     </div>
 
-    <h3 class="section-subtitle">التَّمْرِينُ السَّادِسُ: حَوِّلْ إِلَى الجَمْعِ</h3>
-    <p class="english-text">Exercise 6: Convert to plural</p>
-    <div class="exercise-box">
-        <p class="arabic-text">(١) رَجَعَ الطَّالِبُ مِنَ الجَامِعَةِ ← رَجَعَ الطُّلَّابُ مِنَ الجَامِعَةِ</p>
-        <p class="arabic-text">(٢) ذَهَبَتِ البِنْتُ إِلَى السُّوقِ ← ذَهَبَتِ البَنَاتُ إِلَى السُّوقِ</p>
-        <p class="arabic-text">(٣) فَهِمَ المُدَرِّسُ المَسْأَلَةَ ← فَهِمَ المُدَرِّسُونَ المَسْأَلَةَ</p>
+    <!-- Category 5: نَعَمْ وَبَلَى -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٥. الفَرْقُ بَيْنَ نَعَمْ وَبَلَى - Na'am vs Bala</h3>
+
+        <div class="exercise-item" id="q15">
+            <p class="exercise-question">مَتَى نَسْتَخْدِمُ \"نَعَمْ\"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">When do we use "نَعَمْ" (yes)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q15', 0, 0)">لِلإِجَابَةِ بِالإِثْبَاتِ عَنْ سُؤَالٍ لَيْسَ فِيهِ نَفْيٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 1, 0)">لِلإِجَابَةِ بِالإِثْبَاتِ عَنْ سُؤَالٍ مَنْفِيٍّ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 2, 0)">لِلنَّفْيِ فَقَطْ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 3, 0)">لِلسُّؤَالِ فَقَطْ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِلإِجَابَةِ بِالإِثْبَاتِ عَنْ سُؤَالٍ لَيْسَ فِيهِ نَفْيٌ</p>
+                <p>\"نَعَمْ\" تُسْتَخْدَمُ لِلإِجَابَةِ بِالإِثْبَاتِ عَنْ سُؤَالٍ مُثْبَتٍ: أَذَهَبْتَ؟ نَعَمْ، ذَهَبْتُ.</p>
+                <p class="english-text">\"نَعَمْ\" is used to answer \"yes\" to a positive question (without negation).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q16">
+            <p class="exercise-question">مَتَى نَسْتَخْدِمُ \"بَلَى\"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">When do we use "بَلَى" (yes indeed)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q16', 0, 1)">لِلإِجَابَةِ بِالإِثْبَاتِ عَنْ سُؤَالٍ مُثْبَتٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 1, 1)">لِلإِجَابَةِ بِالإِثْبَاتِ عَنْ سُؤَالٍ مَنْفِيٍّ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 2, 1)">لِلنَّفْيِ عَنْ أَيِّ سُؤَالٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 3, 1)">لِلتَّعَجُّبِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِلإِجَابَةِ بِالإِثْبَاتِ عَنْ سُؤَالٍ مَنْفِيٍّ</p>
+                <p>\"بَلَى\" تُسْتَخْدَمُ لِلإِجَابَةِ بِالإِثْبَاتِ عَنْ سُؤَالٍ مَنْفِيٍّ: أَمَا ذَهَبْتَ؟ بَلَى، ذَهَبْتُ.</p>
+                <p class="english-text">\"بَلَى\" is used to answer \"yes indeed\" to a negative question.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q17">
+            <p class="exercise-question">سُؤَالٌ: \"أَرَجَعَ أَبُوكَ مِنَ السَّفَرِ؟\" - مَا الإِجَابَةُ بِالإِثْبَاتِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Question: "Did your father return from the journey?" - What is the affirmative answer?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q17', 0, 0)">نَعَمْ، رَجَعَ أَبِي</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 1, 0)">بَلَى، رَجَعَ أَبِي</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 2, 0)">لَا، رَجَعَ أَبِي</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 3, 0)">كَلَّا، رَجَعَ أَبِي</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: نَعَمْ، رَجَعَ أَبِي</p>
+                <p>السُّؤَالُ \"أَرَجَعَ أَبُوكَ؟\" سُؤَالٌ مُثْبَتٌ (لَيْسَ فِيهِ نَفْيٌ)، فَنُجِيبُ بِـ \"نَعَمْ\" لِلإِثْبَاتِ.</p>
+                <p class="english-text">The question \"أَرَجَعَ أَبُوكَ؟\" is positive (no negation), so we answer with \"نَعَمْ\" for affirmative.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q18">
+            <p class="exercise-question">سُؤَالٌ: \"أَمَا رَجَعَ أَبُوكَ مِنَ السَّفَرِ؟\" - مَا الإِجَابَةُ بِالإِثْبَاتِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Question: "Did your father not return from the journey?" - What is the affirmative answer?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q18', 0, 1)">نَعَمْ، رَجَعَ أَبِي</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 1, 1)">بَلَى، رَجَعَ أَبِي</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 2, 1)">لَا، رَجَعَ أَبِي</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 3, 1)">أَجَلْ، رَجَعَ أَبِي</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: بَلَى، رَجَعَ أَبِي</p>
+                <p>السُّؤَالُ \"أَمَا رَجَعَ؟\" سُؤَالٌ مَنْفِيٌّ (فِيهِ \"مَا\")، فَنُجِيبُ بِـ \"بَلَى\" لِلإِثْبَاتِ: بَلَى، رَجَعَ أَبِي.</p>
+                <p class="english-text">The question \"أَمَا رَجَعَ؟\" is negative (contains \"مَا\"), so we answer with \"بَلَى\" for affirmative.</p>
+            </div>
+        </div>
     </div>
 
-    <h3 class="section-subtitle">التَّمْرِينُ السَّابِعُ: أَجِبْ بِنَعَمْ أَوْ بَلَى</h3>
-    <p class="english-text">Exercise 7: Answer with نَعَمْ or بَلَى</p>
-    <div class="exercise-box">
-        <p class="arabic-text">(١) أَذَهَبْتَ إِلَى المَدْرَسَةِ أَمْسِ؟ (إِثْبَاتٌ) ← نَعَمْ، ذَهَبْتُ</p>
-        <p class="arabic-text">(٢) أَمَا ذَهَبْتَ إِلَى المَدْرَسَةِ أَمْسِ؟ (إِثْبَاتٌ) ← بَلَى، ذَهَبْتُ</p>
-        <p class="arabic-text">(٣) أَمَا ذَهَبْتَ إِلَى المَدْرَسَةِ أَمْسِ؟ (نَفْيٌ) ← نَعَمْ، مَا ذَهَبْتُ</p>
-        <p class="arabic-text">(٤) أَلَيْسَ الكِتَابُ جَدِيدًا؟ (إِثْبَاتٌ) ← بَلَى، الكِتَابُ جَدِيدٌ</p>
-        <p class="arabic-text">(٥) أَلَيْسَ الكِتَابُ جَدِيدًا؟ (نَفْيٌ) ← نَعَمْ، لَيْسَ جَدِيدًا</p>
+    <!-- Category 6: التطبيق العام -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٦. التَّطْبِيقُ العَامُّ - General Application</h3>
+
+        <div class="exercise-item" id="q19">
+            <p class="exercise-question">مَا مَعْنَى: \"رَجَعْتُ مِنَ المُسْتَشْفَى لِأَنِّي زُرْتُ أَخِي\"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the meaning of: "رَجَعْتُ مِنَ المُسْتَشْفَى لِأَنِّي زُرْتُ أَخِي"?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q19', 0, 0)">I returned from the hospital because I visited my brother</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 1, 0)">I went to the hospital because my brother is sick</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 2, 0)">My brother returned from the hospital</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 3, 0)">I will return to visit my brother</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: I returned from the hospital because I visited my brother</p>
+                <p>رَجَعْتُ = I returned | مِنَ المُسْتَشْفَى = from the hospital | لِأَنِّي = because I | زُرْتُ أَخِي = visited my brother.</p>
+                <p class="english-text">رَجَعْتُ (I returned) + مِنَ المُسْتَشْفَى (from the hospital) + لِأَنِّي زُرْتُ أَخِي (because I visited my brother).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q20">
+            <p class="exercise-question">أَيُّ الجُمَلِ التَّالِيَةِ صَحِيحَةٌ نَحْوِيًّا؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Which of the following sentences is grammatically correct?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q20', 0, 2)">مَا رَجَعُوا لِأَنَّهُ مَشْغُولُونَ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 1, 2)">مَا رَجَعُوا لِأَنِّي مَشْغُولٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 2, 2)">مَا رَجَعُوا لِأَنَّهُمْ مَشْغُولُونَ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 3, 2)">مَا رَجَعُوا لِأَنَّهَا مَشْغُولَةٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مَا رَجَعُوا لِأَنَّهُمْ مَشْغُولُونَ</p>
+                <p>\"رَجَعُوا\" ضَمِيرُهُ \"هُمْ\"، فَيَجِبُ أَنْ يَكُونَ الضَّمِيرُ فِي \"لِأَنَّ\" مُطَابِقًا: \"لِأَنَّهُمْ مَشْغُولُونَ\".</p>
+                <p class="english-text">\"رَجَعُوا\" has the pronoun \"هُمْ\", so the pronoun in \"لِأَنَّ\" must match: \"لِأَنَّهُمْ مَشْغُولُونَ\".</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="reset-btn" onclick="resetAllQuestions()">إِعَادَةُ التَّمَارِينِ - Reset All Exercises</button>
     </div>
 </section>
+
+<script>
+let score = 0;
+let totalAnswered = 0;
+const totalQuestions = 20;
+
+function checkAnswer(questionId, selectedOption, correctOption) {
+    const questionDiv = document.getElementById(questionId);
+    const options = questionDiv.querySelectorAll('.option-btn');
+    const explanation = questionDiv.querySelector('.explanation');
+
+    options.forEach((btn, index) => {
+        btn.disabled = true;
+        if (index === correctOption) {
+            btn.classList.add('correct');
+        } else if (index === selectedOption && selectedOption !== correctOption) {
+            btn.classList.add('incorrect');
+        }
+    });
+
+    explanation.classList.add('show');
+    if (selectedOption === correctOption) {
+        explanation.classList.add('correct-exp');
+        score++;
+    } else {
+        explanation.classList.add('incorrect-exp');
+    }
+
+    totalAnswered++;
+    updateScore();
+}
+
+function updateScore() {
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const percentage = Math.round((score / totalAnswered) * 100);
+    scoreDisplay.innerHTML = `النَّتِيجَةُ: ${score} مِنْ ${totalAnswered} (${percentage}%) - Score: ${score} out of ${totalAnswered}`;
+}
+
+function resetAllQuestions() {
+    score = 0;
+    totalAnswered = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionDiv = document.getElementById('q' + i);
+        if (questionDiv) {
+            const options = questionDiv.querySelectorAll('.option-btn');
+            const explanation = questionDiv.querySelector('.explanation');
+
+            options.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct', 'incorrect');
+            });
+
+            explanation.classList.remove('show', 'correct-exp', 'incorrect-exp');
+        }
+    }
+
+    document.getElementById('scoreDisplay').innerHTML = 'أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions';
+}
+</script>
 
 <!-- Summary Section -->
 <section id="summary" class="section">

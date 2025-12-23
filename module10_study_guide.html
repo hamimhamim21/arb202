@@ -144,6 +144,131 @@
             padding: 20px;
             margin: 15px 0;
         }
+        /* Interactive Exercise Styles */
+        .exercise-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .exercise-section-title {
+            font-size: 36px;
+            color: #00838f;
+            border-bottom: 4px solid #26c6da;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .exercise-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .exercise-category-title {
+            font-size: 28px;
+            color: #006064;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #b2ebf2;
+        }
+        .exercise-item {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .exercise-question {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .exercise-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 15px 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background: white;
+            font-size: 22px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            text-align: right;
+            transition: all 0.3s;
+        }
+        .option-btn:hover:not(:disabled) {
+            border-color: #00838f;
+            background: #e0f7fa;
+        }
+        .option-btn.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+            color: #1e8449;
+        }
+        .option-btn.incorrect {
+            border-color: #e74c3c;
+            background: #fadbd8;
+            color: #c0392b;
+        }
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .explanation.show {
+            display: block;
+        }
+        .explanation.correct-exp {
+            background: linear-gradient(135deg, #d5f4e6 0%, #a9dfbf 100%);
+            border-right: 5px solid #27ae60;
+        }
+        .explanation.incorrect-exp {
+            background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%);
+            border-right: 5px solid #e74c3c;
+        }
+        .explanation-title {
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .reset-btn {
+            background: linear-gradient(135deg, #00838f 0%, #26c6da 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 131, 143, 0.4);
+        }
+        .score-display {
+            text-align: center;
+            font-size: 24px;
+            color: #006064;
+            padding: 15px;
+            background: #e0f7fa;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
         @media (max-width: 768px) {
             .arabic-large { font-size: 32px; }
             .arabic-medium { font-size: 26px; }
@@ -197,6 +322,7 @@
         <a href="#kaanna"><span class="nav-ar">كَأَنَّ</span><span class="nav-en">As If</span></a>
         <a href="#ordinal"><span class="nav-ar">العدد الترتيبي</span><span class="nav-en">Ordinal Numbers</span></a>
         <a href="#quran"><span class="nav-ar">أمثلة قرآنية</span><span class="nav-en">Quranic Examples</span></a>
+        <a href="#exercises"><span class="nav-ar">تمارين</span><span class="nav-en">Exercises</span></a>
         <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
     </div>
 </nav>
@@ -670,6 +796,452 @@
         </div>
     </div>
 </section>
+
+<!-- Exercises Section -->
+<section id="exercises" class="exercise-section">
+    <h2 class="exercise-section-title">تَمَارِينُ الوَحْدَةِ العَاشِرَةِ - Module 10 Exercises</h2>
+
+    <div class="score-display" id="scoreDisplay">
+        أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions
+    </div>
+
+    <!-- Category 1: Verb Conjugation فَهِمَ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">١. تَصْرِيفُ الفِعْلِ فَهِمَ - Verb Conjugation</h3>
+
+        <!-- Q1 -->
+        <div class="exercise-item" id="q1">
+            <p class="exercise-question">أَكْمِلِ الفَرَاغَ: هُمْ _____ الدَّرْسَ أَمْسِ</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete the blank: They (masc.) _____ the lesson yesterday</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q1', 0, 2)">فَهِمَ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 1, 2)">فَهِمَتْ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 2, 2)">فَهِمُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 3, 2)">فَهِمْنَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: فَهِمُوا</p>
+                <p>الضَّمِيرُ "هُمْ" يَدُلُّ عَلَى جَمَاعَةِ الذُّكُورِ الغَائِبِينَ، فَيَكُونُ الفِعْلُ المَاضِي "فَهِمُوا" مَعَ وَاوِ الجَمَاعَةِ.</p>
+                <p class="english-text">The pronoun "هُمْ" (they - masculine) requires the past tense verb with واو الجماعة, making it "فَهِمُوا".</p>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="exercise-item" id="q2">
+            <p class="exercise-question">مَا هُوَ فِعْلُ الأَمْرِ مِنْ "فَهِمَ" لِلْمُخَاطَبَةِ (أَنْتِ)؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the command form of "فَهِمَ" (to understand) for the feminine "you" (أَنْتِ)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q2', 0, 1)">اِفْهَمْ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 1, 1)">اِفْهَمِي</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 2, 1)">اِفْهَمُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 3, 1)">اِفْهَمَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: اِفْهَمِي</p>
+                <p>فِعْلُ الأَمْرِ لِلْمُخَاطَبَةِ المُؤَنَّثَةِ (أَنْتِ) يَكُونُ بِإِضَافَةِ يَاءِ المُخَاطَبَةِ، فَيَصِيرُ "اِفْهَمِي".</p>
+                <p class="english-text">The command verb for feminine "you" (أَنْتِ) is formed by adding ياء المخاطبة, making it "اِفْهَمِي".</p>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="exercise-item" id="q3">
+            <p class="exercise-question">أَكْمِلِ: أَنَا _____ اللُّغَةَ العَرَبِيَّةَ جَيِّدًا (المُضَارِع)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: I _____ the Arabic language well (present tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q3', 0, 0)">أَفْهَمُ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 1, 0)">يَفْهَمُ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 2, 0)">تَفْهَمُ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 3, 0)">نَفْهَمُ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: أَفْهَمُ</p>
+                <p>الضَّمِيرُ "أَنَا" يَأْخُذُ الفِعْلَ المُضَارِعَ بِهَمْزَةِ المُتَكَلِّمِ "أَفْهَمُ".</p>
+                <p class="english-text">The pronoun "أَنَا" (I) takes the present tense with the همزة المتكلم prefix, making it "أَفْهَمُ".</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 2: حذف النون -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٢. حَذْفُ النُّونِ - Dropping the Noon</h3>
+
+        <!-- Q4 -->
+        <div class="exercise-item" id="q4">
+            <p class="exercise-question">مَا الصَّوَابُ؟ "مُسْلِمُونَ" عِنْدَ الإِضَافَةِ تَصِيرُ:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is correct? "مُسْلِمُونَ" (Muslims) when in idafa becomes:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q4', 0, 1)">مُسْلِمُونَ المَدِينَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 1, 1)">مُسْلِمُو المَدِينَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 2, 1)">مُسْلِمِينَ المَدِينَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 3, 1)">مُسْلِمِي المَدِينَةِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مُسْلِمُو المَدِينَةِ</p>
+                <p>تُحْذَفُ النُّونُ مِنْ جَمْعِ المُذَكَّرِ السَّالِمِ عِنْدَ الإِضَافَةِ. فَ "مُسْلِمُونَ" تَصِيرُ "مُسْلِمُو" لِأَنَّهَا مُضَافٌ.</p>
+                <p class="english-text">The noon is dropped from sound masculine plural in idafa. "مُسْلِمُونَ" becomes "مُسْلِمُو" because it's the first part of idafa (mudaf).</p>
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="exercise-item" id="q5">
+            <p class="exercise-question">فِي الآيَةِ "تَبَّتْ يَدَا أَبِي لَهَبٍ"، لِمَاذَا قُلْنَا "يَدَا" وَلَيْسَ "يَدَانِ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">In the verse "May the hands of Abu Lahab perish", why do we say "يَدَا" and not "يَدَانِ"?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q5', 0, 0)">لِأَنَّهَا مُضَافَةٌ إِلَى "أَبِي"</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 1, 0)">لِأَنَّهَا مَنْصُوبَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 2, 0)">لِأَنَّهَا مَجْرُورَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 3, 0)">لِأَنَّهَا جَمْعٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِأَنَّهَا مُضَافَةٌ إِلَى "أَبِي"</p>
+                <p>المُثَنَّى يَفْقِدُ النُّونَ عِنْدَ الإِضَافَةِ. "يَدَانِ" أَصْبَحَتْ "يَدَا" لِأَنَّهَا مُضَافٌ وَ"أَبِي" مُضَافٌ إِلَيْهِ.</p>
+                <p class="english-text">The dual noun loses its noon when in idafa construction. "يَدَانِ" became "يَدَا" because it's mudaf (possessor) and "أَبِي" is mudaf ilayhi.</p>
+            </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="exercise-item" id="q6">
+            <p class="exercise-question">أَكْمِلِ: "مُعَلِّمُونَ" + "الجَامِعَةِ" = ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: "مُعَلِّمُونَ" (teachers) + "الجَامِعَةِ" (of the university) = ?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q6', 0, 2)">مُعَلِّمُونَ الجَامِعَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 1, 2)">مُعَلِّمِينَ الجَامِعَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 2, 2)">مُعَلِّمُو الجَامِعَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 3, 2)">مُعَلِّمَانِ الجَامِعَةِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مُعَلِّمُو الجَامِعَةِ</p>
+                <p>عِنْدَ إِضَافَةِ جَمْعِ المُذَكَّرِ السَّالِمِ، تُحْذَفُ النُّونُ. فَ"مُعَلِّمُونَ" تَصِيرُ "مُعَلِّمُو" لِأَنَّهَا مُضَافَةٌ.</p>
+                <p class="english-text">When a sound masculine plural is in idafa, the noon is dropped. "مُعَلِّمُونَ" becomes "مُعَلِّمُو" because it's the mudaf.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 3: اسم التفضيل -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٣. اسْمُ التَّفْضِيلِ - Comparative & Superlative</h3>
+
+        <!-- Q7 -->
+        <div class="exercise-item" id="q7">
+            <p class="exercise-question">مَا اسْمُ التَّفْضِيلِ مِنْ "جَمِيلٌ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the comparative form of "جَمِيلٌ" (beautiful)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q7', 0, 1)">جَمَالٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 1, 1)">أَجْمَلُ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 2, 1)">جَمِيلَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 3, 1)">تَجْمِيلٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: أَجْمَلُ</p>
+                <p>اسْمُ التَّفْضِيلِ يَأْتِي عَلَى وَزْنِ "أَفْعَل". مِنْ "جَمِيلٌ" نَأْخُذُ الجَذْرَ (ج-م-ل) وَنَضَعُهُ عَلَى الوَزْنِ: أَجْمَلُ.</p>
+                <p class="english-text">The comparative/superlative follows the pattern "أَفْعَل". From "جَمِيلٌ" we take the root (ج-م-ل) and apply the pattern: أَجْمَلُ.</p>
+            </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="exercise-item" id="q8">
+            <p class="exercise-question">أَكْمِلِ: "القَاهِرَةُ _____ مِنَ الرِّيَاضِ" (كَبِيرٌ)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: "Cairo is _____ than Riyadh" (big)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q8', 0, 0)">أَكْبَرُ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 1, 0)">كَبِيرَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 2, 0)">أَكْبَرُ مَدِينَةٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 3, 0)">الكَبِيرُ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: أَكْبَرُ</p>
+                <p>لِلْمُقَارَنَةِ نَسْتَخْدِمُ: أَفْعَلُ + مِنْ. فَنَقُولُ "أَكْبَرُ مِنَ الرِّيَاضِ" وَلَيْسَ "أَكْبَرُ مَدِينَةٍ".</p>
+                <p class="english-text">For comparison, we use: أَفْعَلُ + مِنْ. So we say "أَكْبَرُ مِنَ الرِّيَاضِ" (bigger than Riyadh).</p>
+            </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="exercise-item" id="q9">
+            <p class="exercise-question">لِلتَّفْضِيلِ المُطْلَقِ (Superlative)، نَسْتَخْدِمُ:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">For the superlative (the best/biggest/etc.), we use:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q9', 0, 1)">أَفْعَلُ + مِنْ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 1, 1)">أَفْعَلُ + مُضَافٌ إِلَيْهِ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 2, 1)">فَعِيلٌ + مِنْ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 3, 1)">أَفْعَلُ فَقَط</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: أَفْعَلُ + مُضَافٌ إِلَيْهِ</p>
+                <p>لِلتَّفْضِيلِ المُطْلَقِ (the best/biggest/etc.) نُضِيفُ اسْمَ التَّفْضِيلِ إِلَى اسْمٍ نَكِرَةٍ. مِثَالٌ: "أَحْسَنُ طَالِبٍ" (the best student).</p>
+                <p class="english-text">For the superlative (the best/biggest), we add the اسم التفضيل to an indefinite noun. Example: "أَحْسَنُ طَالِبٍ" (the best student).</p>
+            </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="exercise-item" id="q10">
+            <p class="exercise-question">أَكْمِلِ: "هَذَا _____ فِي المَدْرَسَةِ" (أَحْسَنُ طَالِبٍ)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: "This is _____ in the school" (the best student)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q10', 0, 0)">أَحْسَنُ طَالِبٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 1, 0)">أَحْسَنُ مِنْ طَالِبٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 2, 0)">حَسَنٌ طَالِبٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 3, 0)">الأَحْسَنُ طَالِبٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: أَحْسَنُ طَالِبٍ</p>
+                <p>لِلتَّفْضِيلِ المُطْلَقِ نَقُولُ "أَفْعَلُ + اسْمٌ نَكِرَةٌ مَجْرُورٌ". فَنَقُولُ "أَحْسَنُ طَالِبٍ" = the best student.</p>
+                <p class="english-text">For superlative, we say "أَفْعَلُ + indefinite genitive noun". So "أَحْسَنُ طَالِبٍ" = the best student.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 4: لَكِنَّ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٤. لَكِنَّ - But / However</h3>
+
+        <!-- Q11 -->
+        <div class="exercise-item" id="q11">
+            <p class="exercise-question">"لَكِنَّ" مِنْ أَخَوَاتِ إِنَّ، تَنْصِبُ _____ وَتَرْفَعُ _____</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"لَكِنَّ" (but) is from the sisters of إِنَّ, it makes _____ accusative and keeps _____ nominative</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q11', 0, 0)">الاسْمَ - الخَبَرَ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 1, 0)">الخَبَرَ - الاسْمَ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 2, 0)">الفَاعِلَ - المَفْعُولَ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 3, 0)">المُبْتَدَأَ - الخَبَرَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: الاسْمَ - الخَبَرَ</p>
+                <p>أَخَوَاتُ إِنَّ (إِنَّ، أَنَّ، لَكِنَّ، كَأَنَّ، لَيْتَ، لَعَلَّ) تَنْصِبُ الاسْمَ وَتَرْفَعُ الخَبَرَ. هَذَا عَكْسُ المُبْتَدَأِ وَالخَبَرِ.</p>
+                <p class="english-text">The sisters of إِنَّ make the subject (اسم) accusative and keep the predicate (خبر) nominative.</p>
+            </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="exercise-item" id="q12">
+            <p class="exercise-question">أَكْمِلِ: "الدَّرْسُ طَوِيلٌ لَكِنَّ_____ سَهْلٌ" (هُوَ)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: "The lesson is long but _____ is easy" (he/it)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q12', 0, 1)">هُوَ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 1, 1)">ـهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 2, 1)">إِيَّاهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 3, 1)">ذَاكَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: ـهُ (لَكِنَّهُ)</p>
+                <p>عِنْدَمَا يَكُونُ اسْمُ لَكِنَّ ضَمِيرًا، يَتَّصِلُ بِهَا مُبَاشَرَةً. فَنَقُولُ "لَكِنَّهُ" وَلَيْسَ "لَكِنَّ هُوَ".</p>
+                <p class="english-text">When the subject of لَكِنَّ is a pronoun, it attaches directly. We say "لَكِنَّهُ" not "لَكِنَّ هُوَ".</p>
+            </div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="exercise-item" id="q13">
+            <p class="exercise-question">اِخْتَرِ الجُمْلَةَ الصَّحِيحَةَ:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Choose the correct sentence: "Ali is poor but his brother is rich"</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q13', 0, 1)">عَلِيٌّ فَقِيرٌ لَكِنَّ أَخُوهُ غَنِيٌّ</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 1, 1)">عَلِيٌّ فَقِيرٌ لَكِنَّ أَخَاهُ غَنِيٌّ</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 2, 1)">عَلِيٌّ فَقِيرٌ لَكِنَّ أَخِيهِ غَنِيٌّ</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 3, 1)">عَلِيٌّ فَقِيرٌ لَكِنْ أَخُوهُ غَنِيٌّ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: عَلِيٌّ فَقِيرٌ لَكِنَّ أَخَاهُ غَنِيٌّ</p>
+                <p>"أَخٌ" مِنَ الأَسْمَاءِ الخَمْسَةِ، وَبَعْدَ "لَكِنَّ" يَكُونُ مَنْصُوبًا بِالأَلِفِ، فَيَصِيرُ "أَخَاهُ".</p>
+                <p class="english-text">"أَخٌ" is one of the Five Nouns. After لَكِنَّ it becomes accusative with alif, so it's "أَخَاهُ".</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 5: كَأَنَّ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٥. كَأَنَّ - As If / It Looks Like</h3>
+
+        <!-- Q14 -->
+        <div class="exercise-item" id="q14">
+            <p class="exercise-question">"كَأَنَّ" تُسْتَخْدَمُ لِـ:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"كَأَنَّ" (as if) is used for:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q14', 0, 1)">الاسْتِدْرَاكِ (But)</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 1, 1)">التَّشْبِيهِ (As if)</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 2, 1)">التَّمَنِّي (Wishing)</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 3, 1)">التَّرَجِّي (Hoping)</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: التَّشْبِيهِ (As if)</p>
+                <p>"كَأَنَّ" تُسْتَخْدَمُ لِلتَّشْبِيهِ، أَيْ لِإِظْهَارِ أَنَّ شَيْئًا يُشْبِهُ شَيْئًا آخَرَ. مِثَالٌ: "كَأَنَّهُ أَسَدٌ" = It's as if he's a lion.</p>
+                <p class="english-text">"كَأَنَّ" is used for simile/resemblance, showing that something resembles something else.</p>
+            </div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="exercise-item" id="q15">
+            <p class="exercise-question">حَوِّلْ: "هِيَ طَبِيبَةٌ" إِلَى جُمْلَةٍ بِـ "كَأَنَّ":</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Convert: "She is a doctor" to a sentence with "كَأَنَّ" (as if):</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q15', 0, 2)">كَأَنَّ هِيَ طَبِيبَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 1, 2)">كَأَنَّهِيَ طَبِيبَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 2, 2)">كَأَنَّهَا طَبِيبَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 3, 2)">كَأَنَّ طَبِيبَةٌ هِيَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: كَأَنَّهَا طَبِيبَةٌ</p>
+                <p>الضَّمِيرُ "هِيَ" يَتَّصِلُ بِـ"كَأَنَّ" وَيَصِيرُ "كَأَنَّهَا". الهَاءُ ضَمِيرٌ مُتَّصِلٌ لِلْمُؤَنَّثِ.</p>
+                <p class="english-text">The pronoun "هِيَ" attaches to "كَأَنَّ" becoming "كَأَنَّهَا". The ها is the attached feminine pronoun.</p>
+            </div>
+        </div>
+
+        <!-- Q16 -->
+        <div class="exercise-item" id="q16">
+            <p class="exercise-question">أَكْمِلِ: "مَنْ هَؤُلَاءِ؟ _____ طُلَّابٌ"</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: "Who are these? _____ students" (It looks as if they are...)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q16', 0, 1)">كَأَنَّهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 1, 1)">كَأَنَّهُمْ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 2, 1)">كَأَنَّهَا</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 3, 1)">كَأَنَّهُنَّ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: كَأَنَّهُمْ</p>
+                <p>"هَؤُلَاءِ" تُشِيرُ إِلَى جَمَاعَةٍ، وَالضَّمِيرُ المُنَاسِبُ هُوَ "هُمْ"، فَنَقُولُ "كَأَنَّهُمْ طُلَّابٌ".</p>
+                <p class="english-text">"هَؤُلَاءِ" (these) refers to a group, so the appropriate pronoun is "هُمْ", making it "كَأَنَّهُمْ طُلَّابٌ".</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 6: العدد الترتيبي -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٦. العَدَدُ التَّرْتِيبِيُّ - Ordinal Numbers</h3>
+
+        <!-- Q17 -->
+        <div class="exercise-item" id="q17">
+            <p class="exercise-question">مَا مُؤَنَّثُ "الأَوَّلُ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the feminine form of "الأَوَّلُ" (first)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q17', 0, 2)">الأَوَّلَةُ</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 1, 2)">الوَاحِدَةُ</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 2, 2)">الأُولَى</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 3, 2)">الأَوْلَى</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: الأُولَى</p>
+                <p>"الأَوَّلُ" مُؤَنَّثُهُ "الأُولَى" وَلَيْسَ "الأَوَّلَةُ". هَذَا شَاذٌّ عَنِ القَاعِدَةِ.</p>
+                <p class="english-text">"الأَوَّلُ" (first - masc.) has the feminine form "الأُولَى", not "الأَوَّلَةُ". This is an exception to the regular pattern.</p>
+            </div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="exercise-item" id="q18">
+            <p class="exercise-question">أَكْمِلِ: "قَرَأْتُ الدَّرْسَ _____" (7)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: "I read the _____ lesson" (7th)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q18', 0, 1)">السَّبْعَةَ</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 1, 1)">السَّابِعَ</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 2, 1)">سَبْعَةً</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 3, 1)">السَّابِعَةَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: السَّابِعَ</p>
+                <p>"الدَّرْسُ" مُذَكَّرٌ، فَالعَدَدُ التَّرْتِيبِيُّ يَجِبُ أَنْ يَكُونَ مُذَكَّرًا أَيْضًا: "السَّابِعَ". (مَنْصُوبٌ لِأَنَّهُ صِفَةٌ لِـ"الدَّرْسَ" المَنْصُوبِ)</p>
+                <p class="english-text">"الدَّرْسُ" is masculine, so the ordinal must also be masculine: "السَّابِعَ". (Accusative because it's an adjective for the accusative "الدَّرْسَ")</p>
+            </div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="exercise-item" id="q19">
+            <p class="exercise-question">أَكْمِلِ: "هَذِهِ الطَّالِبَةُ _____" (3rd)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: "This is the _____ (female) student" (3rd)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q19', 0, 1)">الثَّالِثُ</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 1, 1)">الثَّالِثَةُ</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 2, 1)">ثَالِثَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 3, 1)">الثَّلَاثَةُ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: الثَّالِثَةُ</p>
+                <p>"الطَّالِبَةُ" مُؤَنَّثٌ، فَالعَدَدُ التَّرْتِيبِيُّ يَجِبُ أَنْ يَكُونَ مُؤَنَّثًا: "الثَّالِثَةُ".</p>
+                <p class="english-text">"الطَّالِبَةُ" is feminine, so the ordinal must also be feminine: "الثَّالِثَةُ" (the third - fem.).</p>
+            </div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="exercise-item" id="q20">
+            <p class="exercise-question">مَا العَدَدُ التَّرْتِيبِيُّ المُذَكَّرُ لِـ "8"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the masculine ordinal number for "8" (eighth)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q20', 0, 2)">الثَّمَانِيَةُ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 1, 2)">الثَّمَانِيَةَ عَشَرَ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 2, 2)">الثَّامِنُ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 3, 2)">الثَّامِنَةُ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: الثَّامِنُ</p>
+                <p>العَدَدُ "8" التَّرْتِيبِيُّ المُذَكَّرُ هُوَ "الثَّامِنُ"، وَالمُؤَنَّثُ "الثَّامِنَةُ".</p>
+                <p class="english-text">The ordinal for "8" (masculine) is "الثَّامِنُ", and feminine is "الثَّامِنَةُ".</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="reset-btn" onclick="resetAllQuestions()">إِعَادَةُ التَّمَارِينِ - Reset All Exercises</button>
+    </div>
+</section>
+
+<script>
+let score = 0;
+let totalAnswered = 0;
+const totalQuestions = 20;
+
+function checkAnswer(questionId, selectedOption, correctOption) {
+    const questionDiv = document.getElementById(questionId);
+    const options = questionDiv.querySelectorAll('.option-btn');
+    const explanation = questionDiv.querySelector('.explanation');
+
+    // Disable all buttons
+    options.forEach((btn, index) => {
+        btn.disabled = true;
+        if (index === correctOption) {
+            btn.classList.add('correct');
+        } else if (index === selectedOption && selectedOption !== correctOption) {
+            btn.classList.add('incorrect');
+        }
+    });
+
+    // Show explanation
+    explanation.classList.add('show');
+    if (selectedOption === correctOption) {
+        explanation.classList.add('correct-exp');
+        score++;
+    } else {
+        explanation.classList.add('incorrect-exp');
+    }
+
+    totalAnswered++;
+    updateScore();
+}
+
+function updateScore() {
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const percentage = Math.round((score / totalAnswered) * 100);
+    scoreDisplay.innerHTML = `النَّتِيجَةُ: ${score} مِنْ ${totalAnswered} (${percentage}%) - Score: ${score} out of ${totalAnswered}`;
+}
+
+function resetAllQuestions() {
+    score = 0;
+    totalAnswered = 0;
+
+    // Reset all questions
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionDiv = document.getElementById('q' + i);
+        if (questionDiv) {
+            const options = questionDiv.querySelectorAll('.option-btn');
+            const explanation = questionDiv.querySelector('.explanation');
+
+            options.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct', 'incorrect');
+            });
+
+            explanation.classList.remove('show', 'correct-exp', 'incorrect-exp');
+        }
+    }
+
+    document.getElementById('scoreDisplay').innerHTML = 'أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions';
+}
+</script>
 
 <!-- Summary Section -->
 <section id="summary" class="section">

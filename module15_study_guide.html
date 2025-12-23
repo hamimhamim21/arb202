@@ -154,6 +154,131 @@
             margin: 15px 0;
             text-align: center;
         }
+        /* Interactive Exercise Styles */
+        .exercise-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .exercise-section-title {
+            font-size: 36px;
+            color: #5e35b1;
+            border-bottom: 4px solid #7e57c2;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .exercise-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .exercise-category-title {
+            font-size: 28px;
+            color: #4527a0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d1c4e9;
+        }
+        .exercise-item {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .exercise-question {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .exercise-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 15px 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background: white;
+            font-size: 22px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            text-align: right;
+            transition: all 0.3s;
+        }
+        .option-btn:hover:not(:disabled) {
+            border-color: #7e57c2;
+            background: #ede7f6;
+        }
+        .option-btn.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+            color: #1e8449;
+        }
+        .option-btn.incorrect {
+            border-color: #e74c3c;
+            background: #fadbd8;
+            color: #c0392b;
+        }
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .explanation.show {
+            display: block;
+        }
+        .explanation.correct-exp {
+            background: linear-gradient(135deg, #d5f4e6 0%, #a9dfbf 100%);
+            border-right: 5px solid #27ae60;
+        }
+        .explanation.incorrect-exp {
+            background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%);
+            border-right: 5px solid #e74c3c;
+        }
+        .explanation-title {
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .reset-btn {
+            background: linear-gradient(135deg, #5e35b1 0%, #7e57c2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(94, 53, 177, 0.4);
+        }
+        .score-display {
+            text-align: center;
+            font-size: 24px;
+            color: #4527a0;
+            padding: 15px;
+            background: #ede7f6;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
         @media (max-width: 768px) {
             .arabic-large { font-size: 32px; }
             .arabic-medium { font-size: 26px; }
@@ -206,6 +331,7 @@
         <a href="#sakinayn"><span class="nav-ar">التقاء الساكنين</span><span class="nav-en">Two Sukoons</span></a>
         <a href="#dialogue"><span class="nav-ar">الحوار</span><span class="nav-en">Dialogue</span></a>
         <a href="#quran"><span class="nav-ar">أمثلة قرآنية</span><span class="nav-en">Quranic Examples</span></a>
+        <a href="#exercises"><span class="nav-ar">التمارين</span><span class="nav-en">Exercises</span></a>
         <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
     </div>
 </nav>
@@ -601,6 +727,429 @@
         </div>
     </div>
 </section>
+
+<!-- Exercises Section -->
+<section id="exercises" class="exercise-section">
+    <h2 class="exercise-section-title">تَمَارِينُ الوَحْدَةِ الخَامِسَةَ عَشْرَةَ - Module 15 Exercises</h2>
+
+    <div class="score-display" id="scoreDisplay">
+        أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions
+    </div>
+
+    <!-- Category 1: تصريف ضَرَبَ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">١. تَصْرِيفُ الفِعْلِ ضَرَبَ - Verb Conjugation</h3>
+
+        <div class="exercise-item" id="q1">
+            <p class="exercise-question">أَكْمِلِ الفَرَاغَ: هُوَ _____ الكُرَةَ (المضارع)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete the blank: He _____ the ball (present tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q1', 0, 0)">يَضْرِبُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 1, 0)">تَضْرِبُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 2, 0)">أَضْرِبُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 3, 0)">يَضْرِبُونَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: يَضْرِبُ</p>
+                <p>الضَّمِيرُ "هُوَ" لِلْمُذَكَّرِ الغَائِبِ المُفْرَدِ، فَيَكُونُ المُضَارِعُ "يَضْرِبُ" بِحَرْفِ المُضَارَعَةِ "يـ".</p>
+                <p class="english-text">"هُوَ" (he) is third person masculine singular, so the present tense is "يَضْرِبُ" with prefix يـ.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q2">
+            <p class="exercise-question">أَكْمِلِ الفَرَاغَ: أَنْتُنَّ _____ الطَّبْلَةَ (الماضي)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete the blank: You (fem. pl.) _____ the drum (past tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q2', 0, 2)">ضَرَبْتُ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 1, 2)">ضَرَبُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 2, 2)">ضَرَبْتُنَّ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 3, 2)">ضَرَبْنَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: ضَرَبْتُنَّ</p>
+                <p>الضَّمِيرُ "أَنْتُنَّ" لِجَمْعِ المُؤَنَّثِ المُخَاطَبِ، فَيَكُونُ الفِعْلُ المَاضِي "ضَرَبْتُنَّ" مَعَ تَاءِ الفَاعِلِ وَنُونِ النِّسْوَةِ.</p>
+                <p class="english-text">"أَنْتُنَّ" (you feminine plural) uses "ضَرَبْتُنَّ" with تاء الفاعل and نون النسوة.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q3">
+            <p class="exercise-question">مَا هُوَ فِعْلُ الأَمْرِ مِنْ "ضَرَبَ" لِلضَّمِيرِ "أَنْتُمَا"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the command form of "ضَرَبَ" (to hit) for the pronoun "أَنْتُمَا" (you dual)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q3', 0, 2)">اِضْرِبْ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 1, 2)">اِضْرِبِي</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 2, 2)">اِضْرِبَا</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 3, 2)">اِضْرِبُوا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: اِضْرِبَا</p>
+                <p>فِعْلُ الأَمْرِ لِلْمُثَنَّى (أَنْتُمَا) يَكُونُ "اِضْرِبَا" مَعَ أَلِفِ الاثْنَيْنِ.</p>
+                <p class="english-text">The command for dual "you" (أَنْتُمَا) is "اِضْرِبَا" with ألف الاثنين.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q4">
+            <p class="exercise-question">أَكْمِلِ: هُنَّ _____ عَلَى البَابِ (الماضي)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: They (fem.) _____ on the door (past tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q4', 0, 1)">ضَرَبَتْ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 1, 1)">ضَرَبْنَ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 2, 1)">ضَرَبُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 3, 1)">ضَرَبَتَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: ضَرَبْنَ</p>
+                <p>"هُنَّ" جَمْعُ مُؤَنَّثٍ غَائِبٍ، فَيَكُونُ المَاضِي "ضَرَبْنَ" مَعَ نُونِ النِّسْوَةِ.</p>
+                <p class="english-text">"هُنَّ" is feminine plural, so the past verb takes نون النسوة: "ضَرَبْنَ".</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 2: الفعل اللازم والمتعدي -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٢. الفِعْلُ اللَّازِمُ وَالمُتَعَدِّي - Intransitive & Transitive</h3>
+
+        <div class="exercise-item" id="q5">
+            <p class="exercise-question">أَيُّ الأَفْعَالِ التَّالِيَةِ مُتَعَدٍّ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Which of the following verbs is transitive?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q5', 0, 0)">ضَرَبَ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 1, 0)">خَرَجَ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 2, 0)">رَجَعَ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 3, 0)">مَاتَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: ضَرَبَ</p>
+                <p>"ضَرَبَ" فِعْلٌ مُتَعَدٍّ يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ: ضَرَبَ الوَلَدُ الكُرَةَ. أَمَّا خَرَجَ، رَجَعَ، مَاتَ فَأَفْعَالٌ لَازِمَةٌ.</p>
+                <p class="english-text">"ضَرَبَ" is transitive - needs an object: ضَرَبَ الوَلَدُ الكُرَةَ. The others are intransitive.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q6">
+            <p class="exercise-question">"خَرَجَ مُحَمَّدٌ" - لِمَاذَا هَذِهِ الجُمْلَةُ كَامِلَةٌ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"Muhammad left" - Why is this sentence complete?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q6', 0, 1)">لِأَنَّ "خَرَجَ" فِعْلٌ مُتَعَدٍّ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 1, 1)">لِأَنَّ "خَرَجَ" فِعْلٌ لَازِمٌ لَا يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 2, 1)">لِأَنَّ المَفْعُولَ بِهِ مَحْذُوفٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 3, 1)">لِأَنَّ الجُمْلَةَ اسْمِيَّةٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِأَنَّ "خَرَجَ" فِعْلٌ لَازِمٌ لَا يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ</p>
+                <p>الفِعْلُ اللَّازِمُ يَكْتَفِي بِالفَاعِلِ فَقَطْ لِإِتْمَامِ المَعْنَى. "خَرَجَ مُحَمَّدٌ" جُمْلَةٌ مُكْتَمِلَةٌ.</p>
+                <p class="english-text">Intransitive verbs only need a subject to complete meaning. "خَرَجَ مُحَمَّدٌ" is a complete sentence.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q7">
+            <p class="exercise-question">"جَعَلَتْ أُمِّي البُرْتُقَالَ عَصِيرًا" - كَمْ مَفْعُولًا بِهِ فِي الجُمْلَةِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"My mother made the orange into juice" - How many direct objects are in the sentence?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q7', 0, 1)">مَفْعُولٌ بِهِ وَاحِدٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 1, 1)">مَفْعُولَانِ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 2, 1)">لَا يُوجَدُ مَفْعُولٌ بِهِ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 3, 1)">ثَلَاثَةُ مَفَاعِيلَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مَفْعُولَانِ</p>
+                <p>"جَعَلَ" مِنَ الأَفْعَالِ الَّتِي تَنْصِبُ مَفْعُولَيْنِ: "البُرْتُقَالَ" (مَفْعُولٌ بِهِ أَوَّلُ) وَ"عَصِيرًا" (مَفْعُولٌ بِهِ ثَانٍ).</p>
+                <p class="english-text">"جَعَلَ" takes two objects: "البُرْتُقَالَ" (first) and "عَصِيرًا" (second).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 3: الفعل الثلاثي -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٣. الفِعْلُ الثُّلَاثِيُّ - Trilateral Verb</h3>
+
+        <div class="exercise-item" id="q8">
+            <p class="exercise-question">مَا اسْمُ الحَرْفِ الأَوَّلِ فِي الفِعْلِ الثُّلَاثِيِّ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the name of the first letter in a trilateral verb?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q8', 0, 0)">فَاءُ الكَلِمَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 1, 0)">عَيْنُ الكَلِمَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 2, 0)">لَامُ الكَلِمَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 3, 0)">أَلِفُ الكَلِمَةِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: فَاءُ الكَلِمَةِ</p>
+                <p>الحَرْفُ الأَوَّلُ يُسَمَّى "فَاءُ الكَلِمَةِ" (First Radical)، نِسْبَةً إِلَى حَرْفِ الفَاءِ فِي الوَزْنِ "فَعَلَ".</p>
+                <p class="english-text">The first radical is called "فَاءُ الكَلِمَةِ" - from the ف in the pattern فَعَلَ.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q9">
+            <p class="exercise-question">فِي الفِعْلِ "خَرَجَ"، مَا هِيَ "عَيْنُ الكَلِمَةِ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">In the verb "خَرَجَ" (to exit), what is the "عَيْنُ الكَلِمَةِ" (second radical)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q9', 0, 1)">خ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 1, 1)">ر</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 2, 1)">ج</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 3, 1)">ا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: ر</p>
+                <p>"خَرَجَ" = خ + ر + ج. الحَرْفُ الثَّانِي "ر" هُوَ "عَيْنُ الكَلِمَةِ" (Second Radical).</p>
+                <p class="english-text">"خَرَجَ" = خ + ر + ج. The second letter "ر" is "عَيْنُ الكَلِمَةِ" (Second Radical).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q10">
+            <p class="exercise-question">مَا حَرَكَةُ "فَاءِ الكَلِمَةِ" وَ"لَامِ الكَلِمَةِ" دَائِمًا فِي الفِعْلِ المَاضِي الثُّلَاثِيِّ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What vowel do the first and third radicals always have in the past tense trilateral verb?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q10', 0, 0)">مَفْتُوحَتَانِ (فَتْحَة)</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 1, 0)">مَضْمُومَتَانِ (ضَمَّة)</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 2, 0)">مَكْسُورَتَانِ (كَسْرَة)</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 3, 0)">سَاكِنَتَانِ (سُكُون)</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مَفْتُوحَتَانِ (فَتْحَة)</p>
+                <p>فَاءُ الكَلِمَةِ (الأَوَّلُ) وَلَامُ الكَلِمَةِ (الثَّالِثُ) دَائِمًا مَفْتُوحَتَانِ. فَقَطْ "عَيْنُ الكَلِمَةِ" (الثَّانِي) تَتَغَيَّرُ.</p>
+                <p class="english-text">First and third radicals always have fatha. Only the second radical (عَيْن) can vary.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q11">
+            <p class="exercise-question">"فَهِمَ" - مَا نَوْعُ هَذَا الفِعْلِ حَسَبَ حَرَكَةِ عَيْنِ الكَلِمَةِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"فَهِمَ" (to understand) - What type is this verb according to the vowel of its second radical?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q11', 0, 2)">مَفْتُوحُ العَيْنِ (فَعَلَ)</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 1, 2)">مَضْمُومُ العَيْنِ (فَعُلَ)</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 2, 2)">مَكْسُورُ العَيْنِ (فَعِلَ)</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 3, 2)">سَاكِنُ العَيْنِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مَكْسُورُ العَيْنِ (فَعِلَ)</p>
+                <p>"فَهِمَ" = فَـ هِـ مَ. الحَرْفُ الثَّانِي "هـ" مَكْسُورٌ (هِ)، فَهُوَ عَلَى وَزْنِ "فَعِلَ".</p>
+                <p class="english-text">"فَهِمَ" has kasra on the second radical (هِ), so it follows the pattern فَعِلَ (fa'ila).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q12">
+            <p class="exercise-question">أَيُّ الأَفْعَالِ التَّالِيَةِ عَلَى وَزْنِ "فَعَلَ" (مَفْتُوحُ العَيْنِ)؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Which of the following verbs follows the pattern "فَعَلَ" (with fatha on second radical)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q12', 0, 0)">كَتَبَ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 1, 0)">سَمِعَ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 2, 0)">كَرُمَ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 3, 0)">حَفِظَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: كَتَبَ</p>
+                <p>"كَتَبَ" = كَـ تَـ بَ. الحَرْفُ الثَّانِي "تـ" مَفْتُوحٌ (تَ)، فَهُوَ عَلَى وَزْنِ "فَعَلَ". أَمَّا سَمِعَ وَحَفِظَ فَعَلَى وَزْنِ "فَعِلَ"، وَكَرُمَ عَلَى وَزْنِ "فَعُلَ".</p>
+                <p class="english-text">"كَتَبَ" has fatha on the second radical. سَمِعَ and حَفِظَ are فَعِلَ, and كَرُمَ is فَعُلَ.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 4: التقاء الساكنين -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٤. اِلْتِقَاءُ السَّاكِنَيْنِ - Meeting of Two Sukoons</h3>
+
+        <div class="exercise-item" id="q13">
+            <p class="exercise-question">مَا القَاعِدَةُ فِي اِلْتِقَاءِ السَّاكِنَيْنِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the rule regarding the meeting of two sukoons?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q13', 0, 0)">لَا يَجُوزُ أَنْ يَلْتَقِيَ حَرْفَانِ سَاكِنَانِ</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 1, 0)">يَجُوزُ أَنْ يَلْتَقِيَ حَرْفَانِ سَاكِنَانِ</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 2, 0)">يَجِبُ أَنْ يَلْتَقِيَ حَرْفَانِ سَاكِنَانِ</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 3, 0)">يُفَضَّلُ اِلْتِقَاءُ السَّاكِنَيْنِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لَا يَجُوزُ أَنْ يَلْتَقِيَ حَرْفَانِ سَاكِنَانِ</p>
+                <p>فِي اللُّغَةِ العَرَبِيَّةِ، إِذَا جَاءَ حَرْفَانِ سَاكِنَانِ مُتَتَالِيَانِ، فَيَجِبُ تَغْيِيرُ أَحَدِهِمَا إِلَى حَرَكَةٍ.</p>
+                <p class="english-text">In Arabic, two consecutive sukoons are not allowed. One must change to a vowel.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q14">
+            <p class="exercise-question">"قَالَتِ المُعَلِّمَةُ" - لِمَاذَا تَحَرَّكَتِ التَّاءُ بِالكَسْرَةِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"قَالَتِ المُعَلِّمَةُ" (The teacher said) - Why does the taa have kasra?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q14', 0, 0)">لِالْتِقَاءِ السَّاكِنَيْنِ (تْ + الـ)</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 1, 0)">لِأَنَّهَا تَاءُ التَّأْنِيثِ</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 2, 0)">لِأَنَّ المُعَلِّمَةَ مُؤَنَّثَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 3, 0)">لِأَنَّهَا قَاعِدَةٌ صَرْفِيَّةٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِالْتِقَاءِ السَّاكِنَيْنِ (تْ + الـ)</p>
+                <p>تَاءُ التَّأْنِيثِ سَاكِنَةٌ (تْ)، وَأَلِفُ وَلَامُ التَّعْرِيفِ سَاكِنَةٌ أَيْضًا (الْـ). لِمَنْعِ اِلْتِقَاءِ السَّاكِنَيْنِ تَتَحَرَّكُ التَّاءُ بِالكَسْرَةِ.</p>
+                <p class="english-text">The taa of femininity (تْ) and the alif-laam (الْـ) are both sukoon. To avoid two sukoons, taa takes kasra.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q15">
+            <p class="exercise-question">"قَالَتْ فَاطِمَةُ" - لِمَاذَا بَقِيَتِ التَّاءُ سَاكِنَةً؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"قَالَتْ فَاطِمَةُ" (Fatima said) - Why does the taa remain with sukoon?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q15', 0, 0)">لِأَنَّ الفَاءَ فِي "فَاطِمَةُ" مُتَحَرِّكَةٌ (فَـ) فَلَا يُوجَدُ اِلْتِقَاءُ سَاكِنَيْنِ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 1, 0)">لِأَنَّ فَاطِمَةَ اسْمٌ عَلَمٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 2, 0)">لِأَنَّ التَّاءَ تَاءُ التَّأْنِيثِ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 3, 0)">لِأَنَّ الجُمْلَةَ قَصِيرَةٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِأَنَّ الفَاءَ فِي "فَاطِمَةُ" مُتَحَرِّكَةٌ (فَـ) فَلَا يُوجَدُ اِلْتِقَاءُ سَاكِنَيْنِ</p>
+                <p>التَّاءُ سَاكِنَةٌ (تْ)، لَكِنَّ الحَرْفَ التَّالِيَ (فَـ) مُتَحَرِّكٌ بِالفَتْحَةِ، فَلَا يُوجَدُ اِلْتِقَاءُ سَاكِنَيْنِ.</p>
+                <p class="english-text">The taa has sukoon (تْ), but the next letter (فَـ) has fatha, so there's no meeting of two sukoons.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q16">
+            <p class="exercise-question">"اقْتَرَبَتِ السَّاعَةُ" - مَا سَبَبُ الكَسْرَةِ عَلَى التَّاءِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"اقْتَرَبَتِ السَّاعَةُ" (The Hour drew near) - What causes the kasra on the taa?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q16', 0, 1)">لِأَنَّ "اقْتَرَبَ" فِعْلٌ ثُلَاثِيٌّ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 1, 1)">لِالْتِقَاءِ السَّاكِنَيْنِ مَعَ (الـ) فِي "السَّاعَةُ"</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 2, 1)">لِأَنَّ السَّاعَةَ مُؤَنَّثَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 3, 1)">لِأَنَّ الفِعْلَ مُضَارِعٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لِالْتِقَاءِ السَّاكِنَيْنِ مَعَ (الـ) فِي "السَّاعَةُ"</p>
+                <p>تَاءُ التَّأْنِيثِ (تْ) وَأَلِفُ وَلَامُ التَّعْرِيفِ (الْـ) كِلَاهُمَا سَاكِنٌ، فَتَتَحَرَّكُ التَّاءُ بِالكَسْرَةِ لِمَنْعِ اِلْتِقَاءِ السَّاكِنَيْنِ.</p>
+                <p class="english-text">The feminine taa (تْ) and alif-laam (الْـ) are both sukoon, so taa takes kasra to prevent two sukoons meeting.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 5: الحوار والمفردات -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٥. الحِوَارُ وَالمُفْرَدَاتُ - Dialogue & Vocabulary</h3>
+
+        <div class="exercise-item" id="q17">
+            <p class="exercise-question">مَا مَعْنَى: "ضَرَبْتُهَا لِأَنَّهَا لَمْ تُصَلِّ العَصْرَ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the meaning of: "ضَرَبْتُهَا لِأَنَّهَا لَمْ تُصَلِّ العَصْرَ"?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q17', 0, 0)">I hit her because she didn't pray Asr</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 1, 0)">She hit me because I didn't pray</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 2, 0)">I prayed Asr after hitting her</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 3, 0)">She prayed Asr before I hit</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: I hit her because she didn't pray Asr</p>
+                <p>ضَرَبْتُهَا = I hit her | لِأَنَّهَا = because she | لَمْ تُصَلِّ = didn't pray | العَصْرَ = Asr prayer.</p>
+                <p class="english-text">ضَرَبْتُهَا (I hit her) + لِأَنَّهَا (because she) + لَمْ تُصَلِّ (didn't pray) + العَصْرَ (Asr).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q18">
+            <p class="exercise-question">"الطَّالِبُ الكَسْلَانُ" - مَا مَعْنَى "الكَسْلَانُ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"الطَّالِبُ الكَسْلَانُ" (The _____ student) - What does "الكَسْلَانُ" mean?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q18', 0, 1)">The hardworking</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 1, 1)">The lazy</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 2, 1)">The smart</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 3, 1)">The new</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: The lazy</p>
+                <p>"الكَسْلَانُ" صِفَةٌ بِمَعْنَى "الكَسُولُ" أَوْ lazy. "الطَّالِبُ الكَسْلَانُ" = The lazy student.</p>
+                <p class="english-text">"الكَسْلَانُ" is an adjective meaning "lazy". الطَّالِبُ الكَسْلَانُ = The lazy student.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 6: التطبيق العام -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٦. التَّطْبِيقُ العَامُّ - General Application</h3>
+
+        <div class="exercise-item" id="q19">
+            <p class="exercise-question">فِي الآيَةِ "اقْتَرَبَتِ السَّاعَةُ وَانْشَقَّ القَمَرُ"، مَا نَوْعُ الفِعْلَيْنِ "اقْتَرَبَ" وَ"انْشَقَّ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">In the verse "The Hour drew near and the moon split", what type are the verbs "اقْتَرَبَ" and "انْشَقَّ"?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q19', 0, 0)">لَازِمَانِ (لَا يَحْتَاجَانِ إِلَى مَفْعُولٍ بِهِ)</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 1, 0)">مُتَعَدِّيَانِ</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 2, 0)">اقْتَرَبَ مُتَعَدٍّ وَانْشَقَّ لَازِمٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 3, 0)">اقْتَرَبَ لَازِمٌ وَانْشَقَّ مُتَعَدٍّ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لَازِمَانِ (لَا يَحْتَاجَانِ إِلَى مَفْعُولٍ بِهِ)</p>
+                <p>"اقْتَرَبَ" و"انْشَقَّ" فِعْلَانِ لَازِمَانِ. "اقْتَرَبَتِ السَّاعَةُ" وَ"انْشَقَّ القَمَرُ" جُمَلٌ مُكْتَمِلَةٌ بِالفَاعِلِ فَقَطْ.</p>
+                <p class="english-text">"اقْتَرَبَ" (drew near) and "انْشَقَّ" (split) are both intransitive - complete with just the subject.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q20">
+            <p class="exercise-question">رَتِّبِ الحُرُوفَ الثَّلَاثَةَ لِلْفِعْلِ "ضَرَبَ" بِأَسْمَائِهَا الصَّحِيحَةِ:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Arrange the three letters of the verb "ضَرَبَ" (to hit) with their correct names:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q20', 0, 0)">ض = فَاءُ الكَلِمَةِ | ر = عَيْنُ الكَلِمَةِ | ب = لَامُ الكَلِمَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 1, 0)">ض = لَامُ الكَلِمَةِ | ر = فَاءُ الكَلِمَةِ | ب = عَيْنُ الكَلِمَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 2, 0)">ض = عَيْنُ الكَلِمَةِ | ر = لَامُ الكَلِمَةِ | ب = فَاءُ الكَلِمَةِ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 3, 0)">ض = فَاءُ الكَلِمَةِ | ر = لَامُ الكَلِمَةِ | ب = عَيْنُ الكَلِمَةِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: ض = فَاءُ الكَلِمَةِ | ر = عَيْنُ الكَلِمَةِ | ب = لَامُ الكَلِمَةِ</p>
+                <p>"ضَرَبَ" = ض + ر + ب. الأَوَّلُ (ض) = فَاءُ الكَلِمَةِ، الثَّانِي (ر) = عَيْنُ الكَلِمَةِ، الثَّالِثُ (ب) = لَامُ الكَلِمَةِ.</p>
+                <p class="english-text">"ضَرَبَ" = ض + ر + ب. First (ض) = فاء الكلمة, Second (ر) = عين الكلمة, Third (ب) = لام الكلمة.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="reset-btn" onclick="resetAllQuestions()">إِعَادَةُ التَّمَارِينِ - Reset All Exercises</button>
+    </div>
+</section>
+
+<script>
+let score = 0;
+let totalAnswered = 0;
+const totalQuestions = 20;
+
+function checkAnswer(questionId, selectedOption, correctOption) {
+    const questionDiv = document.getElementById(questionId);
+    const options = questionDiv.querySelectorAll('.option-btn');
+    const explanation = questionDiv.querySelector('.explanation');
+
+    options.forEach((btn, index) => {
+        btn.disabled = true;
+        if (index === correctOption) {
+            btn.classList.add('correct');
+        } else if (index === selectedOption && selectedOption !== correctOption) {
+            btn.classList.add('incorrect');
+        }
+    });
+
+    explanation.classList.add('show');
+    if (selectedOption === correctOption) {
+        explanation.classList.add('correct-exp');
+        score++;
+    } else {
+        explanation.classList.add('incorrect-exp');
+    }
+
+    totalAnswered++;
+    updateScore();
+}
+
+function updateScore() {
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const percentage = Math.round((score / totalAnswered) * 100);
+    scoreDisplay.innerHTML = `النَّتِيجَةُ: ${score} مِنْ ${totalAnswered} (${percentage}%) - Score: ${score} out of ${totalAnswered}`;
+}
+
+function resetAllQuestions() {
+    score = 0;
+    totalAnswered = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionDiv = document.getElementById('q' + i);
+        if (questionDiv) {
+            const options = questionDiv.querySelectorAll('.option-btn');
+            const explanation = questionDiv.querySelector('.explanation');
+
+            options.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct', 'incorrect');
+            });
+
+            explanation.classList.remove('show', 'correct-exp', 'incorrect-exp');
+        }
+    }
+
+    document.getElementById('scoreDisplay').innerHTML = 'أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions';
+}
+</script>
 
 <!-- Summary Section -->
 <section id="summary" class="section">

@@ -339,6 +339,132 @@
             border-bottom: none;
         }
 
+        /* Interactive Exercise Styles */
+        .exercise-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .exercise-section-title {
+            font-size: 36px;
+            color: #1a5276;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .exercise-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .exercise-category-title {
+            font-size: 28px;
+            color: #1a5276;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4e6f1;
+        }
+        .exercise-item {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .exercise-question {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .exercise-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 15px 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background: white;
+            font-size: 22px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            text-align: right;
+            transition: all 0.3s;
+        }
+        .option-btn:hover:not(:disabled) {
+            border-color: #3498db;
+            background: #eaf2f8;
+        }
+        .option-btn.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+            color: #1e8449;
+        }
+        .option-btn.incorrect {
+            border-color: #e74c3c;
+            background: #fadbd8;
+            color: #c0392b;
+        }
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .explanation.show {
+            display: block;
+        }
+        .explanation.correct-exp {
+            background: linear-gradient(135deg, #d5f4e6 0%, #a9dfbf 100%);
+            border-right: 5px solid #27ae60;
+        }
+        .explanation.incorrect-exp {
+            background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%);
+            border-right: 5px solid #e74c3c;
+        }
+        .explanation-title {
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .reset-btn {
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(26, 82, 118, 0.4);
+        }
+        .score-display {
+            text-align: center;
+            font-size: 24px;
+            color: #1a5276;
+            padding: 15px;
+            background: #eaf2f8;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .arabic-large { font-size: 32px; }
@@ -397,6 +523,7 @@
         <a href="#dhu"><span class="nav-ar">ذو وذات</span><span class="nav-en">Dhu & Dhat</span></a>
         <a href="#irab"><span class="nav-ar">الإعراب</span><span class="nav-en">I'rab</span></a>
         <a href="#quran"><span class="nav-ar">أمثلة قرآنية</span><span class="nav-en">Quran Examples</span></a>
+        <a href="#exercises"><span class="nav-ar">تمارين</span><span class="nav-en">Exercises</span></a>
         <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
     </div>
 </nav>
@@ -1254,6 +1381,434 @@
         </div>
     </div>
 </section>
+
+<!-- Exercises Section -->
+<section id="exercises" class="exercise-section">
+    <h2 class="exercise-section-title">تَمَارِينُ الوَحْدَةِ الأُولَى - Module 1 Exercises</h2>
+
+    <div class="score-display" id="scoreDisplay">
+        أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions
+    </div>
+
+    <!-- Category 1: أنواع الكلمة -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">١. أَنْوَاعُ الكَلِمَةِ - Word Types</h3>
+
+        <div class="exercise-item" id="q1">
+            <p class="exercise-question">مَا هِيَ أَنْوَاعُ الكَلِمَةِ فِي اللُّغَةِ العَرَبِيَّةِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What are the types of words in the Arabic language?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q1', 0, 0)">اسْمٌ - فِعْلٌ - حَرْفٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 1, 0)">مُبْتَدَأٌ - خَبَرٌ - فَاعِلٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 2, 0)">مَاضٍ - مُضَارِعٌ - أَمْرٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 3, 0)">مَرْفُوعٌ - مَنْصُوبٌ - مَجْرُورٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: اسْمٌ - فِعْلٌ - حَرْفٌ</p>
+                <p>الكَلِمَةُ فِي العَرَبِيَّةِ ثَلَاثَةُ أَنْوَاعٍ: الاسْمُ (يَدُلُّ عَلَى مَعْنًى بِدُونِ زَمَنٍ)، الفِعْلُ (يَدُلُّ عَلَى حَدَثٍ مَعَ زَمَنٍ)، الحَرْفُ (لَيْسَ لَهُ مَعْنًى إِلَّا مَعَ غَيْرِهِ).</p>
+                <p class="english-text">Arabic words are three types: Noun (meaning without time), Verb (action with time), Particle (meaning only with others).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q2">
+            <p class="exercise-question">كَلِمَةُ "كِتَابٌ" مِنْ أَيِّ نَوْعٍ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What type of word is "كِتَابٌ" (book)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q2', 0, 0)">اسْمٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 1, 0)">فِعْلٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 2, 0)">حَرْفٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 3, 0)">صِفَةٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: اسْمٌ</p>
+                <p>"كِتَابٌ" اسْمٌ لِأَنَّهُ يَدُلُّ عَلَى شَيْءٍ بِدُونِ زَمَنٍ. الأَسْمَاءُ تَشْمَلُ الأَشْخَاصَ وَالأَشْيَاءَ وَالأَمَاكِنَ وَالصِّفَاتِ.</p>
+                <p class="english-text">"كِتَابٌ" (book) is a noun because it refers to something without indicating time.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q3">
+            <p class="exercise-question">كَلِمَةُ "فِي" مِنْ أَيِّ نَوْعٍ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What type of word is "فِي" (in)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q3', 0, 2)">اسْمٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 1, 2)">فِعْلٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 2, 2)">حَرْفٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 3, 2)">ظَرْفٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: حَرْفٌ</p>
+                <p>"فِي" حَرْفُ جَرٍّ، لَيْسَ لَهُ مَعْنًى مُسْتَقِلٌّ بَلْ يَحْتَاجُ إِلَى كَلِمَةٍ بَعْدَهُ لِيَكْتَمِلَ المَعْنَى.</p>
+                <p class="english-text">"فِي" (in) is a particle - a preposition that needs another word to complete its meaning.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 2: أنواع الجملة -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٢. أَنْوَاعُ الجُمْلَةِ - Sentence Types</h3>
+
+        <div class="exercise-item" id="q4">
+            <p class="exercise-question">"الكِتَابُ جَدِيدٌ" - مَا نَوْعُ هَذِهِ الجُمْلَةِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"The book is new" - What type of sentence is this?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q4', 0, 0)">جُمْلَةٌ اسْمِيَّةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 1, 0)">جُمْلَةٌ فِعْلِيَّةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 2, 0)">جُمْلَةٌ شَرْطِيَّةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 3, 0)">جُمْلَةٌ اسْتِفْهَامِيَّةٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: جُمْلَةٌ اسْمِيَّةٌ</p>
+                <p>الجُمْلَةُ الاسْمِيَّةُ تَبْدَأُ بِاسْمٍ (مُبْتَدَأٍ) وَتَتْبَعُهَا خَبَرٌ. هُنَا "الكِتَابُ" مُبْتَدَأٌ وَ"جَدِيدٌ" خَبَرٌ.</p>
+                <p class="english-text">A nominal sentence starts with a noun (subject) followed by a predicate. Here "الكِتَابُ" is mubtada' and "جَدِيدٌ" is khabar.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q5">
+            <p class="exercise-question">"خَرَجَ الفَلَّاحُ مِنَ البَيْتِ" - مَا نَوْعُ هَذِهِ الجُمْلَةِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"The farmer went out from the house" - What type of sentence is this?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q5', 0, 1)">جُمْلَةٌ اسْمِيَّةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 1, 1)">جُمْلَةٌ فِعْلِيَّةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 2, 1)">جُمْلَةٌ شَرْطِيَّةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 3, 1)">جُمْلَةٌ ظَرْفِيَّةٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: جُمْلَةٌ فِعْلِيَّةٌ</p>
+                <p>الجُمْلَةُ الفِعْلِيَّةُ تَبْدَأُ بِفِعْلٍ ثُمَّ يَأْتِي الفَاعِلُ. هُنَا "خَرَجَ" فِعْلٌ مَاضٍ وَ"الفَلَّاحُ" فَاعِلٌ.</p>
+                <p class="english-text">A verbal sentence starts with a verb, then the subject. Here "خَرَجَ" is past verb and "الفَلَّاحُ" is the doer (subject).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q6">
+            <p class="exercise-question">الجُمْلَةُ الاسْمِيَّةُ تَتَكَوَّنُ مِنْ:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">The nominal sentence consists of:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q6', 0, 1)">فِعْلٍ + فَاعِلٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 1, 1)">مُبْتَدَأٍ + خَبَرٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 2, 1)">فِعْلٍ + مَفْعُولٍ بِهِ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 3, 1)">حَرْفٍ + اسْمٍ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: مُبْتَدَأٍ + خَبَرٍ</p>
+                <p>الجُمْلَةُ الاسْمِيَّةُ = مُبْتَدَأٌ (الموضوع) + خَبَرٌ (الإخبار عنه). أَمَّا الجُمْلَةُ الفِعْلِيَّةُ = فِعْلٌ + فَاعِلٌ.</p>
+                <p class="english-text">Nominal sentence = Subject (mubtada') + Predicate (khabar). Verbal sentence = Verb + Doer (subject).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 3: أنواع الفعل -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٣. أَنْوَاعُ الفِعْلِ - Verb Types</h3>
+
+        <div class="exercise-item" id="q7">
+            <p class="exercise-question">"كَتَبَ" مِنْ أَيِّ نَوْعٍ مِنَ الأَفْعَالِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What type of verb is "كَتَبَ" (he wrote)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q7', 0, 0)">فِعْلٌ مَاضٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 1, 0)">فِعْلٌ مُضَارِعٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 2, 0)">فِعْلُ أَمْرٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 3, 0)">اسْمُ فَاعِلٍ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: فِعْلٌ مَاضٍ</p>
+                <p>"كَتَبَ" فِعْلٌ مَاضٍ لِأَنَّهُ يَدُلُّ عَلَى حَدَثٍ وَقَعَ وَانْتَهَى فِي الزَّمَنِ المَاضِي.</p>
+                <p class="english-text">"كَتَبَ" is past tense because it indicates an action that happened and completed in the past.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q8">
+            <p class="exercise-question">مَا هِيَ حُرُوفُ المُضَارَعَةِ (أَنَيْتُ)؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What are the present tense prefix letters (ANYT)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q8', 0, 0)">أ - ن - ي - ت</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 1, 0)">ب - ت - ث - ج</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 2, 0)">س - ش - ص - ض</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 3, 0)">ف - ع - ل - م</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: أ - ن - ي - ت</p>
+                <p>الفِعْلُ المُضَارِعُ يَبْدَأُ بِأَحَدِ الحُرُوفِ الأَرْبَعَةِ: أ (أَنَا)، ن (نَحْنُ)، ي (هُوَ/هُمْ)، ت (أَنْتَ/أَنْتِ/هِيَ).</p>
+                <p class="english-text">Present tense verbs begin with one of four letters: أ (I), ن (we), ي (he/they masc.), ت (you/she).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q9">
+            <p class="exercise-question">فِعْلُ الأَمْرِ يُسْتَخْدَمُ مَعَ:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">The command verb is used with:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q9', 0, 1)">المُتَكَلِّمِ فَقَطْ (أَنَا/نَحْنُ)</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 1, 1)">المُخَاطَبِ فَقَطْ (أَنْتَ/أَنْتِ/أَنْتُمْ...)</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 2, 1)">الغَائِبِ فَقَطْ (هُوَ/هِيَ/هُمْ...)</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 3, 1)">جَمِيعِ الضَّمَائِرِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: المُخَاطَبِ فَقَطْ</p>
+                <p>فِعْلُ الأَمْرِ يُسْتَخْدَمُ فَقَطْ مَعَ المُخَاطَبِ: أَنْتَ، أَنْتِ، أَنْتُمَا، أَنْتُمْ، أَنْتُنَّ. لَا يُوجَدُ أَمْرٌ لِلْمُتَكَلِّمِ أَوِ الغَائِبِ.</p>
+                <p class="english-text">Command verb is only used with second person: you (masc./fem./dual/plural). No command for first or third person.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 4: تصريف الأفعال -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٤. تَصْرِيفُ الأَفْعَالِ - Verb Conjugation</h3>
+
+        <div class="exercise-item" id="q10">
+            <p class="exercise-question">أَكْمِلِ: هُمْ _____ الدَّرْسَ (كَتَبَ - الماضي)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: They (masc.) _____ the lesson (كَتَبَ - past tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q10', 0, 2)">كَتَبَ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 1, 2)">كَتَبَتْ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 2, 2)">كَتَبُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 3, 2)">كَتَبْنَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: كَتَبُوا</p>
+                <p>"هُمْ" ضَمِيرٌ لِجَمَاعَةِ الذُّكُورِ الغَائِبِينَ، فَالفِعْلُ المَاضِي يَكُونُ "كَتَبُوا" مَعَ وَاوِ الجَمَاعَةِ.</p>
+                <p class="english-text">"هُمْ" (they - masc.) requires واو الجماعة, making it "كَتَبُوا".</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q11">
+            <p class="exercise-question">أَكْمِلِ: أَنَا _____ الدَّرْسَ (كَتَبَ - المضارع)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: I _____ the lesson (كَتَبَ - present tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q11', 0, 0)">أَكْتُبُ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 1, 0)">يَكْتُبُ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 2, 0)">تَكْتُبُ</button>
+                <button class="option-btn" onclick="checkAnswer('q11', 3, 0)">نَكْتُبُ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: أَكْتُبُ</p>
+                <p>"أَنَا" يَأْخُذُ الفِعْلَ المُضَارِعَ بِهَمْزَةِ المُتَكَلِّمِ "أَ"، فَيَصِيرُ "أَكْتُبُ".</p>
+                <p class="english-text">"أَنَا" (I) takes the present tense with همزة المتكلم "أ", making it "أَكْتُبُ".</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q12">
+            <p class="exercise-question">مَا هُوَ فِعْلُ الأَمْرِ مِنْ "كَتَبَ" لِـ "أَنْتُمْ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the command form of "كَتَبَ" for "أَنْتُمْ" (you masc. pl.)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q12', 0, 2)">اُكْتُبْ</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 1, 2)">اُكْتُبِي</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 2, 2)">اُكْتُبُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q12', 3, 2)">اُكْتُبْنَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: اُكْتُبُوا</p>
+                <p>فِعْلُ الأَمْرِ لِجَمَاعَةِ الذُّكُورِ (أَنْتُمْ) يَكُونُ بِإِضَافَةِ وَاوِ الجَمَاعَةِ، فَيَصِيرُ "اُكْتُبُوا".</p>
+                <p class="english-text">Command for masculine plural (أَنْتُمْ) adds واو الجماعة, making it "اُكْتُبُوا".</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 5: البحث في المعاجم -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٥. البَحْثُ فِي المَعَاجِمِ - Dictionary Search</h3>
+
+        <div class="exercise-item" id="q13">
+            <p class="exercise-question">لِلبَحْثِ عَنِ الفِعْلِ "يَلْعَبُ" فِي المُعْجَمِ، نَبْحَثُ عَنْ:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">To search for the verb "يَلْعَبُ" (he plays) in the dictionary, we search for:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q13', 0, 1)">يَلْعَبُ</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 1, 1)">لَعِبَ</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 2, 1)">يَلْعَبُونَ</button>
+                <button class="option-btn" onclick="checkAnswer('q13', 3, 1)">اِلْعَبْ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: لَعِبَ</p>
+                <p>لِلبَحْثِ فِي المُعْجَمِ، يَجِبُ أَنْ يَكُونَ الفِعْلُ: مُفْرَدًا، مُذَكَّرًا، مَاضِيًا، مَعَ الضَّمِيرِ "هُوَ". فَ"يَلْعَبُ" نَبْحَثُ عَنْهُ فِي "لَعِبَ".</p>
+                <p class="english-text">For dictionary search, verb must be: singular, masculine, past tense, with "he". So "يَلْعَبُ" becomes "لَعِبَ".</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q14">
+            <p class="exercise-question">لِلبَحْثِ عَنِ الفِعْلِ "اُسْكُتْ" فِي المُعْجَمِ، نَبْحَثُ عَنْ:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">To search for the verb "اُسْكُتْ" (be quiet!) in the dictionary, we search for:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q14', 0, 0)">سَكَتَ</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 1, 0)">يَسْكُتُ</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 2, 0)">اُسْكُتْ</button>
+                <button class="option-btn" onclick="checkAnswer('q14', 3, 0)">سَاكِتٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: سَكَتَ</p>
+                <p>"اُسْكُتْ" فِعْلُ أَمْرٍ. لِلبَحْثِ عَنْهُ نُحَوِّلُهُ إِلَى المَاضِي مَعَ "هُوَ": سَكَتَ.</p>
+                <p class="english-text">"اُسْكُتْ" is a command. To search for it, convert to past tense with "he": سَكَتَ.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 6: إِنَّ وأخواتها -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٦. إِنَّ وَأَخَوَاتُهَا - Inna and Sisters</h3>
+
+        <div class="exercise-item" id="q15">
+            <p class="exercise-question">إِنَّ تَنْصِبُ _____ وَتَرْفَعُ _____</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">إِنَّ puts _____ in accusative and keeps _____ in nominative</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q15', 0, 1)">الخَبَرَ - المُبْتَدَأَ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 1, 1)">المُبْتَدَأَ (الاسْمَ) - الخَبَرَ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 2, 1)">الفَاعِلَ - المَفْعُولَ</button>
+                <button class="option-btn" onclick="checkAnswer('q15', 3, 1)">الفِعْلَ - الفَاعِلَ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: المُبْتَدَأَ (الاسْمَ) - الخَبَرَ</p>
+                <p>إِنَّ وَأَخَوَاتُهَا تَنْصِبُ المُبْتَدَأَ (يُسَمَّى اسْمَ إِنَّ) وَتَرْفَعُ الخَبَرَ (يُسَمَّى خَبَرَ إِنَّ).</p>
+                <p class="english-text">Inna and sisters put the subject (ism inna) in accusative and keep the predicate (khabar inna) in nominative.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q16">
+            <p class="exercise-question">حَوِّلْ: "الكِتَابُ جَدِيدٌ" إِلَى جُمْلَةٍ بِـ "إِنَّ":</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Convert: "The book is new" to a sentence with "إِنَّ":</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q16', 0, 1)">إِنَّ الكِتَابُ جَدِيدٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 1, 1)">إِنَّ الكِتَابَ جَدِيدٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 2, 1)">إِنَّ الكِتَابَ جَدِيدًا</button>
+                <button class="option-btn" onclick="checkAnswer('q16', 3, 1)">إِنَّ الكِتَابِ جَدِيدٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: إِنَّ الكِتَابَ جَدِيدٌ</p>
+                <p>"الكِتَابُ" كَانَ مَرْفُوعًا بِالضَّمَّةِ، وَبَعْدَ "إِنَّ" يَصِيرُ مَنْصُوبًا بِالفَتْحَةِ: "الكِتَابَ". الخَبَرُ "جَدِيدٌ" يَبْقَى مَرْفُوعًا.</p>
+                <p class="english-text">"الكِتَابُ" was nominative (damma), after إِنَّ becomes accusative (fatha): "الكِتَابَ". Predicate stays nominative.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q17">
+            <p class="exercise-question">مَا هِيَ أَخَوَاتُ إِنَّ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What are the sisters of إِنَّ?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q17', 0, 0)">أَنَّ - لَعَلَّ - لٰكِنَّ - كَأَنَّ - لَيْتَ</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 1, 0)">كَانَ - أَصْبَحَ - أَمْسَى - ظَلَّ</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 2, 0)">مِنْ - إِلَى - عَنْ - عَلَى</button>
+                <button class="option-btn" onclick="checkAnswer('q17', 3, 0)">لَمْ - لَنْ - لَا - مَا</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: أَنَّ - لَعَلَّ - لٰكِنَّ - كَأَنَّ - لَيْتَ</p>
+                <p>أَخَوَاتُ إِنَّ: أَنَّ (أن)، لَعَلَّ (perhaps)، لٰكِنَّ (but)، كَأَنَّ (as if)، لَيْتَ (wish). كُلُّهَا تَعْمَلُ عَمَلَ إِنَّ.</p>
+                <p class="english-text">Sisters of Inna: أَنَّ (that), لَعَلَّ (perhaps), لٰكِنَّ (but), كَأَنَّ (as if), لَيْتَ (wish). All work like إِنَّ.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q18">
+            <p class="exercise-question">حَوِّلْ: "المُسْلِمُونَ مُجْتَهِدُونَ" إِلَى جُمْلَةٍ بِـ "إِنَّ":</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Convert: "The Muslims are hardworking" to a sentence with "إِنَّ":</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q18', 0, 1)">إِنَّ المُسْلِمُونَ مُجْتَهِدُونَ</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 1, 1)">إِنَّ المُسْلِمِينَ مُجْتَهِدُونَ</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 2, 1)">إِنَّ المُسْلِمِينَ مُجْتَهِدِينَ</button>
+                <button class="option-btn" onclick="checkAnswer('q18', 3, 1)">إِنَّ المُسْلِمَانِ مُجْتَهِدَانِ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: إِنَّ المُسْلِمِينَ مُجْتَهِدُونَ</p>
+                <p>جَمْعُ المُذَكَّرِ السَّالِمُ يُنْصَبُ بِاليَاءِ: "المُسْلِمُونَ" ← "المُسْلِمِينَ". الخَبَرُ يَبْقَى مَرْفُوعًا بِالوَاوِ: "مُجْتَهِدُونَ".</p>
+                <p class="english-text">Sound masculine plural is accusative with ي: "المُسْلِمُونَ" → "المُسْلِمِينَ". Predicate stays nominative with و.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 7: ذو وذات -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٧. ذُو وَذَاتُ - Possession</h3>
+
+        <div class="exercise-item" id="q19">
+            <p class="exercise-question">"هَذَا طَالِبٌ ذُو خُلُقٍ" - مَا مَعْنَى "ذُو خُلُقٍ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"This is a student with good character" - What does "ذُو خُلُقٍ" mean?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q19', 0, 0)">صَاحِبُ خُلُقٍ / يَمْتَلِكُ خُلُقًا</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 1, 0)">بِدُونِ خُلُقٍ</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 2, 0)">يُرِيدُ خُلُقًا</button>
+                <button class="option-btn" onclick="checkAnswer('q19', 3, 0)">كَانَ لَهُ خُلُقٌ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: صَاحِبُ خُلُقٍ / يَمْتَلِكُ خُلُقًا</p>
+                <p>"ذُو" تَدُلُّ عَلَى المِلْكِيَّةِ أَوِ الصِّفَةِ (Possessor/Owner of). "ذُو خُلُقٍ" = صَاحِبُ أَخْلَاقٍ حَسَنَةٍ.</p>
+                <p class="english-text">"ذُو" means possessor/owner of. "ذُو خُلُقٍ" = possessor of good character.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q20">
+            <p class="exercise-question">أَكْمِلِ: "هَذِهِ طَالِبَةٌ _____ خُلُقٍ" (للمؤنث)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: "This (fem.) is a student _____ good character" (for feminine)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q20', 0, 1)">ذُو</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 1, 1)">ذَاتُ</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 2, 1)">ذَوُو</button>
+                <button class="option-btn" onclick="checkAnswer('q20', 3, 1)">ذَوَاتُ</button>
+            </div>
+            <div class="explanation">
+                <p class="explanation-title">✓ الإِجَابَةُ الصَّحِيحَةُ: ذَاتُ</p>
+                <p>"ذُو" لِلْمُذَكَّرِ المُفْرَدِ، وَ"ذَاتُ" لِلْمُؤَنَّثِ المُفْرَدِ. فَنَقُولُ: "طَالِبَةٌ ذَاتُ خُلُقٍ".</p>
+                <p class="english-text">"ذُو" for masculine singular, "ذَاتُ" for feminine singular. So: "طَالِبَةٌ ذَاتُ خُلُقٍ".</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="reset-btn" onclick="resetAllQuestions()">إِعَادَةُ التَّمَارِينِ - Reset All Exercises</button>
+    </div>
+</section>
+
+<script>
+let score = 0;
+let totalAnswered = 0;
+const totalQuestions = 20;
+
+function checkAnswer(questionId, selectedOption, correctOption) {
+    const questionDiv = document.getElementById(questionId);
+    const options = questionDiv.querySelectorAll('.option-btn');
+    const explanation = questionDiv.querySelector('.explanation');
+
+    options.forEach((btn, index) => {
+        btn.disabled = true;
+        if (index === correctOption) {
+            btn.classList.add('correct');
+        } else if (index === selectedOption && selectedOption !== correctOption) {
+            btn.classList.add('incorrect');
+        }
+    });
+
+    explanation.classList.add('show');
+    if (selectedOption === correctOption) {
+        explanation.classList.add('correct-exp');
+        score++;
+    } else {
+        explanation.classList.add('incorrect-exp');
+    }
+
+    totalAnswered++;
+    updateScore();
+}
+
+function updateScore() {
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const percentage = Math.round((score / totalAnswered) * 100);
+    scoreDisplay.innerHTML = `النَّتِيجَةُ: ${score} مِنْ ${totalAnswered} (${percentage}%) - Score: ${score} out of ${totalAnswered}`;
+}
+
+function resetAllQuestions() {
+    score = 0;
+    totalAnswered = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionDiv = document.getElementById('q' + i);
+        if (questionDiv) {
+            const options = questionDiv.querySelectorAll('.option-btn');
+            const explanation = questionDiv.querySelector('.explanation');
+
+            options.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct', 'incorrect');
+            });
+
+            explanation.classList.remove('show', 'correct-exp', 'incorrect-exp');
+        }
+    }
+
+    document.getElementById('scoreDisplay').innerHTML = 'أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions';
+}
+</script>
 
 <!-- Summary Section -->
 <section id="summary" class="section">
