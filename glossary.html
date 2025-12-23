@@ -3,1022 +3,1038 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arabic Grammar Glossary | قاموس المصطلحات النحوية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <title>القَامُوسُ وَالمُفْرَدَاتُ - Glossary & Vocabulary | ARB202</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Amiri', serif;
-            max-width: 1200px;
+            font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
-            line-height: 2;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            min-height: 100vh;
-            color: #e0e0e0;
         }
-        .main-title {
-            text-align: center;
-            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
-        }
-        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
-        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
-        .main-title .description { font-size: 18px; opacity: 0.8; margin-top: 15px; font-family: Georgia, serif; direction: ltr; }
 
-        .search-container {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 12px;
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 30px;
+            border-radius: 20px;
             margin-bottom: 30px;
             text-align: center;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
         }
-        .search-input {
-            width: 100%;
-            max-width: 500px;
-            padding: 15px 20px;
+
+        .header h1 {
+            color: white;
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            color: rgba(255,255,255,0.9);
             font-size: 20px;
-            font-family: 'Amiri', serif;
-            border: 2px solid #e94560;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.95);
-            color: #333;
-            text-align: center;
-        }
-        .search-input::placeholder {
-            color: #888;
-        }
-        .search-input:focus {
-            outline: none;
-            border-color: #ff6b6b;
-            box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
         }
 
-        .category {
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            margin-bottom: 25px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
-        .category-header {
-            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+
+        .nav-tab {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(240, 147, 251, 0.4);
+        }
+
+        .nav-tab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(240, 147, 251, 0.5);
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            box-shadow: 0 5px 20px rgba(56, 239, 125, 0.4);
+        }
+
+        /* Search Box */
+        .search-container {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 18px 25px;
+            font-size: 20px;
+            border: 3px solid #e0e0e0;
+            border-radius: 50px;
+            font-family: inherit;
+            direction: rtl;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Glossary Grid */
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .glossary-category {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .glossary-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px 25px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s;
+            color: white;
         }
-        .category-header:hover {
-            background: linear-gradient(135deg, #ff6b6b 0%, #e94560 100%);
-        }
-        .category-title {
-            font-size: 28px;
+
+        .category-header h3 {
+            font-size: 22px;
             margin: 0;
         }
-        .category-title-en {
-            font-size: 18px;
-            font-family: Georgia, serif;
-            opacity: 0.9;
-            direction: ltr;
-        }
-        .toggle-icon {
+
+        .category-header .toggle-icon {
             font-size: 24px;
-            transition: transform 0.3s;
-        }
-        .category.collapsed .toggle-icon {
-            transform: rotate(-90deg);
-        }
-        .category.collapsed .category-content {
-            display: none;
+            transition: transform 0.3s ease;
         }
 
         .category-content {
             padding: 20px;
+            max-height: 500px;
+            overflow-y: auto;
         }
 
-        .term-grid {
+        .category-content.collapsed {
+            display: none;
+        }
+
+        .term-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            border-radius: 12px;
+            border-right: 5px solid #667eea;
+        }
+
+        .term-arabic {
+            font-size: 24px;
+            color: #1a5276;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .term-english {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .term-definition {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Vocabulary Section */
+        .vocab-section {
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .vocab-header {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 25px 30px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .vocab-header h3 {
+            font-size: 26px;
+            margin: 0;
+        }
+
+        .vocab-header .module-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+        }
+
+        .vocab-content {
+            padding: 25px;
+        }
+
+        .vocab-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 15px;
         }
-        .term-item {
-            background: rgba(255,255,255,0.08);
-            padding: 18px;
-            border-radius: 10px;
-            border-right: 4px solid #e94560;
-            transition: all 0.3s;
+
+        .vocab-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
         }
-        .term-item:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateX(-5px);
+
+        .vocab-card:hover {
+            border-color: #11998e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(17, 153, 142, 0.2);
         }
-        .term-arabic {
+
+        .vocab-card.verb { border-right: 5px solid #3498db; }
+        .vocab-card.noun { border-right: 5px solid #27ae60; }
+        .vocab-card.adjective { border-right: 5px solid #e67e22; }
+        .vocab-card.particle { border-right: 5px solid #9b59b6; }
+        .vocab-card.phrase { border-right: 5px solid #e74c3c; }
+        .vocab-card.number { border-right: 5px solid #1abc9c; }
+
+        .vocab-arabic {
             font-size: 28px;
-            color: #ff6b6b;
+            color: #1a5276;
             font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .term-english {
-            font-size: 18px;
-            font-family: Georgia, serif;
-            color: #b0b0b0;
-            direction: ltr;
-            text-align: left;
-        }
-        .term-note {
-            font-size: 14px;
-            color: #888;
-            font-style: italic;
-            margin-top: 5px;
-            font-family: Georgia, serif;
-            direction: ltr;
-            text-align: left;
+            margin-bottom: 8px;
         }
 
-        .home-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
-            z-index: 1001;
-            transition: all 0.3s;
-        }
-        .home-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5);
-        }
-        .home-btn svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-
-        .stats-bar {
-            background: rgba(255,255,255,0.1);
-            padding: 15px 25px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 32px;
-            color: #ff6b6b;
-            font-weight: bold;
-        }
-        .stat-label {
+        .vocab-transliteration {
             font-size: 16px;
-            color: #888;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 8px;
         }
 
-        .no-results {
-            text-align: center;
-            padding: 40px;
-            color: #888;
-            font-size: 24px;
-            display: none;
+        .vocab-meaning {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 8px;
         }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 30px;
-            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+        .vocab-category-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
             color: white;
+        }
+
+        .vocab-category-tag.verb { background: #3498db; }
+        .vocab-category-tag.noun { background: #27ae60; }
+        .vocab-category-tag.adjective { background: #e67e22; }
+        .vocab-category-tag.particle { background: #9b59b6; }
+        .vocab-category-tag.phrase { background: #e74c3c; }
+        .vocab-category-tag.number { background: #1abc9c; }
+
+        /* Filter */
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
             border-radius: 15px;
         }
 
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover { border-color: #667eea; }
+        .filter-btn.active { background: #667eea; color: white; border-color: #667eea; }
+
+        /* Stats */
+        .stats-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .hidden { display: none !important; }
+
         @media (max-width: 768px) {
-            .main-title h1 { font-size: 36px; }
-            .category-title { font-size: 24px; }
-            .term-arabic { font-size: 24px; }
-            .stats-bar { gap: 20px; }
+            .header h1 { font-size: 28px; }
+            .glossary-grid { grid-template-columns: 1fr; }
+            .nav-tabs { flex-direction: column; }
+            .nav-tab { width: 100%; }
+            .vocab-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<!-- Home Button -->
-<a href="index.html" class="home-btn" title="Back to Home">
-    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-</a>
+<div class="container">
+    <a href="index.html" class="back-link">
+        <span>&#8592;</span>
+        <span>العَوْدَةُ لِلرَّئِيسِيَّةِ</span>
+    </a>
 
-<!-- Main Title -->
-<header class="main-title">
-    <h1>قَامُوسُ المُصْطَلَحَاتِ النَّحْوِيَّةِ</h1>
-    <div class="subtitle">Arabic Grammar Glossary</div>
-    <div class="description">All grammar terms from Modules 1-15 with English translations</div>
-</header>
+    <div class="header">
+        <h1>القَامُوسُ وَالمُفْرَدَاتُ</h1>
+        <p>Glossary & Vocabulary - ARB202</p>
+    </div>
 
-<!-- Search -->
-<div class="search-container">
-    <input type="text" class="search-input" id="searchInput" placeholder="ابحث / Search..." oninput="filterTerms()">
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <button class="nav-tab active" onclick="showSection('grammar', this)">
+            المُصْطَلَحَاتُ النَّحْوِيَّةُ<br><small>Grammar Terms</small>
+        </button>
+        <button class="nav-tab" onclick="showSection('vocabulary', this)">
+            المُفْرَدَاتُ حَسَبَ الوَحْدَةِ<br><small>Vocabulary by Module</small>
+        </button>
+        <button class="nav-tab" onclick="showSection('categories', this)">
+            المُفْرَدَاتُ حَسَبَ النَّوْعِ<br><small>Vocabulary by Category</small>
+        </button>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchBox" placeholder="اِبْحَثْ عَنْ كَلِمَةٍ... Search for a word..." oninput="searchContent()">
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-box">
+        <div class="stat-card">
+            <div class="stat-number">350+</div>
+            <div class="stat-label">إِجْمَالِي الكَلِمَاتِ<br>Total Words</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">15</div>
+            <div class="stat-label">وَحْدَاتٌ<br>Modules</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">أَفْعَالٌ<br>Verbs</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">مُصْطَلَحَاتٌ<br>Terms</div>
+        </div>
+    </div>
+
+    <!-- Section 1: Grammar Terms -->
+    <div id="grammar-section" class="content-section active">
+        <div class="glossary-grid">
+
+            <!-- Word Types -->
+            <div class="glossary-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>أَنْوَاعُ الكَلِمَةِ - Word Types</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="category-content">
+                    <div class="term-item searchable">
+                        <div class="term-arabic">اِسْمٌ</div>
+                        <div class="term-english">Noun / Name</div>
+                        <div class="term-definition">كَلِمَةٌ تَدُلُّ عَلَى إِنْسَانٍ أَوْ حَيَوَانٍ أَوْ شَيْءٍ. A word indicating a person, animal, or thing.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">فِعْلٌ</div>
+                        <div class="term-english">Verb</div>
+                        <div class="term-definition">كَلِمَةٌ تَدُلُّ عَلَى حَدَثٍ مُقْتَرِنٍ بِزَمَنٍ. A word indicating an action connected to time.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">حَرْفٌ</div>
+                        <div class="term-english">Particle</div>
+                        <div class="term-definition">كَلِمَةٌ لَا مَعْنَى لَهَا إِلَّا مَعَ غَيْرِهَا. A word with meaning only when combined with others.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sentence Types -->
+            <div class="glossary-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>أَنْوَاعُ الجُمْلَةِ - Sentence Types</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="category-content">
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الجُمْلَةُ الاسْمِيَّةُ</div>
+                        <div class="term-english">Nominal Sentence</div>
+                        <div class="term-definition">جُمْلَةٌ تَبْدَأُ بِاسْمٍ، وَتَتَكَوَّنُ مِنْ مُبْتَدَأٍ وَخَبَرٍ. Sentence starting with a noun (Subject + Predicate).</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الجُمْلَةُ الفِعْلِيَّةُ</div>
+                        <div class="term-english">Verbal Sentence</div>
+                        <div class="term-definition">جُمْلَةٌ تَبْدَأُ بِفِعْلٍ، وَتَتَكَوَّنُ مِنْ فِعْلٍ وَفَاعِلٍ. Sentence starting with a verb (Verb + Subject).</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">المُبْتَدَأُ</div>
+                        <div class="term-english">Subject (Nominal)</div>
+                        <div class="term-definition">الاسْمُ المَرْفُوعُ فِي أَوَّلِ الجُمْلَةِ الاسْمِيَّةِ. The nominative noun at the beginning of a nominal sentence.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الخَبَرُ</div>
+                        <div class="term-english">Predicate</div>
+                        <div class="term-definition">الجُزْءُ الَّذِي يُكْمِلُ مَعْنَى المُبْتَدَأِ. The part that completes the meaning of the subject.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الفَاعِلُ</div>
+                        <div class="term-english">Subject (Verbal)</div>
+                        <div class="term-definition">الاسْمُ المَرْفُوعُ الَّذِي يَدُلُّ عَلَى مَنْ قَامَ بِالفِعْلِ. The nominative noun indicating who did the action.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">المَفْعُولُ بِهِ</div>
+                        <div class="term-english">Direct Object</div>
+                        <div class="term-definition">الاسْمُ المَنْصُوبُ الَّذِي يَقَعُ عَلَيْهِ الفِعْلُ. The accusative noun that receives the action.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Verb Types -->
+            <div class="glossary-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>أَنْوَاعُ الفِعْلِ - Verb Types</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="category-content">
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الفِعْلُ المَاضِي</div>
+                        <div class="term-english">Past Tense Verb</div>
+                        <div class="term-definition">فِعْلٌ يَدُلُّ عَلَى حَدَثٍ وَقَعَ فِي الزَّمَنِ المَاضِي. Example: كَتَبَ, ذَهَبَ</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الفِعْلُ المُضَارِعُ</div>
+                        <div class="term-english">Present/Future Tense Verb</div>
+                        <div class="term-definition">فِعْلٌ يَدُلُّ عَلَى حَدَثٍ فِي الحَاضِرِ أَوِ المُسْتَقْبَلِ. يَبْدَأُ بِـ (أَنَيْتُ). Example: يَكْتُبُ</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">فِعْلُ الأَمْرِ</div>
+                        <div class="term-english">Command/Imperative</div>
+                        <div class="term-definition">فِعْلٌ يَطْلُبُ حُدُوثَ الفِعْلِ. Example: اُكْتُبْ, اِذْهَبْ</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الفِعْلُ الصَّحِيحُ</div>
+                        <div class="term-english">Sound Verb</div>
+                        <div class="term-definition">فِعْلٌ خَلَتْ حُرُوفُهُ الأَصْلِيَّةُ مِنْ أَحْرُفِ العِلَّةِ. A verb without weak letters.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الفِعْلُ الأَجْوَفُ</div>
+                        <div class="term-english">Hollow Verb</div>
+                        <div class="term-definition">فِعْلٌ عَيْنُهُ حَرْفُ عِلَّةٍ. A verb with weak middle letter. Example: قَالَ, كَانَ</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الفِعْلُ المَهْمُوزُ</div>
+                        <div class="term-english">Hamzated Verb</div>
+                        <div class="term-definition">فِعْلٌ فِيهِ هَمْزَةٌ. A verb containing hamza. Example: قَرَأَ, أَكَلَ</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الفِعْلُ الجَامِدُ</div>
+                        <div class="term-english">Inert Verb</div>
+                        <div class="term-definition">فِعْلٌ يَأْتِي فِي صِيغَةٍ وَاحِدَةٍ فَقَطْ. Example: لَيْسَ (only past tense)</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الفِعْلُ النَّاقِصُ</div>
+                        <div class="term-english">Incomplete Verb</div>
+                        <div class="term-definition">فِعْلٌ يَحْتَاجُ إِلَى اسْمٍ وَخَبَرٍ. Example: كَانَ وَأَخَوَاتُهَا</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grammatical Cases -->
+            <div class="glossary-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>الحَالَاتُ الإِعْرَابِيَّةُ - Cases</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="category-content">
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الرَّفْعُ (مَرْفُوعٌ)</div>
+                        <div class="term-english">Nominative Case</div>
+                        <div class="term-definition">عَلَامَتُهُ الضَّمَّةُ (ُ). لِلْمُبْتَدَأِ وَالخَبَرِ وَالفَاعِلِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">النَّصْبُ (مَنْصُوبٌ)</div>
+                        <div class="term-english">Accusative Case</div>
+                        <div class="term-definition">عَلَامَتُهُ الفَتْحَةُ (َ). لِلْمَفْعُولِ بِهِ وَخَبَرِ كَانَ وَاسْمِ إِنَّ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الجَرُّ (مَجْرُورٌ)</div>
+                        <div class="term-english">Genitive Case</div>
+                        <div class="term-definition">عَلَامَتُهُ الكَسْرَةُ (ِ). بَعْدَ حُرُوفِ الجَرِّ وَالمُضَافِ إِلَيْهِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">الجَزْمُ (مَجْزُومٌ)</div>
+                        <div class="term-english">Jussive Case</div>
+                        <div class="term-definition">عَلَامَتُهُ السُّكُونُ (ْ). لِلْفِعْلِ المُضَارِعِ بَعْدَ أَدَوَاتِ الجَزْمِ.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inna and Sisters -->
+            <div class="glossary-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>إِنَّ وَأَخَوَاتُهَا</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="category-content">
+                    <div class="term-item searchable">
+                        <div class="term-arabic">إِنَّ</div>
+                        <div class="term-english">Indeed / Verily</div>
+                        <div class="term-definition">حَرْفُ تَوْكِيدٍ. تَنْصِبُ المُبْتَدَأَ وَتَرْفَعُ الخَبَرَ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">أَنَّ</div>
+                        <div class="term-english">That (conjunction)</div>
+                        <div class="term-definition">حَرْفُ تَوْكِيدٍ وَمَصْدَرِيٌّ. تَعْمَلُ عَمَلَ إِنَّ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">لَكِنَّ</div>
+                        <div class="term-english">But / However</div>
+                        <div class="term-definition">حَرْفُ اسْتِدْرَاكٍ. لِلتَّعَارُضِ وَالاسْتِثْنَاءِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">كَأَنَّ</div>
+                        <div class="term-english">As if / Like</div>
+                        <div class="term-definition">حَرْفُ تَشْبِيهٍ. لِلْمُقَارَنَةِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">لَيْتَ</div>
+                        <div class="term-english">I wish / If only</div>
+                        <div class="term-definition">حَرْفُ تَمَنٍّ. لِلتَّعْبِيرِ عَنِ الأُمْنِيَةِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">لَعَلَّ</div>
+                        <div class="term-english">Perhaps / Maybe</div>
+                        <div class="term-definition">حَرْفُ تَرَجٍّ. لِلتَّعْبِيرِ عَنِ الأَمَلِ.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kaana and Sisters -->
+            <div class="glossary-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>كَانَ وَأَخَوَاتُهَا</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="category-content">
+                    <div class="term-item searchable">
+                        <div class="term-arabic">كَانَ</div>
+                        <div class="term-english">Was / To be</div>
+                        <div class="term-definition">فِعْلٌ نَاقِصٌ. تَرْفَعُ الاسْمَ وَتَنْصِبُ الخَبَرَ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">لَيْسَ</div>
+                        <div class="term-english">Is not</div>
+                        <div class="term-definition">فِعْلٌ جَامِدٌ لِلنَّفْيِ. يَأْتِي فِي المَاضِي فَقَطْ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">صَارَ</div>
+                        <div class="term-english">To become</div>
+                        <div class="term-definition">فِعْلٌ نَاقِصٌ يَدُلُّ عَلَى التَّحَوُّلِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">أَصْبَحَ</div>
+                        <div class="term-english">To become (morning)</div>
+                        <div class="term-definition">فِعْلٌ نَاقِصٌ يَدُلُّ عَلَى وَقْتِ الصَّبَاحِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">أَمْسَى</div>
+                        <div class="term-english">To become (evening)</div>
+                        <div class="term-definition">فِعْلٌ نَاقِصٌ يَدُلُّ عَلَى وَقْتِ المَسَاءِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">ظَلَّ</div>
+                        <div class="term-english">To remain</div>
+                        <div class="term-definition">فِعْلٌ نَاقِصٌ يَدُلُّ عَلَى الاسْتِمْرَارِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">بَاتَ</div>
+                        <div class="term-english">To spend the night</div>
+                        <div class="term-definition">فِعْلٌ نَاقِصٌ يَدُلُّ عَلَى وَقْتِ اللَّيْلِ.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Numbers -->
+            <div class="glossary-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>قَوَاعِدُ الأَعْدَادِ - Number Rules</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="category-content">
+                    <div class="term-item searchable">
+                        <div class="term-arabic">١ وَ ٢ (وَاحِد وَاثْنَان)</div>
+                        <div class="term-english">Numbers 1 & 2</div>
+                        <div class="term-definition">يُوَافِقَانِ المَعْدُودَ فِي التَّذْكِيرِ وَالتَّأْنِيثِ. AGREE with noun gender.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">٣ - ١٠ (ثَلَاثَة إِلَى عَشَرَة)</div>
+                        <div class="term-english">Numbers 3-10</div>
+                        <div class="term-definition">يُخَالِفُونَ المَعْدُودَ. DISAGREE with noun gender. المعدود: جمع مجرور.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">١١ وَ ١٢</div>
+                        <div class="term-english">Numbers 11 & 12</div>
+                        <div class="term-definition">كِلَا الجُزْأَيْنِ يُوَافِقَانِ المَعْدُودَ. Both parts AGREE.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">١٣ - ١٩</div>
+                        <div class="term-english">Numbers 13-19</div>
+                        <div class="term-definition">الأَوَّلُ يُخَالِفُ، الثَّانِي يُوَافِقُ. First DISAGREES, second AGREES.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">أَلْفَاظُ العُقُودِ</div>
+                        <div class="term-english">Decade Numbers (20-90)</div>
+                        <div class="term-definition">عِشْرُونَ، ثَلَاثُونَ... لَا تَتَغَيَّرُ. Don't change for gender.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">التَّمْيِيزُ</div>
+                        <div class="term-english">Specifier (counted noun)</div>
+                        <div class="term-definition">٣-١٠: جَمْعٌ مَجْرُورٌ. ١١-٩٩: مُفْرَدٌ مَنْصُوبٌ.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pronouns -->
+            <div class="glossary-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>الضَّمَائِرُ - Pronouns</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="category-content">
+                    <div class="term-item searchable">
+                        <div class="term-arabic">هُوَ / هِيَ</div>
+                        <div class="term-english">He / She</div>
+                        <div class="term-definition">ضَمِيرٌ لِلْغَائِبِ المُفْرَدِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">هُمَا</div>
+                        <div class="term-english">They (dual)</div>
+                        <div class="term-definition">ضَمِيرٌ لِلْمُثَنَّى الغَائِبِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">هُمْ / هُنَّ</div>
+                        <div class="term-english">They (m/f)</div>
+                        <div class="term-definition">ضَمِيرٌ لِجَمْعِ الغَائِبِينَ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">أَنْتَ / أَنْتِ</div>
+                        <div class="term-english">You (m/f)</div>
+                        <div class="term-definition">ضَمِيرٌ لِلْمُخَاطَبِ المُفْرَدِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">أَنْتُمْ / أَنْتُنَّ</div>
+                        <div class="term-english">You (m.pl/f.pl)</div>
+                        <div class="term-definition">ضَمِيرٌ لِجَمْعِ المُخَاطَبِينَ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">أَنَا / نَحْنُ</div>
+                        <div class="term-english">I / We</div>
+                        <div class="term-definition">ضَمِيرٌ لِلْمُتَكَلِّمِ.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prepositions -->
+            <div class="glossary-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>حُرُوفُ الجَرِّ - Prepositions</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="category-content">
+                    <div class="term-item searchable">
+                        <div class="term-arabic">مِنْ</div>
+                        <div class="term-english">From</div>
+                        <div class="term-definition">حَرْفُ جَرٍّ لِلابْتِدَاءِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">إِلَى</div>
+                        <div class="term-english">To</div>
+                        <div class="term-definition">حَرْفُ جَرٍّ لِلانْتِهَاءِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">فِي</div>
+                        <div class="term-english">In</div>
+                        <div class="term-definition">حَرْفُ جَرٍّ لِلظَّرْفِيَّةِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">عَلَى</div>
+                        <div class="term-english">On / Upon</div>
+                        <div class="term-definition">حَرْفُ جَرٍّ لِلاسْتِعْلَاءِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">عَنْ</div>
+                        <div class="term-english">About / From</div>
+                        <div class="term-definition">حَرْفُ جَرٍّ لِلْمُجَاوَزَةِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">بِـ</div>
+                        <div class="term-english">With / By</div>
+                        <div class="term-definition">حَرْفُ جَرٍّ لِلإِلْصَاقِ.</div>
+                    </div>
+                    <div class="term-item searchable">
+                        <div class="term-arabic">لِـ</div>
+                        <div class="term-english">For / To</div>
+                        <div class="term-definition">حَرْفُ جَرٍّ لِلْمِلْكِيَّةِ.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Section 2: Vocabulary by Module -->
+    <div id="vocabulary-section" class="content-section">
+
+        <!-- Module 1 -->
+        <div class="vocab-section">
+            <div class="vocab-header" onclick="toggleVocab(this)">
+                <h3>الوَحْدَةُ الأُولَى - Module 1</h3>
+                <span class="module-badge">أَسَاسِيَّاتُ النَّحْوِ</span>
+            </div>
+            <div class="vocab-content">
+                <div class="vocab-grid">
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">كَتَبَ - يَكْتُبُ</div><div class="vocab-transliteration">kataba - yaktubu</div><div class="vocab-meaning">To write</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">ذَهَبَ - يَذْهَبُ</div><div class="vocab-transliteration">dhahaba - yadh'habu</div><div class="vocab-meaning">To go</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">خَرَجَ - يَخْرُجُ</div><div class="vocab-transliteration">kharaja - yakhruju</div><div class="vocab-meaning">To exit / go out</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">جَلَسَ - يَجْلِسُ</div><div class="vocab-transliteration">jalasa - yajlisu</div><div class="vocab-meaning">To sit</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">أَكَلَ - يَأْكُلُ</div><div class="vocab-transliteration">akala - ya'kulu</div><div class="vocab-meaning">To eat</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">كَلِمَةٌ</div><div class="vocab-transliteration">kalimah</div><div class="vocab-meaning">Word</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">جُمْلَةٌ</div><div class="vocab-transliteration">jumlah</div><div class="vocab-meaning">Sentence</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">طَالِبٌ</div><div class="vocab-transliteration">taalib</div><div class="vocab-meaning">Student (m)</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">طَالِبَةٌ</div><div class="vocab-transliteration">taalibah</div><div class="vocab-meaning">Student (f)</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">مُدَرِّسٌ</div><div class="vocab-transliteration">mudarris</div><div class="vocab-meaning">Teacher</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">كِتَابٌ</div><div class="vocab-transliteration">kitaab</div><div class="vocab-meaning">Book</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">قَلَمٌ</div><div class="vocab-transliteration">qalam</div><div class="vocab-meaning">Pen</div><span class="vocab-category-tag noun">اسم</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="vocab-section">
+            <div class="vocab-header" onclick="toggleVocab(this)">
+                <h3>الوَحْدَةُ الثَّانِيَةُ - Module 2</h3>
+                <span class="module-badge">إِنَّ وَأَخَوَاتُهَا</span>
+            </div>
+            <div class="vocab-content">
+                <div class="vocab-grid">
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">تَاجِرٌ</div><div class="vocab-transliteration">taajir</div><div class="vocab-meaning">Merchant / Trader</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">ذَكِيٌّ</div><div class="vocab-transliteration">dhakiyy</div><div class="vocab-meaning">Intelligent / Smart</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">غَنِيٌّ</div><div class="vocab-transliteration">ghaniyy</div><div class="vocab-meaning">Rich / Wealthy</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">فَقِيرٌ</div><div class="vocab-transliteration">faqeer</div><div class="vocab-meaning">Poor</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">مُتَزَوِّجٌ</div><div class="vocab-transliteration">mutazawwij</div><div class="vocab-meaning">Married</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">غَالٍ</div><div class="vocab-transliteration">ghaalin</div><div class="vocab-meaning">Expensive</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">رَخِيصٌ</div><div class="vocab-transliteration">rakhees</div><div class="vocab-meaning">Cheap</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">كَسْلَانُ</div><div class="vocab-transliteration">kaslaan</div><div class="vocab-meaning">Lazy</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">مُجْتَهِدٌ</div><div class="vocab-transliteration">mujtahid</div><div class="vocab-meaning">Hardworking</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">طَبِيبٌ</div><div class="vocab-transliteration">tabeeb</div><div class="vocab-meaning">Doctor</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">مُهَنْدِسٌ</div><div class="vocab-transliteration">muhandis</div><div class="vocab-meaning">Engineer</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">صَعْبٌ</div><div class="vocab-transliteration">sa'b</div><div class="vocab-meaning">Difficult</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">سَهْلٌ</div><div class="vocab-transliteration">sahl</div><div class="vocab-meaning">Easy</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">بَارِدٌ</div><div class="vocab-transliteration">baarid</div><div class="vocab-meaning">Cold</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">صَفْحَةٌ</div><div class="vocab-transliteration">safha</div><div class="vocab-meaning">Page</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">رِيَالٌ</div><div class="vocab-transliteration">riyaal</div><div class="vocab-meaning">Riyal (currency)</div><span class="vocab-category-tag noun">اسم</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="vocab-section">
+            <div class="vocab-header" onclick="toggleVocab(this)">
+                <h3>الوَحْدَةُ الثَّالِثَةُ - Module 3</h3>
+                <span class="module-badge">كَانَ وَلَيْسَ</span>
+            </div>
+            <div class="vocab-content">
+                <div class="vocab-grid">
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">شَرِبَ - يَشْرَبُ</div><div class="vocab-transliteration">shariba - yashrabu</div><div class="vocab-meaning">To drink</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">قَاضٍ</div><div class="vocab-transliteration">qaadin</div><div class="vocab-meaning">Judge</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">مُحَامٍ</div><div class="vocab-transliteration">muhaamin</div><div class="vocab-meaning">Lawyer</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">وَادٍ</div><div class="vocab-transliteration">waadin</div><div class="vocab-meaning">Valley</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">خَادِمٌ</div><div class="vocab-transliteration">khaadim</div><div class="vocab-meaning">Servant</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">قَوِيٌّ</div><div class="vocab-transliteration">qawiyy</div><div class="vocab-meaning">Strong</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">بَعِيدٌ</div><div class="vocab-transliteration">ba'eed</div><div class="vocab-meaning">Far</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">قَرِيبٌ</div><div class="vocab-transliteration">qareeb</div><div class="vocab-meaning">Near / Close</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">جَدِيدٌ</div><div class="vocab-transliteration">jadeed</div><div class="vocab-meaning">New</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">فَلَّاحٌ</div><div class="vocab-transliteration">fallaah</div><div class="vocab-meaning">Farmer</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">حَقْلٌ</div><div class="vocab-transliteration">haql</div><div class="vocab-meaning">Field</div><span class="vocab-category-tag noun">اسم</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="vocab-section">
+            <div class="vocab-header" onclick="toggleVocab(this)">
+                <h3>الوَحْدَةُ الرَّابِعَةُ - Module 4</h3>
+                <span class="module-badge">كَانَ وَأَخَوَاتُهَا</span>
+            </div>
+            <div class="vocab-content">
+                <div class="vocab-grid">
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">كَانَ - يَكُونُ</div><div class="vocab-transliteration">kaana - yakoonu</div><div class="vocab-meaning">To be / Was</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">نَهْرٌ</div><div class="vocab-transliteration">nahr</div><div class="vocab-meaning">River</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">مَصْرِفٌ</div><div class="vocab-transliteration">masrif</div><div class="vocab-meaning">Bank</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">مَكْتَبُ البَرِيدِ</div><div class="vocab-transliteration">maktab al-bareed</div><div class="vocab-meaning">Post Office</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">لِقَاءٌ</div><div class="vocab-transliteration">liqaa'</div><div class="vocab-meaning">Meeting</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">جَيِّدٌ</div><div class="vocab-transliteration">jayyid</div><div class="vocab-meaning">Good</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">جَيْبٌ</div><div class="vocab-transliteration">jayb</div><div class="vocab-meaning">Pocket</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">مُغْلَقٌ</div><div class="vocab-transliteration">mughlaq</div><div class="vocab-meaning">Closed</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">مَفْتُوحٌ</div><div class="vocab-transliteration">maftooh</div><div class="vocab-meaning">Open</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">مَرِيضٌ</div><div class="vocab-transliteration">mareed</div><div class="vocab-meaning">Sick</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">جَوْعَانُ</div><div class="vocab-transliteration">jaw'aan</div><div class="vocab-meaning">Hungry</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">عَطْشَانُ</div><div class="vocab-transliteration">'atshaan</div><div class="vocab-meaning">Thirsty</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">نَائِمٌ</div><div class="vocab-transliteration">naa'im</div><div class="vocab-meaning">Sleeping</div><span class="vocab-category-tag adjective">صفة</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="vocab-section">
+            <div class="vocab-header" onclick="toggleVocab(this)">
+                <h3>الوَحْدَةُ الخَامِسَةُ - Module 5</h3>
+                <span class="module-badge">اسم التفضيل</span>
+            </div>
+            <div class="vocab-content">
+                <div class="vocab-grid">
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">حَفِظَ - يَحْفَظُ</div><div class="vocab-transliteration">hafidha - yahfadhu</div><div class="vocab-meaning">To memorize</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">أَكْبَرُ</div><div class="vocab-transliteration">akbar</div><div class="vocab-meaning">Bigger / Biggest</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">أَصْغَرُ</div><div class="vocab-transliteration">asghar</div><div class="vocab-meaning">Smaller / Smallest</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">أَطْوَلُ</div><div class="vocab-transliteration">atwal</div><div class="vocab-meaning">Taller / Tallest</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">أَجْمَلُ</div><div class="vocab-transliteration">ajmal</div><div class="vocab-meaning">More/Most beautiful</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card adjective searchable"><div class="vocab-arabic">أَفْضَلُ</div><div class="vocab-transliteration">afdal</div><div class="vocab-meaning">Better / Best</div><span class="vocab-category-tag adjective">صفة</span></div>
+                    <div class="vocab-card particle searchable"><div class="vocab-arabic">بَلَى</div><div class="vocab-transliteration">balaa</div><div class="vocab-meaning">Yes (to negative Q)</div><span class="vocab-category-tag particle">حرف</span></div>
+                    <div class="vocab-card particle searchable"><div class="vocab-arabic">نَعَمْ</div><div class="vocab-transliteration">na'am</div><div class="vocab-meaning">Yes</div><span class="vocab-category-tag particle">حرف</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 6-8: Numbers -->
+        <div class="vocab-section">
+            <div class="vocab-header" onclick="toggleVocab(this)">
+                <h3>الوَحْدَاتُ ٦-٨ - Modules 6-8</h3>
+                <span class="module-badge">الأعداد</span>
+            </div>
+            <div class="vocab-content">
+                <div class="vocab-grid">
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">قَرَأَ - يَقْرَأُ</div><div class="vocab-transliteration">qara'a - yaqra'u</div><div class="vocab-meaning">To read</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">بَحَثَ - يَبْحَثُ</div><div class="vocab-transliteration">bahatha - yabhatthu</div><div class="vocab-meaning">To search</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">فَتَحَ - يَفْتَحُ</div><div class="vocab-transliteration">fataha - yaftahu</div><div class="vocab-meaning">To open</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">وَاحِدٌ / وَاحِدَةٌ</div><div class="vocab-transliteration">waahid / waahidah</div><div class="vocab-meaning">One</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">اِثْنَانِ / اِثْنَتَانِ</div><div class="vocab-transliteration">ithnaan / ithnataan</div><div class="vocab-meaning">Two</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">ثَلَاثَةٌ / ثَلَاثٌ</div><div class="vocab-transliteration">thalaathah / thalaath</div><div class="vocab-meaning">Three</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">أَرْبَعَةٌ / أَرْبَعٌ</div><div class="vocab-transliteration">arba'ah / arba'</div><div class="vocab-meaning">Four</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">خَمْسَةٌ / خَمْسٌ</div><div class="vocab-transliteration">khamsah / khams</div><div class="vocab-meaning">Five</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">سِتَّةٌ / سِتٌّ</div><div class="vocab-transliteration">sittah / sitt</div><div class="vocab-meaning">Six</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">سَبْعَةٌ / سَبْعٌ</div><div class="vocab-transliteration">sab'ah / sab'</div><div class="vocab-meaning">Seven</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">ثَمَانِيَةٌ / ثَمَانٍ</div><div class="vocab-transliteration">thamaaniyah / thamaanin</div><div class="vocab-meaning">Eight</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">تِسْعَةٌ / تِسْعٌ</div><div class="vocab-transliteration">tis'ah / tis'</div><div class="vocab-meaning">Nine</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">عَشَرَةٌ / عَشْرٌ</div><div class="vocab-transliteration">'asharah / 'ashr</div><div class="vocab-meaning">Ten</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">أَحَدَ عَشَرَ</div><div class="vocab-transliteration">ahada 'ashara</div><div class="vocab-meaning">Eleven</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">اِثْنَا عَشَرَ</div><div class="vocab-transliteration">ithnaa 'ashara</div><div class="vocab-meaning">Twelve</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">عِشْرُونَ</div><div class="vocab-transliteration">'ishroona</div><div class="vocab-meaning">Twenty</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">مِائَةٌ</div><div class="vocab-transliteration">mi'ah</div><div class="vocab-meaning">One hundred</div><span class="vocab-category-tag number">عدد</span></div>
+                    <div class="vocab-card number searchable"><div class="vocab-arabic">أَلْفٌ</div><div class="vocab-transliteration">alf</div><div class="vocab-meaning">One thousand</div><span class="vocab-category-tag number">عدد</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 9-15: More Verbs & Nouns -->
+        <div class="vocab-section">
+            <div class="vocab-header" onclick="toggleVocab(this)">
+                <h3>الوَحْدَاتُ ٩-١٥ - Modules 9-15</h3>
+                <span class="module-badge">أَفْعَالٌ وَأَسْمَاءٌ</span>
+            </div>
+            <div class="vocab-content">
+                <div class="vocab-grid">
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">نَظَرَ - يَنْظُرُ</div><div class="vocab-transliteration">nadhara - yandhuru</div><div class="vocab-meaning">To look</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">سَمِعَ - يَسْمَعُ</div><div class="vocab-transliteration">sami'a - yasma'u</div><div class="vocab-meaning">To hear</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">قَالَ - يَقُولُ</div><div class="vocab-transliteration">qaala - yaqoolu</div><div class="vocab-meaning">To say</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">أَخَذَ - يَأْخُذُ</div><div class="vocab-transliteration">akhadha - ya'khudhu</div><div class="vocab-meaning">To take</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">رَجَعَ - يَرْجِعُ</div><div class="vocab-transliteration">raja'a - yarji'u</div><div class="vocab-meaning">To return</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">دَخَلَ - يَدْخُلُ</div><div class="vocab-transliteration">dakhala - yadkhulu</div><div class="vocab-meaning">To enter</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">وَصَلَ - يَصِلُ</div><div class="vocab-transliteration">wasala - yasilu</div><div class="vocab-meaning">To arrive</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">عَمِلَ - يَعْمَلُ</div><div class="vocab-transliteration">'amila - ya'malu</div><div class="vocab-meaning">To work</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card verb searchable"><div class="vocab-arabic">عَرَفَ - يَعْرِفُ</div><div class="vocab-transliteration">'arafa - ya'rifu</div><div class="vocab-meaning">To know</div><span class="vocab-category-tag verb">فعل</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">مَسْجِدٌ</div><div class="vocab-transliteration">masjid</div><div class="vocab-meaning">Mosque</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">مَدْرَسَةٌ</div><div class="vocab-transliteration">madrasah</div><div class="vocab-meaning">School</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">جَامِعَةٌ</div><div class="vocab-transliteration">jaami'ah</div><div class="vocab-meaning">University</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">سُوقٌ</div><div class="vocab-transliteration">sooq</div><div class="vocab-meaning">Market</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">مُسْتَشْفَى</div><div class="vocab-transliteration">mustashfaa</div><div class="vocab-meaning">Hospital</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">بَيْتٌ</div><div class="vocab-transliteration">bayt</div><div class="vocab-meaning">House</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">غُرْفَةٌ</div><div class="vocab-transliteration">ghurfah</div><div class="vocab-meaning">Room</div><span class="vocab-category-tag noun">اسم</span></div>
+                    <div class="vocab-card noun searchable"><div class="vocab-arabic">سَيَّارَةٌ</div><div class="vocab-transliteration">sayyaarah</div><div class="vocab-meaning">Car</div><span class="vocab-category-tag noun">اسم</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section 3: Vocabulary by Category -->
+    <div id="categories-section" class="content-section">
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterByCategory('all')">الكُلُّ - All</button>
+            <button class="filter-btn" onclick="filterByCategory('verb')">الأَفْعَالُ - Verbs</button>
+            <button class="filter-btn" onclick="filterByCategory('noun')">الأَسْمَاءُ - Nouns</button>
+            <button class="filter-btn" onclick="filterByCategory('adjective')">الصِّفَاتُ - Adjectives</button>
+            <button class="filter-btn" onclick="filterByCategory('particle')">الحُرُوفُ - Particles</button>
+            <button class="filter-btn" onclick="filterByCategory('number')">الأَعْدَادُ - Numbers</button>
+        </div>
+        <div class="vocab-grid" id="categoryGrid"></div>
+    </div>
+
 </div>
-
-<!-- Stats -->
-<div class="stats-bar">
-    <div class="stat-item">
-        <div class="stat-number">14</div>
-        <div class="stat-label">Categories</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">100+</div>
-        <div class="stat-label">Terms</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">15</div>
-        <div class="stat-label">Modules Covered</div>
-    </div>
-</div>
-
-<!-- No Results Message -->
-<div class="no-results" id="noResults">
-    لَا تُوجَدُ نَتَائِجُ - No results found
-</div>
-
-<!-- Category 1: Word Types -->
-<div class="category" data-category="word-types">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">أَنْوَاعُ الكَلِمَةِ</h2>
-            <div class="category-title-en">Word Types</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">الكَلِمَةُ</div>
-                <div class="term-english">Word</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الاسْمُ</div>
-                <div class="term-english">Noun</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الفِعْلُ</div>
-                <div class="term-english">Verb</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الحَرْفُ</div>
-                <div class="term-english">Particle</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 2: Sentence Types -->
-<div class="category" data-category="sentence-types">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">أَنْوَاعُ الجُمْلَةِ</h2>
-            <div class="category-title-en">Sentence Types</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">الجُمْلَةُ الاسْمِيَّةُ</div>
-                <div class="term-english">Nominal Sentence</div>
-                <div class="term-note">Starts with a noun</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الجُمْلَةُ الفِعْلِيَّةُ</div>
-                <div class="term-english">Verbal Sentence</div>
-                <div class="term-note">Starts with a verb</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">المُبْتَدَأُ</div>
-                <div class="term-english">Subject (of nominal sentence)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الخَبَرُ</div>
-                <div class="term-english">Predicate</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">شِبْهُ جُمْلَةٍ</div>
-                <div class="term-english">Semi-sentence</div>
-                <div class="term-note">Prepositional/adverbial phrase</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 3: Verb Types -->
-<div class="category" data-category="verb-types">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">أَنْوَاعُ الفِعْلِ</h2>
-            <div class="category-title-en">Verb Types</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">الفِعْلُ المَاضِي</div>
-                <div class="term-english">Past Tense Verb</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الفِعْلُ المُضَارِعُ</div>
-                <div class="term-english">Present/Future Tense Verb</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">فِعْلُ الأَمْرِ</div>
-                <div class="term-english">Command/Imperative Verb</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الفِعْلُ اللَّازِمُ</div>
-                <div class="term-english">Intransitive Verb</div>
-                <div class="term-note">No direct object needed</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الفِعْلُ المُتَعَدِّي</div>
-                <div class="term-english">Transitive Verb</div>
-                <div class="term-note">Requires direct object</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الفِعْلُ الثُّلَاثِيُّ</div>
-                <div class="term-english">Trilateral Verb</div>
-                <div class="term-note">3-letter root</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">التَّصْرِيفُ</div>
-                <div class="term-english">Conjugation</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 4: Verb Components -->
-<div class="category" data-category="verb-components">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">مُكَوِّنَاتُ الجُمْلَةِ الفِعْلِيَّةِ</h2>
-            <div class="category-title-en">Verbal Sentence Components</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">الفَاعِلُ</div>
-                <div class="term-english">Subject / Doer</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">المَفْعُولُ بِهِ</div>
-                <div class="term-english">Direct Object</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">تَاءُ الفَاعِلِ</div>
-                <div class="term-english">Subject Taa</div>
-                <div class="term-note">Verb ending for 1st/2nd person</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">تَاءُ التَّأْنِيثِ</div>
-                <div class="term-english">Feminine Taa</div>
-                <div class="term-note">ـتْ at end of verb</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">نُونُ النِّسْوَةِ</div>
-                <div class="term-english">Feminine Plural Noon</div>
-                <div class="term-note">ـنَ ending</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">وَاوُ الجَمَاعَةِ</div>
-                <div class="term-english">Masculine Plural Waaw</div>
-                <div class="term-note">ـوا ending</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">أَلِفُ الاثْنَيْنِ</div>
-                <div class="term-english">Dual Alif</div>
-                <div class="term-note">ـا ending for dual</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">نَا الفَاعِلِينَ</div>
-                <div class="term-english">First Person Plural Ending</div>
-                <div class="term-note">ـنَا for "we"</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">يَاءُ المُخَاطَبَةِ</div>
-                <div class="term-english">Feminine Addressee Yaa</div>
-                <div class="term-note">ـي ending for أَنْتِ</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 5: Trilateral Verb Radicals -->
-<div class="category" data-category="radicals">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">حُرُوفُ الفِعْلِ الثُّلَاثِيِّ</h2>
-            <div class="category-title-en">Trilateral Verb Radicals</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">فَاءُ الكَلِمَةِ</div>
-                <div class="term-english">First Radical</div>
-                <div class="term-note">1st letter of root</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">عَيْنُ الكَلِمَةِ</div>
-                <div class="term-english">Second Radical</div>
-                <div class="term-note">2nd letter of root</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لَامُ الكَلِمَةِ</div>
-                <div class="term-english">Third Radical</div>
-                <div class="term-note">3rd letter of root</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مَفْتُوحُ العَيْنِ</div>
-                <div class="term-english">Fatha on Second Radical</div>
-                <div class="term-note">Pattern: فَعَلَ</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مَضْمُومُ العَيْنِ</div>
-                <div class="term-english">Damma on Second Radical</div>
-                <div class="term-note">Pattern: فَعُلَ</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مَكْسُورُ العَيْنِ</div>
-                <div class="term-english">Kasra on Second Radical</div>
-                <div class="term-note">Pattern: فَعِلَ</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 6: Noun Types -->
-<div class="category" data-category="noun-types">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">أَنْوَاعُ الاسْمِ</h2>
-            <div class="category-title-en">Noun Types</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">المُفْرَدُ</div>
-                <div class="term-english">Singular</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">المُثَنَّى</div>
-                <div class="term-english">Dual</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الجَمْعُ</div>
-                <div class="term-english">Plural</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">جَمْعُ المُذَكَّرِ السَّالِمُ</div>
-                <div class="term-english">Sound Masculine Plural</div>
-                <div class="term-note">ـونَ / ـينَ ending</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">جَمْعُ المُؤَنَّثِ السَّالِمُ</div>
-                <div class="term-english">Sound Feminine Plural</div>
-                <div class="term-note">ـاتٌ ending</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">جَمْعُ التَّكْسِيرِ</div>
-                <div class="term-english">Broken Plural</div>
-                <div class="term-note">Irregular pattern change</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الاسْمُ المَنْقُوصُ</div>
-                <div class="term-english">Deficient Noun</div>
-                <div class="term-note">Ends in ـي</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الأَسْمَاءُ الخَمْسَةُ</div>
-                <div class="term-english">The Five Nouns</div>
-                <div class="term-note">أَبٌ، أَخٌ، حَمٌ، فُو، ذُو</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">اسْمُ التَّفْضِيلِ</div>
-                <div class="term-english">Comparative/Superlative</div>
-                <div class="term-note">Pattern: أَفْعَل</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">المُضَافُ</div>
-                <div class="term-english">First part of Idafa</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">المُضَافُ إِلَيْهِ</div>
-                <div class="term-english">Second part of Idafa</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 7: Case Endings -->
-<div class="category" data-category="case-endings">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">الإِعْرَابُ وَالحَرَكَاتُ</h2>
-            <div class="category-title-en">Case Endings & Vowel Marks</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">الإِعْرَابُ</div>
-                <div class="term-english">Grammatical Analysis (I'rab)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مَرْفُوعٌ</div>
-                <div class="term-english">Nominative Case</div>
-                <div class="term-note">Subject position</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مَنْصُوبٌ</div>
-                <div class="term-english">Accusative Case</div>
-                <div class="term-note">Object position</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مَجْرُورٌ</div>
-                <div class="term-english">Genitive Case</div>
-                <div class="term-note">After preposition/in idafa</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مَبْنِيٌّ</div>
-                <div class="term-english">Indeclinable/Built</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الضَّمَّةُ</div>
-                <div class="term-english">Damma (ـُ)</div>
-                <div class="term-note">Nominative marker</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الفَتْحَةُ</div>
-                <div class="term-english">Fatha (ـَ)</div>
-                <div class="term-note">Accusative marker</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الكَسْرَةُ</div>
-                <div class="term-english">Kasra (ـِ)</div>
-                <div class="term-note">Genitive marker</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">السُّكُونُ</div>
-                <div class="term-english">Sukoon (ـْ)</div>
-                <div class="term-note">No vowel</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">التَّنْوِينُ</div>
-                <div class="term-english">Tanween</div>
-                <div class="term-note">ـٌ / ـً / ـٍ</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الْتِقَاءُ السَّاكِنَيْنِ</div>
-                <div class="term-english">Meeting of Two Sukoons</div>
-                <div class="term-note">Not allowed in Arabic</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 8: Pronouns -->
-<div class="category" data-category="pronouns">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">الضَّمَائِرُ</h2>
-            <div class="category-title-en">Pronouns</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">الضَّمَائِرُ المُنْفَصِلَةُ</div>
-                <div class="term-english">Independent Pronouns</div>
-                <div class="term-note">أَنَا، أَنْتَ، هُوَ...</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الضَّمَائِرُ المُتَّصِلَةُ</div>
-                <div class="term-english">Attached Pronouns</div>
-                <div class="term-note">ـهُ، ـكَ، ـي...</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">ضَمِيرُ الرَّفْعِ</div>
-                <div class="term-english">Nominative Pronoun</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">ضَمِيرُ النَّصْبِ</div>
-                <div class="term-english">Accusative Pronoun</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">ضَمِيرُ الجَرِّ</div>
-                <div class="term-english">Genitive Pronoun</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">المُتَكَلِّمُ</div>
-                <div class="term-english">First Person (Speaker)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">المُخَاطَبُ</div>
-                <div class="term-english">Second Person (Addressee)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الغَائِبُ</div>
-                <div class="term-english">Third Person (Absent)</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 9: إنّ وأخواتها -->
-<div class="category" data-category="inna">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">إِنَّ وَأَخَوَاتُهَا</h2>
-            <div class="category-title-en">Inna and Its Sisters</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">إِنَّ</div>
-                <div class="term-english">Indeed / Verily</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">أَنَّ</div>
-                <div class="term-english">That (conjunction)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لٰكِنَّ</div>
-                <div class="term-english">But / However</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">كَأَنَّ</div>
-                <div class="term-english">As if / Looks like</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لَيْتَ</div>
-                <div class="term-english">Would that / I wish</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لَعَلَّ</div>
-                <div class="term-english">Perhaps / Maybe</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">اسْمُ إِنَّ</div>
-                <div class="term-english">Subject of Inna</div>
-                <div class="term-note">منصوب (accusative)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">خَبَرُ إِنَّ</div>
-                <div class="term-english">Predicate of Inna</div>
-                <div class="term-note">مرفوع (nominative)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لَامُ الابْتِدَاءِ</div>
-                <div class="term-english">Laam of Beginning</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">اللَّامُ المُزَحْلَقَةُ</div>
-                <div class="term-english">Skating Laam</div>
-                <div class="term-note">إنَّ...لَـ construction</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 10: كان وأخواتها -->
-<div class="category" data-category="kaana">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">كَانَ وَأَخَوَاتُهَا</h2>
-            <div class="category-title-en">Kaana and Its Sisters</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">كَانَ</div>
-                <div class="term-english">Was / To be</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">أَصْبَحَ</div>
-                <div class="term-english">Became (in the morning)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">أَمْسَى</div>
-                <div class="term-english">Became (in the evening)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">صَارَ</div>
-                <div class="term-english">Became</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لَيْسَ</div>
-                <div class="term-english">Is not (negation)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">اسْمُ كَانَ</div>
-                <div class="term-english">Subject of Kaana</div>
-                <div class="term-note">مرفوع (nominative)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">خَبَرُ كَانَ</div>
-                <div class="term-english">Predicate of Kaana</div>
-                <div class="term-note">منصوب (accusative)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الْبَاءُ الزَّائِدَةُ</div>
-                <div class="term-english">Additional Baa</div>
-                <div class="term-note">With لَيْسَ predicate</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 11: Numbers -->
-<div class="category" data-category="numbers">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">الأَعْدَادُ</h2>
-            <div class="category-title-en">Numbers</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">العَدَدُ الأَصْلِيُّ</div>
-                <div class="term-english">Cardinal Number</div>
-                <div class="term-note">واحد، اثنان، ثلاثة...</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">العَدَدُ التَّرْتِيبِيُّ</div>
-                <div class="term-english">Ordinal Number</div>
-                <div class="term-note">أَوَّل، ثَانٍ، ثَالِث...</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">المَعْدُودُ</div>
-                <div class="term-english">Counted Noun</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">أَلْفَاظُ العُقُودِ</div>
-                <div class="term-english">Decades</div>
-                <div class="term-note">20, 30, 40... (عشرون، ثلاثون)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مِائَةٌ</div>
-                <div class="term-english">Hundred</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">أَلْفٌ</div>
-                <div class="term-english">Thousand</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 12: Negation -->
-<div class="category" data-category="negation">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">أَدَوَاتُ النَّفْيِ</h2>
-            <div class="category-title-en">Negation Particles</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">مَا</div>
-                <div class="term-english">Not (for past)</div>
-                <div class="term-note">مَا ذَهَبَ = he didn't go</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لَا</div>
-                <div class="term-english">Not / No</div>
-                <div class="term-note">General/present negation</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لَنْ</div>
-                <div class="term-english">Will not (future)</div>
-                <div class="term-note">Causes nasb on verb</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لَمْ</div>
-                <div class="term-english">Did not</div>
-                <div class="term-note">Causes jazm on verb</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لَيْسَ</div>
-                <div class="term-english">Is not</div>
-                <div class="term-note">From كان وأخواتها</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 13: Interrogatives -->
-<div class="category" data-category="interrogatives">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">أَدَوَاتُ الاسْتِفْهَامِ</h2>
-            <div class="category-title-en">Question Words</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">هَلْ</div>
-                <div class="term-english">Is / Does (yes/no)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الهَمْزَةُ (أَ)</div>
-                <div class="term-english">Question Particle</div>
-                <div class="term-note">أَذَهَبْتَ؟ = Did you go?</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مَنْ</div>
-                <div class="term-english">Who</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مَا / مَاذَا</div>
-                <div class="term-english">What</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">أَيْنَ</div>
-                <div class="term-english">Where</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">مَتَى</div>
-                <div class="term-english">When</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">كَيْفَ</div>
-                <div class="term-english">How</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">لِمَاذَا</div>
-                <div class="term-english">Why</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">كَمْ</div>
-                <div class="term-english">How many</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">أَيُّ</div>
-                <div class="term-english">Which</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">نَعَمْ</div>
-                <div class="term-english">Yes</div>
-                <div class="term-note">For positive questions</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">بَلَى</div>
-                <div class="term-english">Yes indeed</div>
-                <div class="term-note">For negative questions</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Category 14: Gender & Definiteness -->
-<div class="category" data-category="gender">
-    <div class="category-header" onclick="toggleCategory(this)">
-        <div>
-            <h2 class="category-title">الجِنْسُ وَالتَّعْرِيفُ</h2>
-            <div class="category-title-en">Gender & Definiteness</div>
-        </div>
-        <span class="toggle-icon">▼</span>
-    </div>
-    <div class="category-content">
-        <div class="term-grid">
-            <div class="term-item">
-                <div class="term-arabic">المُذَكَّرُ</div>
-                <div class="term-english">Masculine</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">المُؤَنَّثُ</div>
-                <div class="term-english">Feminine</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">المَعْرِفَةُ</div>
-                <div class="term-english">Definite</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">النَّكِرَةُ</div>
-                <div class="term-english">Indefinite</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">أَلْ التَّعْرِيفِ</div>
-                <div class="term-english">Definite Article (ال)</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">تَاءُ التَّأْنِيثِ المَرْبُوطَةُ</div>
-                <div class="term-english">Tied Taa (ة)</div>
-                <div class="term-note">Feminine marker</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">الاسْمُ المَوْصُولُ</div>
-                <div class="term-english">Relative Pronoun</div>
-                <div class="term-note">الَّذِي، الَّتِي...</div>
-            </div>
-            <div class="term-item">
-                <div class="term-arabic">اسْمُ الإِشَارَةِ</div>
-                <div class="term-english">Demonstrative Pronoun</div>
-                <div class="term-note">هَذَا، هَذِهِ، ذَلِكَ...</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer>
-    <p style="font-size: 24px;">قَامُوسُ المُصْطَلَحَاتِ النَّحْوِيَّةِ</p>
-    <p style="font-size: 18px;">Arabic Grammar Glossary - ARB202</p>
-    <p style="font-size: 14px; opacity: 0.8; margin-top: 15px;">Covering all terms from Modules 1-15</p>
-</footer>
 
 <script>
-function toggleCategory(header) {
-    const category = header.parentElement;
-    category.classList.toggle('collapsed');
+function showSection(section, btn) {
+    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(section + '-section').classList.add('active');
+    btn.classList.add('active');
+    if (section === 'categories') populateCategoryGrid();
 }
 
-function filterTerms() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const categories = document.querySelectorAll('.category');
-    let hasResults = false;
+function toggleCategory(header) {
+    header.nextElementSibling.classList.toggle('collapsed');
+}
 
-    categories.forEach(category => {
-        const terms = category.querySelectorAll('.term-item');
-        let categoryHasMatch = false;
+function toggleVocab(header) {
+    const content = header.nextElementSibling;
+    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+}
 
-        terms.forEach(term => {
-            const arabic = term.querySelector('.term-arabic').textContent.toLowerCase();
-            const english = term.querySelector('.term-english').textContent.toLowerCase();
-            const note = term.querySelector('.term-note');
-            const noteText = note ? note.textContent.toLowerCase() : '';
-
-            if (arabic.includes(searchTerm) || english.includes(searchTerm) || noteText.includes(searchTerm)) {
-                term.style.display = 'block';
-                categoryHasMatch = true;
-                hasResults = true;
-            } else {
-                term.style.display = 'none';
-            }
-        });
-
-        if (categoryHasMatch) {
-            category.style.display = 'block';
-            category.classList.remove('collapsed');
+function searchContent() {
+    const term = document.getElementById('searchBox').value.toLowerCase();
+    document.querySelectorAll('.searchable').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(term)) {
+            item.classList.remove('hidden');
+            let parent = item.closest('.category-content, .vocab-content');
+            if (parent) { parent.classList.remove('collapsed'); parent.style.display = 'block'; }
         } else {
-            category.style.display = 'none';
+            item.classList.add('hidden');
         }
     });
+}
 
-    document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
+function populateCategoryGrid() {
+    const grid = document.getElementById('categoryGrid');
+    const cards = document.querySelectorAll('#vocabulary-section .vocab-card');
+    grid.innerHTML = '';
+    cards.forEach(card => grid.appendChild(card.cloneNode(true)));
+}
 
-    // If search is empty, show all
-    if (searchTerm === '') {
-        categories.forEach(category => {
-            category.style.display = 'block';
-            category.querySelectorAll('.term-item').forEach(term => {
-                term.style.display = 'block';
-            });
-        });
-        document.getElementById('noResults').style.display = 'none';
-    }
+function filterByCategory(category) {
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('#categoryGrid .vocab-card').forEach(item => {
+        item.classList.toggle('hidden', category !== 'all' && !item.classList.contains(category));
+    });
 }
 </script>
 
