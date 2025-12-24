@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARB202 - Course Quizzes | اختبارات الدورة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Amiri', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.3);
+        }
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 22px;
+            opacity: 0.95;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #e94560;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            background: rgba(233, 69, 96, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        .back-link:hover {
+            background: rgba(233, 69, 96, 0.4);
+        }
+        .nav-container {
+            position: sticky;
+            top: 10px;
+            background: linear-gradient(135deg, #233554 0%, #2d4a6f 100%);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .nav-title {
+            color: #e94560;
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            background: rgba(233, 69, 96, 0.3);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover {
+            background: rgba(233, 69, 96, 0.6);
+            transform: translateY(-2px);
+        }
+        .module-section {
+            background: linear-gradient(135deg, #233554 0%, #2d4a6f 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 2px solid transparent;
+        }
+        .module-section:hover {
+            border-color: #e94560;
+        }
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(233, 69, 96, 0.5);
+        }
+        .module-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e94560;
+            background: rgba(233, 69, 96, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .module-title {
+            font-size: 28px;
+        }
+        .quiz-question {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-right: 4px solid #e94560;
+        }
+        .question-header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .question-text {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .option {
+            padding: 12px 18px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+            font-size: 20px;
+            transition: all 0.3s;
+            color: #fff;
+        }
+        .option:hover {
+            background: rgba(233, 69, 96, 0.3);
+            transform: translateX(-5px);
+        }
+        .answer-reveal summary {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            list-style: none;
+        }
+        .answer-reveal summary::-webkit-details-marker {
+            display: none;
+        }
+        .correct-answer {
+            margin-top: 15px;
+            padding: 20px;
+            background: rgba(76, 175, 80, 0.2);
+            border-right: 4px solid #4caf50;
+            border-radius: 8px;
+            font-size: 20px;
+            color: #a5d6a7;
+            font-weight: bold;
+        }
+        .english-text {
+            font-family: Georgia, serif;
+            direction: ltr;
+            text-align: left;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            opacity: 0.8;
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 32px; }
+            .module-title { font-size: 22px; }
+            .question-text { font-size: 18px; }
+            .option { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← العودة إلى الرئيسية | Back to Home</a>
+
+        <header>
+            <h1>اختبارات الدورة</h1>
+            <p>ARB202 - Course Quizzes</p>
+            <p style="font-size: 16px; margin-top: 10px; opacity: 0.9;">Practice quizzes for all 15 modules</p>
+        </header>
+
+        <nav class="nav-container">
+            <div class="nav-title">اختر الوحدة - Select Module</div>
+            <div class="nav-links">
+                <a href="#module1">١</a>
+                <a href="#module2">٢</a>
+                <a href="#module3">٣</a>
+                <a href="#module4">٤</a>
+                <a href="#module5">٥</a>
+                <a href="#module6">٦</a>
+                <a href="#module7">٧</a>
+                <a href="#module8">٨</a>
+                <a href="#module9">٩</a>
+                <a href="#module10">١٠</a>
+                <a href="#module11">١١</a>
+                <a href="#module12">١٢</a>
+                <a href="#module13">١٣</a>
+                <a href="#module14">١٤</a>
+                <a href="#module15">١٥</a>
+            </div>
+        </nav>
+
+        <!-- Module 1 Quiz -->
+        <section id="module1" class="module-section">
+            <div class="module-header">
+                <div class="module-number">١</div>
+                <div class="module-title">الوَحْدَةُ الأُولَى - Module 1</div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 1 - السؤال الأول</div>
+                <p class="question-text">Which of the following is not a sister of إِنَّ?<br>أَيُّ الآتِي لَيْسَ مِنْ أَخَوَاتِ إِنَّ؟</p>
+                <div class="quiz-options">
+                    <div class="option">a. لَيْتَ</div>
+                    <div class="option">b. لَعَلَّ</div>
+                    <div class="option">c. لٰكِنَّ</div>
+                    <div class="option">d. كَأَنَّ</div>
+                    <div class="option">e. كَانَ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: e. كَانَ<br>كَانَ is a verb (فعل ناقص), not a sister of إِنَّ. The sisters of إِنَّ are: إِنَّ، أَنَّ، لَعَلَّ، لٰكِنَّ، كَأَنَّ، لَيْتَ</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 2 - السؤال الثاني</div>
+                <p class="question-text">What is the root of the verb: تَفْهَمَانِ?<br>مَا جَذْرُ الفِعْلِ: تَفْهَمَانِ؟</p>
+                <div class="quiz-options">
+                    <div class="option">a. افهموا</div>
+                    <div class="option">b. نَفْهَمُ</div>
+                    <div class="option">c. فَهَّمَ</div>
+                    <div class="option">d. تَفَهَّمَ</div>
+                    <div class="option">e. فَهِمَ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: e. فَهِمَ<br>The root form is the third person masculine singular past tense (هُوَ form). تَفْهَمَانِ is the present tense dual form.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 3 - السؤال الثالث</div>
+                <p class="question-text">The فِعْل الأَمْر is always ...?<br>فِعْلُ الأَمْرِ دَائِمًا ...؟</p>
+                <div class="quiz-options">
+                    <div class="option">a. مَضْمُومًا (with damma)</div>
+                    <div class="option">b. مَبْنِيًّا (fixed/indeclinable)</div>
+                    <div class="option">c. مَكْسُورًا (with kasra)</div>
+                    <div class="option">d. مُعْرَبًا (declinable)</div>
+                    <div class="option">e. مَفْتُوحًا (with fatha)</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: b. مَبْنِيًّا<br>The command verb (فِعْل الأَمْر) is always مَبْنِيٌّ عَلَى السُّكُونِ (built on sukoon). It does not change based on grammatical position.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 4 - السؤال الرابع</div>
+                <p class="question-text">Which of the following pronouns are used with the فِعْل الأَمْر?<br>أَيُّ الضَّمَائِرِ التَّالِيَةِ تُسْتَخْدَمُ مَعَ فِعْلِ الأَمْرِ؟</p>
+                <div class="quiz-options">
+                    <div class="option">a. هُمْ (they masc.)</div>
+                    <div class="option">b. هُوَ (he)</div>
+                    <div class="option">c. أَنَا (I)</div>
+                    <div class="option">d. أَنْتُنَّ (you fem. pl.)</div>
+                    <div class="option">e. هُنَّ (they fem.)</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: d. أَنْتُنَّ<br>فِعْل الأَمْر is only used with second person (المُخَاطَب): أَنْتَ، أَنْتِ، أَنْتُمَا، أَنْتُمْ، أَنْتُنَّ</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 5 - السؤال الخامس</div>
+                <p class="question-text">Which of the following is the correct word needed to complete this sentence:<br>هٰذِهِ الفَتَاةُ ....... خُلُقٍ</p>
+                <div class="quiz-options">
+                    <div class="option">a. ذَوُو</div>
+                    <div class="option">b. ذَوَاتُ</div>
+                    <div class="option">c. ذَوَا</div>
+                    <div class="option">d. ذُو</div>
+                    <div class="option">e. ذَاتُ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: e. ذَاتُ<br>Since الفَتَاة is feminine singular and in the nominative case (خبر), we use ذَاتُ (feminine singular nominative form of ذُو).</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Module 10 Quiz -->
+        <section id="module10" class="module-section">
+            <div class="module-header">
+                <div class="module-number">١٠</div>
+                <div class="module-title">الوَحْدَةُ العَاشِرَةُ - Module 10</div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 1 - السؤال الأول</div>
+                <p class="question-text">Which of the following sentences contains an اسم التَّفْضِيل (comparative/superlative)?</p>
+                <div class="quiz-options">
+                    <div class="option">a. هَذَا الدَّرْسُ صَعْبٌ</div>
+                    <div class="option">b. حَامِدٌ مُهَنْدِسٌ حَسَنٌ</div>
+                    <div class="option">c. هَذِهِ أَرْخَصُ سَاعَةٍ فِي السُّوقِ</div>
+                    <div class="option">d. الدُّكْتُورُ مُحَمَّدٌ طَبِيبٌ شَهِيرٌ</div>
+                    <div class="option">e. هَذَا الفَصْلُ وَاسِعٌ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: c. هَذِهِ أَرْخَصُ سَاعَةٍ فِي السُّوقِ<br>أَرْخَصُ (cheapest) is اسم التفضيل on the pattern أَفْعَلُ. The sentence means "This is the cheapest watch in the market."</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 2 - السؤال الثاني</div>
+                <p class="question-text">Which of the following sentences about Prophet Yusuf's dream is correct?</p>
+                <div class="quiz-options">
+                    <div class="option">a. رَأَى يُوسُفُ عَلَيْهِ السَّلَامُ فِي المَنَامِ أَحَدَ عَشَرَ كَوْكَبًا</div>
+                    <div class="option">b. رَأَى يُوسُفُ عَلَيْهِ السَّلَامُ فِي المَنَامِ سَبْعَةَ عَشْرَةَ كَوْكَبًا</div>
+                    <div class="option">c. رَأَى يُوسُفُ عَلَيْهِ السَّلَامُ فِي المَنَامِ عِشْرُونَ كَوْكَبٌ</div>
+                    <div class="option">d. رَأَى يُوسُفُ عَلَيْهِ السَّلَامُ فِي المَنَامِ ثَلَاثَةَ عَشَرَ كَوَاكِبُ</div>
+                    <div class="option">e. رَأَى يُوسُفُ عَلَيْهِ السَّلَامُ فِي المَنَامِ اثْنَا عَشْرَةَ كَوْكَبًا</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: a. رَأَى يُوسُفُ عَلَيْهِ السَّلَامُ فِي المَنَامِ أَحَدَ عَشَرَ كَوْكَبًا<br>According to Surah Yusuf (12:4), Prophet Yusuf saw 11 stars (أَحَدَ عَشَرَ كَوْكَبًا), the sun, and the moon prostrating to him.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 3 - السؤال الثالث</div>
+                <p class="question-text">Which of the following sentences is correct? (about months in a year)</p>
+                <div class="quiz-options">
+                    <div class="option">a. فِي السَّنَةِ سِتَّةَ عَشَرَ شَهْرًا</div>
+                    <div class="option">b. فِي السَّنَةِ أَحَدَ عَشَرَ شَهْرًا</div>
+                    <div class="option">c. فِي السَّنَةِ ثَلَاثَةَ عَشَرَ شَهْرًا</div>
+                    <div class="option">d. فِي السَّنَةِ اثْنَا عَشَرَ شَهْرًا</div>
+                    <div class="option">e. فِي السَّنَةِ شَهْرٌ وَاحِدٌ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: d. فِي السَّنَةِ اثْنَا عَشَرَ شَهْرًا<br>There are 12 months in a year. شَهْر (month) is masculine, so the number is اثْنَا عَشَرَ (both parts masculine).</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 4 - السؤال الرابع</div>
+                <p class="question-text">Which of the following words is the correct مَعْدُود [counted word] for this sentence:<br>فِي مَدْرَسَتِنَا سِتَّةَ عَشَرَ .......</p>
+                <div class="quiz-options">
+                    <div class="option">a. مُدَرِّسَاتٍ</div>
+                    <div class="option">b. مُدَرِّسَةً</div>
+                    <div class="option">c. مُدَرِّسًا</div>
+                    <div class="option">d. مُدَرِّسٌ</div>
+                    <div class="option">e. مُدَرِّسِينَ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: c. مُدَرِّسًا<br>For numbers 11-99, the counted word is: singular (مُفْرَد), indefinite (نَكِرَة), accusative (مَنْصُوب). Since سِتَّةَ has ta marbuta, the counted noun is masculine: مُدَرِّسًا.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 5 - السؤال الخامس</div>
+                <p class="question-text">What is the correct form of العَدَد التَّرْتِيبِي (ordinal number) for:<br>أَنَا طَالِبٌ فِي السَّنَةِ ......</p>
+                <div class="quiz-options">
+                    <div class="option">a. الثَّالِثَةُ (the third - fem.)</div>
+                    <div class="option">b. الثَّانِي (the second - masc.)</div>
+                    <div class="option">c. خَمْسَةٌ (five)</div>
+                    <div class="option">d. الرَّابِعَةِ (the fourth - fem. genitive)</div>
+                    <div class="option">e. الأَوَّلِ (the first - masc.)</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: d. الرَّابِعَةِ<br>السَّنَة is feminine, so the ordinal must be feminine: الرَّابِعَة. It's genitive (مَجْرُور) because it's مُضَاف إِلَيْهِ after السَّنَةِ.</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Module 11 Quiz -->
+        <section id="module11" class="module-section">
+            <div class="module-header">
+                <div class="module-number">١١</div>
+                <div class="module-title">الوَحْدَةُ الحَادِيَةَ عَشْرَةَ - Module 11</div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 1 - السؤال الأول</div>
+                <p class="question-text">Which of the following sentences does NOT consist of الأَسْمَاء الخَمْسَة (the five special nouns)?</p>
+                <div class="quiz-options">
+                    <div class="option">a. مِنْ أَيْنَ الأَخُ؟</div>
+                    <div class="option">b. رَأَيْتُ حَمَا صَابِرٍ</div>
+                    <div class="option">c. أَبُو صَدِيقِي عِنْدَ المُدِيرِ</div>
+                    <div class="option">d. إِنَّ أَخَا سَعِيدٍ مَرِيضٌ</div>
+                    <div class="option">e. مَحْمُودُ رَجُلٌ ذُو مَالٍ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: a. مِنْ أَيْنَ الأَخُ؟<br>الأَسْمَاء الخَمْسَة only show their special إعراب when they are مُضَاف (attached to something). Here الأَخُ has ال, so it shows regular إعراب with harakaat, not the special letters.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 2 - السؤال الثاني</div>
+                <p class="question-text">Which of the following sentences has the signs of إِعْرَاب with harakaat (vowel marks) and NOT letters?</p>
+                <div class="quiz-options">
+                    <div class="option">a. كِتَابُ عَلِيٍّ قَدِيمٌ جِدًّا</div>
+                    <div class="option">b. الطَّالِبَانِ يُذَاكِرَانِ دَرْسَ الفِقْهِ</div>
+                    <div class="option">c. لِي أَخَوَانِ أَكْبَرُ مِنِّي سِنًّا</div>
+                    <div class="option">d. مَرَرْتُ بِالمُهَنْدِسِينَ الجُدُدِ</div>
+                    <div class="option">e. رَأَيْتُ أَبَا بَكْرٍ فِي الطَّرِيقِ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: a. كِتَابُ عَلِيٍّ قَدِيمٌ جِدًّا<br>This sentence uses only harakaat for إعراب. The others contain: dual (ان/ين), sound masculine plural (ون/ين), or الأسماء الخمسة (و/ا/ي) which show إعراب with letters.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 3 - السؤال الثالث</div>
+                <p class="question-text">Which of the following terms is used to describe an action that has already taken place?</p>
+                <div class="quiz-options">
+                    <div class="option">a. الفِعْل الأَمْر (command verb)</div>
+                    <div class="option">b. الفِعْلُ المَاضِي (past tense verb)</div>
+                    <div class="option">c. الاسْمُ الجَمْع (plural noun)</div>
+                    <div class="option">d. الفِعْلُ المُضَارِعُ (present/future verb)</div>
+                    <div class="option">e. الاسْمُ المُفْرَدُ (singular noun)</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: b. الفِعْلُ المَاضِي<br>الفِعْل المَاضِي (past tense verb) describes actions that have already happened. Examples: كَتَبَ (wrote), ذَهَبَ (went), أَكَلَ (ate).</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 4 - السؤال الرابع</div>
+                <p class="question-text">What is the least amount of letters a verb may have?</p>
+                <div class="quiz-options">
+                    <div class="option">a. ثَلَاثَةِ حُرُوفٍ (3 letters)</div>
+                    <div class="option">b. أَرْبَعَةِ حُرُوفٍ (4 letters)</div>
+                    <div class="option">c. سِتَّةِ حُرُوفٍ (6 letters)</div>
+                    <div class="option">d. حَرْفَيْنِ (2 letters)</div>
+                    <div class="option">e. خَمْسَةِ حُرُوفٍ (5 letters)</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: a. ثَلَاثَةِ حُرُوفٍ<br>Arabic verbs have a minimum of 3 root letters (الفِعْل الثُّلَاثِي). Examples: كَتَبَ (ك-ت-ب), ذَهَبَ (ذ-ه-ب), أَكَلَ (أ-ك-ل).</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 5 - السؤال الخامس</div>
+                <p class="question-text">If you start working at 8 o'clock and end at 12, how many hours do you work?</p>
+                <div class="quiz-options">
+                    <div class="option">a. أَرْبَعُ سَاعَاتٍ</div>
+                    <div class="option">b. أَرْبَعَةُ سَاعَاتٍ</div>
+                    <div class="option">c. أَرْبَعَ سَاعَةً</div>
+                    <div class="option">d. ثَلَاثَةُ سَاعَاتٍ</div>
+                    <div class="option">e. ثَلَاثُ سَاعَاتٍ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: a. أَرْبَعُ سَاعَاتٍ<br>8 to 12 = 4 hours. سَاعَة (hour) is feminine, so the number takes the masculine form (أَرْبَعُ without ta marbuta). The counted noun is plural genitive for numbers 3-10.</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Module 12 Quiz -->
+        <section id="module12" class="module-section">
+            <div class="module-header">
+                <div class="module-number">١٢</div>
+                <div class="module-title">الوَحْدَةُ الثَّانِيَةَ عَشْرَةَ - Module 12</div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 1 - السؤال الأول</div>
+                <p class="question-text">Which of the following sentences contains an error?</p>
+                <div class="quiz-options">
+                    <div class="option">a. إِنَّ البِنْتَ حَفِظَتْ سُورَةَ العَلَقِ</div>
+                    <div class="option">b. البَنَاتُ حَفِظْنَ سُورَةَ العَلَقِ</div>
+                    <div class="option">c. ذَهَبَتْ أُمِّي إِلَى خَالَتِي</div>
+                    <div class="option">d. حَفِظَ الأَوْلَادُ سُورَةَ العَلَقِ</div>
+                    <div class="option">e. إِنَّ الوَلَدَيْنِ حَفِظَتَا سُورَةَ العَلَقِ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: e. إِنَّ الوَلَدَيْنِ حَفِظَتَا<br>The error is using حَفِظَتَا (feminine dual) with الوَلَدَيْنِ (masculine dual). It should be حَفِظَا without the تاء since the subject is masculine dual.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 2 - السؤال الثاني</div>
+                <p class="question-text">Which of the following sentences does NOT consist of one of الأَسْمَاء الخَمْسَة (the five special nouns)?</p>
+                <div class="quiz-options">
+                    <div class="option">a. إِنَّ أَخَاكَ طَبِيبٌ</div>
+                    <div class="option">b. كَانَ أَبِي طَالِبًا ذَكِيًّا</div>
+                    <div class="option">c. ذَهَبَ أَبُو مُحَمَّدٍ إِلَى مَكَّةَ</div>
+                    <div class="option">d. مَرَرْتُ بِأَبِيكَ</div>
+                    <div class="option">e. إِنَّ هَذَا الرَّجُلَ ذُو مَالٍ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: b. كَانَ أَبِي طَالِبًا ذَكِيًّا<br>When أب is attached to ياء المُتَكَلِّم (my), it loses the special i'rab of الأسماء الخمسة. The word أَبِي doesn't show و/ا/ي case endings - it's just أَبِي in all cases.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 3 - السؤال الثالث</div>
+                <p class="question-text">Which sentence contains the word أب which is مُضَاف to the يَاء المُتَكَلِّم?</p>
+                <div class="quiz-options">
+                    <div class="option">a. كَانَ أَبُو بَكْرٍ أَوَّلَ رَجُلٍ يُؤْمِنُ بِاللهِ بَعْدَ الرَّسُولِ</div>
+                    <div class="option">b. خَرَجْتُ مَعَ أَبِي إِلَى الحَقْلِ</div>
+                    <div class="option">c. رَأَيْتُ أَبَاكَ فِي الطَّرِيقِ</div>
+                    <div class="option">d. مَرَرْتُ بِأَبِي سَعِيدٍ</div>
+                    <div class="option">e. إِنَّ أَبَا مَحْمُودٍ دَخَلَ المَسْجِدَ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: b. خَرَجْتُ مَعَ أَبِي إِلَى الحَقْلِ<br>Here أَبِي means "my father" - أب is مُضَاف to ياء المُتَكَلِّم. In options a, d, e, أبو/أبي/أبا are added to names (بكر، سعيد، محمود), not to ياء المتكلم.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 4 - السؤال الرابع</div>
+                <p class="question-text">Which of the following verbs is مَبْنِي [Fixed with an ending]?</p>
+                <div class="quiz-options">
+                    <div class="option">a. يَرَى</div>
+                    <div class="option">b. أَسْمَعُ</div>
+                    <div class="option">c. سَمِعْنَا</div>
+                    <div class="option">d. يَتَعَلَّمُ</div>
+                    <div class="option">e. يَتَكَلَّمُ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: c. سَمِعْنَا<br>Past tense verbs (الفِعْل المَاضِي) are always مَبْنِي (fixed/built). سَمِعْنَا is a past tense verb built on sukoon because نَا (we) is attached. The other options are all present tense (مُضَارِع) which is مُعْرَب.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 5 - السؤال الخامس</div>
+                <p class="question-text">Which of the following sentences is incorrect?</p>
+                <div class="quiz-options">
+                    <div class="option">a. هَذَانِ الأَخَوَانِ مِنْ سُورِيَا</div>
+                    <div class="option">b. هَذَا الوَلَدُ أَخِيكَ</div>
+                    <div class="option">c. إِخْوَتِي فِي المَدْرَسَةِ الثَّانَوِيَّةِ</div>
+                    <div class="option">d. أَخُو عَلِيٍّ يَلْعَبُ</div>
+                    <div class="option">e. لِي ثَلَاثَةُ إِخْوَةٍ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: b. هَذَا الوَلَدُ أَخِيكَ<br>The word أَخ here is the predicate (خَبَر) of the nominal sentence, so it should be in the nominative case (مَرْفُوع) with واو: أَخُوكَ. The correct sentence should be: هَذَا الوَلَدُ أَخُوكَ.</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Module 14 Quiz -->
+        <section id="module14" class="module-section">
+            <div class="module-header">
+                <div class="module-number">١٤</div>
+                <div class="module-title">الوَحْدَةُ الرَّابِعَةَ عَشْرَةَ - Module 14</div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 1 - السؤال الأول</div>
+                <p class="question-text">Which of the following sentences has a خَبَر مُفْرَد?</p>
+                <div class="quiz-options">
+                    <div class="option">a. الكِتَابُ شَكْلُهَا جَدِيدٌ</div>
+                    <div class="option">b. الطُّلَّابُ جَالِسُونَ</div>
+                    <div class="option">c. المُهَنْدِسُونَ فِي المَصْنَعِ</div>
+                    <div class="option">d. هَؤُلَاءِ المُهَنْدِسُونَ يَعْمَلُونَ فِي شَرِكَةٍ كَبِيرَةٍ</div>
+                    <div class="option">e. العُصْفُورُ فَوْقَ الشَّجَرَةِ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: b. الطُّلَّابُ جَالِسُونَ<br>جَالِسُونَ is a خَبَر مُفْرَد (single word predicate). Options c and e have شِبْه جُمْلَة (prepositional/adverbial phrase) as predicate. Option d has جُمْلَة فِعْلِيَّة as predicate.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 2 - السؤال الثاني</div>
+                <p class="question-text">What is the correct form of the verb needed to start this sentence:<br>...... الطُّلَّابُ إِلَى الفَصْلِ</p>
+                <div class="quiz-options">
+                    <div class="option">a. دَخَلْنَا</div>
+                    <div class="option">b. دَخَلُوا</div>
+                    <div class="option">c. دَخَلَ</div>
+                    <div class="option">d. دَخَلُونَ</div>
+                    <div class="option">e. دَخَلْنَ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: c. دَخَلَ<br>When the verb comes at the beginning of the sentence before the subject (فِعْل + فَاعِل), the verb stays singular regardless of whether the subject is plural. This is a key rule in Arabic.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 3 - السؤال الثالث</div>
+                <p class="question-text">Which of the following sentences contains a verb which is known as الفِعْل المُتَعَدِّي (transitive verb)?</p>
+                <div class="quiz-options">
+                    <div class="option">a. كَتَبَ المُدَرِّسُ الدَّرْسَ عَلَى السَّبُورَةِ</div>
+                    <div class="option">b. رَجَعَ التَّاجِرُ مِنَ السُّوقِ</div>
+                    <div class="option">c. خَرَجْتُ مِنَ الفَصْلِ الآنَ</div>
+                    <div class="option">d. جَاءَ مُحَمَّدٌ</div>
+                    <div class="option">e. ذَهَبَ المُدَرِّسُ إِلَى المَكْتَبَةِ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: a. كَتَبَ المُدَرِّسُ الدَّرْسَ عَلَى السَّبُورَةِ<br>كَتَبَ is a transitive verb (المُتَعَدِّي) because it takes a direct object (الدَّرْسَ). The other verbs (رَجَعَ، خَرَجَ، جَاءَ، ذَهَبَ) are intransitive (لَازِم) - they don't take direct objects.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 4 - السؤال الرابع</div>
+                <p class="question-text">What is the correct form of the verb required to complete this sentence:<br>الطَّالِبَانِ........ مِنَ الفَصْلِ</p>
+                <div class="quiz-options">
+                    <div class="option">a. خَرَجَا</div>
+                    <div class="option">b. خَرَجْنَ</div>
+                    <div class="option">c. خَرَجَتَا</div>
+                    <div class="option">d. خَرَجُوا</div>
+                    <div class="option">e. خَرَجَ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: a. خَرَجَا<br>الطَّالِبَانِ is masculine dual (مُثَنَّى مُذَكَّر), so the verb needs the masculine dual form خَرَجَا. Option c (خَرَجَتَا) would be for feminine dual.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 5 - السؤال الخامس</div>
+                <p class="question-text">What is the correct form of the verb required to start this sentence:<br>.......... البِنْتَانِ الأَبْوَابَ</p>
+                <div class="quiz-options">
+                    <div class="option">a. فَتَحْنَ</div>
+                    <div class="option">b. فَتَحَتْ</div>
+                    <div class="option">c. فَتَحَا</div>
+                    <div class="option">d. فَتَحُوا</div>
+                    <div class="option">e. فَتَحَتَا</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: e. فَتَحَتَا<br>البِنْتَانِ is feminine dual (مُثَنَّى مُؤَنَّث), so the verb needs the feminine dual form فَتَحَتَا (with تاء التأنيث + ألف الاثنتين).</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Module 15 Quiz -->
+        <section id="module15" class="module-section">
+            <div class="module-header">
+                <div class="module-number">١٥</div>
+                <div class="module-title">الوَحْدَةُ الخَامِسَةَ عَشْرَةَ - Module 15</div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 1 - السؤال الأول</div>
+                <p class="question-text">Which of the verbs has both its المَاضِي and المُضَارِع forms on the scale of: فَعُلَ يَفْعُلُ?</p>
+                <div class="quiz-options">
+                    <div class="option">a. سَعِدَ يَسْعَدُ</div>
+                    <div class="option">b. كَسَرَ يَكْسِرُ</div>
+                    <div class="option">c. فَهِمَ يَفْهَمُ</div>
+                    <div class="option">d. شَكَرَ يَشْكُرُ</div>
+                    <div class="option">e. كَرُمَ يَكْرُمُ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: e. كَرُمَ يَكْرُمُ<br>This verb follows the pattern فَعُلَ يَفْعُلُ where the middle letter has damma in both past and present. This pattern indicates qualities (صفات).</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 2 - السؤال الثاني</div>
+                <p class="question-text">Which of the following sentences has the ruling: اِلْتِقَاءُ السَّاكِنَيْنِ – the meeting of 2 سُكُون?</p>
+                <div class="quiz-options">
+                    <div class="option">a. قَالَتْ أُخْتِي: إِنَّ البَيْتَ نَظِيفٌ</div>
+                    <div class="option">b. رَأَيْتُ الأُسْتَاذَ الجَدِيدَ</div>
+                    <div class="option">c. قَرَأْتُ الدَّرْسَ</div>
+                    <div class="option">d. مَاتَ الرِّجَالُ</div>
+                    <div class="option">e. شَرِبَتِ الأُمُّ المَاءَ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: e. شَرِبَتِ الأُمُّ المَاءَ<br>Here we have التِقَاء السَّاكِنَيْن: the تاء in شَرِبَتْ originally has sukoon, and the أ in الأُمُّ has sukoon (hamzat al-wasl). To avoid two sukoons meeting, the تاء takes kasra: شَرِبَتِ.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 3 - السؤال الثالث</div>
+                <p class="question-text">Which of the verbs has both its المَاضِي and المُضَارِع forms on the scale of: فَعَلَ يَفْعُلُ?</p>
+                <div class="quiz-options">
+                    <div class="option">a. أَخَذَ يَأْخُذُ</div>
+                    <div class="option">b. نَصَحَ يَنْصَحُ</div>
+                    <div class="option">c. كَسَرَ يَكْسِرُ</div>
+                    <div class="option">d. ذَهَبَ يَذْهَبُ</div>
+                    <div class="option">e. صَعَدَ يَصْعَدُ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: a. أَخَذَ يَأْخُذُ<br>This verb follows the pattern فَعَلَ يَفْعُلُ where the middle letter has fatha in past and damma in present.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 4 - السؤال الرابع</div>
+                <p class="question-text">Which of the following verbs is a verb that is مَفْتُوحُ الْعَيْنِ – middle letter taking a Fatha?</p>
+                <div class="quiz-options">
+                    <div class="option">a. فَهِمَ</div>
+                    <div class="option">b. سَمِعَ</div>
+                    <div class="option">c. شَكَرَ</div>
+                    <div class="option">d. كَرُمَ</div>
+                    <div class="option">e. حَفِظَ</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: c. شَكَرَ<br>شَكَرَ has fatha on the middle letter (ك). The others have kasra (فَهِمَ، سَمِعَ، حَفِظَ) or damma (كَرُمَ) on the middle letter.</div>
+                </details>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-header">Question 5 - السؤال الخامس</div>
+                <p class="question-text">Which of the following sentences has the خَبَر as a شِبْه الجُمْلَة that is a ظَرْف مَكَان – an Adverb of place?</p>
+                <div class="quiz-options">
+                    <div class="option">a. ذَهَبْتُ إِلَى الطَّبِيبِ أَمْسِ</div>
+                    <div class="option">b. العُصْفُورُ فَوْقَ الشَّجَرَةِ</div>
+                    <div class="option">c. الكِتَابُ فِي المَكْتَبِ</div>
+                    <div class="option">d. جَلَسْتُ تَحْتَ الشَّجَرَةِ</div>
+                    <div class="option">e. ذَهَبْتُ الآنَ إِلَى بَيْتِ أُخْتِي</div>
+                </div>
+                <details class="answer-reveal">
+                    <summary>Show Answer - أظهر الإجابة</summary>
+                    <div class="correct-answer">✓ Correct Answer: b. العُصْفُورُ فَوْقَ الشَّجَرَةِ<br>فَوْقَ is a ظَرْف مَكَان (adverb of place) serving as the خَبَر. Option c uses فِي which is a حَرْف جَرّ (preposition), not a ظَرْف.</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Placeholder sections for modules 2-9, 13 -->
+        <section id="module2" class="module-section">
+            <div class="module-header">
+                <div class="module-number">٢</div>
+                <div class="module-title">الوَحْدَةُ الثَّانِيَةُ - Module 2</div>
+            </div>
+            <p style="text-align: center; padding: 20px; opacity: 0.7;">Quiz questions coming soon. See <a href="module2_study_guide.html#quiz" style="color: #e94560;">Module 2 Study Guide</a> for current quiz.</p>
+        </section>
+
+        <section id="module3" class="module-section">
+            <div class="module-header">
+                <div class="module-number">٣</div>
+                <div class="module-title">الوَحْدَةُ الثَّالِثَةُ - Module 3</div>
+            </div>
+            <p style="text-align: center; padding: 20px; opacity: 0.7;">Quiz questions coming soon. See <a href="module3_study_guide.html#quiz" style="color: #e94560;">Module 3 Study Guide</a> for current quiz.</p>
+        </section>
+
+        <section id="module4" class="module-section">
+            <div class="module-header">
+                <div class="module-number">٤</div>
+                <div class="module-title">الوَحْدَةُ الرَّابِعَةُ - Module 4</div>
+            </div>
+            <p style="text-align: center; padding: 20px; opacity: 0.7;">Quiz questions coming soon. See <a href="module4_study_guide.html#quiz" style="color: #e94560;">Module 4 Study Guide</a> for current quiz.</p>
+        </section>
+
+        <section id="module5" class="module-section">
+            <div class="module-header">
+                <div class="module-number">٥</div>
+                <div class="module-title">الوَحْدَةُ الخَامِسَةُ - Module 5</div>
+            </div>
+            <p style="text-align: center; padding: 20px; opacity: 0.7;">Quiz questions coming soon. See <a href="module5_study_guide.html#quiz" style="color: #e94560;">Module 5 Study Guide</a> for current quiz.</p>
+        </section>
+
+        <section id="module6" class="module-section">
+            <div class="module-header">
+                <div class="module-number">٦</div>
+                <div class="module-title">الوَحْدَةُ السَّادِسَةُ - Module 6</div>
+            </div>
+            <p style="text-align: center; padding: 20px; opacity: 0.7;">Quiz questions coming soon. See <a href="module6_study_guide.html#quiz" style="color: #e94560;">Module 6 Study Guide</a> for current quiz.</p>
+        </section>
+
+        <section id="module7" class="module-section">
+            <div class="module-header">
+                <div class="module-number">٧</div>
+                <div class="module-title">الوَحْدَةُ السَّابِعَةُ - Module 7</div>
+            </div>
+            <p style="text-align: center; padding: 20px; opacity: 0.7;">Quiz questions coming soon. See <a href="module7_study_guide.html#quiz" style="color: #e94560;">Module 7 Study Guide</a> for current quiz.</p>
+        </section>
+
+        <section id="module8" class="module-section">
+            <div class="module-header">
+                <div class="module-number">٨</div>
+                <div class="module-title">الوَحْدَةُ الثَّامِنَةُ - Module 8</div>
+            </div>
+            <p style="text-align: center; padding: 20px; opacity: 0.7;">Quiz questions coming soon. See <a href="module8_study_guide.html#quiz" style="color: #e94560;">Module 8 Study Guide</a> for current quiz.</p>
+        </section>
+
+        <section id="module9" class="module-section">
+            <div class="module-header">
+                <div class="module-number">٩</div>
+                <div class="module-title">الوَحْدَةُ التَّاسِعَةُ - Module 9</div>
+            </div>
+            <p style="text-align: center; padding: 20px; opacity: 0.7;">Quiz questions coming soon. See <a href="module9_study_guide.html#quiz" style="color: #e94560;">Module 9 Study Guide</a> for current quiz.</p>
+        </section>
+
+        <section id="module13" class="module-section">
+            <div class="module-header">
+                <div class="module-number">١٣</div>
+                <div class="module-title">الوَحْدَةُ الثَّالِثَةَ عَشْرَةَ - Module 13</div>
+            </div>
+            <p style="text-align: center; padding: 20px; opacity: 0.7;">Quiz questions coming soon. See <a href="module13_study_guide.html#quiz" style="color: #e94560;">Module 13 Study Guide</a> for current quiz.</p>
+        </section>
+
+        <footer>
+            <p>مِنْ كِتَابِ المَدِينَةِ - الجُزْءُ الثَّانِي</p>
+            <p style="font-family: Georgia, serif; margin-top: 10px;">ARB202 Course Quizzes - Created for personal study use</p>
+        </footer>
+    </div>
+</body>
+</html>
