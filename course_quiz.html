@@ -196,6 +196,82 @@
             .question-text { font-size: 18px; }
             .option { font-size: 16px; }
         }
+        /* Interactive Quiz Styles */
+        .option {
+            cursor: pointer;
+            user-select: none;
+        }
+        .option.correct {
+            background: rgba(76, 175, 80, 0.4) !important;
+            border-right: 4px solid #4caf50;
+            border-left: 4px solid #4caf50;
+        }
+        .option.wrong {
+            background: rgba(244, 67, 54, 0.4) !important;
+            border-right: 4px solid #f44336;
+            border-left: 4px solid #f44336;
+        }
+        .quiz-question.solved .option {
+            cursor: default;
+            opacity: 0.8;
+        }
+        .quiz-question.solved .option.correct {
+            opacity: 1;
+        }
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            display: none;
+        }
+        .quiz-feedback.show {
+            display: block;
+        }
+        .quiz-feedback.correct {
+            background: rgba(76, 175, 80, 0.2);
+            color: #a5d6a7;
+            border-right: 4px solid #4caf50;
+        }
+        .quiz-feedback.wrong {
+            background: rgba(244, 67, 54, 0.2);
+            color: #ef9a9a;
+            border-right: 4px solid #f44336;
+        }
+        .score-container {
+            background: linear-gradient(135deg, #233554 0%, #2d4a6f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .score-display {
+            font-size: 24px;
+            color: #e94560;
+        }
+        .score-number {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .reset-btn {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .reset-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -229,6 +305,14 @@
             </div>
         </nav>
 
+        <!-- Score and Reset -->
+        <div class="score-container">
+            <div class="score-display">
+                النتيجة | Score: <span id="score" class="score-number">0</span> / <span id="total">75</span>
+            </div>
+            <button class="reset-btn" onclick="resetQuiz()">إعادة الاختبار | Reset Quiz</button>
+        </div>
+
         <!-- Module 1 Quiz -->
         <section id="module1" class="module-section">
             <div class="module-header">
@@ -236,7 +320,7 @@
                 <div class="module-title">الوَحْدَةُ الأُولَى - Module 1</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which of the following is not a sister of إِنَّ?<br>أَيُّ الآتِي لَيْسَ مِنْ أَخَوَاتِ إِنَّ؟</p>
                 <div class="quiz-options">
@@ -252,7 +336,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">What is the root of the verb: تَفْهَمَانِ?<br>مَا جَذْرُ الفِعْلِ: تَفْهَمَانِ؟</p>
                 <div class="quiz-options">
@@ -268,7 +352,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">The فِعْل الأَمْر is always ...?<br>فِعْلُ الأَمْرِ دَائِمًا ...؟</p>
                 <div class="quiz-options">
@@ -284,7 +368,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">Which of the following pronouns are used with the فِعْل الأَمْر?<br>أَيُّ الضَّمَائِرِ التَّالِيَةِ تُسْتَخْدَمُ مَعَ فِعْلِ الأَمْرِ؟</p>
                 <div class="quiz-options">
@@ -300,7 +384,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">Which of the following is the correct word needed to complete this sentence:<br>هٰذِهِ الفَتَاةُ ....... خُلُقٍ</p>
                 <div class="quiz-options">
@@ -324,7 +408,7 @@
                 <div class="module-title">الوَحْدَةُ العَاشِرَةُ - Module 10</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which of the following sentences contains an اسم التَّفْضِيل (comparative/superlative)?</p>
                 <div class="quiz-options">
@@ -340,7 +424,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which of the following sentences about Prophet Yusuf's dream is correct?</p>
                 <div class="quiz-options">
@@ -356,7 +440,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Which of the following sentences is correct? (about months in a year)</p>
                 <div class="quiz-options">
@@ -372,7 +456,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">Which of the following words is the correct مَعْدُود [counted word] for this sentence:<br>فِي مَدْرَسَتِنَا سِتَّةَ عَشَرَ .......</p>
                 <div class="quiz-options">
@@ -388,7 +472,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">What is the correct form of العَدَد التَّرْتِيبِي (ordinal number) for:<br>أَنَا طَالِبٌ فِي السَّنَةِ ......</p>
                 <div class="quiz-options">
@@ -412,7 +496,7 @@
                 <div class="module-title">الوَحْدَةُ الحَادِيَةَ عَشْرَةَ - Module 11</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which of the following sentences does NOT consist of الأَسْمَاء الخَمْسَة (the five special nouns)?</p>
                 <div class="quiz-options">
@@ -428,7 +512,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which of the following sentences has the signs of إِعْرَاب with harakaat (vowel marks) and NOT letters?</p>
                 <div class="quiz-options">
@@ -444,7 +528,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Which of the following terms is used to describe an action that has already taken place?</p>
                 <div class="quiz-options">
@@ -460,7 +544,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">What is the least amount of letters a verb may have?</p>
                 <div class="quiz-options">
@@ -476,7 +560,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">If you start working at 8 o'clock and end at 12, how many hours do you work?</p>
                 <div class="quiz-options">
@@ -500,7 +584,7 @@
                 <div class="module-title">الوَحْدَةُ الثَّانِيَةَ عَشْرَةَ - Module 12</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which of the following sentences contains an error?</p>
                 <div class="quiz-options">
@@ -516,7 +600,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which of the following sentences does NOT consist of one of الأَسْمَاء الخَمْسَة (the five special nouns)?</p>
                 <div class="quiz-options">
@@ -532,7 +616,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Which sentence contains the word أب which is مُضَاف to the يَاء المُتَكَلِّم?</p>
                 <div class="quiz-options">
@@ -548,7 +632,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">Which of the following verbs is مَبْنِي [Fixed with an ending]?</p>
                 <div class="quiz-options">
@@ -564,7 +648,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">Which of the following sentences is incorrect?</p>
                 <div class="quiz-options">
@@ -588,7 +672,7 @@
                 <div class="module-title">الوَحْدَةُ الرَّابِعَةَ عَشْرَةَ - Module 14</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which of the following sentences has a خَبَر مُفْرَد?</p>
                 <div class="quiz-options">
@@ -604,7 +688,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">What is the correct form of the verb needed to start this sentence:<br>...... الطُّلَّابُ إِلَى الفَصْلِ</p>
                 <div class="quiz-options">
@@ -620,7 +704,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Which of the following sentences contains a verb which is known as الفِعْل المُتَعَدِّي (transitive verb)?</p>
                 <div class="quiz-options">
@@ -636,7 +720,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">What is the correct form of the verb required to complete this sentence:<br>الطَّالِبَانِ........ مِنَ الفَصْلِ</p>
                 <div class="quiz-options">
@@ -652,7 +736,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">What is the correct form of the verb required to start this sentence:<br>.......... البِنْتَانِ الأَبْوَابَ</p>
                 <div class="quiz-options">
@@ -676,7 +760,7 @@
                 <div class="module-title">الوَحْدَةُ الخَامِسَةَ عَشْرَةَ - Module 15</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which of the verbs has both its المَاضِي and المُضَارِع forms on the scale of: فَعُلَ يَفْعُلُ?</p>
                 <div class="quiz-options">
@@ -692,7 +776,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which of the following sentences has the ruling: اِلْتِقَاءُ السَّاكِنَيْنِ – the meeting of 2 سُكُون?</p>
                 <div class="quiz-options">
@@ -708,7 +792,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Which of the verbs has both its المَاضِي and المُضَارِع forms on the scale of: فَعَلَ يَفْعُلُ?</p>
                 <div class="quiz-options">
@@ -724,7 +808,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">Which of the following verbs is a verb that is مَفْتُوحُ الْعَيْنِ – middle letter taking a Fatha?</p>
                 <div class="quiz-options">
@@ -740,7 +824,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">Which of the following sentences has the خَبَر as a شِبْه الجُمْلَة that is a ظَرْف مَكَان – an Adverb of place?</p>
                 <div class="quiz-options">
@@ -764,7 +848,7 @@
                 <div class="module-title">الوَحْدَةُ الثَّانِيَةُ - Module 2</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which of the following is the correct word needed to complete this sentence:<br>هذا الدَّفْتَرُ ......وَرَقٍ مُسَطَّرٍ</p>
                 <div class="quiz-options">
@@ -780,7 +864,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which of the following numbers is in the correct form to complete this sentence:<br>لِهَاشِمٍ ......إِخْوَةٍ</p>
                 <div class="quiz-options">
@@ -796,7 +880,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">What is the opposite meaning of the word: مُجْتَهِدٌ?</p>
                 <div class="quiz-options">
@@ -812,7 +896,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">Which of the following numbers is in the correct form to complete this sentence:<br>فِي بَيْتِ الفَلَّاحِ ......دَجَاجَاتٍ</p>
                 <div class="quiz-options">
@@ -828,7 +912,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">What is the singular form of the word: نِسَاءٌ?</p>
                 <div class="quiz-options">
@@ -852,7 +936,7 @@
                 <div class="module-title">الوَحْدَةُ الثَّالِثَةُ - Module 3</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">What is the إعراب of the خبر ليس when it is used without the حرف جر - ب?</p>
                 <div class="quiz-options">
@@ -868,7 +952,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which pronoun matches the form of ليس in the sentence: لَسْنَ بِطَبِيبَاتٍ?</p>
                 <div class="quiz-options">
@@ -884,7 +968,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">What is the most appropriate form of ليس needed to complete the following sentence:<br>نَحْنُ فِي المَدْرَسَةِ وَ.....فِي المَنْزِلِ</p>
                 <div class="quiz-options">
@@ -900,7 +984,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">Which of the following is a فعل ناقص [incomplete verb]?</p>
                 <div class="quiz-options">
@@ -916,7 +1000,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">What is the meaning of the بِـ when it is used with the خبر ليس?</p>
                 <div class="quiz-options">
@@ -940,7 +1024,7 @@
                 <div class="module-title">الوَحْدَةُ الرَّابِعَةُ - Module 4</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">What is the خبر كان in the sentence: كَانَ فِي البَيْتِ رَجُلٌ?</p>
                 <div class="quiz-options">
@@ -956,7 +1040,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">What is the correct form of the number required to complete the sentence:<br>لِأَخِي ...... خَالَاتٍ</p>
                 <div class="quiz-options">
@@ -972,7 +1056,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Which of the following sentences has the same meaning as:<br>لَيْسَ الكِتَابُ بِجَدِيدٍ?</p>
                 <div class="quiz-options">
@@ -988,7 +1072,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">Which of the following words has the same meaning as: فُؤَاد?</p>
                 <div class="quiz-options">
@@ -1004,7 +1088,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">What is the Arabic translation of: sea?</p>
                 <div class="quiz-options">
@@ -1028,7 +1112,7 @@
                 <div class="module-title">الوَحْدَةُ الخَامِسَةُ - Module 5</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which of the following is a confirmation to the question: أَلَيْسَ أَخُوكَ بِطَبِيبٍ؟</p>
                 <div class="quiz-options">
@@ -1044,7 +1128,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which of the following sentences has the most form of emphasis?</p>
                 <div class="quiz-options">
@@ -1060,7 +1144,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Which of the following responses is the correct negation to the question: أَمَا قَرَأْتَ دَرْسَ اليَوْمِ؟</p>
                 <div class="quiz-options">
@@ -1076,7 +1160,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">Which of the following responses is a negation to the question: أَمَا فَهِمْتُمُ الدَّرْسَ؟</p>
                 <div class="quiz-options">
@@ -1092,7 +1176,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">What is the correct answer needed to complete the sentence: الأَوْلَادُ ...... البَنَاتِ</p>
                 <div class="quiz-options">
@@ -1116,7 +1200,7 @@
                 <div class="module-title">الوَحْدَةُ السَّادِسَةُ - Module 6</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">What is the correct form of the number 8 needed to complete this sentence:<br>اشْتَرَيْتُ ......كُتُبٍ</p>
                 <div class="quiz-options">
@@ -1132,7 +1216,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which of the following sentences contains a word that has the إعراب similar to that of المُثَنَّى [dual noun]?</p>
                 <div class="quiz-options">
@@ -1148,7 +1232,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Complete the sentence: البَنَاتُ.......مِنَ الأَوْلَادِ</p>
                 <div class="quiz-options">
@@ -1164,7 +1248,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">What is the correct form of the number 5 needed to complete this sentence:<br>إِنَّ هَؤُلَاءِ .......طَبِيبَاتٍ</p>
                 <div class="quiz-options">
@@ -1180,7 +1264,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">What is the correct affirmative response [saying 'yes'] to the question:<br>أَمَا دَرَسْتَ اللُّغَةَ العَرَبِيَّةَ؟</p>
                 <div class="quiz-options">
@@ -1204,7 +1288,7 @@
                 <div class="module-title">الوَحْدَةُ السَّابِعَةُ - Module 7</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which word is the most suitable to begin this sentence:<br>........أَخِي عَنِ الكِتَابِ وَلَمْ يَجِدْهُ</p>
                 <div class="quiz-options">
@@ -1220,7 +1304,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which sentence carries the most emphasis?</p>
                 <div class="quiz-options">
@@ -1236,7 +1320,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Which sentence does NOT have the لام الابتداء?</p>
                 <div class="quiz-options">
@@ -1252,7 +1336,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">Which sentence has no form of emphasis?</p>
                 <div class="quiz-options">
@@ -1268,7 +1352,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">Which sentence carries the most emphasis?</p>
                 <div class="quiz-options">
@@ -1292,7 +1376,7 @@
                 <div class="module-title">الوَحْدَةُ الثَّامِنَةُ - Module 8</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">What is the correct form of the number 15 in the following sentence:<br>فِي الفَصْلِ 15 طَالِبًا</p>
                 <div class="quiz-options">
@@ -1308,7 +1392,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which of the following numbers is called العدد الترتيبي (ordinal number)?</p>
                 <div class="quiz-options">
@@ -1324,7 +1408,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">What is the correct form of the number 18 for: 18 تَاجِرًا</p>
                 <div class="quiz-options">
@@ -1340,7 +1424,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">Which is the correct verb needed to complete the sentence:<br>........صَدِيقِي عَنْ مِفْتَاحِ السَّيَّارَةِ</p>
                 <div class="quiz-options">
@@ -1356,7 +1440,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="b">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">Which of the following forms of the numbers is the correct one?</p>
                 <div class="quiz-options">
@@ -1380,7 +1464,7 @@
                 <div class="module-title">الوَحْدَةُ التَّاسِعَةُ - Module 9</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which of the following constructions must have the number عَشَر without the تاء مربوطة?</p>
                 <div class="quiz-options">
@@ -1396,7 +1480,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which two numbers must have their معدود [counted word] being: نَكِرَة – مُفْرَد – مَنصوب?</p>
                 <div class="quiz-options">
@@ -1412,7 +1496,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Which harakah is on the last letter of a word to which the ياء المُتَكَلِّم is attached?</p>
                 <div class="quiz-options">
@@ -1428,7 +1512,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">For which of the following numbers will the معدود [counted word] be: نَكِرَةٌ – جَمْع – مَجْرُور?</p>
                 <div class="quiz-options">
@@ -1444,7 +1528,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="e">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">Which of the following sentences contains a number called أَلْفَاظُ العُقُودِ (decades)?</p>
                 <div class="quiz-options">
@@ -1468,7 +1552,7 @@
                 <div class="module-title">الوَحْدَةُ الثَّالِثَةَ عَشْرَةَ - Module 13</div>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 1 - السؤال الأول</div>
                 <p class="question-text">Which of the following verbs has the attached pronoun – مَبْنِيٌّ عَلَى الفَتْحِ، فِي مَحَلٍّ رَفْع?</p>
                 <div class="quiz-options">
@@ -1484,7 +1568,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 2 - السؤال الثاني</div>
                 <p class="question-text">Which of the following verbs has the attached pronoun – مَبْنِيٌّ عَلَى السُّكُونِ، فِي مَحَلٍّ رَفْع?</p>
                 <div class="quiz-options">
@@ -1500,7 +1584,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="a">
                 <div class="question-header">Question 3 - السؤال الثالث</div>
                 <p class="question-text">Which of the following words is the correct word required to complete the sentence:<br>أَهْلًا وَسَهْلًا وَمَرْحَبًا بِكِ يَا....</p>
                 <div class="quiz-options">
@@ -1516,7 +1600,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="c">
                 <div class="question-header">Question 4 - السؤال الرابع</div>
                 <p class="question-text">What is the إعراب of a pronoun when it is attached to a noun?</p>
                 <div class="quiz-options">
@@ -1532,7 +1616,7 @@
                 </details>
             </div>
 
-            <div class="quiz-question">
+            <div class="quiz-question" data-correct="d">
                 <div class="question-header">Question 5 - السؤال الخامس</div>
                 <p class="question-text">What is the إعراب of the pronoun when it is attached to a verb?</p>
                 <div class="quiz-options">
@@ -1554,5 +1638,93 @@
             <p style="font-family: Georgia, serif; margin-top: 10px;">ARB202 Course Quizzes - Created for personal study use</p>
         </footer>
     </div>
+
+    <script>
+        // Quiz Interactive Logic
+        let score = 0;
+        const totalQuestions = 75;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.quiz-question');
+
+            questions.forEach(question => {
+                const options = question.querySelectorAll('.option');
+                const correctAnswer = question.dataset.correct;
+                const answerReveal = question.querySelector('.answer-reveal');
+                const correctAnswerDiv = question.querySelector('.correct-answer');
+
+                // Create feedback element
+                const feedback = document.createElement('div');
+                feedback.className = 'quiz-feedback';
+                question.querySelector('.quiz-options').after(feedback);
+
+                options.forEach(option => {
+                    option.addEventListener('click', function() {
+                        // Prevent clicking if already solved
+                        if (question.classList.contains('solved')) return;
+
+                        const selectedLetter = this.textContent.trim().charAt(0).toLowerCase();
+                        const isCorrect = selectedLetter === correctAnswer;
+
+                        if (isCorrect) {
+                            // Correct answer!
+                            this.classList.add('correct');
+                            question.classList.add('solved');
+                            score++;
+                            updateScore();
+
+                            // Show success feedback
+                            feedback.className = 'quiz-feedback correct show';
+                            feedback.innerHTML = '✓ صحيح! Correct!';
+
+                            // Auto-open the explanation
+                            if (answerReveal) {
+                                answerReveal.open = true;
+                            }
+                        } else {
+                            // Wrong answer
+                            this.classList.add('wrong');
+
+                            // Show try again feedback
+                            feedback.className = 'quiz-feedback wrong show';
+                            feedback.innerHTML = '✗ خطأ - حاول مرة أخرى | Wrong - Try again!';
+                        }
+                    });
+                });
+            });
+        });
+
+        function updateScore() {
+            document.getElementById('score').textContent = score;
+        }
+
+        function resetQuiz() {
+            score = 0;
+            updateScore();
+
+            document.querySelectorAll('.quiz-question').forEach(question => {
+                question.classList.remove('solved');
+                question.querySelectorAll('.option').forEach(opt => {
+                    opt.classList.remove('correct', 'wrong');
+                });
+
+                // Hide feedback
+                const feedback = question.querySelector('.quiz-feedback');
+                if (feedback) {
+                    feedback.className = 'quiz-feedback';
+                    feedback.innerHTML = '';
+                }
+
+                // Close answer reveal
+                const answerReveal = question.querySelector('.answer-reveal');
+                if (answerReveal) {
+                    answerReveal.open = false;
+                }
+            });
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
