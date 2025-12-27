@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 16 - Arabic Study Guide | الوحدة السادسة عشرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            min-height: 100vh;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #00796b 0%, #009688 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #00695c 0%, #00796b 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px;
+            color: #00796b;
+            border-bottom: 4px solid #009688;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .translit-text { font-family: Georgia, serif; font-style: italic; color: #888; direction: ltr; text-align: left; font-size: 16px; }
+        .grammar-box {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            border-right: 5px solid #009688;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-right: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-right: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 5px solid #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00796b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #e0f7fa; }
+        tr:hover { background: #b2ebf2; }
+        .pronoun-cell { background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); font-weight: bold; color: #00796b; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .vocab-item {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .dialogue-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #ff9800;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .speaker-a { color: #00796b; font-weight: bold; }
+        .speaker-b { color: #c62828; font-weight: bold; }
+        .summary-box {
+            background: linear-gradient(135deg, #00695c 0%, #00796b 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .summary-box h3 { color: #ffeb3b; font-size: 28px; margin-bottom: 20px; }
+        .summary-box ul { list-style: none; padding: 0; }
+        .summary-box li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 22px; }
+        .comparison-table { border: 2px solid #009688; border-radius: 10px; overflow: hidden; }
+
+        /* Flashcard Styles */
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .flashcard {
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .flashcard-front {
+            background: linear-gradient(135deg, #00796b 0%, #009688 100%);
+            color: white;
+        }
+        .flashcard-back {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            transform: rotateY(180deg);
+            color: #333;
+        }
+        .flashcard-arabic {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .flashcard-hint {
+            font-size: 14px;
+            opacity: 0.8;
+            font-family: Georgia, serif;
+        }
+        .flashcard-english {
+            font-size: 20px;
+            font-family: Georgia, serif;
+            text-align: center;
+        }
+        .flashcard-translit {
+            font-size: 16px;
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Memory Game Styles */
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 600px;
+            margin: 25px auto;
+        }
+        .memory-card {
+            height: 100px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .memory-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+        }
+        .memory-card.flipped .memory-card-inner,
+        .memory-card.matched .memory-card-inner {
+            transform: rotateY(180deg);
+        }
+        .memory-card-front, .memory-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .memory-card-front {
+            background: linear-gradient(135deg, #00796b 0%, #009688 100%);
+            color: white;
+            font-size: 30px;
+        }
+        .memory-card-back {
+            background: white;
+            border: 2px solid #009688;
+            transform: rotateY(180deg);
+        }
+        .memory-card.matched .memory-card-back {
+            background: #c8e6c9;
+            border-color: #4caf50;
+        }
+        .memory-score {
+            text-align: center;
+            font-size: 24px;
+            color: #00796b;
+            margin: 15px 0;
+        }
+
+        /* Sentence Builder Styles */
+        .sentence-builder {
+            background: #f5f5f5;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .word-bank {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+            min-height: 60px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border: 2px dashed #009688;
+        }
+        .draggable-word {
+            background: linear-gradient(135deg, #00796b 0%, #009688 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: grab;
+            font-size: 22px;
+            transition: all 0.3s;
+            user-select: none;
+        }
+        .draggable-word:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .draggable-word.dragging {
+            opacity: 0.5;
+        }
+        .sentence-area {
+            min-height: 80px;
+            background: white;
+            border: 3px solid #009688;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .sentence-area.drag-over {
+            background: #e0f7fa;
+        }
+        .check-sentence-btn {
+            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .check-sentence-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+        }
+        .sentence-result {
+            text-align: center;
+            font-size: 22px;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .sentence-result.correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .sentence-result.incorrect {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        /* Fill in the Blank Styles */
+        .fill-blank-exercise {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        .fill-blank-sentence {
+            font-size: 26px;
+            text-align: center;
+            margin: 20px 0;
+            line-height: 2;
+        }
+        .blank-input {
+            border: none;
+            border-bottom: 3px solid #009688;
+            background: transparent;
+            font-size: 24px;
+            font-family: 'Amiri', serif;
+            width: 150px;
+            text-align: center;
+            padding: 5px;
+            direction: rtl;
+        }
+        .blank-input:focus {
+            outline: none;
+            border-bottom-color: #00695c;
+            background: rgba(0,150,136,0.1);
+        }
+        .blank-input.correct {
+            border-bottom-color: #4caf50;
+            background: rgba(76,175,80,0.1);
+        }
+        .blank-input.incorrect {
+            border-bottom-color: #f44336;
+            background: rgba(244,67,54,0.1);
+        }
+
+        /* Verb Pattern Identifier */
+        .pattern-exercise {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .pattern-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        .pattern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .pattern-verb {
+            font-size: 42px;
+            color: #00695c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .pattern-options {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .pattern-btn {
+            padding: 8px 20px;
+            border: 2px solid #009688;
+            background: white;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Amiri', serif;
+        }
+        .pattern-btn:hover {
+            background: #e0f7fa;
+        }
+        .pattern-btn.selected {
+            background: #009688;
+            color: white;
+        }
+        .pattern-btn.correct {
+            background: #4caf50;
+            border-color: #4caf50;
+            color: white;
+        }
+        .pattern-btn.incorrect {
+            background: #f44336;
+            border-color: #f44336;
+            color: white;
+        }
+        .pattern-feedback {
+            margin-top: 15px;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* Subject/Object Identifier */
+        .sentence-analysis {
+            background: #f5f5f5;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .analysis-sentence {
+            font-size: 28px;
+            text-align: center;
+            margin: 20px 0;
+            line-height: 2.5;
+        }
+        .clickable-word {
+            padding: 5px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            margin: 5px;
+        }
+        .clickable-word:hover {
+            background: #e0f7fa;
+        }
+        .clickable-word.subject {
+            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+            color: white;
+        }
+        .clickable-word.object {
+            background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+            color: white;
+        }
+        .clickable-word.verb {
+            background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+            color: white;
+        }
+        .analysis-legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
+        }
+        .legend-color {
+            width: 25px;
+            height: 25px;
+            border-radius: 5px;
+        }
+
+        /* Progress Tracker */
+        .progress-tracker {
+            background: linear-gradient(135deg, #00695c 0%, #00796b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .progress-bar-container {
+            background: rgba(255,255,255,0.3);
+            border-radius: 25px;
+            height: 30px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%);
+            height: 100%;
+            border-radius: 25px;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Interactive Exercise Styles */
+        .exercise-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .exercise-section-title {
+            font-size: 36px;
+            color: #00796b;
+            border-bottom: 4px solid #009688;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .exercise-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .exercise-category-title {
+            font-size: 28px;
+            color: #00695c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #b2ebf2;
+        }
+        .exercise-item {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .exercise-question {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .exercise-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 15px 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background: white;
+            font-size: 22px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            text-align: right;
+            transition: all 0.3s;
+        }
+        .option-btn:hover:not(:disabled) {
+            border-color: #009688;
+            background: #e0f7fa;
+        }
+        .option-btn.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+            color: #1e8449;
+        }
+        .option-btn.incorrect {
+            border-color: #e74c3c;
+            background: #fadbd8;
+            color: #c0392b;
+        }
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .explanation.show {
+            display: block;
+        }
+        .explanation.correct-exp {
+            background: linear-gradient(135deg, #d5f4e6 0%, #a9dfbf 100%);
+            border-right: 5px solid #27ae60;
+        }
+        .explanation.incorrect-exp {
+            background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%);
+            border-right: 5px solid #e74c3c;
+        }
+        .reset-btn {
+            background: linear-gradient(135deg, #00796b 0%, #009688 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 121, 107, 0.4);
+        }
+        .score-display {
+            text-align: center;
+            font-size: 24px;
+            color: #00695c;
+            padding: 15px;
+            background: #e0f7fa;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Learning Tips Box */
+        .learning-tip {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .learning-tip-title {
+            font-size: 24px;
+            color: #2e7d32;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .learning-tip-content {
+            font-size: 20px;
+            color: #1b5e20;
+        }
+
+        /* Mnemonic Box */
+        .mnemonic-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .mnemonic-title {
+            font-size: 24px;
+            color: #1565c0;
+            margin-bottom: 15px;
+        }
+        .mnemonic-content {
+            font-size: 28px;
+            color: #0d47a1;
+            line-height: 2;
+        }
+
+        @media (max-width: 768px) {
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .arabic-text { font-size: 22px; }
+            .section-title { font-size: 28px; }
+            table { font-size: 18px; }
+            .memory-game { grid-template-columns: repeat(3, 1fr); }
+            .flashcard-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+            z-index: 1001;
+            transition: all 0.3s;
+        }
+        .home-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5);
+        }
+        .home-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Home Button -->
+<a href="index.html" class="home-btn" title="Back to Home">
+    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+</a>
+
+<!-- Navigation -->
+<nav class="nav-container">
+    <div class="nav-title">الوحدة السادسة عشرة - Module 16</div>
+    <div class="nav-links">
+        <a href="#conjugation"><span class="nav-ar">تصريف حَمَلَ</span><span class="nav-en">Verb Conjugation</span></a>
+        <a href="#transitive"><span class="nav-ar">الفعل المتعدي</span><span class="nav-en">Transitive Verbs</span></a>
+        <a href="#sentence-convert"><span class="nav-ar">تحويل الجمل</span><span class="nav-en">Sentence Conversion</span></a>
+        <a href="#flashcards"><span class="nav-ar">البطاقات</span><span class="nav-en">Flashcards</span></a>
+        <a href="#memory-game"><span class="nav-ar">لعبة الذاكرة</span><span class="nav-en">Memory Game</span></a>
+        <a href="#sentence-builder"><span class="nav-ar">بناء الجمل</span><span class="nav-en">Sentence Builder</span></a>
+        <a href="#pattern-id"><span class="nav-ar">تحديد الوزن</span><span class="nav-en">Pattern ID</span></a>
+        <a href="#exercises"><span class="nav-ar">التمارين</span><span class="nav-en">Exercises</span></a>
+        <a href="#vocab"><span class="nav-ar">المفردات</span><span class="nav-en">Vocabulary</span></a>
+        <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
+    </div>
+</nav>
+
+<!-- Main Title -->
+<header class="main-title">
+    <h1>الوحدة السادسة عشرة</h1>
+    <div class="subtitle">Module 16 - Sixteenth Unit</div>
+    <div class="subtitle" style="font-size: 20px; margin-top: 15px;">
+        الدَّوْرَةُ الثَّالِثَةُ - المُحَاضَرَةُ السَّادِسَةَ عَشْرَةَ
+    </div>
+    <div class="english-text" style="color: white; opacity: 0.9;">
+        Third Course - Sixteenth Lecture
+    </div>
+    <div class="subtitle" style="font-size: 18px; margin-top: 10px;">
+        مِنْ كِتَابِ المَدِينَةِ - الدَّرْسُ الخَامِسُ (تَابِعٌ)
+    </div>
+</header>
+
+<!-- Progress Tracker -->
+<div class="progress-tracker">
+    <h3 style="margin: 0 0 10px 0;">تَقَدُّمُكَ فِي الوَحْدَةِ - Your Progress</h3>
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar" style="width: 0%;">0%</div>
+    </div>
+    <p style="margin: 10px 0 0 0; opacity: 0.9;">أَكْمِلِ التَّمَارِينَ لِزِيَادَةِ تَقَدُّمِكَ</p>
+</div>
+
+<!-- Verb Conjugation Section -->
+<section id="conjugation" class="section">
+    <h2 class="section-title">تَصْرِيفُ الفِعْلِ: حَمَلَ - Verb Conjugation: To Carry</h2>
+
+    <div class="info-box">
+        <p class="arabic-large" style="text-align: center;">حَمَلَ - يَحْمِلُ - اِحْمِلْ</p>
+        <p class="english-text" style="text-align: center;">ḥamala - yaḥmilu - iḥmil (to carry - he carries - carry!)</p>
+        <p class="translit-text" style="text-align: center;">Form I verb - Pattern: فَعَلَ - يَفْعِلُ (same pattern as ضَرَبَ)</p>
+    </div>
+
+    <div class="mnemonic-box">
+        <div class="mnemonic-title">🧠 طَرِيقَةٌ لِلتَّذَكُّرِ - Memory Trick</div>
+        <div class="mnemonic-content">
+            حَمَلَ = حـ + مـ + ل<br>
+            Think: "<strong>H</strong>e <strong>M</strong>oved a <strong>L</strong>oad" (Carry)
+        </div>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>الضَّمِيرُ<br>Pronoun</th>
+                <th>المَاضِي<br>Past</th>
+                <th>المُضَارِعُ<br>Present</th>
+                <th>الأَمْرُ<br>Command</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">أَنَا</td>
+                <td>حَمَلْتُ</td>
+                <td>أَحْمِلُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">نَحْنُ</td>
+                <td>حَمَلْنَا</td>
+                <td>نَحْمِلُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتَ</td>
+                <td>حَمَلْتَ</td>
+                <td>تَحْمِلُ</td>
+                <td>اِحْمِلْ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتِ</td>
+                <td>حَمَلْتِ</td>
+                <td>تَحْمِلِينَ</td>
+                <td>اِحْمِلِي</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمَا</td>
+                <td>حَمَلْتُمَا</td>
+                <td>تَحْمِلَانِ</td>
+                <td>اِحْمِلَا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمْ</td>
+                <td>حَمَلْتُمْ</td>
+                <td>تَحْمِلُونَ</td>
+                <td>اِحْمِلُوا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُنَّ</td>
+                <td>حَمَلْتُنَّ</td>
+                <td>تَحْمِلْنَ</td>
+                <td>اِحْمِلْنَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُوَ</td>
+                <td>حَمَلَ</td>
+                <td>يَحْمِلُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هِيَ</td>
+                <td>حَمَلَتْ</td>
+                <td>تَحْمِلُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (مُذَكَّرٌ)</td>
+                <td>حَمَلَا</td>
+                <td>يَحْمِلَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (مُؤَنَّثٌ)</td>
+                <td>حَمَلَتَا</td>
+                <td>تَحْمِلَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمْ</td>
+                <td>حَمَلُوا</td>
+                <td>يَحْمِلُونَ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُنَّ</td>
+                <td>حَمَلْنَ</td>
+                <td>يَحْمِلْنَ</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">يَا عَادِلُ، اِحْمِلْ هَذَا الكِتَابَ الجَدِيدَ</p>
+        <p class="english-text">O Adil, carry this new book</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">أَنَا أَحْمِلُ الحَقِيبَةَ مِنَ البَيْتِ إِلَى المَدْرَسَةِ</p>
+        <p class="english-text">I carry the bag from home to school</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">يَذْهَبُ أَخِي إِلَى السُّوقِ كُلَّ يَوْمٍ وَيَحْمِلُ أَشْيَاءَ كَثِيرَةً</p>
+        <p class="english-text">My brother goes to the market every day and carries many things</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">يَا خَدِيجَةُ، هَلْ حَمَلْتِ هَذَا الكِتَابَ إِلَى المَدْرَسَةِ؟</p>
+        <p class="english-text">O Khadijah, did you carry this book to school?</p>
+    </div>
+</section>
+
+<!-- Transitive Verbs Section -->
+<section id="transitive" class="section">
+    <h2 class="section-title">الفِعْلُ المُتَعَدِّي وَالفَاعِلُ وَالمَفْعُولُ بِهِ - Transitive Verb, Subject & Object</h2>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>الفِعْلُ المُتَعَدِّي:</strong> هُوَ الفِعْلُ الَّذِي لَا يَكْتَفِي بِفَاعِلِهِ وَيَحْتَاجُ إِلَى مَفْعُولٍ بِهِ</p>
+        <p class="english-text"><strong>Transitive Verb:</strong> A verb that is not complete with its subject alone and needs a direct object</p>
+    </div>
+
+    <div class="learning-tip">
+        <div class="learning-tip-title">💡 نَصِيحَةٌ لِلتَّعَلُّمِ - Learning Tip</div>
+        <div class="learning-tip-content">
+            <strong>كَيْفَ تُحَدِّدُ المَفْعُولَ بِهِ؟</strong> اسْأَلْ: "مَاذَا فَعَلَ؟" أَوْ "مَنْ فَعَلَ؟"<br>
+            <strong>How to identify the object?</strong> Ask: "What did he do?" or "Whom did he do it to?"
+        </div>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ عَلَى الجُمْلَةِ الفِعْلِيَّةِ - Examples of Verbal Sentences</h3>
+
+    <div class="sentence-analysis">
+        <div class="analysis-legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);"></div>
+                <span>الفِعْلُ (Verb)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);"></div>
+                <span>الفَاعِلُ (Subject)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);"></div>
+                <span>المَفْعُولُ بِهِ (Object)</span>
+            </div>
+        </div>
+
+        <div class="grammar-box">
+            <p class="arabic-text" style="font-size: 30px;">
+                <span style="background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%); color: white; padding: 5px 15px; border-radius: 8px;">قَرَأَ</span>
+                <span style="background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%); color: white; padding: 5px 15px; border-radius: 8px;">الطَّالِبُ</span>
+                <span style="background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%); color: white; padding: 5px 15px; border-radius: 8px;">القُرْآنَ</span>
+            </p>
+            <p class="english-text">The student read the Quran</p>
+        </div>
+
+        <div class="grammar-box">
+            <p class="arabic-text" style="font-size: 30px;">
+                <span style="background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%); color: white; padding: 5px 15px; border-radius: 8px;">شَرِبَ</span>
+                <span style="background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%); color: white; padding: 5px 15px; border-radius: 8px;">الضَّيْفُ</span>
+                <span style="background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%); color: white; padding: 5px 15px; border-radius: 8px;">القَهْوَةَ</span>
+            </p>
+            <p class="english-text">The guest drank the coffee</p>
+        </div>
+
+        <div class="grammar-box">
+            <p class="arabic-text" style="font-size: 30px;">
+                <span style="background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%); color: white; padding: 5px 15px; border-radius: 8px;">كَتَبَ</span>
+                <span style="background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%); color: white; padding: 5px 15px; border-radius: 8px;">المُدَرِّسُ</span>
+                <span style="background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%); color: white; padding: 5px 15px; border-radius: 8px;">الدَّرْسَ</span>
+            </p>
+            <p class="english-text">The teacher wrote the lesson</p>
+        </div>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text"><strong>تَذَكَّرْ:</strong> الفَاعِلُ مَرْفُوعٌ (بِالضَّمَّةِ) وَالمَفْعُولُ بِهِ مَنْصُوبٌ (بِالفَتْحَةِ)</p>
+        <p class="english-text"><strong>Remember:</strong> Subject is in nominative case (ضمة) and Object is in accusative case (فتحة)</p>
+    </div>
+</section>
+
+<!-- Sentence Conversion Section -->
+<section id="sentence-convert" class="section">
+    <h2 class="section-title">تَحْوِيلُ الجُمْلَةِ الاسْمِيَّةِ إِلَى فِعْلِيَّةٍ - Converting Nominal to Verbal Sentences</h2>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>القَاعِدَةُ:</strong> لِتَحْوِيلِ الجُمْلَةِ الاسْمِيَّةِ إِلَى فِعْلِيَّةٍ، قَدِّمِ الفِعْلَ عَلَى الفَاعِلِ</p>
+        <p class="english-text"><strong>Rule:</strong> To convert a nominal sentence to verbal, put the verb before the subject</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>الجُمْلَةُ الاسْمِيَّةُ<br>Nominal Sentence</th>
+                <th>الجُمْلَةُ الفِعْلِيَّةُ<br>Verbal Sentence</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>الأَوْلَادُ شَرِبُوا القَهْوَةَ</td>
+                <td class="pronoun-cell">شَرِبَ الأَوْلَادُ القَهْوَةَ</td>
+            </tr>
+            <tr>
+                <td>النَّاسُ سَمِعُوا الأَذَانَ</td>
+                <td class="pronoun-cell">سَمِعَ النَّاسُ الأَذَانَ</td>
+            </tr>
+            <tr>
+                <td>الطُّلَّابُ كَتَبُوا الأَجْوِبَةَ</td>
+                <td class="pronoun-cell">كَتَبَ الطُّلَّابُ الأَجْوِبَةَ</td>
+            </tr>
+            <tr>
+                <td>الطَّالِبَاتُ دَخَلْنَ الفَصْلَ</td>
+                <td class="pronoun-cell">دَخَلَتِ الطَّالِبَاتُ الفَصْلَ</td>
+            </tr>
+            <tr>
+                <td>المُدَرِّسُونَ خَرَجُوا مِنَ الفُصُولِ</td>
+                <td class="pronoun-cell">خَرَجَ المُدَرِّسُونَ مِنَ الفُصُولِ</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>مُلَاحَظَةٌ مُهِمَّةٌ:</strong> عِنْدَ تَقْدِيمِ الفِعْلِ، يَكُونُ الفِعْلُ مُفْرَدًا (مُذَكَّرًا أَوْ مُؤَنَّثًا) حَتَّى لَوْ كَانَ الفَاعِلُ جَمْعًا</p>
+        <p class="english-text"><strong>Important Note:</strong> When the verb comes first, it stays singular (masculine or feminine) even if the subject is plural</p>
+    </div>
+</section>
+
+<!-- Flashcards Section -->
+<section id="flashcards" class="section">
+    <h2 class="section-title">البِطَاقَاتُ التَّعْلِيمِيَّةُ - Flashcards</h2>
+    <p class="english-text" style="text-align: center; margin-bottom: 20px;">Click the cards to flip them and test your vocabulary!</p>
+
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">حَمَلَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">He carried</div>
+                    <div class="flashcard-translit">ḥamala</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">كَسَرَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">He broke</div>
+                    <div class="flashcard-translit">kasara</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">سَمِعَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">He heard</div>
+                    <div class="flashcard-translit">samiʿa</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">شَرِبَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">He drank</div>
+                    <div class="flashcard-translit">shariba</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">غَسَلَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">He washed</div>
+                    <div class="flashcard-translit">ghasala</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">قَتَلَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">He killed</div>
+                    <div class="flashcard-translit">qatala</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">عِنَبٌ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Grapes</div>
+                    <div class="flashcard-translit">ʿinab</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">مَوْزٌ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Banana</div>
+                    <div class="flashcard-translit">mawz</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">حَيَّةٌ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Snake</div>
+                    <div class="flashcard-translit">ḥayyah</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">بَقَّالٌ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Grocer</div>
+                    <div class="flashcard-translit">baqqāl</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">دُكَّانٌ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Shop</div>
+                    <div class="flashcard-translit">dukkān</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">سَبُّورَةٌ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Writing Board</div>
+                    <div class="flashcard-translit">sabbūrah</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Memory Game Section -->
+<section id="memory-game" class="section">
+    <h2 class="section-title">لُعْبَةُ الذَّاكِرَةِ - Memory Game</h2>
+    <p class="english-text" style="text-align: center;">Match the Arabic verbs with their English meanings!</p>
+
+    <div class="memory-score">
+        المُحَاوَلَاتُ: <span id="memoryMoves">0</span> | الأَزْوَاجُ: <span id="memoryPairs">0</span>/6
+    </div>
+
+    <div class="memory-game" id="memoryGame">
+        <!-- Cards will be generated by JavaScript -->
+    </div>
+
+    <div style="text-align: center;">
+        <button class="reset-btn" onclick="initMemoryGame()">إِعَادَةُ اللُّعْبَةِ - Restart Game</button>
+    </div>
+</section>
+
+<!-- Sentence Builder Section -->
+<section id="sentence-builder" class="section">
+    <h2 class="section-title">بِنَاءُ الجُمَلِ - Sentence Builder</h2>
+    <p class="english-text" style="text-align: center;">Drag the words to build correct sentences!</p>
+
+    <div class="sentence-builder">
+        <h3 class="section-subtitle">الجُمْلَةُ ١: Build a verbal sentence</h3>
+        <p class="english-text" style="text-align: center;">Target: "The student wrote the lesson"</p>
+
+        <div class="word-bank" id="wordBank1">
+            <div class="draggable-word" draggable="true" data-word="الدَّرْسَ">الدَّرْسَ</div>
+            <div class="draggable-word" draggable="true" data-word="كَتَبَ">كَتَبَ</div>
+            <div class="draggable-word" draggable="true" data-word="الطَّالِبُ">الطَّالِبُ</div>
+        </div>
+
+        <div class="sentence-area" id="sentenceArea1"></div>
+
+        <div style="text-align: center;">
+            <button class="check-sentence-btn" onclick="checkSentence1()">تَحَقَّقْ - Check</button>
+            <button class="reset-btn" onclick="resetSentence1()" style="margin-right: 10px;">إِعَادَةٌ - Reset</button>
+        </div>
+
+        <div class="sentence-result" id="result1"></div>
+    </div>
+
+    <div class="sentence-builder">
+        <h3 class="section-subtitle">الجُمْلَةُ ٢: Build a verbal sentence</h3>
+        <p class="english-text" style="text-align: center;">Target: "The guest drank the coffee"</p>
+
+        <div class="word-bank" id="wordBank2">
+            <div class="draggable-word" draggable="true" data-word="القَهْوَةَ">القَهْوَةَ</div>
+            <div class="draggable-word" draggable="true" data-word="الضَّيْفُ">الضَّيْفُ</div>
+            <div class="draggable-word" draggable="true" data-word="شَرِبَ">شَرِبَ</div>
+        </div>
+
+        <div class="sentence-area" id="sentenceArea2"></div>
+
+        <div style="text-align: center;">
+            <button class="check-sentence-btn" onclick="checkSentence2()">تَحَقَّقْ - Check</button>
+            <button class="reset-btn" onclick="resetSentence2()" style="margin-right: 10px;">إِعَادَةٌ - Reset</button>
+        </div>
+
+        <div class="sentence-result" id="result2"></div>
+    </div>
+</section>
+
+<!-- Verb Pattern Identifier -->
+<section id="pattern-id" class="section">
+    <h2 class="section-title">تَحْدِيدُ وَزْنِ الفِعْلِ - Identify the Verb Pattern</h2>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>القَاعِدَةُ:</strong> عَيْنُ الكَلِمَةِ (الحَرْفُ الثَّانِي) يُحَدِّدُ نَوْعَ الوَزْنِ:</p>
+        <p class="arabic-text">• فَتْحَة = فَعَلَ (مِثْل: كَتَبَ، ضَرَبَ)</p>
+        <p class="arabic-text">• كَسْرَة = فَعِلَ (مِثْل: سَمِعَ، فَهِمَ)</p>
+        <p class="arabic-text">• ضَمَّة = فَعُلَ (مِثْل: كَرُمَ)</p>
+    </div>
+
+    <div class="pattern-exercise">
+        <div class="pattern-card" id="pattern1">
+            <div class="pattern-verb">خَرَجَ</div>
+            <div class="pattern-options">
+                <button class="pattern-btn" onclick="checkPattern('pattern1', 'فَعَلَ', this)">فَعَلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern1', 'فَعِلَ', this)">فَعِلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern1', 'فَعُلَ', this)">فَعُلَ</button>
+            </div>
+            <div class="pattern-feedback" id="feedback-pattern1"></div>
+        </div>
+
+        <div class="pattern-card" id="pattern2">
+            <div class="pattern-verb">فَهِمَ</div>
+            <div class="pattern-options">
+                <button class="pattern-btn" onclick="checkPattern('pattern2', 'فَعِلَ', this)">فَعَلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern2', 'فَعِلَ', this)">فَعِلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern2', 'فَعِلَ', this)">فَعُلَ</button>
+            </div>
+            <div class="pattern-feedback" id="feedback-pattern2"></div>
+        </div>
+
+        <div class="pattern-card" id="pattern3">
+            <div class="pattern-verb">كَرُمَ</div>
+            <div class="pattern-options">
+                <button class="pattern-btn" onclick="checkPattern('pattern3', 'فَعُلَ', this)">فَعَلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern3', 'فَعُلَ', this)">فَعِلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern3', 'فَعُلَ', this)">فَعُلَ</button>
+            </div>
+            <div class="pattern-feedback" id="feedback-pattern3"></div>
+        </div>
+
+        <div class="pattern-card" id="pattern4">
+            <div class="pattern-verb">شَرِبَ</div>
+            <div class="pattern-options">
+                <button class="pattern-btn" onclick="checkPattern('pattern4', 'فَعِلَ', this)">فَعَلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern4', 'فَعِلَ', this)">فَعِلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern4', 'فَعِلَ', this)">فَعُلَ</button>
+            </div>
+            <div class="pattern-feedback" id="feedback-pattern4"></div>
+        </div>
+
+        <div class="pattern-card" id="pattern5">
+            <div class="pattern-verb">ضَرَبَ</div>
+            <div class="pattern-options">
+                <button class="pattern-btn" onclick="checkPattern('pattern5', 'فَعَلَ', this)">فَعَلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern5', 'فَعَلَ', this)">فَعِلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern5', 'فَعَلَ', this)">فَعُلَ</button>
+            </div>
+            <div class="pattern-feedback" id="feedback-pattern5"></div>
+        </div>
+
+        <div class="pattern-card" id="pattern6">
+            <div class="pattern-verb">حَفِظَ</div>
+            <div class="pattern-options">
+                <button class="pattern-btn" onclick="checkPattern('pattern6', 'فَعِلَ', this)">فَعَلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern6', 'فَعِلَ', this)">فَعِلَ</button>
+                <button class="pattern-btn" onclick="checkPattern('pattern6', 'فَعِلَ', this)">فَعُلَ</button>
+            </div>
+            <div class="pattern-feedback" id="feedback-pattern6"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Attached Pronouns Section -->
+<section class="section">
+    <h2 class="section-title">الضَّمَائِرُ المُتَّصِلَةُ - Attached Pronouns</h2>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>القَاعِدَةُ:</strong> الضَّمِيرُ المُتَّصِلُ يُضَافُ إِلَى آخِرِ الفِعْلِ لِيَدُلَّ عَلَى المَفْعُولِ بِهِ</p>
+        <p class="english-text"><strong>Rule:</strong> Attached pronouns are added to the end of the verb to indicate the object</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>الجُمْلَةُ الكَامِلَةُ</th>
+                <th>التَّحْلِيلُ</th>
+                <th>المَعْنَى</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">فَتَحْتُهُ</td>
+                <td>فَتَحْتُ + هُ</td>
+                <td>I opened it (masc.)</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">فَتَحْتُهَا</td>
+                <td>فَتَحْتُ + هَا</td>
+                <td>I opened it (fem.)</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">حَمَلْتُهُ</td>
+                <td>حَمَلْتُ + هُ</td>
+                <td>I carried it/him</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">قَرَأْتُهَا</td>
+                <td>قَرَأْتُ + هَا</td>
+                <td>I read it (fem.)</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">كَتَبْتُهُمْ</td>
+                <td>كَتَبْتُ + هُمْ</td>
+                <td>I wrote them</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="mnemonic-box">
+        <div class="mnemonic-title">🧠 طَرِيقَةٌ لِلتَّذَكُّرِ - Memory Trick</div>
+        <div class="mnemonic-content">
+            هُ = him/it (masc.) | هَا = her/it (fem.)<br>
+            هُمْ = them (masc.) | هُنَّ = them (fem.)
+        </div>
+    </div>
+</section>
+
+<!-- Exercises Section -->
+<section id="exercises" class="exercise-section">
+    <h2 class="exercise-section-title">تَمَارِينُ الوَحْدَةِ السَّادِسَةَ عَشْرَةَ - Module 16 Exercises</h2>
+
+    <div class="score-display" id="scoreDisplay">
+        أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions
+    </div>
+
+    <!-- Category 1: تصريف حَمَلَ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">١. تَصْرِيفُ الفِعْلِ حَمَلَ - Verb Conjugation</h3>
+
+        <div class="exercise-item" id="q1">
+            <p class="exercise-question">أَكْمِلِ الفَرَاغَ: أَنَا _____ الحَقِيبَةَ (المضارع)</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Complete: I _____ the bag (present tense)</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q1', 0, 0)">أَحْمِلُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 1, 0)">تَحْمِلُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 2, 0)">يَحْمِلُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 3, 0)">نَحْمِلُ</button>
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: أَحْمِلُ</strong></p>
+                <p>الضَّمِيرُ "أَنَا" لِلْمُتَكَلِّمِ المُفْرَدِ، فَيَكُونُ المُضَارِعُ "أَحْمِلُ" بِحَرْفِ المُضَارَعَةِ "أَـ".</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q2">
+            <p class="exercise-question">مَا هُوَ فِعْلُ الأَمْرِ مِنْ "حَمَلَ" لِلضَّمِيرِ "أَنْتُمْ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What is the command form of "حَمَلَ" for "أَنْتُمْ" (you masc. pl.)?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q2', 0, 2)">اِحْمِلْ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 1, 2)">اِحْمِلِي</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 2, 2)">اِحْمِلُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 3, 2)">اِحْمِلَا</button>
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: اِحْمِلُوا</strong></p>
+                <p>فِعْلُ الأَمْرِ لِجَمْعِ المُذَكَّرِ (أَنْتُمْ) يَكُونُ "اِحْمِلُوا" مَعَ وَاوِ الجَمَاعَةِ.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 2: الفعل المتعدي -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٢. الفِعْلُ المُتَعَدِّي - Transitive Verbs</h3>
+
+        <div class="exercise-item" id="q3">
+            <p class="exercise-question">فِي الجُمْلَةِ "كَسَرَ الطِّفْلُ القَلَمَ"، مَا هُوَ المَفْعُولُ بِهِ؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">In "The child broke the pen", what is the object?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q3', 0, 2)">كَسَرَ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 1, 2)">الطِّفْلُ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 2, 2)">القَلَمَ</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 3, 2)">لَا يُوجَدُ</button>
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: القَلَمَ</strong></p>
+                <p>"القَلَمَ" هُوَ المَفْعُولُ بِهِ (مَنْصُوبٌ بِالفَتْحَةِ). كَسَرَ = الفِعْلُ، الطِّفْلُ = الفَاعِلُ.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q4">
+            <p class="exercise-question">"غَسَلَتْ آمِنَةُ المَنْدِيلَ" - حَدِّدِ الفَاعِلَ</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">"Amina washed the handkerchief" - Identify the subject</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q4', 0, 1)">غَسَلَتْ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 1, 1)">آمِنَةُ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 2, 1)">المَنْدِيلَ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 3, 1)">التَّاءُ</button>
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: آمِنَةُ</strong></p>
+                <p>"آمِنَةُ" هِيَ الفَاعِلُ (مَرْفُوعٌ بِالضَّمَّةِ). غَسَلَتْ = الفِعْلُ، المَنْدِيلَ = المَفْعُولُ بِهِ.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 3: تحويل الجمل -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٣. تَحْوِيلُ الجُمَلِ - Sentence Conversion</h3>
+
+        <div class="exercise-item" id="q5">
+            <p class="exercise-question">حَوِّلِ الجُمْلَةَ الاسْمِيَّةَ "الطُّلَّابُ فَهِمُوا الدَّرْسَ" إِلَى فِعْلِيَّةٍ:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Convert "The students understood the lesson" to a verbal sentence:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q5', 0, 0)">فَهِمَ الطُّلَّابُ الدَّرْسَ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 1, 0)">فَهِمُوا الطُّلَّابُ الدَّرْسَ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 2, 0)">الدَّرْسَ فَهِمَ الطُّلَّابُ</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 3, 0)">الطُّلَّابُ الدَّرْسَ فَهِمُوا</button>
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: فَهِمَ الطُّلَّابُ الدَّرْسَ</strong></p>
+                <p>عِنْدَ تَقْدِيمِ الفِعْلِ، يَبْقَى الفِعْلُ مُفْرَدًا (فَهِمَ) حَتَّى لَوْ كَانَ الفَاعِلُ جَمْعًا.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q6">
+            <p class="exercise-question">لِمَاذَا نَقُولُ "دَخَلَ الطُّلَّابُ" وَلَيْسَ "دَخَلُوا الطُّلَّابُ"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Why do we say "دَخَلَ الطُّلَّابُ" and not "دَخَلُوا الطُّلَّابُ"?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q6', 0, 0)">لِأَنَّ الفِعْلَ إِذَا تَقَدَّمَ عَلَى الفَاعِلِ يَكُونُ مُفْرَدًا</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 1, 0)">لِأَنَّ الطُّلَّابَ مُذَكَّرٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 2, 0)">لِأَنَّ دَخَلَ فِعْلٌ لَازِمٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 3, 0)">لَا فَرْقَ بَيْنَهُمَا</button>
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: لِأَنَّ الفِعْلَ إِذَا تَقَدَّمَ عَلَى الفَاعِلِ يَكُونُ مُفْرَدًا</strong></p>
+                <p>هَذِهِ قَاعِدَةٌ مُهِمَّةٌ: الفِعْلُ المُتَقَدِّمُ يَبْقَى مُفْرَدًا وَإِنْ كَانَ الفَاعِلُ جَمْعًا.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 4: الضمائر المتصلة -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٤. الضَّمَائِرُ المُتَّصِلَةُ - Attached Pronouns</h3>
+
+        <div class="exercise-item" id="q7">
+            <p class="exercise-question">مَا مَعْنَى "فَتَحْتُهَا"؟</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">What does "فَتَحْتُهَا" mean?</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q7', 0, 1)">He opened it</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 1, 1)">I opened it (feminine)</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 2, 1)">She opened it</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 3, 1)">I opened them</button>
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: I opened it (feminine)</strong></p>
+                <p>فَتَحْتُهَا = فَتَحْتُ (I opened) + هَا (it - feminine). الضَّمِيرُ "هَا" لِلْمُؤَنَّثِ.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q8">
+            <p class="exercise-question">حَلِّلِ الكَلِمَةَ "حَمَلْتُهُ" إِلَى أَجْزَائِهَا:</p>
+            <p class="english-text" style="margin-top: -10px; margin-bottom: 15px;">Break down "حَمَلْتُهُ" into its parts:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q8', 0, 0)">حَمَلْتُ + هُ (الفِعْلُ + ضَمِيرُ المَفْعُولِ بِهِ)</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 1, 0)">حَمَلَ + تُهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 2, 0)">حَمَ + لْتُهُ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 3, 0)">حَمَلْ + تُ + هُ</button>
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: حَمَلْتُ + هُ (الفِعْلُ + ضَمِيرُ المَفْعُولِ بِهِ)</strong></p>
+                <p>حَمَلْتُ = أَنَا حَمَلْتُ (I carried)، هُ = إِيَّاهُ (him/it masculine).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 5: المفردات -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٥. المُفْرَدَاتُ - Vocabulary</h3>
+
+        <div class="exercise-item" id="q9">
+            <p class="exercise-question">مَا مَعْنَى "بَقَّالٌ"؟</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q9', 0, 1)">Baker</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 1, 1)">Grocer</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 2, 1)">Butcher</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 3, 1)">Farmer</button>
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: Grocer</strong></p>
+                <p>بَقَّالٌ = grocer (صَاحِبُ دُكَّانِ البَقَالَةِ)</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q10">
+            <p class="exercise-question">مَا جَمْعُ "سُؤَالٌ"؟</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q10', 0, 0)">أَسْئِلَةٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 1, 0)">سُؤَالَاتٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 2, 0)">سَائِلُونَ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 3, 0)">سُؤُولٌ</button>
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: أَسْئِلَةٌ</strong></p>
+                <p>سُؤَالٌ (question) - جَمْعُهُ: أَسْئِلَةٌ (questions)</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="reset-btn" onclick="resetAllQuestions()">إِعَادَةُ التَّمَارِينِ - Reset All Exercises</button>
+    </div>
+</section>
+
+<!-- Vocabulary Section -->
+<section id="vocab" class="section">
+    <h2 class="section-title">الكَلِمَاتُ الجَدِيدَةُ - New Vocabulary</h2>
+
+    <h3 class="section-subtitle">الأَفْعَالُ - Verbs</h3>
+    <div class="vocab-grid">
+        <div class="vocab-item">
+            <p class="arabic-medium">حَمَلَ - يَحْمِلُ</p>
+            <p class="english-text">To carry</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">كَسَرَ - يَكْسِرُ</p>
+            <p class="english-text">To break</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">سَمِعَ - يَسْمَعُ</p>
+            <p class="english-text">To hear</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">شَرِبَ - يَشْرَبُ</p>
+            <p class="english-text">To drink</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">غَسَلَ - يَغْسِلُ</p>
+            <p class="english-text">To wash</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">قَتَلَ - يَقْتُلُ</p>
+            <p class="english-text">To kill</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">دَخَلَ - يَدْخُلُ</p>
+            <p class="english-text">To enter</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">أَكَلَ - يَأْكُلُ</p>
+            <p class="english-text">To eat</p>
+        </div>
+    </div>
+
+    <h3 class="section-subtitle">الأَسْمَاءُ - Nouns</h3>
+    <div class="vocab-grid">
+        <div class="vocab-item">
+            <p class="arabic-medium">عِنَبٌ - أَعْنَابٌ</p>
+            <p class="english-text">Grapes</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">مَوْزٌ</p>
+            <p class="english-text">Banana</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">تِينٌ</p>
+            <p class="english-text">Fig</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">حَيَّةٌ - حَيَّاتٌ</p>
+            <p class="english-text">Snake</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">ثُعْبَانٌ - ثَعَابِينُ</p>
+            <p class="english-text">Snake (large)</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">حَجَرٌ - أَحْجَارٌ</p>
+            <p class="english-text">Stone</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">عَصًا - عِصِيٌّ</p>
+            <p class="english-text">Stick</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">خُبْزٌ</p>
+            <p class="english-text">Bread</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">قَهْوَةٌ</p>
+            <p class="english-text">Coffee</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">دُكَّانٌ - دَكَاكِينُ</p>
+            <p class="english-text">Shop</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">بَقَّالٌ - بَقَّالُونَ</p>
+            <p class="english-text">Grocer</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">سَبُّورَةٌ</p>
+            <p class="english-text">Writing board</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">سُؤَالٌ - أَسْئِلَةٌ</p>
+            <p class="english-text">Question</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">جَوَابٌ - أَجْوِبَةٌ</p>
+            <p class="english-text">Answer</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">ضَيْفٌ - ضُيُوفٌ</p>
+            <p class="english-text">Guest</p>
+        </div>
+        <div class="vocab-item">
+            <p class="arabic-medium">فَجْرٌ</p>
+            <p class="english-text">Dawn</p>
+        </div>
+    </div>
+</section>
+
+<!-- Summary Section -->
+<section id="summary" class="section">
+    <h2 class="section-title">خُلَاصَةُ الوَحْدَةِ السَّادِسَةَ عَشْرَةَ - Module 16 Summary</h2>
+
+    <div class="summary-box">
+        <h3>مَا تَعَلَّمْنَاهُ - What We Learned</h3>
+        <ul>
+            <li>
+                <span>✓ تَصْرِيفُ الفِعْلِ حَمَلَ - يَحْمِلُ - اِحْمِلْ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Full conjugation of "to carry" in all pronoun forms</span>
+            </li>
+            <li>
+                <span>✓ الفِعْلُ المُتَعَدِّي وَالفَاعِلُ وَالمَفْعُولُ بِهِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Transitive verbs, subjects, and direct objects</span>
+            </li>
+            <li>
+                <span>✓ تَحْوِيلُ الجُمْلَةِ الاسْمِيَّةِ إِلَى فِعْلِيَّةٍ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Converting nominal sentences to verbal sentences</span>
+            </li>
+            <li>
+                <span>✓ قَاعِدَةُ الفِعْلِ المُفْرَدِ مَعَ الفَاعِلِ الجَمْعِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Verb stays singular when preceding a plural subject</span>
+            </li>
+            <li>
+                <span>✓ الضَّمَائِرُ المُتَّصِلَةُ بِالفِعْلِ (هُ، هَا، هُمْ...)</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Attached pronouns showing the object</span>
+            </li>
+            <li>
+                <span>✓ مُفْرَدَاتٌ جَدِيدَةٌ: أَفْعَالٌ وَأَسْمَاءٌ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">New vocabulary: verbs and nouns with their plurals</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="rule-box">
+        <h3 class="section-subtitle">القَوَاعِدُ الأَسَاسِيَّةُ - Key Rules</h3>
+        <p class="arabic-large" style="text-align: center;">الفِعْلُ المُتَعَدِّي = فِعْلٌ + فَاعِلٌ + مَفْعُولٌ بِهِ</p>
+        <p class="english-text" style="text-align: center;">Transitive verb = Verb + Subject + Object</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-large" style="text-align: center;">الفَاعِلُ مَرْفُوعٌ (ـُ) ، المَفْعُولُ بِهِ مَنْصُوبٌ (ـَ)</p>
+        <p class="english-text" style="text-align: center;">Subject = nominative (damma), Object = accusative (fatha)</p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-large" style="text-align: center;">إِذَا تَقَدَّمَ الفِعْلُ عَلَى الفَاعِلِ، يَكُونُ الفِعْلُ مُفْرَدًا</p>
+        <p class="english-text" style="text-align: center;">When verb precedes subject, verb stays singular</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer style="text-align: center; padding: 30px; margin-top: 30px; background: linear-gradient(135deg, #00695c 0%, #00796b 100%); color: white; border-radius: 15px;">
+    <p style="font-size: 24px;">الوَحْدَةُ السَّادِسَةَ عَشْرَةَ - Module 16</p>
+    <p style="font-size: 18px;">دَوْرَةُ ARB202 - دُرُوسُ اللُّغَةِ العَرَبِيَّةِ</p>
+    <p style="font-size: 16px; opacity: 0.8;">مِنْ كِتَابِ المَدِينَةِ - الجُزْءُ الثَّانِي</p>
+    <p style="font-size: 14px; margin-top: 20px; opacity: 0.6;">Created for personal study use</p>
+</footer>
+
+<script>
+// Quiz functionality
+let score = 0;
+let totalAnswered = 0;
+const totalQuestions = 10;
+
+function checkAnswer(questionId, selectedOption, correctOption) {
+    const questionDiv = document.getElementById(questionId);
+    const options = questionDiv.querySelectorAll('.option-btn');
+    const explanation = questionDiv.querySelector('.explanation');
+
+    options.forEach((btn, index) => {
+        btn.disabled = true;
+        if (index === correctOption) {
+            btn.classList.add('correct');
+        } else if (index === selectedOption && selectedOption !== correctOption) {
+            btn.classList.add('incorrect');
+        }
+    });
+
+    explanation.classList.add('show');
+    if (selectedOption === correctOption) {
+        explanation.classList.add('correct-exp');
+        score++;
+    } else {
+        explanation.classList.add('incorrect-exp');
+    }
+
+    totalAnswered++;
+    updateScore();
+    updateProgress();
+}
+
+function updateScore() {
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const percentage = Math.round((score / totalAnswered) * 100);
+    scoreDisplay.innerHTML = `النَّتِيجَةُ: ${score} مِنْ ${totalAnswered} (${percentage}%) - Score: ${score} out of ${totalAnswered}`;
+}
+
+function resetAllQuestions() {
+    score = 0;
+    totalAnswered = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionDiv = document.getElementById('q' + i);
+        if (questionDiv) {
+            const options = questionDiv.querySelectorAll('.option-btn');
+            const explanation = questionDiv.querySelector('.explanation');
+
+            options.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct', 'incorrect');
+            });
+
+            explanation.classList.remove('show', 'correct-exp', 'incorrect-exp');
+        }
+    }
+
+    document.getElementById('scoreDisplay').innerHTML = 'أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions';
+    updateProgress();
+}
+
+// Progress tracking
+function updateProgress() {
+    const progressBar = document.getElementById('progressBar');
+    const percentage = Math.round((totalAnswered / totalQuestions) * 100);
+    progressBar.style.width = percentage + '%';
+    progressBar.textContent = percentage + '%';
+}
+
+// Memory Game
+const memoryPairs = [
+    { arabic: 'حَمَلَ', english: 'carried' },
+    { arabic: 'كَسَرَ', english: 'broke' },
+    { arabic: 'سَمِعَ', english: 'heard' },
+    { arabic: 'شَرِبَ', english: 'drank' },
+    { arabic: 'غَسَلَ', english: 'washed' },
+    { arabic: 'قَتَلَ', english: 'killed' }
+];
+
+let memoryCards = [];
+let flippedCards = [];
+let matchedPairs = 0;
+let moves = 0;
+
+function initMemoryGame() {
+    const game = document.getElementById('memoryGame');
+    game.innerHTML = '';
+    memoryCards = [];
+    flippedCards = [];
+    matchedPairs = 0;
+    moves = 0;
+    document.getElementById('memoryMoves').textContent = '0';
+    document.getElementById('memoryPairs').textContent = '0';
+
+    // Create pairs
+    const cards = [];
+    memoryPairs.forEach((pair, index) => {
+        cards.push({ id: index * 2, type: 'arabic', value: pair.arabic, pairId: index });
+        cards.push({ id: index * 2 + 1, type: 'english', value: pair.english, pairId: index });
+    });
+
+    // Shuffle
+    cards.sort(() => Math.random() - 0.5);
+
+    // Create card elements
+    cards.forEach(card => {
+        const cardEl = document.createElement('div');
+        cardEl.className = 'memory-card';
+        cardEl.dataset.pairId = card.pairId;
+        cardEl.dataset.type = card.type;
+        cardEl.innerHTML = `
+            <div class="memory-card-inner">
+                <div class="memory-card-front">?</div>
+                <div class="memory-card-back">${card.value}</div>
+            </div>
+        `;
+        cardEl.addEventListener('click', () => flipMemoryCard(cardEl));
+        game.appendChild(cardEl);
+        memoryCards.push(cardEl);
+    });
+}
+
+function flipMemoryCard(card) {
+    if (flippedCards.length >= 2 || card.classList.contains('flipped') || card.classList.contains('matched')) {
+        return;
+    }
+
+    card.classList.add('flipped');
+    flippedCards.push(card);
+
+    if (flippedCards.length === 2) {
+        moves++;
+        document.getElementById('memoryMoves').textContent = moves;
+
+        const [card1, card2] = flippedCards;
+        if (card1.dataset.pairId === card2.dataset.pairId && card1.dataset.type !== card2.dataset.type) {
+            // Match!
+            setTimeout(() => {
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                matchedPairs++;
+                document.getElementById('memoryPairs').textContent = matchedPairs;
+                flippedCards = [];
+            }, 500);
+        } else {
+            // No match
+            setTimeout(() => {
+                card1.classList.remove('flipped');
+                card2.classList.remove('flipped');
+                flippedCards = [];
+            }, 1000);
+        }
+    }
+}
+
+// Sentence Builder
+function initSentenceBuilder() {
+    const areas = ['sentenceArea1', 'sentenceArea2'];
+    areas.forEach(areaId => {
+        const area = document.getElementById(areaId);
+        area.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            area.classList.add('drag-over');
+        });
+        area.addEventListener('dragleave', () => {
+            area.classList.remove('drag-over');
+        });
+        area.addEventListener('drop', (e) => {
+            e.preventDefault();
+            area.classList.remove('drag-over');
+            const word = e.dataTransfer.getData('text/plain');
+            const wordEl = document.createElement('div');
+            wordEl.className = 'draggable-word';
+            wordEl.textContent = word;
+            wordEl.draggable = true;
+            wordEl.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', word);
+                setTimeout(() => wordEl.remove(), 0);
+            });
+            area.appendChild(wordEl);
+        });
+    });
+
+    document.querySelectorAll('.draggable-word').forEach(word => {
+        word.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.textContent);
+            e.target.classList.add('dragging');
+        });
+        word.addEventListener('dragend', (e) => {
+            e.target.classList.remove('dragging');
+        });
+    });
+}
+
+function checkSentence1() {
+    const area = document.getElementById('sentenceArea1');
+    const words = Array.from(area.querySelectorAll('.draggable-word')).map(w => w.textContent);
+    const sentence = words.join(' ');
+    const result = document.getElementById('result1');
+
+    if (sentence === 'كَتَبَ الطَّالِبُ الدَّرْسَ') {
+        result.textContent = '✓ أَحْسَنْتَ! الجُمْلَةُ صَحِيحَةٌ - Excellent! Correct sentence!';
+        result.className = 'sentence-result correct';
+    } else {
+        result.textContent = '✗ حَاوِلْ مَرَّةً أُخْرَى - Try again! (Verb + Subject + Object)';
+        result.className = 'sentence-result incorrect';
+    }
+}
+
+function resetSentence1() {
+    document.getElementById('sentenceArea1').innerHTML = '';
+    document.getElementById('result1').className = 'sentence-result';
+    document.getElementById('result1').textContent = '';
+    document.getElementById('wordBank1').innerHTML = `
+        <div class="draggable-word" draggable="true" data-word="الدَّرْسَ">الدَّرْسَ</div>
+        <div class="draggable-word" draggable="true" data-word="كَتَبَ">كَتَبَ</div>
+        <div class="draggable-word" draggable="true" data-word="الطَّالِبُ">الطَّالِبُ</div>
+    `;
+    initSentenceBuilder();
+}
+
+function checkSentence2() {
+    const area = document.getElementById('sentenceArea2');
+    const words = Array.from(area.querySelectorAll('.draggable-word')).map(w => w.textContent);
+    const sentence = words.join(' ');
+    const result = document.getElementById('result2');
+
+    if (sentence === 'شَرِبَ الضَّيْفُ القَهْوَةَ') {
+        result.textContent = '✓ أَحْسَنْتَ! الجُمْلَةُ صَحِيحَةٌ - Excellent! Correct sentence!';
+        result.className = 'sentence-result correct';
+    } else {
+        result.textContent = '✗ حَاوِلْ مَرَّةً أُخْرَى - Try again! (Verb + Subject + Object)';
+        result.className = 'sentence-result incorrect';
+    }
+}
+
+function resetSentence2() {
+    document.getElementById('sentenceArea2').innerHTML = '';
+    document.getElementById('result2').className = 'sentence-result';
+    document.getElementById('result2').textContent = '';
+    document.getElementById('wordBank2').innerHTML = `
+        <div class="draggable-word" draggable="true" data-word="القَهْوَةَ">القَهْوَةَ</div>
+        <div class="draggable-word" draggable="true" data-word="الضَّيْفُ">الضَّيْفُ</div>
+        <div class="draggable-word" draggable="true" data-word="شَرِبَ">شَرِبَ</div>
+    `;
+    initSentenceBuilder();
+}
+
+// Pattern Identifier
+const patternAnswers = {
+    'pattern1': 'فَعَلَ',
+    'pattern2': 'فَعِلَ',
+    'pattern3': 'فَعُلَ',
+    'pattern4': 'فَعِلَ',
+    'pattern5': 'فَعَلَ',
+    'pattern6': 'فَعِلَ'
+};
+
+function checkPattern(patternId, selectedAnswer, btn) {
+    const card = document.getElementById(patternId);
+    const buttons = card.querySelectorAll('.pattern-btn');
+    const feedback = document.getElementById('feedback-' + patternId);
+    const correctAnswer = patternAnswers[patternId];
+
+    buttons.forEach(b => {
+        b.disabled = true;
+        if (b.textContent === correctAnswer) {
+            b.classList.add('correct');
+        }
+    });
+
+    if (selectedAnswer === correctAnswer) {
+        btn.classList.add('correct');
+        feedback.innerHTML = '✓ صَحِيحٌ! - Correct!';
+        feedback.style.background = '#c8e6c9';
+        feedback.style.color = '#2e7d32';
+    } else {
+        btn.classList.add('incorrect');
+        feedback.innerHTML = '✗ الإِجَابَةُ الصَّحِيحَةُ: ' + correctAnswer;
+        feedback.style.background = '#ffcdd2';
+        feedback.style.color = '#c62828';
+    }
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', function() {
+    initMemoryGame();
+    initSentenceBuilder();
+});
+</script>
+
+</body>
+</html>
