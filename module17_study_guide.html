@@ -1,0 +1,2593 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 17 - Arabic Study Guide | الوحدة السابعة عشرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            min-height: 100vh;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #5c6bc0 0%, #7986cb 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #3949ab 0%, #5c6bc0 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px;
+            color: #3949ab;
+            border-bottom: 4px solid #5c6bc0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .section-subtitle { font-size: 28px; color: #5c6bc0; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #283593; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .translit-text { font-family: Georgia, serif; font-style: italic; color: #888; direction: ltr; text-align: left; font-size: 16px; }
+        .grammar-box {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            border-right: 5px solid #5c6bc0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-right: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-right: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 5px solid #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .irab-box {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border-right: 5px solid #e91e63;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .irab-title {
+            font-size: 28px;
+            color: #c2185b;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #3949ab 0%, #5c6bc0 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #e8eaf6; }
+        tr:hover { background: #c5cae9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); font-weight: bold; color: #3949ab; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .vocab-item {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .dialogue-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #ff9800;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .speaker-a { color: #5c6bc0; font-weight: bold; }
+        .speaker-b { color: #c62828; font-weight: bold; }
+        .speaker-c { color: #2e7d32; font-weight: bold; }
+        .summary-box {
+            background: linear-gradient(135deg, #3949ab 0%, #5c6bc0 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .summary-box h3 { color: #ffeb3b; font-size: 28px; margin-bottom: 20px; }
+        .summary-box ul { list-style: none; padding: 0; }
+        .summary-box li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 22px; }
+        .comparison-table { border: 2px solid #5c6bc0; border-radius: 10px; overflow: hidden; }
+
+        /* Number Card Styles */
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .number-card {
+            background: linear-gradient(135deg, #5c6bc0 0%, #7986cb 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .number-card:hover {
+            transform: translateY(-5px);
+        }
+        .number-card .num-arabic {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .number-card .num-value {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        /* Flashcard Styles */
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .flashcard {
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .flashcard-front {
+            background: linear-gradient(135deg, #5c6bc0 0%, #7986cb 100%);
+            color: white;
+        }
+        .flashcard-back {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            transform: rotateY(180deg);
+            color: #333;
+        }
+        .flashcard-arabic {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .flashcard-hint {
+            font-size: 14px;
+            opacity: 0.8;
+            font-family: Georgia, serif;
+        }
+        .flashcard-english {
+            font-size: 20px;
+            font-family: Georgia, serif;
+            text-align: center;
+        }
+        .flashcard-translit {
+            font-size: 16px;
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Memory Game Styles */
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 600px;
+            margin: 25px auto;
+        }
+        .memory-card {
+            height: 100px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .memory-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+        }
+        .memory-card.flipped .memory-card-inner,
+        .memory-card.matched .memory-card-inner {
+            transform: rotateY(180deg);
+        }
+        .memory-card-front, .memory-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .memory-card-front {
+            background: linear-gradient(135deg, #5c6bc0 0%, #7986cb 100%);
+            color: white;
+            font-size: 30px;
+        }
+        .memory-card-back {
+            background: white;
+            border: 2px solid #5c6bc0;
+            transform: rotateY(180deg);
+        }
+        .memory-card.matched .memory-card-back {
+            background: #c8e6c9;
+            border-color: #4caf50;
+        }
+        .memory-score {
+            text-align: center;
+            font-size: 24px;
+            color: #3949ab;
+            margin: 15px 0;
+        }
+
+        /* Exercise Styles */
+        .exercise-section {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .exercise-section-title {
+            font-size: 36px;
+            color: #3949ab;
+            border-bottom: 4px solid #5c6bc0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .exercise-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .exercise-category-title {
+            font-size: 28px;
+            color: #3949ab;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c5cae9;
+        }
+        .exercise-item {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .exercise-question {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .exercise-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 15px 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background: white;
+            font-size: 22px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            text-align: right;
+            transition: all 0.3s;
+        }
+        .option-btn:hover:not(:disabled) {
+            border-color: #5c6bc0;
+            background: #e8eaf6;
+        }
+        .option-btn.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+            color: #1e8449;
+        }
+        .option-btn.incorrect {
+            border-color: #e74c3c;
+            background: #fadbd8;
+            color: #c0392b;
+        }
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .explanation.show {
+            display: block;
+        }
+        .explanation.correct-exp {
+            background: linear-gradient(135deg, #d5f4e6 0%, #a9dfbf 100%);
+            border-right: 5px solid #27ae60;
+        }
+        .explanation.incorrect-exp {
+            background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%);
+            border-right: 5px solid #e74c3c;
+        }
+        .reset-btn {
+            background: linear-gradient(135deg, #5c6bc0 0%, #7986cb 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(92, 107, 192, 0.4);
+        }
+        .score-display {
+            text-align: center;
+            font-size: 24px;
+            color: #3949ab;
+            padding: 15px;
+            background: #e8eaf6;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .translate-btn {
+            background: linear-gradient(135deg, #7986cb 0%, #9fa8da 100%);
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-family: Georgia, serif;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: all 0.3s;
+        }
+        .translate-btn:hover {
+            background: linear-gradient(135deg, #5c6bc0 0%, #7986cb 100%);
+            transform: translateY(-1px);
+        }
+        .translation-text {
+            display: none;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            font-family: Georgia, serif;
+            color: #1565c0;
+            font-size: 16px;
+            direction: ltr;
+            text-align: left;
+        }
+        .translation-text.show {
+            display: block;
+        }
+
+        /* Mnemonic Box */
+        .mnemonic-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .mnemonic-title {
+            font-size: 24px;
+            color: #1565c0;
+            margin-bottom: 15px;
+        }
+        .mnemonic-content {
+            font-size: 28px;
+            color: #0d47a1;
+            line-height: 2;
+        }
+
+        /* Quran Box */
+        .quran-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .quran-verse {
+            font-size: 32px;
+            color: #1b5e20;
+            text-align: center;
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+        .quran-reference {
+            font-size: 18px;
+            color: #2e7d32;
+            text-align: center;
+            font-family: Georgia, serif;
+        }
+
+        @media (max-width: 768px) {
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .arabic-text { font-size: 22px; }
+            .section-title { font-size: 28px; }
+            table { font-size: 18px; }
+            .memory-game { grid-template-columns: repeat(3, 1fr); }
+            .flashcard-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+            z-index: 1001;
+            transition: all 0.3s;
+        }
+        .home-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5);
+        }
+        .home-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Home Button -->
+<a href="index.html" class="home-btn" title="Back to Home">
+    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+</a>
+
+<!-- Navigation -->
+<nav class="nav-container">
+    <div class="nav-title">الوحدة السابعة عشرة - Module 17</div>
+    <div class="nav-links">
+        <a href="#conjugation"><span class="nav-ar">تصريف شَكَرَ</span><span class="nav-en">Verb Conjugation</span></a>
+        <a href="#verb-patterns"><span class="nav-ar">وزن الأفعال</span><span class="nav-en">Verb Patterns</span></a>
+        <a href="#dialogue"><span class="nav-ar">الدرس السادس</span><span class="nav-en">Dialogue</span></a>
+        <a href="#lima"><span class="nav-ar">لِمَ ولِمَهْ</span><span class="nav-en">Why?</span></a>
+        <a href="#numbers"><span class="nav-ar">الأعداد المركبة</span><span class="nav-en">Compound Numbers</span></a>
+        <a href="#irab-numbers"><span class="nav-ar">إعراب الأعداد</span><span class="nav-en">I'rab of Numbers</span></a>
+        <a href="#verbal-nouns"><span class="nav-ar">أسماء الأفعال</span><span class="nav-en">Verbal Nouns</span></a>
+        <a href="#inna-anna"><span class="nav-ar">إنّ وأنّ</span><span class="nav-en">Inna & Anna</span></a>
+        <a href="#irab-ayy"><span class="nav-ar">إعراب أيّ</span><span class="nav-en">I'rab of Ayy</span></a>
+        <a href="#flashcards"><span class="nav-ar">البطاقات</span><span class="nav-en">Flashcards</span></a>
+        <a href="#exercises"><span class="nav-ar">التمارين</span><span class="nav-en">Exercises</span></a>
+        <a href="#summary"><span class="nav-ar">الخلاصة</span><span class="nav-en">Summary</span></a>
+    </div>
+</nav>
+
+<!-- Main Title -->
+<header class="main-title">
+    <h1>الوحدة السابعة عشرة</h1>
+    <div class="subtitle">Module 17 - Seventeenth Unit</div>
+    <div class="subtitle" style="font-size: 20px; margin-top: 15px;">
+        الدَّوْرَةُ الثَّالِثَةُ - المُحَاضَرَةُ السَّابِعَةَ عَشْرَةَ
+    </div>
+    <div class="english-text" style="color: white; opacity: 0.9;">
+        Third Course - Seventeenth Lecture
+    </div>
+    <div class="subtitle" style="font-size: 18px; margin-top: 10px;">
+        مِنْ كِتَابِ المَدِينَةِ - الدَّرْسُ السَّادِسُ
+    </div>
+</header>
+
+<!-- Verb Conjugation Section -->
+<section id="conjugation" class="section">
+    <h2 class="section-title">تَصْرِيفُ الفِعْلِ: شَكَرَ - Verb Conjugation: To Thank</h2>
+
+    <div class="info-box">
+        <p class="arabic-large" style="text-align: center;">شَكَرَ - يَشْكُرُ - اشْكُرْ</p>
+        <p class="english-text" style="text-align: center;">shakara - yashkuru - ushkur (to thank - he thanks - thank!)</p>
+        <p class="translit-text" style="text-align: center;">Form I verb - Pattern: فَعَلَ - يَفْعُلُ</p>
+    </div>
+
+    <div class="mnemonic-box">
+        <div class="mnemonic-title">🧠 طَرِيقَةٌ لِلتَّذَكُّرِ - Memory Trick</div>
+        <div class="mnemonic-content">
+            شَكَرَ = شـ + كـ + ر<br>
+            Think: "<strong>Sh</strong>ow <strong>K</strong>indness, <strong>R</strong>emember" (Thank/Be Grateful)
+        </div>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>الضَّمِيرُ<br>Pronoun</th>
+                <th>المَاضِي<br>Past</th>
+                <th>المُضَارِعُ<br>Present</th>
+                <th>الأَمْرُ<br>Command</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">أَنَا</td>
+                <td>شَكَرْتُ</td>
+                <td>أَشْكُرُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">نَحْنُ</td>
+                <td>شَكَرْنَا</td>
+                <td>نَشْكُرُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتَ</td>
+                <td>شَكَرْتَ</td>
+                <td>تَشْكُرُ</td>
+                <td>اشْكُرْ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتِ</td>
+                <td>شَكَرْتِ</td>
+                <td>تَشْكُرِينَ</td>
+                <td>اشْكُرِي</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمَا</td>
+                <td>شَكَرْتُمَا</td>
+                <td>تَشْكُرَانِ</td>
+                <td>اشْكُرَا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمْ</td>
+                <td>شَكَرْتُمْ</td>
+                <td>تَشْكُرُونَ</td>
+                <td>اشْكُرُوا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُنَّ</td>
+                <td>شَكَرْتُنَّ</td>
+                <td>تَشْكُرْنَ</td>
+                <td>اشْكُرْنَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُوَ</td>
+                <td>شَكَرَ</td>
+                <td>يَشْكُرُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هِيَ</td>
+                <td>شَكَرَتْ</td>
+                <td>تَشْكُرُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (مُذَكَّرٌ)</td>
+                <td>شَكَرَا</td>
+                <td>يَشْكُرَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا (مُؤَنَّثٌ)</td>
+                <td>شَكَرَتَا</td>
+                <td>تَشْكُرَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمْ</td>
+                <td>شَكَرُوا</td>
+                <td>يَشْكُرُونَ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُنَّ</td>
+                <td>شَكَرْنَ</td>
+                <td>يَشْكُرْنَ</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="grammar-box">
+        <p class="arabic-text">يَا سَعِيدُ، اشْكُرِ الأُسْتَاذَ</p>
+        <p class="english-text">O Saeed, thank the teacher</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">يَا فَاطِمَةُ، اشْكُرِي الأُسْتَاذَ عَلَى شَرْحِ الدَّرْسِ</p>
+        <p class="english-text">O Fatima, thank the teacher for explaining the lesson</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">شَكَرَتِ البِنْتُ خَالَهَا</p>
+        <p class="english-text">The girl thanked her maternal uncle</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">المُسْلِمُونَ يَشْكُرُونَ اللهَ عَلَى نِعَمِهِ</p>
+        <p class="english-text">The Muslims thank Allah for His blessings</p>
+    </div>
+    <div class="grammar-box">
+        <p class="arabic-text">هَذَانِ الطَّالِبَانِ يَشْكُرَانِ اللهَ</p>
+        <p class="english-text">These two students thank Allah</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-verse">وَلَٰكِنَّ أَكْثَرَ النَّاسِ لَا يَشْكُرُونَ</p>
+        <p class="quran-reference">But most of the people are not grateful - (Yusuf: 38)</p>
+    </div>
+</section>
+
+<!-- Verb Pattern Exercise Section -->
+<section id="verb-patterns" class="section">
+    <h2 class="section-title">تَمْرِينٌ: وَزْنُ الأَفْعَالِ - Exercise: Verb Patterns</h2>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>السُّؤَالُ:</strong> مَا وَزْنُ الأَفْعَالِ التَّالِيَةِ؟</p>
+        <p class="english-text"><strong>Question:</strong> What are the patterns of the following verbs?</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align: center;">شَرِبَ - تَشْرَبُونَ - فَهِمَتْ - تَفْهَمِينَ - أَخَذْنَا - أَكَلْتُمْ</p>
+    </div>
+
+    <h3 class="section-subtitle">الإِجَابَةُ - The Answer</h3>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>الفِعْلُ<br>Verb</th>
+                <th>الوَزْنُ<br>Pattern</th>
+                <th>English</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>شَرِبَ</td>
+                <td class="pronoun-cell">فَعِلَ</td>
+                <td>He drank (past, 3rd person masc.)</td>
+            </tr>
+            <tr>
+                <td>تَشْرَبُونَ</td>
+                <td class="pronoun-cell">تَفْعَلُونَ</td>
+                <td>You (pl. masc.) drink (present)</td>
+            </tr>
+            <tr>
+                <td>فَهِمَتْ</td>
+                <td class="pronoun-cell">فَعِلَتْ</td>
+                <td>She understood (past, 3rd person fem.)</td>
+            </tr>
+            <tr>
+                <td>تَفْهَمِينَ</td>
+                <td class="pronoun-cell">تَفْعَلِينَ</td>
+                <td>You (fem.) understand (present)</td>
+            </tr>
+            <tr>
+                <td>أَخَذْنَا</td>
+                <td class="pronoun-cell">فَعَلْنَا</td>
+                <td>We took (past, 1st person pl.)</td>
+            </tr>
+            <tr>
+                <td>أَكَلْتُمْ</td>
+                <td class="pronoun-cell">فَعَلْتُمْ</td>
+                <td>You (pl. masc.) ate (past)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="mnemonic-box">
+        <div class="mnemonic-title">🧠 طَرِيقَةٌ لِلتَّذَكُّرِ - Memory Trick</div>
+        <div class="mnemonic-content">
+            <strong>الأَوْزَانُ الثَّلَاثَةُ لِلْفِعْلِ الثُّلَاثِيِّ:</strong><br>
+            فَعَلَ - يَفْعَلُ (مِثْل: ذَهَبَ - يَذْهَبُ)<br>
+            فَعِلَ - يَفْعَلُ (مِثْل: شَرِبَ - يَشْرَبُ)<br>
+            فَعُلَ - يَفْعُلُ (مِثْل: كَرُمَ - يَكْرُمُ)
+        </div>
+        <p class="english-text" style="text-align: center; margin-top: 10px;">
+            Three patterns for trilateral verbs: فَعَلَ (a-a), فَعِلَ (a-i), فَعُلَ (a-u)
+        </p>
+    </div>
+</section>
+
+<!-- Dialogue Section - Lesson 6 -->
+<section id="dialogue" class="section">
+    <h2 class="section-title">قِرَاءَةُ الدَّرْسِ السَّادِسِ - Reading: Lesson 6</h2>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>مِنَ الجُزْءِ الثَّانِي مِنْ كِتَابِ المَدِينَةِ</strong></p>
+        <p class="english-text">From Part 2 of the Madinah Book - A conversation between a mother (الأم), her son Saeed (سعيد), and daughter Maryam (مريم)</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> مَتَى رَجَعْتَ مِنَ المَدْرَسَةِ يَا بُنَيَّ؟</p>
+        <p class="english-text"><strong>Mother:</strong> When did you return from school, my son?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">سَعِيدٌ:</span> رَجَعْتُ قَبْلَ نِصْفِ سَاعَةٍ.</p>
+        <p class="english-text"><strong>Saeed:</strong> I returned half an hour ago.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> أَيْنَ أُخْتُكَ مَرْيَمُ؟ أَمَا رَجَعَتْ؟</p>
+        <p class="english-text"><strong>Mother:</strong> Where is your sister Maryam? Hasn't she returned?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">سَعِيدٌ:</span> لَا أَدْرِي. أَنَا مَا رَأَيْتُهَا.</p>
+        <p class="english-text"><strong>Saeed:</strong> I don't know. I haven't seen her.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> مَاذَا قَرَأْتَ اليَوْمَ؟</p>
+        <p class="english-text"><strong>Mother:</strong> What did you read today?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">سَعِيدٌ:</span> قَرَأْتُ اليَوْمَ دَرْسًا جَدِيدًا فِي الفِقْهِ.</p>
+        <p class="english-text"><strong>Saeed:</strong> Today I read a new lesson in Islamic jurisprudence (Fiqh).</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> أَفَهِمْتَهُ؟</p>
+        <p class="english-text"><strong>Mother:</strong> Did you understand it?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">سَعِيدٌ:</span> نَعَمْ. فَهِمْتُهُ جَيِّدًا.</p>
+        <p class="english-text"><strong>Saeed:</strong> Yes, I understood it well.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> أَمَا قَرَأْتَ القُرْآنَ اليَوْمَ؟</p>
+        <p class="english-text"><strong>Mother:</strong> Didn't you read the Quran today?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">سَعِيدٌ:</span> بَلَى. قَرَأْتُ سُورَةَ الرَّحْمٰنِ وَحَفِظْتُهَا. فَفَرِحَ بِيَ المُدَرِّسُ كَثِيرًا وَقَالَ: إِنَّكَ أَحْسَنُ طَالِبٍ فِي الفَصْلِ.</p>
+        <p class="english-text"><strong>Saeed:</strong> Yes. I read Surah Ar-Rahman and memorized it. The teacher was very happy with me and said that I am the best student in the class.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> مَا شَاءَ اللهُ! زَادَكَ اللهُ عِلْمًا يَا بُنَيَّ.</p>
+        <p class="english-text"><strong>Mother:</strong> Masha'Allah! May Allah increase you in knowledge, my son.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">سَعِيدٌ:</span> أَغَسَلْتِ قَمِيصَانِي يَا أُمِّي؟</p>
+        <p class="english-text"><strong>Saeed:</strong> Did you wash my shirts, O mother?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> نَعَمْ. غَسَلْتُهَا وَكَوَيْتُهَا... خُذْ هٰذَا القَمِيصَ.</p>
+        <p class="english-text"><strong>Mother:</strong> Yes, I washed them and ironed them... Take this shirt.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-b">سَعِيدٌ:</span> هَاتِي ذَاكَ يَا أُمِّي. ذَاكَ أَجْمَلُ مِنْ هٰذَا.</p>
+        <p class="english-text"><strong>Saeed:</strong> Give me that one, O mother. That one is more beautiful than this.</p>
+    </div>
+
+    <h3 class="section-subtitle" style="margin-top: 30px;">(تَدْخُلُ مَرْيَمُ) - Maryam Enters</h3>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> السَّلَامُ عَلَيْكُمْ. كَيْفَ حَالُكِ يَا أُمِّي؟ وَكَيْفَ حَالُكَ يَا أَخِي؟</p>
+        <p class="english-text"><strong>Maryam:</strong> Peace be upon you. How are you, mother? And how are you, brother?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> وَعَلَيْكُمُ السَّلَامُ. أَهْلًا يَا بُنَيَّتِي. مَتَى خَرَجْتِ مِنَ المَدْرَسَةِ؟</p>
+        <p class="english-text"><strong>Mother:</strong> And peace be upon you. Welcome, my daughter. When did you leave school?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> خَرَجْتُ بَعْدَ صَلَاةِ الظُّهْرِ.</p>
+        <p class="english-text"><strong>Maryam:</strong> I left after Dhuhr prayer.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> أَيْنَ زَمِيلَاتُكِ آمِنَةُ وَفَاطِمَةُ وَسُعَادُ؟</p>
+        <p class="english-text"><strong>Mother:</strong> Where are your classmates Amina, Fatima, and Su'ad?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> أَنَا مَا رَأَيْتُهُنَّ بَعْدَ الصَّلَاةِ.</p>
+        <p class="english-text"><strong>Maryam:</strong> I haven't seen them after the prayer.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> يَا بُنَيَّتِي. أَخُوكِ حَفِظَ سُورَةَ الرَّحْمٰنِ. أَيَّ سُورَةٍ حَفِظْتِ أَنْتِ؟</p>
+        <p class="english-text"><strong>Mother:</strong> My daughter, your brother memorized Surah Ar-Rahman. Which surah did you memorize?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> أَنَا حَفِظْتُ سُورَةَ الحَدِيدِ، وَهِيَ أَطْوَلُ مِنْ سُورَةِ الرَّحْمٰنِ. وَكَذٰلِكَ حَفِظْتُ سِتَّ عَشْرَةَ آيَةً مِنْ سُورَةِ النَّبَأِ.</p>
+        <p class="english-text"><strong>Maryam:</strong> I memorized Surah Al-Hadid, which is longer than Surah Ar-Rahman. And I also memorized sixteen verses from Surah An-Naba.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> مَا شَاءَ اللهُ! إِنَّكِ طَالِبَةٌ مُجْتَهِدَةٌ. أَنَا مَسْرُورَةٌ بِكِ... أَذَهَبْتِ إِلَى المَكْتَبَةِ اليَوْمَ؟</p>
+        <p class="english-text"><strong>Mother:</strong> Masha'Allah! You are truly a hardworking student. I am pleased with you... Did you go to the library today?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> نَعَمْ. ذَهَبْتُ.</p>
+        <p class="english-text"><strong>Maryam:</strong> Yes, I went.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> مَاذَا قَرَأْتِ هُنَاكَ؟</p>
+        <p class="english-text"><strong>Mother:</strong> What did you read there?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> قَرَأْتُ مَجَلَّةً مِنْ بَاكِسْتَانَ اسْمُهَا (الإِسْلَامُ).</p>
+        <p class="english-text"><strong>Maryam:</strong> I read a magazine from Pakistan called "Al-Islam".</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> أَبِاللُّغَةِ العَرَبِيَّةِ هِيَ؟</p>
+        <p class="english-text"><strong>Mother:</strong> Is it in Arabic?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> لَا، هِيَ بِاللُّغَةِ الإِنْجِلِيزِيَّةِ.</p>
+        <p class="english-text"><strong>Maryam:</strong> No, it is in English.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> أَذَهَبْتِ إِلَى المُدِيرَةِ؟</p>
+        <p class="english-text"><strong>Mother:</strong> Did you go to the headmistress?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> لَا، هِيَ مَا جَاءَتِ اليَوْمَ.</p>
+        <p class="english-text"><strong>Maryam:</strong> No, she didn't come today.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> لِمَهْ؟</p>
+        <p class="english-text"><strong>Mother:</strong> Why?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> أَظُنُّ أَنَّهَا ذَهَبَتْ إِلَى مَكَّةَ.</p>
+        <p class="english-text"><strong>Maryam:</strong> I think (that) she went to Makkah.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> أَشَرِبْتِ الشَّايَ؟</p>
+        <p class="english-text"><strong>Mother:</strong> Did you drink tea?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> لَا، مَا شَرِبْتُ.</p>
+        <p class="english-text"><strong>Maryam:</strong> No, I didn't drink.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">الأُمُّ:</span> (لِلْخَادِمَةِ) هَاتِي الشَّايَ يَا لَيْلَى.</p>
+        <p class="english-text"><strong>Mother:</strong> (To the maid) Bring the tea, O Layla.</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-c">مَرْيَمُ:</span> وَهَاتِي قِطْعَةَ خُبْزٍ أَيْضًا يَا لَيْلَى. أَنَا جَوْعَى.</p>
+        <p class="english-text"><strong>Maryam:</strong> And bring a piece of bread too, O Layla. I am hungry.</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>مُلَاحَظَاتٌ نَحْوِيَّةٌ مِنَ الحِوَارِ:</strong></p>
+        <p class="english-text"><strong>Grammar notes from the dialogue:</strong></p>
+        <p class="arabic-text">• <span style="color: #5c6bc0;">قَالَ: إِنَّكَ أَحْسَنُ طَالِبٍ</span> ← إِنَّ بَعْدَ قَالَ (كَسْرَة)</p>
+        <p class="english-text">• After قَالَ we use إِنَّ with kasra</p>
+        <p class="arabic-text">• <span style="color: #e91e63;">أَظُنُّ أَنَّهَا ذَهَبَتْ</span> ← أَنَّ بَعْدَ أَظُنُّ (فَتْحَة)</p>
+        <p class="english-text">• After أَظُنُّ we use أَنَّ with fatha</p>
+        <p class="arabic-text">• <span style="color: #4caf50;">هَاتِي الشَّايَ</span> ← اسْمُ فِعْلِ أَمْرٍ (هَاتِ)</p>
+        <p class="english-text">• هَاتِ is a verbal noun meaning "give!"</p>
+        <p class="arabic-text">• <span style="color: #ff9800;">سِتَّ عَشْرَةَ آيَةً</span> ← عَدَدٌ مُرَكَّبٌ مَعَ مَعْدُودٍ مُؤَنَّثٍ</p>
+        <p class="english-text">• Compound number (16) with feminine counted noun</p>
+    </div>
+</section>
+
+<!-- Lima and Limah Section -->
+<section id="lima" class="section">
+    <h2 class="section-title">لِمَ وَلِمَهْ؟ - Why?</h2>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>تَعْرِيفٌ:</strong> (لِمَ) وَ(لِمَهْ) كِلَاهُمَا بِمَعْنَى (لِمَاذَا) لِلسُّؤَالِ عَنِ السَّبَبِ</p>
+        <p class="english-text"><strong>Definition:</strong> Both لِمَ and لِمَهْ mean "why?" - used to ask about a reason</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>الأَصْلُ:</strong> لِمَ = لِ + مَا (حُذِفَتِ الأَلِفُ)</p>
+        <p class="english-text"><strong>Origin:</strong> لِمَ = لِ (for) + مَا (what) - the alif was deleted</p>
+        <p class="arabic-text"><strong>لِمَهْ:</strong> أُضِيفَتْ هَاءُ السَّكْتِ لِلْوَقْفِ</p>
+        <p class="english-text"><strong>لِمَهْ:</strong> A هاء السكت (pause ه) was added for stopping</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+
+    <div class="grammar-box">
+        <p class="arabic-text" style="font-size: 26px;">لِمَ تَأَخَّرْتَ؟</p>
+        <p class="english-text">Why were you late?</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text" style="font-size: 26px;">لِمَهْ؟ (لِلْوَقْفِ)</p>
+        <p class="english-text">Why? (when pausing/at end of sentence)</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text" style="font-size: 26px;">لِمَ لَمْ تَحْضُرْ أَمْسِ؟</p>
+        <p class="english-text">Why didn't you attend yesterday?</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><strong>مِنَ الحِوَارِ:</strong></p>
+        <p class="arabic-text" style="font-size: 24px;">الأُمُّ: <span style="color: #5c6bc0; font-weight: bold;">لِمَهْ؟</span> (لِمَاذَا لَمْ تَأْتِ المُدِيرَةُ؟)</p>
+        <p class="arabic-text">مَرْيَمُ: أَظُنُّ أَنَّهَا ذَهَبَتْ إِلَى مَكَّةَ.</p>
+        <p class="english-text"><strong>From the dialogue:</strong> Mother: "Why?" (Why didn't the headmistress come?) - Maryam: "I think she went to Makkah."</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-verse">لِمَ تَقُولُونَ مَا لَا تَفْعَلُونَ</p>
+        <p class="quran-reference">Why do you say that which you do not do? - (As-Saff: 2)</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>الفَرْقُ بَيْنَ لِمَ وَلِمَهْ:</strong></p>
+        <p class="arabic-text">• <span style="color: #5c6bc0; font-weight: bold;">لِمَ</span> ← تُسْتَخْدَمُ فِي وَسَطِ الكَلَامِ (in connected speech)</p>
+        <p class="arabic-text">• <span style="color: #e91e63; font-weight: bold;">لِمَهْ</span> ← تُسْتَخْدَمُ عِنْدَ الوَقْفِ (when pausing/at end)</p>
+        <p class="english-text"><strong>Difference:</strong> لِمَ is used in continuous speech; لِمَهْ is used when pausing or at the end of a sentence</p>
+    </div>
+</section>
+
+<!-- Compound Numbers Section -->
+<section id="numbers" class="section">
+    <h2 class="section-title">الأَعْدَادُ المُرَكَّبَةُ (١١-١٩) - Compound Numbers</h2>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>تَعْرِيفٌ:</strong> الأَعْدَادُ مِنْ (١١) إِلَى (١٩) تُسَمَّى بِالأَعْدَادِ المُرَكَّبَةِ لِأَنَّهَا تَتَكَوَّنُ مِنْ جُزْأَيْنِ</p>
+        <p class="english-text"><strong>Definition:</strong> Numbers from 11 to 19 are called "compound numbers" because they consist of two parts</p>
+    </div>
+
+    <h3 class="section-subtitle">أَنْوَاعُ الأَعْدَادِ - Types of Numbers</h3>
+    <div class="number-grid">
+        <div class="number-card">
+            <div class="num-arabic">العَدَدُ المُفْرَدُ</div>
+            <div class="num-value">One-word Number (1-10)</div>
+        </div>
+        <div class="number-card">
+            <div class="num-arabic">العَدَدُ المُرَكَّبُ</div>
+            <div class="num-value">Compound Number (11-19)</div>
+        </div>
+        <div class="number-card">
+            <div class="num-arabic">أَلْفَاظُ العُقُودِ</div>
+            <div class="num-value">Decades (20, 30...)</div>
+        </div>
+    </div>
+
+    <h3 class="section-subtitle">العَدَدَانِ أَحَدَ عَشَرَ وَاثْنَا عَشَرَ (11 & 12)</h3>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>القَاعِدَةُ:</strong> العَدَدَانِ (أَحَدَ عَشَرَ) وَ(اثْنَا عَشَرَ) يُوَافِقَانِ المَعْدُودَ</p>
+        <p class="english-text"><strong>Rule:</strong> Numbers 11 and 12 AGREE with the counted noun in gender</p>
+        <p class="arabic-text">• إِذَا كَانَ المَعْدُودُ مُذَكَّرًا ← الجُزْءُ الأَوَّلُ وَالثَّانِي مُذَكَّرَانِ</p>
+        <p class="arabic-text">• إِذَا كَانَ المَعْدُودُ مُؤَنَّثًا ← الجُزْءُ الأَوَّلُ وَالثَّانِي مُؤَنَّثَانِ</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>العَدَدُ</th>
+                <th>مَعَ المُذَكَّرِ</th>
+                <th>مَعَ المُؤَنَّثِ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">١١</td>
+                <td>أَحَدَ عَشَرَ كِتَابًا</td>
+                <td>إِحْدَى عَشْرَةَ قِصَّةً</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٢</td>
+                <td>اثْنَا عَشَرَ قَلَمًا</td>
+                <td>اثْنَتَا عَشْرَةَ صَفْحَةً</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="section-subtitle">الأَعْدَادُ مِنْ ١٣ إِلَى ١٩</h3>
+
+    <div class="warning-box">
+        <p class="arabic-text"><strong>القَاعِدَةُ المُهِمَّةُ:</strong></p>
+        <p class="arabic-text">• الجُزْءُ الأَوَّلُ <span style="color: #c62828; font-weight: bold;">يُخَالِفُ</span> المَعْدُودَ (Disagrees)</p>
+        <p class="arabic-text">• الجُزْءُ الثَّانِي (عَشَرَ/عَشْرَةَ) <span style="color: #2e7d32; font-weight: bold;">يُوَافِقُ</span> المَعْدُودَ (Agrees)</p>
+        <p class="english-text"><strong>Important Rule:</strong> First part DISAGREES, second part AGREES with counted noun</p>
+    </div>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>العَدَدُ</th>
+                <th>مَعَ المُذَكَّرِ</th>
+                <th>مَعَ المُؤَنَّثِ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">١٣</td>
+                <td>ثَلَاثَةَ عَشَرَ طَالِبًا</td>
+                <td>ثَلَاثَ عَشْرَةَ طَالِبَةً</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٤</td>
+                <td>أَرْبَعَةَ عَشَرَ كِتَابًا</td>
+                <td>أَرْبَعَ عَشْرَةَ صَفْحَةً</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٥</td>
+                <td>خَمْسَةَ عَشَرَ يَوْمًا</td>
+                <td>خَمْسَ عَشْرَةَ لَيْلَةً</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٦</td>
+                <td>سِتَّةَ عَشَرَ رَجُلًا</td>
+                <td>سِتَّ عَشْرَةَ آيَةً</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٧</td>
+                <td>سَبْعَةَ عَشَرَ قَلَمًا</td>
+                <td>سَبْعَ عَشْرَةَ سَنَةً</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٨</td>
+                <td>ثَمَانِيَةَ عَشَرَ شَهْرًا</td>
+                <td>ثَمَانِيَ عَشْرَةَ سَاعَةً</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">١٩</td>
+                <td>تِسْعَةَ عَشَرَ دِرْهَمًا</td>
+                <td>تِسْعَ عَشْرَةَ رَكْعَةً</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="mnemonic-box">
+        <div class="mnemonic-title">🧠 طَرِيقَةٌ لِلتَّذَكُّرِ - Memory Trick</div>
+        <div class="mnemonic-content">
+            <strong>١١ و ١٢:</strong> كِلَا الجُزْأَيْنِ يُوَافِقَانِ (Both parts AGREE)<br>
+            <strong>١٣-١٩:</strong> الأَوَّلُ يُخَالِفُ، الثَّانِي يُوَافِقُ (First DISAGREES, Second AGREES)
+        </div>
+    </div>
+</section>
+
+<!-- I'rab of Numbers Section -->
+<section id="irab-numbers" class="section">
+    <h2 class="section-title">إِعْرَابُ الأَعْدَادِ المُرَكَّبَةِ - I'rab of Compound Numbers</h2>
+
+    <div class="irab-box">
+        <div class="irab-title">📚 إِعْرَابُ أَحَدَ عَشَرَ وَاثْنَا عَشَرَ</div>
+        <p class="arabic-text"><strong>أَحَدَ عَشَرَ:</strong> عَدَدٌ مُرَكَّبٌ مَبْنِيٌّ عَلَى فَتْحِ الجُزْأَيْنِ فِي مَحَلِّ رَفْعٍ أَوْ نَصْبٍ أَوْ جَرٍّ حَسَبَ مَوْقِعِهِ فِي الجُمْلَةِ</p>
+        <p class="english-text">أحد عشر is indeclinable (مبني) on fatha for both parts, in the position of nominative, accusative, or genitive based on its position in the sentence</p>
+    </div>
+
+    <div class="irab-box">
+        <div class="irab-title">📚 إِعْرَابُ اثْنَا عَشَرَ</div>
+        <p class="arabic-text"><strong>اثْنَا عَشَرَ:</strong> الجُزْءُ الأَوَّلُ (اثْنَا) يُعْرَبُ إِعْرَابَ المُثَنَّى</p>
+        <p class="arabic-text">• فِي حَالَةِ الرَّفْعِ: اثْنَا عَشَرَ</p>
+        <p class="arabic-text">• فِي حَالَةِ النَّصْبِ وَالجَرِّ: اثْنَيْ عَشَرَ</p>
+        <p class="english-text">The first part (اثنا) is declined like the dual - nominative: اثنا, accusative/genitive: اثني</p>
+    </div>
+
+    <h3 class="section-subtitle">تَدْرِيبٌ عَلَى الإِعْرَابِ - I'rab Practice</h3>
+
+    <div class="irab-box">
+        <div class="irab-title">📝 مِثَالٌ: كَتَبْتُ ثَلَاثَ عَشْرَةَ صَفْحَةً</div>
+        <p class="arabic-text"><strong>السُّؤَالُ:</strong> أَيْنَ العَدَدُ وَأَيْنَ المَعْدُودُ؟ وَمَا نَوْعُ العَدَدِ؟ وَكَيْفَ نُعْرِبُ العَدَدَ؟</p>
+        <div class="grammar-box">
+            <p class="arabic-text"><strong>الإِجَابَةُ:</strong></p>
+            <p class="arabic-text">• العَدَدُ هُوَ: <span style="color: #5c6bc0; font-weight: bold;">ثَلَاثَ عَشْرَةَ</span></p>
+            <p class="arabic-text">• المَعْدُودُ هُوَ: <span style="color: #e91e63; font-weight: bold;">صَفْحَةً</span> (نَكِرَةٌ مُفْرَدٌ مَنْصُوبٌ)</p>
+            <p class="arabic-text">• نَوْعُ العَدَدِ: عَدَدٌ مُرَكَّبٌ</p>
+            <p class="arabic-text">• الإِعْرَابُ: عَدَدٌ مُرَكَّبٌ مَبْنِيٌّ عَلَى فَتْحِ الجُزْأَيْنِ فِي مَحَلِّ نَصْبٍ مَفْعُولٌ بِهِ</p>
+        </div>
+    </div>
+
+    <div class="irab-box">
+        <div class="irab-title">📝 مِثَالٌ: صَلَّيْتُ اثْنَتَيْ عَشْرَةَ رَكْعَةً</div>
+        <div class="grammar-box">
+            <p class="arabic-text"><strong>الإِعْرَابُ:</strong></p>
+            <p class="arabic-text">• <strong>اثْنَتَيْ:</strong> مَفْعُولٌ بِهِ مَنْصُوبٌ بِالْيَاءِ لِأَنَّهُ مُلْحَقٌ بِالمُثَنَّى</p>
+            <p class="arabic-text">• <strong>عَشْرَةَ:</strong> عَدَدٌ مَبْنِيٌّ عَلَى الفَتْحِ فِي مَحَلِّ جَرٍّ مُضَافٌ إِلَيْهِ</p>
+            <p class="english-text">اثنتي is accusative (shown by ي because it's like dual), عشرة is مضاف إليه</p>
+        </div>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>قَاعِدَةٌ عَامَّةٌ:</strong> الأَعْدَادُ المُرَكَّبَةُ (١٣-١٩) مَبْنِيَّةٌ عَلَى فَتْحِ الجُزْأَيْنِ فِي مَحَلِّ رَفْعٍ أَوْ نَصْبٍ أَوْ جَرٍّ</p>
+        <p class="english-text"><strong>General Rule:</strong> Compound numbers 13-19 are indeclinable (مبني) on fatha for both parts</p>
+    </div>
+</section>
+
+<!-- Verbal Nouns Section -->
+<section id="verbal-nouns" class="section">
+    <h2 class="section-title">أَسْمَاءُ الأَفْعَالِ - Verbal Nouns (Words That Act Like Verbs)</h2>
+
+    <!-- Simple Introduction -->
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 24px;"><strong>مَا هِيَ أَسْمَاءُ الأَفْعَالِ؟</strong></p>
+        <p class="english-text" style="font-size: 20px;"><strong>What are Verbal Nouns?</strong></p>
+        <p class="english-text">Think of them as <strong>"shortcut words"</strong> - they are NOUNS (not verbs!) but they carry the MEANING of a verb.</p>
+        <p class="english-text">In English, we have similar things: "Shh!" means "Be quiet!" and "Psst!" means "Hey, listen!"</p>
+    </div>
+
+    <!-- Simple Comparison Box -->
+    <div class="rule-box">
+        <h3 style="color: #f57c00; margin-bottom: 15px; text-align: center;">🔍 Verb vs. Verbal Noun - What's the Difference?</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Regular Verb (فِعْل)</th>
+                    <th style="width: 50%;">Verbal Noun (اسْمُ فِعْل)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>أَعْطِ</strong> الكِتَابَ<br><span style="color: #666;">Give the book!</span></td>
+                    <td><strong>هَاتِ</strong> الكِتَابَ<br><span style="color: #666;">Give the book! (same meaning)</span></td>
+                </tr>
+                <tr>
+                    <td>Can change: أَعْطِ، أَعْطِي، أَعْطُوا<br><span style="color: #666;">Changes with pronouns</span></td>
+                    <td>Doesn't fully conjugate like verbs<br><span style="color: #666;">Has its own special forms</span></td>
+                </tr>
+                <tr>
+                    <td>Accepts تاء التأنيث: أَعْطَتْ<br><span style="color: #666;">Can add feminine marker</span></td>
+                    <td>Cannot add تاء التأنيث<br><span style="color: #666;">No feminine marker possible</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Three Types with Clear Examples -->
+    <h3 class="section-subtitle">الأَنْوَاعُ الثَّلَاثَةُ - The Three Types</h3>
+
+    <div class="grammar-box" style="border-right: 5px solid #4caf50;">
+        <p class="arabic-large" style="color: #2e7d32;">١. اسْمُ فِعْلٍ مَاضٍ - Past Tense Verbal Noun</p>
+        <p class="arabic-text" style="font-size: 32px; text-align: center;">هَيْهَاتَ = بَعُدَ</p>
+        <p class="english-text" style="text-align: center; font-size: 20px;"><strong>hayhāt</strong> = "It is far away!" / "No way!"</p>
+        <div class="quran-box" style="margin-top: 15px;">
+            <p class="quran-verse">هَيْهَاتَ هَيْهَاتَ لِمَا تُوعَدُونَ</p>
+            <p class="quran-reference">Far, far away is that which you are promised! - (Al-Mu'minun: 36)</p>
+        </div>
+    </div>
+
+    <div class="grammar-box" style="border-right: 5px solid #2196f3;">
+        <p class="arabic-large" style="color: #1565c0;">٢. اسْمُ فِعْلٍ مُضَارِعٍ - Present Tense Verbal Noun</p>
+        <p class="arabic-text" style="font-size: 32px; text-align: center;">أُفٍّ = أَتَضَجَّرُ</p>
+        <p class="english-text" style="text-align: center; font-size: 20px;"><strong>uff</strong> = "I am annoyed!" / "Ugh!"</p>
+        <div class="quran-box" style="margin-top: 15px;">
+            <p class="quran-verse">فَلَا تَقُل لَّهُمَا أُفٍّ</p>
+            <p class="quran-reference">Do not say to them "Uff" (a word of disrespect) - (Al-Isra: 23)</p>
+        </div>
+    </div>
+
+    <div class="grammar-box" style="border-right: 5px solid #e91e63;">
+        <p class="arabic-large" style="color: #c2185b;">٣. اسْمُ فِعْلِ أَمْرٍ - Command Verbal Noun</p>
+        <p class="arabic-text" style="font-size: 32px; text-align: center;">هَاتِ = أَعْطِ</p>
+        <p class="english-text" style="text-align: center; font-size: 20px;"><strong>hāti</strong> = "Give!" / "Hand it over!"</p>
+        <p class="english-text" style="text-align: center;">This is the main one we study in this module!</p>
+    </div>
+
+    <!-- Focus on هاتِ -->
+    <h3 class="section-subtitle">📚 تَعَلَّمْ: هَاتِ - Learn: "Give!"</h3>
+
+    <div class="mnemonic-box">
+        <div class="mnemonic-title">🎯 The Key Point</div>
+        <div class="mnemonic-content" style="font-size: 24px;">
+            <strong>هَاتِ</strong> means exactly the same as <strong>أَعْطِ</strong> (Give!)<br><br>
+            When someone says "هَاتِ الكِتَابَ" they mean "Give me the book!"<br>
+            It's just a different (shorter) way to say it!
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 22px;"><strong>لِمَاذَا نَسْتَخْدِمُ "هَاتِ" بَدَلًا مِنْ "أَعْطِ"؟</strong></p>
+        <p class="english-text"><strong>Why use "هَاتِ" instead of "أَعْطِ"?</strong></p>
+        <p class="english-text">• It's shorter and quicker to say</p>
+        <p class="english-text">• It's very common in everyday Arabic</p>
+        <p class="english-text">• It appears in the Quran and classical texts</p>
+        <p class="english-text">• Native speakers use it all the time!</p>
+    </div>
+
+    <!-- How to Use هاتِ with Different People -->
+    <h3 class="section-subtitle">كَيْفَ تَسْتَخْدِمُ "هَاتِ" - How to Use "هاتِ"</h3>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Who You're Talking To</th>
+                <th>الضَّمِيرُ</th>
+                <th>الصِّيغَةُ</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>One male (you masc.)</td>
+                <td class="pronoun-cell">أَنْتَ</td>
+                <td style="font-size: 24px; font-weight: bold; color: #5c6bc0;">هَاتِ</td>
+                <td>يَا مُحَمَّدُ، <strong>هَاتِ</strong> الكِتَابَ<br><span style="color: #666;">O Muhammad, give the book!</span></td>
+            </tr>
+            <tr>
+                <td>One female (you fem.)</td>
+                <td class="pronoun-cell">أَنْتِ</td>
+                <td style="font-size: 24px; font-weight: bold; color: #e91e63;">هَاتِي</td>
+                <td>يَا فَاطِمَةُ، <strong>هَاتِي</strong> الكِتَابَ<br><span style="color: #666;">O Fatima, give the book!</span></td>
+            </tr>
+            <tr>
+                <td>Two people (you dual)</td>
+                <td class="pronoun-cell">أَنْتُمَا</td>
+                <td style="font-size: 24px; font-weight: bold; color: #ff9800;">هَاتِيَا</td>
+                <td>يَا طَالِبَانِ، <strong>هَاتِيَا</strong> الكُتُبَ<br><span style="color: #666;">O two students, give the books!</span></td>
+            </tr>
+            <tr>
+                <td>Group of males (you pl. masc.)</td>
+                <td class="pronoun-cell">أَنْتُمْ</td>
+                <td style="font-size: 24px; font-weight: bold; color: #4caf50;">هَاتُوا</td>
+                <td>يَا أَوْلَادُ، <strong>هَاتُوا</strong> الكُتُبَ<br><span style="color: #666;">O boys, give the books!</span></td>
+            </tr>
+            <tr>
+                <td>Group of females (you pl. fem.)</td>
+                <td class="pronoun-cell">أَنْتُنَّ</td>
+                <td style="font-size: 24px; font-weight: bold; color: #9c27b0;">هَاتِينَ</td>
+                <td>يَا بَنَاتُ، <strong>هَاتِينَ</strong> الكُتُبَ<br><span style="color: #666;">O girls, give the books!</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Pattern Recognition -->
+    <div class="rule-box">
+        <h3 style="color: #f57c00; margin-bottom: 15px;">🔑 Easy Pattern to Remember</h3>
+        <p class="english-text" style="font-size: 18px;">The endings are similar to regular verb commands:</p>
+        <table class="comparison-table" style="margin-top: 15px;">
+            <tr>
+                <td><strong>Base:</strong> هَاتِ (masc. singular)</td>
+                <td>Just like: اكْتُبْ، اذْهَبْ</td>
+            </tr>
+            <tr>
+                <td><strong>+ ي</strong> = هَاتِي (fem. singular)</td>
+                <td>Just like: اكْتُبِي، اذْهَبِي</td>
+            </tr>
+            <tr>
+                <td><strong>+ ا</strong> = هَاتِيَا (dual)</td>
+                <td>Just like: اكْتُبَا، اذْهَبَا</td>
+            </tr>
+            <tr>
+                <td><strong>+ وا</strong> = هَاتُوا (masc. plural)</td>
+                <td>Just like: اكْتُبُوا، اذْهَبُوا</td>
+            </tr>
+            <tr>
+                <td><strong>+ ينَ</strong> = هَاتِينَ (fem. plural)</td>
+                <td>Just like: اكْتُبْنَ، اذْهَبْنَ</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Examples from the Dialogue -->
+    <h3 class="section-subtitle">أَمْثِلَةٌ مِنَ الحِوَارِ - Examples from the Dialogue</h3>
+
+    <div class="dialogue-box">
+        <p class="arabic-text" style="font-size: 26px;">الأُمُّ: <span style="color: #e91e63; font-weight: bold;">هَاتِي</span> الشَّايَ يَا لَيْلَى</p>
+        <p class="english-text"><strong>Mother:</strong> <span style="color: #e91e63;">Give</span> (me) the tea, O Layla!</p>
+        <p class="english-text" style="color: #666; font-style: italic;">Using هَاتِي because speaking to a female (Layla)</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text" style="font-size: 26px;">مَرْيَمُ: وَ<span style="color: #e91e63; font-weight: bold;">هَاتِي</span> قِطْعَةَ خُبْزٍ أَيْضًا</p>
+        <p class="english-text"><strong>Maryam:</strong> And <span style="color: #e91e63;">give</span> (me) a piece of bread too!</p>
+        <p class="english-text" style="color: #666; font-style: italic;">Also using هَاتِي because speaking to Layla (female)</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text" style="font-size: 26px;">سَعِيدٌ: <span style="color: #e91e63; font-weight: bold;">هَاتِي</span> ذَاكَ يَا أُمِّي</p>
+        <p class="english-text"><strong>Saeed:</strong> <span style="color: #e91e63;">Give</span> (me) that one, O mother!</p>
+        <p class="english-text" style="color: #666; font-style: italic;">Using هَاتِي because speaking to his mother (female)</p>
+    </div>
+
+    <!-- Quranic Example -->
+    <div class="quran-box">
+        <p class="quran-verse">قُلْ <span style="color: #4caf50; font-weight: bold;">هَاتُوا</span> بُرْهَانَكُمْ إِن كُنتُمْ صَادِقِينَ</p>
+        <p class="quran-reference">Say: "<strong>Bring</strong> your proof if you are truthful!" - (Al-Baqarah: 111)</p>
+        <p class="english-text" style="margin-top: 10px;">Here هَاتُوا is used because Allah is telling the Prophet to address a group (plural)</p>
+    </div>
+
+    <!-- Quick Summary -->
+    <div class="summary-box">
+        <h3>📝 Quick Summary - أسماء الأفعال</h3>
+        <ul>
+            <li><strong>What:</strong> Words that LOOK like nouns but ACT like verbs</li>
+            <li><strong>Why:</strong> They're shortcuts - shorter ways to express verb meanings</li>
+            <li><strong>Key example:</strong> هَاتِ = أَعْطِ (Give!)</li>
+            <li><strong>Three types:</strong> Past (هَيْهَاتَ), Present (أُفٍّ), Command (هَاتِ)</li>
+            <li><strong>Most important:</strong> Learn هَاتِ and its forms - you'll use it a lot!</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Inna and Anna Section -->
+<section id="inna-anna" class="section">
+    <h2 class="section-title">إِنَّ وَأَنَّ - When to Use Which?</h2>
+
+    <!-- The Problem -->
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 24px;"><strong>المُشْكِلَةُ: كَلِمَتَانِ مُتَشَابِهَتَانِ!</strong></p>
+        <p class="english-text" style="font-size: 20px;"><strong>The Problem: Two Words That Look Almost Identical!</strong></p>
+        <p class="english-text">Both إِنَّ and أَنَّ mean "indeed/that" and they look very similar. The ONLY difference is the vowel on the first letter:</p>
+        <div style="display: flex; justify-content: center; gap: 50px; margin: 20px 0;">
+            <div style="text-align: center; padding: 20px; background: #e3f2fd; border-radius: 15px;">
+                <p style="font-size: 48px; color: #1565c0; margin: 0;">إِنَّ</p>
+                <p style="font-size: 18px; color: #1565c0;"><strong>Kasra</strong> (ـِ) under the hamza</p>
+                <p style="font-size: 14px; color: #666;">Sounds like: <strong>IN-na</strong></p>
+            </div>
+            <div style="text-align: center; padding: 20px; background: #fce4ec; border-radius: 15px;">
+                <p style="font-size: 48px; color: #c2185b; margin: 0;">أَنَّ</p>
+                <p style="font-size: 18px; color: #c2185b;"><strong>Fatha</strong> (ـَ) on the hamza</p>
+                <p style="font-size: 14px; color: #666;">Sounds like: <strong>AN-na</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Simple Rule -->
+    <div class="mnemonic-box">
+        <div class="mnemonic-title">🎯 The ONE Rule You Need to Know</div>
+        <div class="mnemonic-content" style="font-size: 22px;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td style="padding: 15px; text-align: center; border-right: 2px solid #2196f3;">
+                        <span style="font-size: 28px;">قَالَ</span><br>
+                        <span style="color: #666;">(he said)</span>
+                    </td>
+                    <td style="padding: 15px; text-align: center;">
+                        <span style="font-size: 36px; color: #1565c0;">→ إِنَّ</span><br>
+                        <span style="color: #1565c0;">(with kasra)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; text-align: center; border-right: 2px solid #e91e63;">
+                        <span style="font-size: 28px;">أَظُنُّ</span><br>
+                        <span style="color: #666;">(I think)</span>
+                    </td>
+                    <td style="padding: 15px; text-align: center;">
+                        <span style="font-size: 36px; color: #c2185b;">→ أَنَّ</span><br>
+                        <span style="color: #c2185b;">(with fatha)</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Why This Rule? -->
+    <div class="rule-box">
+        <h3 style="color: #f57c00; margin-bottom: 15px;">🤔 Why Does This Rule Exist?</h3>
+        <p class="english-text" style="font-size: 18px;">Think of it like English:</p>
+        <table class="comparison-table">
+            <tr>
+                <td style="background: #e3f2fd;"><strong>قَالَ + إِنَّ</strong></td>
+                <td>= Reported speech<br>"He said <strong>that</strong> Muhammad is sick."</td>
+            </tr>
+            <tr>
+                <td style="background: #fce4ec;"><strong>أَظُنُّ + أَنَّ</strong></td>
+                <td>= Expressing a thought/belief<br>"I think <strong>that</strong> he went to Makkah."</td>
+            </tr>
+        </table>
+        <p class="english-text" style="margin-top: 15px;"><strong>In simple terms:</strong></p>
+        <p class="english-text">• <span style="color: #1565c0;"><strong>قَالَ + إِنَّ</strong></span> = "said <strong>that</strong>..." (reporting speech)</p>
+        <p class="english-text">• <span style="color: #c2185b;"><strong>أَظُنُّ + أَنَّ</strong></span> = "think <strong>that</strong>..." (expressing a thought)</p>
+    </div>
+
+    <!-- Rule 1: After قال -->
+    <h3 class="section-subtitle">📘 القَاعِدَةُ ١: بَعْدَ "قَالَ" - Rule 1: After "Said"</h3>
+
+    <div class="grammar-box" style="border-right: 5px solid #1565c0;">
+        <p class="arabic-text" style="font-size: 22px;"><strong>القَاعِدَةُ:</strong> بَعْدَ الفِعْلِ <span style="color: #1565c0; font-weight: bold;">قَالَ</span> نَسْتَخْدِمُ <span style="color: #1565c0; font-weight: bold; font-size: 28px;">إِنَّ</span></p>
+        <p class="english-text"><strong>Rule:</strong> After the verb <strong>قَالَ</strong> (said), use <strong style="color: #1565c0;">إِنَّ</strong> (with kasra)</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text" style="font-size: 28px; text-align: center;">
+            <span style="color: #4caf50;">✓</span> قَالَ الأُسْتَاذُ: <span style="color: #1565c0; font-weight: bold;">إِنَّ</span> مُحَمَّدًا مَرِيضٌ
+        </p>
+        <p class="english-text" style="text-align: center; font-size: 18px;">The teacher said <strong>that</strong> Muhammad is sick.</p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text" style="font-size: 28px; text-align: center;">
+            <span style="color: #c62828;">✗</span> قَالَ الأُسْتَاذُ <span style="color: #c62828; text-decoration: line-through;">أَنَّ</span> مُحَمَّدًا مَرِيضٌ
+        </p>
+        <p class="english-text" style="text-align: center; color: #c62828;"><strong>WRONG!</strong> Don't use أَنَّ after قَالَ</p>
+    </div>
+
+    <!-- More examples for قال -->
+    <div class="info-box">
+        <p class="english-text"><strong>More examples with قَالَ + إِنَّ:</strong></p>
+        <table class="comparison-table">
+            <tr>
+                <td class="pronoun-cell">قَالَتِ الأُمُّ: <span style="color: #1565c0;">إِنَّ</span>كَ طَالِبٌ مُجْتَهِدٌ</td>
+                <td>The mother said that you are a hardworking student.</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">قَالَ المُدَرِّسُ: <span style="color: #1565c0;">إِنَّ</span>كَ أَحْسَنُ طَالِبٍ</td>
+                <td>The teacher said that you are the best student.</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">قَالَ اللهُ: <span style="color: #1565c0;">إِنِّي</span> جَاعِلٌ فِي الأَرْضِ خَلِيفَةً</td>
+                <td>Allah said that He is placing on earth a vicegerent.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Rule 2: After أظنّ -->
+    <h3 class="section-subtitle">📙 القَاعِدَةُ ٢: بَعْدَ "أَظُنُّ" - Rule 2: After "I Think"</h3>
+
+    <div class="grammar-box" style="border-right: 5px solid #c2185b;">
+        <p class="arabic-text" style="font-size: 22px;"><strong>القَاعِدَةُ:</strong> بَعْدَ الفِعْلِ <span style="color: #c2185b; font-weight: bold;">أَظُنُّ</span> نَسْتَخْدِمُ <span style="color: #c2185b; font-weight: bold; font-size: 28px;">أَنَّ</span></p>
+        <p class="english-text"><strong>Rule:</strong> After the verb <strong>أَظُنُّ</strong> (I think), use <strong style="color: #c2185b;">أَنَّ</strong> (with fatha)</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text" style="font-size: 28px; text-align: center;">
+            <span style="color: #4caf50;">✓</span> أَظُنُّ <span style="color: #c2185b; font-weight: bold;">أَنَّ</span>كَ مُجْتَهِدٌ
+        </p>
+        <p class="english-text" style="text-align: center; font-size: 18px;">I think <strong>that</strong> you are hardworking.</p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text" style="font-size: 28px; text-align: center;">
+            <span style="color: #c62828;">✗</span> أَظُنُّ <span style="color: #c62828; text-decoration: line-through;">إِنَّ</span>كَ مُجْتَهِدٌ
+        </p>
+        <p class="english-text" style="text-align: center; color: #c62828;"><strong>WRONG!</strong> Don't use إِنَّ after أَظُنُّ</p>
+    </div>
+
+    <!-- More examples for أظنّ -->
+    <div class="info-box">
+        <p class="english-text"><strong>More examples with أَظُنُّ + أَنَّ:</strong></p>
+        <table class="comparison-table">
+            <tr>
+                <td class="pronoun-cell">أَظُنُّ <span style="color: #c2185b;">أَنَّ</span>هَا ذَهَبَتْ إِلَى مَكَّةَ</td>
+                <td>I think that she went to Makkah.</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَظُنُّ <span style="color: #c2185b;">أَنَّ</span> الدَّرْسَ سَهْلٌ</td>
+                <td>I think that the lesson is easy.</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَظُنُّ <span style="color: #c2185b;">أَنَّ</span>هُ مَرِيضٌ</td>
+                <td>I think that he is sick.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Example from the Dialogue -->
+    <h3 class="section-subtitle">📝 مِنَ الحِوَارِ - From Our Dialogue</h3>
+
+    <div class="dialogue-box">
+        <p class="arabic-text"><strong>السِّيَاقُ:</strong> الأُمُّ تَسْأَلُ عَنِ المُدِيرَةِ</p>
+        <p class="english-text"><strong>Context:</strong> The mother asks about the headmistress</p>
+    </div>
+
+    <div class="dialogue-box">
+        <p class="arabic-text" style="font-size: 24px;"><span class="speaker-a">الأُمُّ:</span> لِمَهْ؟ (لِمَاذَا لَمْ تَأْتِ المُدِيرَةُ؟)</p>
+        <p class="english-text"><strong>Mother:</strong> Why? (Why didn't the headmistress come?)</p>
+    </div>
+
+    <div class="dialogue-box" style="background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);">
+        <p class="arabic-text" style="font-size: 24px;"><span class="speaker-c">مَرْيَمُ:</span> <span style="color: #c2185b; font-weight: bold;">أَظُنُّ أَنَّ</span>هَا ذَهَبَتْ إِلَى مَكَّةَ</p>
+        <p class="english-text"><strong>Maryam:</strong> <span style="color: #c2185b;"><strong>I think that</strong></span> she went to Makkah.</p>
+        <p class="english-text" style="color: #666; font-style: italic;">→ Uses أَنَّ because it follows أَظُنُّ (expressing a thought/opinion)</p>
+    </div>
+
+    <div class="dialogue-box" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);">
+        <p class="arabic-text" style="font-size: 24px;"><span class="speaker-b">سَعِيدٌ:</span> <span style="color: #1565c0; font-weight: bold;">قَالَ</span> المُدَرِّسُ: <span style="color: #1565c0; font-weight: bold;">إِنَّ</span>كَ أَحْسَنُ طَالِبٍ فِي الفَصْلِ</p>
+        <p class="english-text"><strong>Saeed:</strong> The teacher <span style="color: #1565c0;"><strong>said that</strong></span> you are the best student in the class.</p>
+        <p class="english-text" style="color: #666; font-style: italic;">→ Uses إِنَّ because it follows قَالَ (reporting what someone said)</p>
+    </div>
+
+    <!-- Quick Decision Guide -->
+    <div class="mnemonic-box">
+        <div class="mnemonic-title">🧠 Quick Decision Guide</div>
+        <div class="mnemonic-content">
+            <p style="font-size: 20px; margin-bottom: 15px;"><strong>Ask yourself: What verb comes BEFORE?</strong></p>
+            <table style="width: 100%; font-size: 18px;">
+                <tr>
+                    <td style="padding: 10px; background: #e3f2fd; border-radius: 8px;">
+                        <strong>Is it قَالَ (said)?</strong><br>
+                        → Use <span style="color: #1565c0; font-size: 24px;"><strong>إِنَّ</strong></span>
+                    </td>
+                </tr>
+                <tr><td style="height: 10px;"></td></tr>
+                <tr>
+                    <td style="padding: 10px; background: #fce4ec; border-radius: 8px;">
+                        <strong>Is it أَظُنُّ (I think)?</strong><br>
+                        → Use <span style="color: #c2185b; font-size: 24px;"><strong>أَنَّ</strong></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Memory Trick -->
+    <div class="rule-box">
+        <h3 style="color: #f57c00; margin-bottom: 15px;">💡 Easy Memory Trick</h3>
+        <p class="english-text" style="font-size: 20px; text-align: center;">
+            <strong style="color: #1565c0;">قَالَ</strong> starts with <strong>ق</strong> (qāf) - hard sound → <strong style="color: #1565c0;">إِنَّ</strong> (kasra - hard/closed)<br><br>
+            <strong style="color: #c2185b;">أَظُنُّ</strong> starts with <strong>أ</strong> (alif) - open sound → <strong style="color: #c2185b;">أَنَّ</strong> (fatha - open)
+        </p>
+        <p class="english-text" style="text-align: center; margin-top: 15px; font-size: 18px;">
+            Or simply remember: <strong>"قَالَ = Quote = إِنَّ"</strong> and <strong>"أَظُنُّ = Think = أَنَّ"</strong>
+        </p>
+    </div>
+
+    <!-- Quranic Examples -->
+    <h3 class="section-subtitle">📖 أَمْثِلَةٌ مِنَ القُرْآنِ - Quranic Examples</h3>
+
+    <div class="info-box" style="margin-bottom: 20px;">
+        <p class="english-text"><strong>Note:</strong> In Quranic translations, إِنَّ is often rendered as "Indeed" for emphasis and formal style. In everyday speech, we translate قَالَ إِنَّ as "said that..."</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-verse">وَإِذِ ابْتَلَىٰ إِبْرَاهِيمَ رَبُّهُ بِكَلِمَاتٍ فَأَتَمَّهُنَّ ۖ <span style="color: #1565c0; font-weight: bold;">قَالَ إِنِّي</span> جَاعِلُكَ لِلنَّاسِ إِمَامًا</p>
+        <p class="quran-reference">And when Abraham was tested by his Lord... <span style="color: #1565c0;"><strong>He said</strong></span> (that) He is making him a leader for mankind. - (Al-Baqarah: 124)</p>
+        <p class="english-text" style="margin-top: 10px;">→ <strong>قَالَ</strong> is followed by <strong style="color: #1565c0;">إِنِّي</strong> (إِنَّ + ي)</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-verse"><span style="color: #1565c0; font-weight: bold;">قَالَ إِنِّي</span> عَبْدُ اللَّهِ</p>
+        <p class="quran-reference"><span style="color: #1565c0;"><strong>He (Jesus) said</strong></span> (that) he is the servant of Allah. - (Maryam: 30)</p>
+        <p class="english-text" style="margin-top: 10px;">→ Baby Jesus speaks! <strong>قَالَ</strong> + <strong style="color: #1565c0;">إِنِّي</strong></p>
+    </div>
+
+    <div class="quran-box">
+        <p class="quran-verse">وَ<span style="color: #1565c0; font-weight: bold;">إِنَّ</span>هَا لَكَبِيرَةٌ إِلَّا عَلَى الْخَاشِعِينَ</p>
+        <p class="quran-reference">And <span style="color: #1565c0;"><strong>indeed</strong></span>, it is difficult except for the humbly submissive. - (Al-Baqarah: 45)</p>
+        <p class="english-text" style="margin-top: 10px;">→ إِنَّ at the start of a sentence (emphasizing a fact - here "Indeed" is appropriate)</p>
+    </div>
+
+    <!-- Common Mistakes -->
+    <div class="warning-box">
+        <h3 style="color: #c62828; margin-bottom: 15px;">⚠️ Common Mistakes to Avoid</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th style="background: #ffcdd2;">❌ Wrong</th>
+                    <th style="background: #c8e6c9;">✓ Correct</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>قَالَ <span style="color: #c62828; text-decoration: line-through;">أَنَّ</span>هُ مَرِيضٌ</td>
+                    <td>قَالَ <span style="color: #4caf50; font-weight: bold;">إِنَّ</span>هُ مَرِيضٌ</td>
+                </tr>
+                <tr>
+                    <td>أَظُنُّ <span style="color: #c62828; text-decoration: line-through;">إِنَّ</span>كَ صَادِقٌ</td>
+                    <td>أَظُنُّ <span style="color: #4caf50; font-weight: bold;">أَنَّ</span>كَ صَادِقٌ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-box">
+        <h3>📝 Quick Summary - إِنَّ vs أَنَّ</h3>
+        <ul>
+            <li><strong>قَالَ + إِنَّ</strong> (kasra) = "said <strong>that</strong>..." → Used after <strong>قَالَ</strong> (said)</li>
+            <li><strong>أَظُنُّ + أَنَّ</strong> (fatha) = "think <strong>that</strong>..." → Used after <strong>أَظُنُّ</strong> (I think)</li>
+            <li><strong>Memory trick:</strong> قَالَ = Quote = إِنَّ | أَظُنُّ = Think = أَنَّ</li>
+            <li><strong>The difference:</strong> Only the vowel on the hamza (ـِ vs ـَ)</li>
+            <li><strong>Key point:</strong> Look at the verb BEFORE to decide which one to use!</li>
+            <li><strong>Translation:</strong> Both translate as "that" in English (not "Indeed" in everyday speech)</li>
+        </ul>
+    </div>
+</section>
+
+<!-- I'rab of Ayy Section -->
+<section id="irab-ayy" class="section">
+    <h2 class="section-title">إِعْرَابُ أَيٍّ الاسْتِفْهَامِيَّةِ - I'rab of Interrogative أيّ</h2>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>تَعْرِيفٌ:</strong> أَيٌّ اسْمُ اسْتِفْهَامٍ، وَتُعْرَبُ بِالحَرَكَاتِ الثَّلَاثَةِ (الضَّمَّةِ وَالفَتْحَةِ وَالكَسْرَةِ)</p>
+        <p class="english-text"><strong>Definition:</strong> أيّ is an interrogative noun meaning "which/what". Unlike other interrogative words, it is FULLY DECLINABLE with all three case endings:</p>
+        <p class="english-text">• <strong>Damma (ـُ)</strong> - Nominative case (مرفوع)</p>
+        <p class="english-text">• <strong>Fatha (ـَ)</strong> - Accusative case (منصوب)</p>
+        <p class="english-text">• <strong>Kasra (ـِ)</strong> - Genitive case (مجرور)</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text"><strong>قَاعِدَةٌ مُهِمَّةٌ:</strong> الاسْمُ الَّذِي يَأْتِي بَعْدَ (أَيٍّ) يُعْرَبُ دَائِمًا <span style="font-weight: bold; color: #c62828;">مُضَافًا إِلَيْهِ مَجْرُورًا</span></p>
+        <p class="english-text"><strong>Important Rule:</strong> The noun that comes after أيّ is ALWAYS مضاف إليه (in genitive case, مجرور)</p>
+    </div>
+
+    <h3 class="section-subtitle">مَتَى تُعْرَبُ أَيٌّ مُبْتَدَأً مَرْفُوعًا؟</h3>
+    <p class="english-text" style="font-size: 20px; text-align: center; margin-bottom: 20px;">When is أيّ parsed as مبتدأ (subject/topic) in the nominative case (مرفوع)?</p>
+
+    <div class="irab-box">
+        <div class="irab-title">📚 الحَالَةُ الأُولَى - Case 1: After Intransitive Verb</div>
+        <p class="arabic-text"><strong>إِذَا أَتَى بَعْدَهَا فِعْلٌ لَازِمٌ</strong></p>
+        <p class="english-text">When followed by an <strong>intransitive verb</strong> (a verb that doesn't take a direct object)</p>
+        <div class="grammar-box">
+            <p class="arabic-large" style="text-align: center;">أَيُّ رَجُلٍ ذَهَبَ؟</p>
+            <p class="english-text" style="text-align: center; font-size: 20px;"><strong>Which man went?</strong></p>
+            <p class="arabic-text"><strong>الإِعْرَابُ:</strong></p>
+            <p class="arabic-text">• <span style="color: #5c6bc0; font-weight: bold;">أَيُّ:</span> اسْمُ اسْتِفْهَامٍ مُبْتَدَأٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ، وَهُوَ مُضَافٌ</p>
+            <p class="english-text">• <strong>أَيُّ:</strong> Interrogative noun, subject (مبتدأ), nominative (مرفوع), sign of its nominative is damma, and it is مضاف</p>
+            <p class="arabic-text">• <span style="color: #e91e63; font-weight: bold;">رَجُلٍ:</span> مُضَافٌ إِلَيْهِ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ</p>
+            <p class="english-text">• <strong>رَجُلٍ:</strong> مضاف إليه, genitive (مجرور), sign of its genitive is kasra</p>
+            <p class="arabic-text">• <span style="color: #2e7d32; font-weight: bold;">ذَهَبَ:</span> فِعْلٌ مَاضٍ، وَالفَاعِلُ ضَمِيرٌ مُسْتَتِرٌ، وَالجُمْلَةُ الفِعْلِيَّةُ فِي مَحَلِّ رَفْعٍ خَبَرٌ</p>
+            <p class="english-text">• <strong>ذَهَبَ:</strong> Past tense verb, subject is hidden pronoun, the verbal sentence is the predicate (خبر)</p>
+        </div>
+    </div>
+
+    <div class="irab-box">
+        <div class="irab-title">📚 الحَالَةُ الثَّانِيَةُ - Case 2: After Transitive Verb with Object</div>
+        <p class="arabic-text"><strong>إِذَا جَاءَ بَعْدَهَا فِعْلٌ مُتَعَدٍّ اسْتَوْفَى مَفْعُولَهُ</strong></p>
+        <p class="english-text">When followed by a <strong>transitive verb that already has its object</strong></p>
+        <div class="grammar-box">
+            <p class="arabic-large" style="text-align: center;">أَيُّ رَجُلٍ قَرَأَ الكِتَابَ؟</p>
+            <p class="english-text" style="text-align: center; font-size: 20px;"><strong>Which man read the book?</strong></p>
+            <p class="arabic-text"><strong>الإِعْرَابُ:</strong></p>
+            <p class="arabic-text">• <span style="color: #5c6bc0; font-weight: bold;">أَيُّ:</span> مُبْتَدَأٌ مَرْفُوعٌ (لِأَنَّ الفِعْلَ قَدِ اسْتَوْفَى مَفْعُولَهُ "الكِتَابَ")</p>
+            <p class="english-text">• <strong>أَيُّ:</strong> Subject (مبتدأ), nominative - because the verb already has its object "الكتاب"</p>
+            <p class="arabic-text">• <span style="color: #e91e63; font-weight: bold;">الكِتَابَ:</span> مَفْعُولٌ بِهِ مَنْصُوبٌ</p>
+            <p class="english-text">• <strong>الكِتَابَ:</strong> Direct object (مفعول به), accusative (منصوب)</p>
+        </div>
+    </div>
+
+    <div class="irab-box">
+        <div class="irab-title">📚 الحَالَةُ الثَّالِثَةُ - Case 3: After كان وأخواتها</div>
+        <p class="arabic-text"><strong>إِذَا أَتَى بَعْدَهَا فِعْلٌ نَاقِصٌ (كَانَ وَأَخَوَاتُهَا)</strong></p>
+        <p class="english-text">When followed by an <strong>incomplete verb (كان and its sisters)</strong></p>
+        <div class="grammar-box">
+            <p class="arabic-large" style="text-align: center;">أَيُّ طَالِبٍ كَانَ صَدِيقًا لَكَ؟</p>
+            <p class="english-text" style="text-align: center; font-size: 20px;"><strong>Which student was a friend to you?</strong></p>
+            <p class="arabic-text"><strong>الإِعْرَابُ:</strong></p>
+            <p class="arabic-text">• <span style="color: #5c6bc0; font-weight: bold;">أَيُّ:</span> مُبْتَدَأٌ مَرْفُوعٌ</p>
+            <p class="english-text">• <strong>أَيُّ:</strong> Subject (مبتدأ), nominative</p>
+            <p class="arabic-text">• <span style="color: #e91e63; font-weight: bold;">طَالِبٍ:</span> مُضَافٌ إِلَيْهِ مَجْرُورٌ</p>
+            <p class="english-text">• <strong>طَالِبٍ:</strong> مضاف إليه, genitive</p>
+            <p class="arabic-text">• <span style="color: #2e7d32; font-weight: bold;">كَانَ:</span> فِعْلٌ مَاضٍ نَاقِصٌ، وَاسْمُهُ ضَمِيرٌ مُسْتَتِرٌ</p>
+            <p class="english-text">• <strong>كَانَ:</strong> Incomplete past verb, its noun (اسم كان) is a hidden pronoun</p>
+            <p class="arabic-text">• <span style="color: #ff9800; font-weight: bold;">صَدِيقًا:</span> خَبَرُ كَانَ مَنْصُوبٌ</p>
+            <p class="english-text">• <strong>صَدِيقًا:</strong> Predicate of كان (خبر كان), accusative</p>
+        </div>
+    </div>
+
+    <div class="irab-box">
+        <div class="irab-title">📚 الحَالَةُ الرَّابِعَةُ - Case 4: After a Complete Sentence</div>
+        <p class="arabic-text"><strong>إِذَا أَتَى بَعْدَهَا جُمْلَةٌ (اسْمِيَّةٌ)</strong></p>
+        <p class="english-text">When followed by a <strong>complete sentence</strong> (nominal sentence)</p>
+        <div class="grammar-box">
+            <p class="arabic-large" style="text-align: center;">أَيُّ تِلْمِيذٍ هُوَ الفَائِزُ؟</p>
+            <p class="english-text" style="text-align: center; font-size: 20px;"><strong>Which student is the winner?</strong></p>
+            <p class="arabic-text"><strong>الإِعْرَابُ:</strong></p>
+            <p class="arabic-text">• <span style="color: #5c6bc0; font-weight: bold;">أَيُّ:</span> مُبْتَدَأٌ أَوَّلُ مَرْفُوعٌ</p>
+            <p class="english-text">• <strong>أَيُّ:</strong> First subject (مبتدأ أول), nominative</p>
+            <p class="arabic-text">• <span style="color: #e91e63; font-weight: bold;">هُوَ:</span> ضَمِيرٌ مُنْفَصِلٌ مُبْتَدَأٌ ثَانٍ</p>
+            <p class="english-text">• <strong>هُوَ:</strong> Separate pronoun, second subject (مبتدأ ثان)</p>
+            <p class="arabic-text">• <span style="color: #2e7d32; font-weight: bold;">الفَائِزُ:</span> خَبَرُ المُبْتَدَأِ الثَّانِي، وَالجُمْلَةُ خَبَرُ المُبْتَدَأِ الأَوَّلِ</p>
+            <p class="english-text">• <strong>الفَائِزُ:</strong> Predicate of second subject; the whole sentence is predicate of first subject</p>
+        </div>
+    </div>
+
+    <div class="irab-box">
+        <div class="irab-title">📚 الحَالَةُ الخَامِسَةُ - Case 5: After شبه جملة (Semi-sentence)</div>
+        <p class="arabic-text"><strong>إِذَا أَتَى بَعْدَهَا شِبْهُ جُمْلَةٍ (جَارٌّ وَمَجْرُورٌ أَوْ ظَرْفٌ)</strong></p>
+        <p class="english-text">When followed by a <strong>semi-sentence</strong> (prepositional phrase or adverb)</p>
+        <div class="grammar-box">
+            <p class="arabic-large" style="text-align: center;">أَيُّ الأَصْدِقَاءِ عِنْدَكَ؟</p>
+            <p class="english-text" style="text-align: center; font-size: 20px;"><strong>Which of the friends is with you?</strong></p>
+            <p class="arabic-text"><strong>الإِعْرَابُ:</strong></p>
+            <p class="arabic-text">• <span style="color: #5c6bc0; font-weight: bold;">أَيُّ:</span> مُبْتَدَأٌ مَرْفُوعٌ</p>
+            <p class="english-text">• <strong>أَيُّ:</strong> Subject (مبتدأ), nominative</p>
+            <p class="arabic-text">• <span style="color: #e91e63; font-weight: bold;">الأَصْدِقَاءِ:</span> مُضَافٌ إِلَيْهِ مَجْرُورٌ</p>
+            <p class="english-text">• <strong>الأَصْدِقَاءِ:</strong> مضاف إليه, genitive</p>
+            <p class="arabic-text">• <span style="color: #2e7d32; font-weight: bold;">عِنْدَكَ:</span> ظَرْفٌ مُتَعَلِّقٌ بِمَحْذُوفٍ خَبَرٌ</p>
+            <p class="english-text">• <strong>عِنْدَكَ:</strong> Adverb of place, connected to an omitted predicate (خبر)</p>
+        </div>
+        <div class="grammar-box">
+            <p class="arabic-large" style="text-align: center;">أَيُّ هَذِهِ الكُتُبِ لَكَ؟</p>
+            <p class="english-text" style="text-align: center; font-size: 20px;"><strong>Which of these books is yours?</strong></p>
+            <p class="arabic-text">• <span style="color: #2e7d32; font-weight: bold;">لَكَ:</span> جَارٌّ وَمَجْرُورٌ مُتَعَلِّقٌ بِمَحْذُوفٍ خَبَرٌ</p>
+            <p class="english-text">• <strong>لَكَ:</strong> Prepositional phrase (لـ + كَ), connected to an omitted predicate</p>
+        </div>
+    </div>
+
+    <div class="irab-box">
+        <div class="irab-title">📚 الحَالَةُ السَّادِسَةُ - Case 6: After a Noun</div>
+        <p class="arabic-text"><strong>إِذَا أَتَى بَعْدَهَا اسْمٌ</strong></p>
+        <p class="english-text">When followed by a <strong>noun</strong> (that serves as the predicate)</p>
+        <div class="grammar-box">
+            <p class="arabic-large" style="text-align: center;">أَيُّ الأَصْدِقَاءِ أَفْضَلُ؟</p>
+            <p class="english-text" style="text-align: center; font-size: 20px;"><strong>Which of the friends is best?</strong></p>
+            <p class="arabic-text"><strong>الإِعْرَابُ:</strong></p>
+            <p class="arabic-text">• <span style="color: #5c6bc0; font-weight: bold;">أَيُّ:</span> مُبْتَدَأٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ</p>
+            <p class="english-text">• <strong>أَيُّ:</strong> Subject (مبتدأ), nominative, sign is damma</p>
+            <p class="arabic-text">• <span style="color: #e91e63; font-weight: bold;">الأَصْدِقَاءِ:</span> مُضَافٌ إِلَيْهِ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ</p>
+            <p class="english-text">• <strong>الأَصْدِقَاءِ:</strong> مضاف إليه, genitive, sign is kasra</p>
+            <p class="arabic-text">• <span style="color: #2e7d32; font-weight: bold;">أَفْضَلُ:</span> خَبَرٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ</p>
+            <p class="english-text">• <strong>أَفْضَلُ:</strong> Predicate (خبر), nominative, sign is damma</p>
+        </div>
+    </div>
+
+    <h3 class="section-subtitle">مَتَى تُعْرَبُ أَيٌّ مَفْعُولًا بِهِ؟</h3>
+    <p class="english-text" style="font-size: 20px; text-align: center; margin-bottom: 20px;">When is أيّ parsed as مفعول به (direct object) in the accusative case?</p>
+
+    <div class="irab-box">
+        <div class="irab-title">📚 أَيٌّ كَمَفْعُولٍ بِهِ - أيّ as Direct Object</div>
+        <p class="arabic-text"><strong>إِذَا جَاءَ بَعْدَهَا فِعْلٌ مُتَعَدٍّ لَمْ يَسْتَوْفِ مَفْعُولَهُ</strong></p>
+        <p class="english-text">When followed by a <strong>transitive verb that hasn't taken its object yet</strong></p>
+        <div class="grammar-box">
+            <p class="arabic-large" style="text-align: center;">أَيَّ كِتَابٍ قَرَأْتَ؟</p>
+            <p class="english-text" style="text-align: center; font-size: 20px;"><strong>Which book did you read?</strong></p>
+            <p class="arabic-text"><strong>الإِعْرَابُ:</strong></p>
+            <p class="arabic-text">• <span style="color: #5c6bc0; font-weight: bold;">أَيَّ:</span> اسْمُ اسْتِفْهَامٍ مَفْعُولٌ بِهِ مُقَدَّمٌ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ</p>
+            <p class="english-text">• <strong>أَيَّ:</strong> Interrogative noun, fronted direct object (مفعول به مقدم), accusative, sign is fatha</p>
+            <p class="arabic-text">• <span style="color: #e91e63; font-weight: bold;">كِتَابٍ:</span> مُضَافٌ إِلَيْهِ مَجْرُورٌ</p>
+            <p class="english-text">• <strong>كِتَابٍ:</strong> مضاف إليه, genitive</p>
+            <p class="arabic-text">• <span style="color: #2e7d32; font-weight: bold;">قَرَأْتَ:</span> فِعْلٌ مَاضٍ، وَالتَّاءُ فَاعِلٌ</p>
+            <p class="english-text">• <strong>قَرَأْتَ:</strong> Past verb + تَ is the subject (فاعل)</p>
+        </div>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text"><strong>تَنْبِيهٌ مُهِمٌّ:</strong> لَاحِظِ الفَرْقَ بَيْنَ:</p>
+        <p class="arabic-text">• أَيُّ رَجُلٍ قَرَأَ <span style="color: #5c6bc0; font-weight: bold;">الكِتَابَ</span>؟ ← أَيُّ = مُبْتَدَأٌ (لِأَنَّ المَفْعُولَ مَوْجُودٌ)</p>
+        <p class="english-text">Which man read <strong>the book</strong>? → أيُّ = subject (because object exists)</p>
+        <p class="arabic-text">• أَيَّ كِتَابٍ قَرَأْتَ؟ ← أَيَّ = مَفْعُولٌ بِهِ (لِأَنَّ الفِعْلَ يَحْتَاجُ مَفْعُولًا)</p>
+        <p class="english-text">Which book did you read? → أيَّ = object (because verb needs an object)</p>
+    </div>
+
+    <div class="mnemonic-box">
+        <div class="mnemonic-title">🧠 طَرِيقَةٌ لِلتَّذَكُّرِ - Memory Trick</div>
+        <div class="mnemonic-content">
+            <strong>لِتَحْدِيدِ إِعْرَابِ "أَيٍّ"، اسْأَلْ:</strong><br>
+            هَلِ الفِعْلُ يَحْتَاجُ مَفْعُولًا؟<br><br>
+            <span style="color: #4caf50;">نَعَمْ ← أَيَّ (مَفْعُولٌ بِهِ مَنْصُوبٌ)</span><br>
+            <span style="color: #2196f3;">لَا ← أَيُّ (مُبْتَدَأٌ مَرْفُوعٌ)</span>
+        </div>
+        <p class="english-text" style="text-align: center; margin-top: 15px;">
+            <strong>To determine the I'rab of أيّ, ask:</strong> Does the verb need an object?<br>
+            YES → أيَّ (accusative, مفعول به) | NO → أيُّ (nominative, مبتدأ)
+        </p>
+    </div>
+
+    <div class="rule-box">
+        <h3 style="color: #f57c00; margin-bottom: 15px;">خُلَاصَةُ إِعْرَابِ أَيٍّ - Summary of I'rab of أيّ</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>الحَالَةُ</th>
+                    <th>الإِعْرَابُ</th>
+                    <th>English</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>بَعْدَ فِعْلٍ لَازِمٍ</td>
+                    <td class="pronoun-cell">مُبْتَدَأٌ مَرْفُوعٌ</td>
+                    <td>Subject (nominative)</td>
+                </tr>
+                <tr>
+                    <td>بَعْدَ فِعْلٍ مُتَعَدٍّ + مَفْعُول</td>
+                    <td class="pronoun-cell">مُبْتَدَأٌ مَرْفُوعٌ</td>
+                    <td>Subject (nominative)</td>
+                </tr>
+                <tr>
+                    <td>بَعْدَ كَانَ وَأَخَوَاتِهَا</td>
+                    <td class="pronoun-cell">مُبْتَدَأٌ مَرْفُوعٌ</td>
+                    <td>Subject (nominative)</td>
+                </tr>
+                <tr>
+                    <td>بَعْدَ جُمْلَةٍ</td>
+                    <td class="pronoun-cell">مُبْتَدَأٌ مَرْفُوعٌ</td>
+                    <td>Subject (nominative)</td>
+                </tr>
+                <tr>
+                    <td>بَعْدَ شِبْهِ جُمْلَةٍ</td>
+                    <td class="pronoun-cell">مُبْتَدَأٌ مَرْفُوعٌ</td>
+                    <td>Subject (nominative)</td>
+                </tr>
+                <tr>
+                    <td>بَعْدَ اسْمٍ (خَبَر)</td>
+                    <td class="pronoun-cell">مُبْتَدَأٌ مَرْفُوعٌ</td>
+                    <td>Subject (nominative)</td>
+                </tr>
+                <tr>
+                    <td>بَعْدَ فِعْلٍ مُتَعَدٍّ بِدُونِ مَفْعُول</td>
+                    <td style="background: #ffcdd2; font-weight: bold; color: #c62828;">مَفْعُولٌ بِهِ مَنْصُوبٌ</td>
+                    <td>Object (accusative)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Flashcards Section -->
+<section id="flashcards" class="section">
+    <h2 class="section-title">البِطَاقَاتُ التَّعْلِيمِيَّةُ - Flashcards</h2>
+    <p class="english-text" style="text-align: center; margin-bottom: 20px;">Click the cards to flip them and test your knowledge!</p>
+
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">شَكَرَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">He thanked</div>
+                    <div class="flashcard-translit">shakara</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">هَاتِ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Give! (verbal noun)</div>
+                    <div class="flashcard-translit">hāti</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">أَحَدَ عَشَرَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Eleven (masc.)</div>
+                    <div class="flashcard-translit">aḥada ʿashara</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">إِحْدَى عَشْرَةَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Eleven (fem.)</div>
+                    <div class="flashcard-translit">iḥdā ʿashrata</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">اثْنَا عَشَرَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Twelve (masc.)</div>
+                    <div class="flashcard-translit">ithnā ʿashara</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">ثَلَاثَةَ عَشَرَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Thirteen (masc.)</div>
+                    <div class="flashcard-translit">thalāthata ʿashara</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">نِعْمَة</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Blessing/Favor</div>
+                    <div class="flashcard-translit">niʿmah</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">أَظُنُّ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">I think/suppose</div>
+                    <div class="flashcard-translit">aẓunnu</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">رَكْعَة</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Unit of prayer</div>
+                    <div class="flashcard-translit">rakʿah</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">صَفْحَة</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Page</div>
+                    <div class="flashcard-translit">ṣafḥah</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">مُجْتَهِد</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Hardworking/Diligent</div>
+                    <div class="flashcard-translit">mujtahid</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">سُورَة</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Chapter (of Quran)</div>
+                    <div class="flashcard-translit">sūrah</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Memory Game Section -->
+<section id="memory-game" class="section">
+    <h2 class="section-title">لُعْبَةُ الذَّاكِرَةِ - Memory Game</h2>
+    <p class="english-text" style="text-align: center;">Match the Arabic numbers with their English meanings!</p>
+
+    <div class="memory-score">
+        المُحَاوَلَاتُ: <span id="memoryMoves">0</span> | الأَزْوَاجُ: <span id="memoryPairs">0</span>/6
+    </div>
+
+    <div class="memory-game" id="memoryGame">
+        <!-- Cards will be generated by JavaScript -->
+    </div>
+
+    <div style="text-align: center;">
+        <button class="reset-btn" onclick="initMemoryGame()">إِعَادَةُ اللُّعْبَةِ - Restart Game</button>
+    </div>
+</section>
+
+<!-- Exercises Section -->
+<section id="exercises" class="exercise-section">
+    <h2 class="exercise-section-title">تَمَارِينُ الوَحْدَةِ السَّابِعَةَ عَشْرَةَ - Module 17 Exercises</h2>
+
+    <div class="score-display" id="scoreDisplay">
+        أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions
+    </div>
+
+    <!-- Category 1: تصريف شَكَرَ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">١. تَصْرِيفُ الفِعْلِ شَكَرَ - Verb Conjugation</h3>
+
+        <div class="exercise-item" id="q1">
+            <p class="exercise-question">أَكْمِلِ الفَرَاغَ: نَحْنُ _____ اللهَ عَلَى نِعَمِهِ (المضارع)</p>
+            <button class="translate-btn" onclick="toggleTranslation('trans1')">Show English</button>
+            <div class="translation-text" id="trans1">Complete: We _____ Allah for His blessings (present tense)</div>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q1', 0, 1)">أَشْكُرُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 1, 1)">نَشْكُرُ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 2, 1)">يَشْكُرُونَ</button>
+                <button class="option-btn" onclick="checkAnswer('q1', 3, 1)">تَشْكُرُونَ</button>
+            </div>
+            <button class="translate-btn" onclick="toggleTranslation('opts1')" style="margin-top: 10px;">Show Options in English</button>
+            <div class="translation-text" id="opts1">
+                • أَشْكُرُ = I thank<br>
+                • نَشْكُرُ = We thank<br>
+                • يَشْكُرُونَ = They (masc.) thank<br>
+                • تَشْكُرُونَ = You all (masc.) thank
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: نَشْكُرُ</strong></p>
+                <p>الضَّمِيرُ "نَحْنُ" لِلْمُتَكَلِّمِينَ، فَيَكُونُ المُضَارِعُ "نَشْكُرُ" بِحَرْفِ المُضَارَعَةِ "نَـ".</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q2">
+            <p class="exercise-question">مَا هُوَ فِعْلُ الأَمْرِ مِنْ "شَكَرَ" لِلضَّمِيرِ "أَنْتُمْ"؟</p>
+            <button class="translate-btn" onclick="toggleTranslation('trans2')">Show English</button>
+            <div class="translation-text" id="trans2">What is the command form of "شَكَرَ" (to thank) for the pronoun "أَنْتُمْ" (you all, masc.)?</div>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q2', 0, 2)">اشْكُرْ</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 1, 2)">اشْكُرِي</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 2, 2)">اشْكُرُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q2', 3, 2)">اشْكُرَا</button>
+            </div>
+            <button class="translate-btn" onclick="toggleTranslation('opts2')" style="margin-top: 10px;">Show Options in English</button>
+            <div class="translation-text" id="opts2">
+                • اشْكُرْ = Thank! (you masc. sing.)<br>
+                • اشْكُرِي = Thank! (you fem. sing.)<br>
+                • اشْكُرُوا = Thank! (you all masc.)<br>
+                • اشْكُرَا = Thank! (you two/dual)
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: اشْكُرُوا</strong></p>
+                <p>فِعْلُ الأَمْرِ لِجَمْعِ المُذَكَّرِ (أَنْتُمْ) يَكُونُ "اشْكُرُوا" مَعَ وَاوِ الجَمَاعَةِ.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 2: الأعداد المركبة -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٢. الأَعْدَادُ المُرَكَّبَةُ - Compound Numbers</h3>
+
+        <div class="exercise-item" id="q3">
+            <p class="exercise-question">كَيْفَ نَقُولُ "١٣ طَالِبَة" بِالعَرَبِيَّةِ؟</p>
+            <button class="translate-btn" onclick="toggleTranslation('trans3')">Show English</button>
+            <div class="translation-text" id="trans3">How do we say "13 female students" in Arabic?</div>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q3', 0, 0)">ثَلَاثَ عَشْرَةَ طَالِبَةً</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 1, 0)">ثَلَاثَةَ عَشَرَ طَالِبَةً</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 2, 0)">ثَلَاثَ عَشَرَ طَالِبَةً</button>
+                <button class="option-btn" onclick="checkAnswer('q3', 3, 0)">ثَلَاثَةَ عَشْرَةَ طَالِبَةً</button>
+            </div>
+            <button class="translate-btn" onclick="toggleTranslation('opts3')" style="margin-top: 10px;">Show Options in English</button>
+            <div class="translation-text" id="opts3">
+                • ثَلَاثَ عَشْرَةَ = 13 (fem. form - 1st disagrees, 2nd agrees)<br>
+                • ثَلَاثَةَ عَشَرَ = 13 (masc. form - 1st disagrees, 2nd agrees)<br>
+                • ثَلَاثَ عَشَرَ = Mixed (incorrect combination)<br>
+                • ثَلَاثَةَ عَشْرَةَ = Mixed (incorrect combination)
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: ثَلَاثَ عَشْرَةَ طَالِبَةً</strong></p>
+                <p>المَعْدُودُ (طَالِبَة) مُؤَنَّثٌ، فَالجُزْءُ الأَوَّلُ يُخَالِفُ (ثَلَاث - بِدُونِ تَاء) وَالجُزْءُ الثَّانِي يُوَافِقُ (عَشْرَة - بِالتَّاءِ).</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q4">
+            <p class="exercise-question">مَا الفَرْقُ بَيْنَ العَدَدَيْنِ (١١، ١٢) وَالأَعْدَادِ (١٣-١٩) مِنْ حَيْثُ المُوَافَقَةُ وَالمُخَالَفَةُ؟</p>
+            <button class="translate-btn" onclick="toggleTranslation('trans4')">Show English</button>
+            <div class="translation-text" id="trans4">What is the difference between numbers (11, 12) and numbers (13-19) in terms of agreement and disagreement with the counted noun?</div>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q4', 0, 0)">(١١، ١٢) كِلَا الجُزْأَيْنِ يُوَافِقَانِ، (١٣-١٩) الأَوَّلُ يُخَالِفُ وَالثَّانِي يُوَافِقُ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 1, 0)">كُلُّهَا تُوَافِقُ المَعْدُودَ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 2, 0)">كُلُّهَا تُخَالِفُ المَعْدُودَ</button>
+                <button class="option-btn" onclick="checkAnswer('q4', 3, 0)">(١١، ١٢) تُخَالِفُ، (١٣-١٩) تُوَافِقُ</button>
+            </div>
+            <button class="translate-btn" onclick="toggleTranslation('opts4')" style="margin-top: 10px;">Show Options in English</button>
+            <div class="translation-text" id="opts4">
+                • (11,12) both parts agree, (13-19) first disagrees, second agrees<br>
+                • All of them agree with the counted noun<br>
+                • All of them disagree with the counted noun<br>
+                • (11,12) disagree, (13-19) agree
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: (١١، ١٢) كِلَا الجُزْأَيْنِ يُوَافِقَانِ، (١٣-١٩) الأَوَّلُ يُخَالِفُ وَالثَّانِي يُوَافِقُ</strong></p>
+                <p>هَذِهِ قَاعِدَةٌ مُهِمَّةٌ فِي الأَعْدَادِ المُرَكَّبَةِ.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 3: أسماء الأفعال -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٣. أَسْمَاءُ الأَفْعَالِ - Verbal Nouns</h3>
+
+        <div class="exercise-item" id="q5">
+            <p class="exercise-question">مَا مَعْنَى "هَاتِ" فِي اللُّغَةِ العَرَبِيَّةِ؟</p>
+            <button class="translate-btn" onclick="toggleTranslation('trans5')">Show English</button>
+            <div class="translation-text" id="trans5">What is the meaning of "هَاتِ" in Arabic?</div>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q5', 0, 1)">خُذْ (Take)</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 1, 1)">أَعْطِ (Give)</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 2, 1)">اذْهَبْ (Go)</button>
+                <button class="option-btn" onclick="checkAnswer('q5', 3, 1)">تَعَالَ (Come)</button>
+            </div>
+            <button class="translate-btn" onclick="toggleTranslation('opts5')" style="margin-top: 10px;">Show Options in English</button>
+            <div class="translation-text" id="opts5">
+                • خُذْ = Take!<br>
+                • أَعْطِ = Give!<br>
+                • اذْهَبْ = Go!<br>
+                • تَعَالَ = Come!
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: أَعْطِ (Give)</strong></p>
+                <p>هَاتِ = أَعْطِ، وَهُوَ اسْمُ فِعْلِ أَمْرٍ مَبْنِيٌّ عَلَى الكَسْرِ.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q6">
+            <p class="exercise-question">كَيْفَ نَقُولُ "هَاتِ" لِجَمَاعَةِ الذُّكُورِ؟</p>
+            <button class="translate-btn" onclick="toggleTranslation('trans6')">Show English</button>
+            <div class="translation-text" id="trans6">How do we say "هَاتِ" (give!) to a group of males?</div>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q6', 0, 1)">هَاتِي</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 1, 1)">هَاتُوا</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 2, 1)">هَاتِينَ</button>
+                <button class="option-btn" onclick="checkAnswer('q6', 3, 1)">هَاتِيَا</button>
+            </div>
+            <button class="translate-btn" onclick="toggleTranslation('opts6')" style="margin-top: 10px;">Show Options in English</button>
+            <div class="translation-text" id="opts6">
+                • هَاتِي = Give! (to one female)<br>
+                • هَاتُوا = Give! (to a group of males)<br>
+                • هَاتِينَ = Give! (to a group of females)<br>
+                • هَاتِيَا = Give! (to two people/dual)
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: هَاتُوا</strong></p>
+                <p>عِنْدَ اتِّصَالِ وَاوِ الجَمَاعَةِ بِـ"هَاتِ" تُصْبِحُ "هَاتُوا" مَبْنِيَّةً عَلَى الضَّمِّ.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 4: إنّ وأنّ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٤. إِنَّ وَأَنَّ - Inna and Anna</h3>
+
+        <div class="exercise-item" id="q7">
+            <p class="exercise-question">أَكْمِلْ: قَالَ المُدَرِّسُ _____ الدَّرْسَ سَهْلٌ</p>
+            <button class="translate-btn" onclick="toggleTranslation('trans7')">Show English</button>
+            <div class="translation-text" id="trans7">Complete: The teacher said _____ the lesson is easy</div>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q7', 0, 0)">إِنَّ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 1, 0)">أَنَّ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 2, 0)">أَنْ</button>
+                <button class="option-btn" onclick="checkAnswer('q7', 3, 0)">إِنْ</button>
+            </div>
+            <button class="translate-btn" onclick="toggleTranslation('opts7')" style="margin-top: 10px;">Show Options in English</button>
+            <div class="translation-text" id="opts7">
+                • إِنَّ = "that" (used after قَالَ - with kasra)<br>
+                • أَنَّ = "that" (used after أَظُنُّ - with fatha)<br>
+                • أَنْ = "to" (lighter form, different usage)<br>
+                • إِنْ = "if" (conditional particle)
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: إِنَّ</strong></p>
+                <p>بَعْدَ الفِعْلِ "قَالَ" نَسْتَخْدِمُ "إِنَّ" بِكَسْرِ الهَمْزَةِ.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q8">
+            <p class="exercise-question">أَكْمِلْ: أَظُنُّ _____ الطَّقْسَ بَارِدٌ اليَوْمَ</p>
+            <button class="translate-btn" onclick="toggleTranslation('trans8')">Show English</button>
+            <div class="translation-text" id="trans8">Complete: I think _____ the weather is cold today</div>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q8', 0, 1)">إِنَّ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 1, 1)">أَنَّ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 2, 1)">أَنْ</button>
+                <button class="option-btn" onclick="checkAnswer('q8', 3, 1)">إِنْ</button>
+            </div>
+            <button class="translate-btn" onclick="toggleTranslation('opts8')" style="margin-top: 10px;">Show Options in English</button>
+            <div class="translation-text" id="opts8">
+                • إِنَّ = "that" (used after قَالَ - with kasra)<br>
+                • أَنَّ = "that" (used after أَظُنُّ - with fatha)<br>
+                • أَنْ = "to" (lighter form, different usage)<br>
+                • إِنْ = "if" (conditional particle)
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: أَنَّ</strong></p>
+                <p>بَعْدَ الفِعْلِ "أَظُنُّ" نَسْتَخْدِمُ "أَنَّ" بِفَتْحِ الهَمْزَةِ.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 5: إعراب أيّ -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">٥. إِعْرَابُ أَيٍّ - I'rab of Ayy</h3>
+
+        <div class="exercise-item" id="q9">
+            <p class="exercise-question">فِي جُمْلَةِ "أَيُّ طَالِبٍ حَضَرَ؟"، مَا إِعْرَابُ "أَيُّ"؟</p>
+            <button class="translate-btn" onclick="toggleTranslation('trans9')">Show English</button>
+            <div class="translation-text" id="trans9">In the sentence "أَيُّ طَالِبٍ حَضَرَ؟" (Which student attended?), what is the grammatical analysis (i'rab) of "أَيُّ"?</div>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q9', 0, 0)">مُبْتَدَأٌ مَرْفُوعٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 1, 0)">مَفْعُولٌ بِهِ مَنْصُوبٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 2, 0)">فَاعِلٌ مَرْفُوعٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q9', 3, 0)">خَبَرٌ مَرْفُوعٌ</button>
+            </div>
+            <button class="translate-btn" onclick="toggleTranslation('opts9')" style="margin-top: 10px;">Show Options in English</button>
+            <div class="translation-text" id="opts9">
+                • مُبْتَدَأٌ مَرْفُوعٌ = Subject (nominative case)<br>
+                • مَفْعُولٌ بِهِ مَنْصُوبٌ = Direct object (accusative case)<br>
+                • فَاعِلٌ مَرْفُوعٌ = Doer/Subject of verb (nominative)<br>
+                • خَبَرٌ مَرْفُوعٌ = Predicate (nominative case)
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: مُبْتَدَأٌ مَرْفُوعٌ</strong></p>
+                <p>أَيٌّ هُنَا مُبْتَدَأٌ لِأَنَّ الفِعْلَ بَعْدَهَا (حَضَرَ) لَازِمٌ. وَ"طَالِبٍ" مُضَافٌ إِلَيْهِ مَجْرُورٌ.</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q10">
+            <p class="exercise-question">مَا إِعْرَابُ الكَلِمَةِ الَّتِي تَأْتِي بَعْدَ "أَيٍّ"؟</p>
+            <button class="translate-btn" onclick="toggleTranslation('trans10')">Show English</button>
+            <div class="translation-text" id="trans10">What is the grammatical analysis (i'rab) of the word that comes after "أَيٍّ"?</div>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer('q10', 0, 1)">فَاعِلٌ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 1, 1)">مُضَافٌ إِلَيْهِ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 2, 1)">مَفْعُولٌ بِهِ</button>
+                <button class="option-btn" onclick="checkAnswer('q10', 3, 1)">نَعْتٌ</button>
+            </div>
+            <button class="translate-btn" onclick="toggleTranslation('opts10')" style="margin-top: 10px;">Show Options in English</button>
+            <div class="translation-text" id="opts10">
+                • فَاعِلٌ = Doer/Subject of verb<br>
+                • مُضَافٌ إِلَيْهِ = Possessed noun (genitive case)<br>
+                • مَفْعُولٌ بِهِ = Direct object<br>
+                • نَعْتٌ = Adjective/Descriptor
+            </div>
+            <div class="explanation">
+                <p><strong>✓ الإِجَابَةُ الصَّحِيحَةُ: مُضَافٌ إِلَيْهِ</strong></p>
+                <p>الاسْمُ الَّذِي يَأْتِي بَعْدَ "أَيٍّ" يُعْرَبُ دَائِمًا مُضَافًا إِلَيْهِ مَجْرُورًا.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="reset-btn" onclick="resetAllQuestions()">إِعَادَةُ التَّمَارِينِ - Reset All Exercises</button>
+    </div>
+</section>
+
+<!-- Summary Section -->
+<section id="summary" class="section">
+    <h2 class="section-title">خُلَاصَةُ الوَحْدَةِ السَّابِعَةَ عَشْرَةَ - Module 17 Summary</h2>
+
+    <div class="summary-box">
+        <h3>مَا تَعَلَّمْنَاهُ - What We Learned</h3>
+        <ul>
+            <li>
+                <span>✓ تَصْرِيفُ الفِعْلِ شَكَرَ - يَشْكُرُ - اشْكُرْ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Full conjugation of "to thank" in all pronoun forms</span>
+            </li>
+            <li>
+                <span>✓ الأَعْدَادُ المُرَكَّبَةُ (١١-١٩)</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Compound numbers and their agreement rules</span>
+            </li>
+            <li>
+                <span>✓ إِعْرَابُ الأَعْدَادِ المُرَكَّبَةِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">I'rab of compound numbers (مبني على فتح الجزأين)</span>
+            </li>
+            <li>
+                <span>✓ أَسْمَاءُ الأَفْعَالِ وَخَاصَّةً "هَاتِ"</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">Verbal nouns, especially هاتِ (Give!)</span>
+            </li>
+            <li>
+                <span>✓ قَالَ إِنَّ وَأَظُنُّ أَنَّ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">When to use إنّ (after قال) vs أنّ (after أظنّ)</span>
+            </li>
+            <li>
+                <span>✓ إِعْرَابُ أَيٍّ الاسْتِفْهَامِيَّةِ</span><br>
+                <span style="opacity: 0.8; font-size: 18px;">I'rab of interrogative أيّ in 6 different cases</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="rule-box">
+        <h3 class="section-subtitle">القَوَاعِدُ الأَسَاسِيَّةُ - Key Rules</h3>
+        <p class="arabic-large" style="text-align: center;">١١، ١٢ ← كِلَا الجُزْأَيْنِ يُوَافِقَانِ المَعْدُودَ</p>
+        <p class="english-text" style="text-align: center;">11, 12 → Both parts AGREE with counted noun</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-large" style="text-align: center;">١٣-١٩ ← الأَوَّلُ يُخَالِفُ، الثَّانِي يُوَافِقُ</p>
+        <p class="english-text" style="text-align: center;">13-19 → First DISAGREES, Second AGREES</p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-large" style="text-align: center;">قَالَ ← إِنَّ (كَسْرَة) | أَظُنُّ ← أَنَّ (فَتْحَة)</p>
+        <p class="english-text" style="text-align: center;">After قال use إنَّ | After أظنّ use أنَّ</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer style="text-align: center; padding: 30px; margin-top: 30px; background: linear-gradient(135deg, #3949ab 0%, #5c6bc0 100%); color: white; border-radius: 15px;">
+    <p style="font-size: 24px;">الوَحْدَةُ السَّابِعَةَ عَشْرَةَ - Module 17</p>
+    <p style="font-size: 18px;">دَوْرَةُ ARB202 - دُرُوسُ اللُّغَةِ العَرَبِيَّةِ</p>
+    <p style="font-size: 16px; opacity: 0.8;">مِنْ كِتَابِ المَدِينَةِ - الجُزْءُ الثَّانِي</p>
+    <p style="font-size: 14px; margin-top: 20px; opacity: 0.6;">Created for personal study use</p>
+</footer>
+
+<script>
+// Quiz functionality
+let score = 0;
+let totalAnswered = 0;
+const totalQuestions = 10;
+
+function checkAnswer(questionId, selectedOption, correctOption) {
+    const questionDiv = document.getElementById(questionId);
+    const options = questionDiv.querySelectorAll('.option-btn');
+    const explanation = questionDiv.querySelector('.explanation');
+
+    options.forEach((btn, index) => {
+        btn.disabled = true;
+        if (index === correctOption) {
+            btn.classList.add('correct');
+        } else if (index === selectedOption && selectedOption !== correctOption) {
+            btn.classList.add('incorrect');
+        }
+    });
+
+    explanation.classList.add('show');
+    if (selectedOption === correctOption) {
+        explanation.classList.add('correct-exp');
+        score++;
+    } else {
+        explanation.classList.add('incorrect-exp');
+    }
+
+    totalAnswered++;
+    updateScore();
+}
+
+function updateScore() {
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const percentage = Math.round((score / totalAnswered) * 100);
+    scoreDisplay.innerHTML = `النَّتِيجَةُ: ${score} مِنْ ${totalAnswered} (${percentage}%) - Score: ${score} out of ${totalAnswered}`;
+}
+
+function resetAllQuestions() {
+    score = 0;
+    totalAnswered = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionDiv = document.getElementById('q' + i);
+        if (questionDiv) {
+            const options = questionDiv.querySelectorAll('.option-btn');
+            const explanation = questionDiv.querySelector('.explanation');
+
+            options.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct', 'incorrect');
+            });
+
+            explanation.classList.remove('show', 'correct-exp', 'incorrect-exp');
+        }
+    }
+
+    document.getElementById('scoreDisplay').innerHTML = 'أَجِبْ عَنِ الأَسْئِلَةِ التَّالِيَةِ - Answer the following questions';
+
+    // Also hide all translations when resetting
+    for (let i = 1; i <= totalQuestions; i++) {
+        const trans = document.getElementById('trans' + i);
+        if (trans) {
+            trans.classList.remove('show');
+        }
+    }
+}
+
+// Toggle English translation
+function toggleTranslation(transId) {
+    const transDiv = document.getElementById(transId);
+    const btn = transDiv.previousElementSibling;
+
+    if (transDiv.classList.contains('show')) {
+        transDiv.classList.remove('show');
+        btn.textContent = 'Show English';
+    } else {
+        transDiv.classList.add('show');
+        btn.textContent = 'Hide English';
+    }
+}
+
+// Memory Game
+const memoryPairs = [
+    { arabic: 'أَحَدَ عَشَرَ', english: '11' },
+    { arabic: 'اثْنَا عَشَرَ', english: '12' },
+    { arabic: 'ثَلَاثَةَ عَشَرَ', english: '13' },
+    { arabic: 'أَرْبَعَةَ عَشَرَ', english: '14' },
+    { arabic: 'خَمْسَةَ عَشَرَ', english: '15' },
+    { arabic: 'سِتَّةَ عَشَرَ', english: '16' }
+];
+
+let memoryCards = [];
+let flippedCards = [];
+let matchedPairs = 0;
+let moves = 0;
+
+function initMemoryGame() {
+    const game = document.getElementById('memoryGame');
+    game.innerHTML = '';
+    memoryCards = [];
+    flippedCards = [];
+    matchedPairs = 0;
+    moves = 0;
+    document.getElementById('memoryMoves').textContent = '0';
+    document.getElementById('memoryPairs').textContent = '0';
+
+    // Create pairs
+    const cards = [];
+    memoryPairs.forEach((pair, index) => {
+        cards.push({ id: index * 2, type: 'arabic', value: pair.arabic, pairId: index });
+        cards.push({ id: index * 2 + 1, type: 'english', value: pair.english, pairId: index });
+    });
+
+    // Shuffle
+    cards.sort(() => Math.random() - 0.5);
+
+    // Create card elements
+    cards.forEach(card => {
+        const cardEl = document.createElement('div');
+        cardEl.className = 'memory-card';
+        cardEl.dataset.pairId = card.pairId;
+        cardEl.dataset.type = card.type;
+        cardEl.innerHTML = `
+            <div class="memory-card-inner">
+                <div class="memory-card-front">?</div>
+                <div class="memory-card-back">${card.value}</div>
+            </div>
+        `;
+        cardEl.addEventListener('click', () => flipMemoryCard(cardEl));
+        game.appendChild(cardEl);
+        memoryCards.push(cardEl);
+    });
+}
+
+function flipMemoryCard(card) {
+    if (flippedCards.length >= 2 || card.classList.contains('flipped') || card.classList.contains('matched')) {
+        return;
+    }
+
+    card.classList.add('flipped');
+    flippedCards.push(card);
+
+    if (flippedCards.length === 2) {
+        moves++;
+        document.getElementById('memoryMoves').textContent = moves;
+
+        const [card1, card2] = flippedCards;
+        if (card1.dataset.pairId === card2.dataset.pairId && card1.dataset.type !== card2.dataset.type) {
+            // Match!
+            setTimeout(() => {
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                matchedPairs++;
+                document.getElementById('memoryPairs').textContent = matchedPairs;
+                flippedCards = [];
+            }, 500);
+        } else {
+            // No match
+            setTimeout(() => {
+                card1.classList.remove('flipped');
+                card2.classList.remove('flipped');
+                flippedCards = [];
+            }, 1000);
+        }
+    }
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', function() {
+    initMemoryGame();
+});
+</script>
+
+</body>
+</html>
