@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 18 - Arabic Study Guide | الوحدة الثامنة عشرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            min-height: 100vh;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #004d40 0%, #00695c 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px;
+            color: #00695c;
+            border-bottom: 4px solid #00897b;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #004d40; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .translit-text { font-family: Georgia, serif; font-style: italic; color: #888; direction: ltr; text-align: left; font-size: 16px; }
+        .grammar-box {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border-right: 5px solid #00897b;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-right: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-right: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 5px solid #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .irab-box {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border-right: 5px solid #e91e63;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .irab-title {
+            font-size: 28px;
+            color: #c2185b;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #e0f2f1; }
+        tr:hover { background: #b2dfdb; }
+        .pronoun-cell { background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); font-weight: bold; color: #00695c; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .vocab-item {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .dialogue-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #ff9800;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .speaker-a { color: #00695c; font-weight: bold; }
+        .speaker-b { color: #c62828; font-weight: bold; }
+        .speaker-c { color: #2e7d32; font-weight: bold; }
+        .summary-box {
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .summary-box h3 { color: #ffeb3b; font-size: 28px; margin-bottom: 20px; }
+        .summary-box ul { list-style: none; padding: 0; }
+        .summary-box li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 22px; }
+        .comparison-table { border: 2px solid #00897b; border-radius: 10px; overflow: hidden; }
+
+        /* Number Card Styles */
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .number-card {
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .number-card:hover {
+            transform: translateY(-5px);
+        }
+        .number-card .num-arabic {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .number-card .num-value {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        /* Flashcard Styles */
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .flashcard {
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .flashcard-front {
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            color: white;
+        }
+        .flashcard-back {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            transform: rotateY(180deg);
+            color: #333;
+        }
+        .flashcard-arabic {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .flashcard-hint {
+            font-size: 14px;
+            opacity: 0.8;
+            font-family: Georgia, serif;
+        }
+        .flashcard-english {
+            font-size: 20px;
+            font-family: Georgia, serif;
+            text-align: center;
+        }
+        .flashcard-translit {
+            font-size: 16px;
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Memory Game Styles */
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 600px;
+            margin: 25px auto;
+        }
+        .memory-card {
+            height: 100px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .memory-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+        }
+        .memory-card.flipped .memory-card-inner,
+        .memory-card.matched .memory-card-inner {
+            transform: rotateY(180deg);
+        }
+        .memory-card-front, .memory-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .memory-card-front {
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            color: white;
+            font-size: 30px;
+        }
+        .memory-card-back {
+            background: white;
+            border: 2px solid #00897b;
+            transform: rotateY(180deg);
+        }
+        .memory-card.matched .memory-card-back {
+            background: #c8e6c9;
+            border-color: #4caf50;
+        }
+        .memory-score {
+            text-align: center;
+            font-size: 24px;
+            color: #00695c;
+            margin: 15px 0;
+        }
+
+        /* Exercise Styles */
+        .exercise-section {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .exercise-section-title {
+            font-size: 36px;
+            color: #00695c;
+            border-bottom: 4px solid #00897b;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .exercise-category {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .exercise-category-title {
+            font-size: 28px;
+            color: #00695c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #b2dfdb;
+        }
+        .exercise-item {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .exercise-question {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .exercise-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 15px 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background: white;
+            font-size: 22px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            text-align: right;
+            transition: all 0.3s;
+        }
+        .option-btn:hover:not(:disabled) {
+            border-color: #00897b;
+            background: #e0f2f1;
+        }
+        .option-btn.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+            color: #1e8449;
+        }
+        .option-btn.incorrect {
+            border-color: #e74c3c;
+            background: #fadbd8;
+            color: #c0392b;
+        }
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .explanation.show {
+            display: block;
+        }
+        .explanation.correct-exp {
+            background: linear-gradient(135deg, #d5f4e6 0%, #a9dfbf 100%);
+            border-right: 5px solid #27ae60;
+        }
+        .explanation.incorrect-exp {
+            background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%);
+            border-right: 5px solid #e74c3c;
+        }
+        .reset-btn {
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4);
+        }
+        .score-display {
+            text-align: center;
+            font-size: 24px;
+            color: #00695c;
+            padding: 15px;
+            background: #e0f2f1;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .translate-btn {
+            background: linear-gradient(135deg, #00897b 0%, #26a69a 100%);
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-family: Georgia, serif;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: all 0.3s;
+        }
+        .translate-btn:hover {
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            transform: translateY(-1px);
+        }
+        .translation-text {
+            display: none;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            font-family: Georgia, serif;
+            color: #1565c0;
+            font-size: 16px;
+            direction: ltr;
+            text-align: left;
+        }
+        .translation-text.show {
+            display: block;
+        }
+
+        /* Mnemonic Box */
+        .mnemonic-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #2196f3;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .mnemonic-title {
+            font-size: 24px;
+            color: #1565c0;
+            margin-bottom: 15px;
+        }
+        .mnemonic-content {
+            font-size: 28px;
+            color: #0d47a1;
+            line-height: 2;
+        }
+
+        /* Quran Box */
+        .quran-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .quran-verse {
+            font-size: 32px;
+            color: #1b5e20;
+            text-align: center;
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+        .quran-reference {
+            font-size: 18px;
+            color: #2e7d32;
+            text-align: center;
+            font-family: Georgia, serif;
+        }
+
+        /* Verbal Noun Category Cards */
+        .verbal-noun-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .verbal-noun-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 5px solid;
+        }
+        .verbal-noun-card.past { border-top-color: #e91e63; }
+        .verbal-noun-card.present { border-top-color: #2196f3; }
+        .verbal-noun-card.command { border-top-color: #ff9800; }
+        .verbal-noun-card h4 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .verbal-noun-card.past h4 { color: #e91e63; }
+        .verbal-noun-card.present h4 { color: #2196f3; }
+        .verbal-noun-card.command h4 { color: #ff9800; }
+
+        @media (max-width: 768px) {
+            .main-title h1 { font-size: 32px; }
+            .section-title { font-size: 28px; }
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .nav-links a { padding: 8px 12px; font-size: 12px; }
+            .memory-game { grid-template-columns: repeat(3, 1fr); }
+            table { font-size: 18px; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav-container">
+    <div class="nav-title">الوَحْدَةُ الثَّامِنَةَ عَشْرَةَ - Module 18</div>
+    <div class="nav-links">
+        <a href="index.html">
+            <span class="nav-ar">الرَّئِيسِيَّةُ</span>
+            <span class="nav-en">Home</span>
+        </a>
+        <a href="#conjugation">
+            <span class="nav-ar">التَّصْرِيفُ</span>
+            <span class="nav-en">Conjugation</span>
+        </a>
+        <a href="#verbal-nouns">
+            <span class="nav-ar">أَسْمَاءُ الأَفْعَالِ</span>
+            <span class="nav-en">Verbal Nouns</span>
+        </a>
+        <a href="#irab">
+            <span class="nav-ar">الإِعْرَابُ</span>
+            <span class="nav-en">I'rab</span>
+        </a>
+        <a href="#numbers">
+            <span class="nav-ar">الأَعْدَادُ</span>
+            <span class="nav-en">Numbers</span>
+        </a>
+        <a href="#exercises">
+            <span class="nav-ar">التَّمَارِينُ</span>
+            <span class="nav-en">Exercises</span>
+        </a>
+        <a href="#summary">
+            <span class="nav-ar">المُلَخَّصُ</span>
+            <span class="nav-en">Summary</span>
+        </a>
+    </div>
+</nav>
+
+<!-- Main Title -->
+<div class="main-title">
+    <h1>الوَحْدَةُ الثَّامِنَةَ عَشْرَةَ</h1>
+    <div class="subtitle">Module 18 - الدَّرْسُ السَّادِسُ</div>
+    <div style="margin-top: 15px; font-size: 36px; font-weight: bold;">
+        اسْتَيْقَظَ - يَسْتَيْقِظُ - اسْتَيْقِظْ
+    </div>
+    <div style="font-family: Georgia, serif; font-size: 18px; margin-top: 10px;">
+        istayqaza - yastayqizu - istayqiz (to wake up)
+    </div>
+</div>
+
+<!-- Section 1: Verb Conjugation -->
+<section id="conjugation" class="section">
+    <h2 class="section-title">تَصْرِيفُ الفِعْلِ - Verb Conjugation</h2>
+
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align: center;">اسْتَيْقَظَ - يَسْتَيْقِظُ - اسْتَيْقِظْ</p>
+        <p class="english-text" style="text-align: center;">To wake up - Form X (استفعل) Verb</p>
+        <p class="translit-text" style="text-align: center;">istayqaza - yastayqizu - istayqiz</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text" style="font-size: 24px; text-align: center; margin-bottom: 15px;"><strong>مَا هُوَ الوَزْنُ العَاشِرُ (اسْتَفْعَلَ)؟</strong></p>
+        <p class="english-text" style="font-size: 18px;"><strong>What is Form X (istaf'ala)?</strong></p>
+        <p class="english-text">Form X is created by adding <strong>اسْتَـ (ista-)</strong> before the 3-letter root. It usually means:</p>
+        <ul style="margin: 15px 30px; font-family: Georgia, serif; color: #555;">
+            <li><strong>Seeking or requesting something:</strong> اسْتَغْفَرَ (to seek forgiveness) from غَفَرَ (to forgive)</li>
+            <li><strong>Considering something to be:</strong> اسْتَحْسَنَ (to consider good) from حَسُنَ (to be good)</li>
+            <li><strong>Becoming or entering a state:</strong> اسْتَيْقَظَ (to wake up/become awake) from يَقِظَ (to be awake)</li>
+        </ul>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 22px;"><strong>تَحْلِيلُ الفِعْلِ - Breaking Down the Verb:</strong></p>
+        <table style="width: 100%; margin: 15px 0; font-size: 20px;">
+            <tr>
+                <td style="padding: 10px; background: #c8e6c9; text-align: center;"><strong>اسْتَـ</strong></td>
+                <td style="padding: 10px; background: #fff9c4; text-align: center;"><strong>يْـ</strong></td>
+                <td style="padding: 10px; background: #bbdefb; text-align: center;"><strong>ـقِـ</strong></td>
+                <td style="padding: 10px; background: #f8bbd0; text-align: center;"><strong>ـظَ</strong></td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; text-align: center; font-family: Georgia, serif;">Form X prefix</td>
+                <td style="padding: 8px; text-align: center; font-family: Georgia, serif;">Root: ي</td>
+                <td style="padding: 8px; text-align: center; font-family: Georgia, serif;">Root: ق</td>
+                <td style="padding: 8px; text-align: center; font-family: Georgia, serif;">Root: ظ</td>
+            </tr>
+        </table>
+        <p class="english-text"><strong>Root letters (ي ق ظ)</strong> = related to being awake/alert (يَقِظَ)</p>
+        <p class="english-text"><strong>اسْتَيْقَظَ</strong> = "to seek wakefulness" → "to wake up"</p>
+    </div>
+
+    <h3 class="section-subtitle">الفِعْلُ المَاضِي - Past Tense</h3>
+    <table class="comparison-table">
+        <tr>
+            <th>الضَّمِيرُ</th>
+            <th>المُفْرَدُ</th>
+            <th>المُثَنَّى</th>
+            <th>الجَمْعُ</th>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">هُوَ / هِيَ</td>
+            <td>اسْتَيْقَظَ / اسْتَيْقَظَتْ</td>
+            <td>اسْتَيْقَظَا / اسْتَيْقَظَتَا</td>
+            <td>اسْتَيْقَظُوا / اسْتَيْقَظْنَ</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنْتَ / أَنْتِ</td>
+            <td>اسْتَيْقَظْتَ / اسْتَيْقَظْتِ</td>
+            <td>اسْتَيْقَظْتُمَا</td>
+            <td>اسْتَيْقَظْتُمْ / اسْتَيْقَظْتُنَّ</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنَا / نَحْنُ</td>
+            <td>اسْتَيْقَظْتُ</td>
+            <td>-</td>
+            <td>اسْتَيْقَظْنَا</td>
+        </tr>
+    </table>
+
+    <h3 class="section-subtitle">الفِعْلُ المُضَارِعُ - Present Tense</h3>
+    <table class="comparison-table">
+        <tr>
+            <th>الضَّمِيرُ</th>
+            <th>المُفْرَدُ</th>
+            <th>المُثَنَّى</th>
+            <th>الجَمْعُ</th>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">هُوَ / هِيَ</td>
+            <td>يَسْتَيْقِظُ / تَسْتَيْقِظُ</td>
+            <td>يَسْتَيْقِظَانِ / تَسْتَيْقِظَانِ</td>
+            <td>يَسْتَيْقِظُونَ / يَسْتَيْقِظْنَ</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنْتَ / أَنْتِ</td>
+            <td>تَسْتَيْقِظُ / تَسْتَيْقِظِينَ</td>
+            <td>تَسْتَيْقِظَانِ</td>
+            <td>تَسْتَيْقِظُونَ / تَسْتَيْقِظْنَ</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنَا / نَحْنُ</td>
+            <td>أَسْتَيْقِظُ</td>
+            <td>-</td>
+            <td>نَسْتَيْقِظُ</td>
+        </tr>
+    </table>
+
+    <h3 class="section-subtitle">فِعْلُ الأَمْرِ - Command Form</h3>
+    <table class="comparison-table">
+        <tr>
+            <th>الضَّمِيرُ</th>
+            <th>المُفْرَدُ</th>
+            <th>المُثَنَّى</th>
+            <th>الجَمْعُ</th>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنْتَ / أَنْتِ</td>
+            <td>اسْتَيْقِظْ / اسْتَيْقِظِي</td>
+            <td>اسْتَيْقِظَا</td>
+            <td>اسْتَيْقِظُوا / اسْتَيْقِظْنَ</td>
+        </tr>
+    </table>
+
+    <div class="dialogue-box">
+        <h4 style="color: #e65100; margin-bottom: 15px;">أَمْثِلَةٌ - Examples</h4>
+        <p class="arabic-text"><span class="speaker-a">اسْتَيْقَظْتُ مِنَ النَّوْمِ فِي الفَجْرِ</span></p>
+        <p class="english-text">I woke up from sleep at dawn</p>
+        <br>
+        <p class="arabic-text"><span class="speaker-b">يَسْتَيْقِظُ الطُّلَّابُ مُبَكِّرِينَ</span></p>
+        <p class="english-text">The students wake up early</p>
+        <br>
+        <p class="arabic-text"><span class="speaker-c">اسْتَيْقِظْ يَا أَخِي!</span></p>
+        <p class="english-text">Wake up, my brother!</p>
+    </div>
+</section>
+
+<!-- Section 2: Verbal Nouns (Asmaa' al-Af'aal) -->
+<section id="verbal-nouns" class="section">
+    <h2 class="section-title">أَسْمَاءُ الأَفْعَالِ - Verbal Nouns</h2>
+
+    <div class="rule-box">
+        <p class="arabic-large" style="text-align: center;">أَسْمَاءُ الأَفْعَالِ</p>
+        <p class="english-text" style="text-align: center; font-size: 20px;"><strong>Words that ACT like verbs but ARE grammatically nouns</strong></p>
+    </div>
+
+    <div class="mnemonic-box">
+        <p class="mnemonic-title">فَهْمُ المَفْهُومِ - Understanding the Concept</p>
+        <p class="english-text" style="font-size: 18px; text-align: right; line-height: 2;">
+            <strong>Think of it this way:</strong> In English, we have words like "Ouch!", "Shh!", "Wow!" - these are not verbs, but they EXPRESS actions or feelings. Arabic has similar words called <strong>أَسْمَاءُ الأَفْعَالِ</strong> (Verbal Nouns).
+        </p>
+        <hr style="margin: 15px 0; border-color: #bbdefb;">
+        <p class="english-text" style="font-size: 18px; text-align: right;">
+            <strong>Key Point:</strong> These words MEAN the same as verbs, but they are GRAMMATICALLY nouns. This means they <u>don't conjugate</u> (change form) like verbs do - they stay the same no matter who is speaking!
+        </p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 24px;"><strong>لِمَاذَا هَذَا مُهِمٌّ؟ - Why Does This Matter?</strong></p>
+        <table style="width: 100%; margin: 15px 0; border-collapse: collapse;">
+            <tr style="background: #e8f5e9;">
+                <th style="padding: 12px; border: 1px solid #c8e6c9; text-align: center;">Regular Verb (changes)</th>
+                <th style="padding: 12px; border: 1px solid #c8e6c9; text-align: center;">Verbal Noun (never changes)</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">
+                    <span class="arabic-text">أَعْطِنِي</span> (give me - to male)<br>
+                    <span class="arabic-text">أَعْطِينِي</span> (give me - to female)<br>
+                    <span class="arabic-text">أَعْطُونِي</span> (give me - to group)
+                </td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center; background: #fff9c4;">
+                    <span class="arabic-text" style="font-size: 28px;"><strong>هَاتِ</strong></span><br>
+                    <span style="font-family: Georgia, serif;">(same for everyone!)</span>
+                </td>
+            </tr>
+        </table>
+        <p class="english-text"><strong>Result:</strong> أَسْمَاءُ الأَفْعَالِ are EASIER because they never change form!</p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text"><strong>القَاعِدَةُ المُهِمَّةُ:</strong></p>
+        <p class="arabic-text" style="font-size: 24px; text-align: center;">أَسْمَاءُ الأَفْعَالِ مَبْنِيَّةٌ - لَا تَتَغَيَّرُ أَبَدًا!</p>
+        <p class="english-text" style="text-align: center;"><strong>Verbal Nouns are INDECLINABLE - they NEVER change!</strong></p>
+    </div>
+
+    <!-- Properties Section -->
+    <h3 class="section-subtitle">خَصَائِصُ أَسْمَاءِ الأَفْعَالِ - Properties of Verbal Nouns</h3>
+
+    <div class="grammar-box">
+        <p class="arabic-text" style="font-size: 22px; margin-bottom: 15px;"><strong>أَهَمُّ خَصَائِصِ أَسْمَاءِ الأَفْعَالِ:</strong></p>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #e0f2f1;">
+                <th style="padding: 15px; border: 1px solid #b2dfdb; text-align: center; width: 50px;">#</th>
+                <th style="padding: 15px; border: 1px solid #b2dfdb; text-align: right;">الخَاصِّيَّةُ بِالعَرَبِيَّةِ</th>
+                <th style="padding: 15px; border: 1px solid #b2dfdb;">Property in English</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center; font-weight: bold; color: #00695c;">١</td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 22px;">أَنَّهَا أَسْمَاءٌ مَبْنِيَّةٌ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">They are <strong>indeclinable nouns</strong> (don't change form)</td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center; font-weight: bold; color: #00695c;">٢</td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 22px;">وَتَعْمَلُ عَمَلَ الفِعْلِ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">They <strong>function like verbs</strong> (take subjects/objects)</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center; font-weight: bold; color: #00695c;">٣</td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 22px;">وَأَنَّهَا لَا تَقْبَلُ عَلَامَةَ الفِعْلِ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">They <strong>don't accept verb markers</strong> (تاء التأنيث، السين، سوف، نون التوكيد)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 20px;"><strong>كَيْفَ نُفَرِّقُ بَيْنَ الفِعْلِ وَاسْمِ الفِعْلِ؟</strong></p>
+        <p class="english-text"><strong>How to distinguish between a VERB and a VERBAL NOUN?</strong></p>
+        <table style="width: 100%; margin: 15px 0; border-collapse: collapse;">
+            <tr style="background: #e8f5e9;">
+                <th style="padding: 12px; border: 1px solid #c8e6c9;">Test</th>
+                <th style="padding: 12px; border: 1px solid #c8e6c9;">Real Verb ✓</th>
+                <th style="padding: 12px; border: 1px solid #c8e6c9;">Verbal Noun ✗</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; font-family: Georgia;"><strong>Past:</strong> Add تاء التأنيث (ـتْ)</td>
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">خَرَجَ → خَرَجَتْ ✓</span></td>
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center; background: #ffebee;"><span class="arabic-text">هَيْهَاتَ → ؟ ✗</span></td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+                <td style="padding: 10px; border: 1px solid #ddd; font-family: Georgia;"><strong>Present:</strong> Add سَـ or سَوْفَ</td>
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">يَشْرَبُ → سَيَشْرَبُ ✓</span></td>
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center; background: #ffebee;"><span class="arabic-text">أُفٍّ → ؟ ✗</span></td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; font-family: Georgia;"><strong>Command:</strong> Add نون التوكيد</td>
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">اذْهَبْ → اذْهَبَنَّ ✓</span></td>
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center; background: #ffebee;"><span class="arabic-text">هَاتِ → ؟ ✗</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <h3 class="section-subtitle">الأَنْوَاعُ الثَّلَاثَةُ - The Three Types</h3>
+
+    <div class="info-box">
+        <p class="english-text" style="font-size: 18px;">Just like regular verbs have past, present, and command forms, Verbal Nouns are also divided into three types based on what kind of verb meaning they carry:</p>
+    </div>
+
+    <div class="verbal-noun-grid">
+        <!-- Past Tense Verbal Nouns -->
+        <div class="verbal-noun-card past">
+            <h4>١. اسْمُ فِعْلٍ مَاضٍ</h4>
+            <p class="english-text"><strong>Verbal Nouns of PAST Tense</strong></p>
+            <p class="english-text" style="font-size: 14px; background: #fce4ec; padding: 8px; border-radius: 5px; margin: 10px 0;">These express something that HAS HAPPENED or a state that EXISTS. Used for exclamations about completed actions.</p>
+            <hr style="margin: 15px 0; border-color: #f8bbd0;">
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>هَيْهَاتَ</strong> = بَعُدَ</p>
+                <p class="english-text"><strong>"How far!"</strong> / "Impossible!"</p>
+                <p class="translit-text">Used to express that something is very far away or impossible to achieve</p>
+            </div>
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>شَتَّانَ</strong> = افْتَرَقَ</p>
+                <p class="english-text"><strong>"How different!"</strong> / "Far apart!"</p>
+                <p class="translit-text">Used to express a huge difference between two things</p>
+            </div>
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>سُرْعَانَ</strong> = أَسْرَعَ</p>
+                <p class="english-text"><strong>"How quickly!"</strong> / "Soon!"</p>
+                <p class="translit-text">Used to express that something happened very fast</p>
+            </div>
+        </div>
+
+        <!-- Present Tense Verbal Nouns -->
+        <div class="verbal-noun-card present">
+            <h4>٢. اسْمُ فِعْلٍ مُضَارِعٍ</h4>
+            <p class="english-text"><strong>Verbal Nouns of PRESENT Tense</strong></p>
+            <p class="english-text" style="font-size: 14px; background: #e3f2fd; padding: 8px; border-radius: 5px; margin: 10px 0;">These express CURRENT feelings or states. Like interjections in English (Ouch! Wow! Ugh!)</p>
+            <hr style="margin: 15px 0; border-color: #bbdefb;">
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>آهِ</strong> = أَتَوَجَّعُ</p>
+                <p class="english-text"><strong>"Ouch!"</strong> / "I feel pain"</p>
+                <p class="translit-text">Expression of physical pain</p>
+            </div>
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>أُفٍّ</strong> = أَتَضَجَّرُ</p>
+                <p class="english-text"><strong>"Uff!"</strong> / "I'm annoyed"</p>
+                <p class="translit-text">Expression of annoyance/frustration (mentioned in Quran!)</p>
+            </div>
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>وَيْ</strong> = أَتَعَجَّبُ</p>
+                <p class="english-text"><strong>"Wow!"</strong> / "I'm amazed"</p>
+                <p class="translit-text">Expression of wonder/amazement</p>
+            </div>
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>بَخْ</strong> = أَسْتَحْسِنُ</p>
+                <p class="english-text"><strong>"Excellent!"</strong> / "How good!"</p>
+                <p class="translit-text">Expression of approval/admiration</p>
+            </div>
+        </div>
+
+        <!-- Command Verbal Nouns -->
+        <div class="verbal-noun-card command">
+            <h4>٣. اسْمُ فِعْلِ أَمْرٍ</h4>
+            <p class="english-text"><strong>Verbal Nouns of COMMAND</strong></p>
+            <p class="english-text" style="font-size: 14px; background: #fff3e0; padding: 8px; border-radius: 5px; margin: 10px 0;">These give COMMANDS or instructions. They replace imperative verbs but don't change form!</p>
+            <hr style="margin: 15px 0; border-color: #ffe0b2;">
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>هَاتِ</strong> = أَعْطِنِي</p>
+                <p class="english-text"><strong>"Give me!"</strong></p>
+                <p class="translit-text">Command to give something (most common one!)</p>
+            </div>
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>هَلُمَّ</strong> = أَقْبِلْ / تَعَالَ</p>
+                <p class="english-text"><strong>"Come here!"</strong> / "Come!"</p>
+                <p class="translit-text">Command to come closer</p>
+            </div>
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>عَلَيْكَ</strong> = الْزَمْ</p>
+                <p class="english-text"><strong>"You must!"</strong> / "Stick to!"</p>
+                <p class="translit-text">Command to hold onto/adhere to something</p>
+            </div>
+            <div class="vocab-item" style="margin: 10px 0;">
+                <p class="arabic-text"><strong>دُونَكَ</strong> = خُذْ</p>
+                <p class="english-text"><strong>"Take it!"</strong></p>
+                <p class="translit-text">Command to take something</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="quran-box">
+        <p class="arabic-text" style="text-align: center; font-size: 22px; margin-bottom: 10px;">مِثَالٌ مِنَ القُرْآنِ الكَرِيمِ</p>
+        <p class="quran-verse">وَلَا تَقُل لَّهُمَا أُفٍّ</p>
+        <p class="quran-reference">سورة الإسراء - آية 23</p>
+        <p class="english-text" style="text-align: center; margin-top: 10px;">"And do not say to them 'Uff'" - Don't express annoyance to your parents</p>
+    </div>
+
+    <div class="quran-box">
+        <p class="arabic-text" style="text-align: center; font-size: 22px; margin-bottom: 10px;">مِثَالٌ آخَرُ</p>
+        <p class="quran-verse">هَيْهَاتَ هَيْهَاتَ لِمَا تُوعَدُونَ</p>
+        <p class="quran-reference">سورة المؤمنون - آية 36</p>
+        <p class="english-text" style="text-align: center; margin-top: 10px;">"Far-fetched, far-fetched is what you are promised!"</p>
+    </div>
+
+    <!-- Detailed Example Tables -->
+    <h3 class="section-subtitle">جَدَاوِلُ الأَمْثِلَةِ التَّفْصِيلِيَّةِ - Detailed Example Tables</h3>
+
+    <!-- Table 1: Past Tense Verbal Nouns -->
+    <div class="irab-box" style="background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);">
+        <div class="irab-title" style="color: #c2185b;">جَدْوَلُ أَسْمَاءِ الأَفْعَالِ المَاضِيَةِ - Past Tense Verbal Nouns Table</div>
+        <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden;">
+            <tr style="background: #e91e63; color: white;">
+                <th style="padding: 15px; border: 1px solid #f8bbd0;">اسْمُ الفِعْلِ</th>
+                <th style="padding: 15px; border: 1px solid #f8bbd0;">المَعْنَى</th>
+                <th style="padding: 15px; border: 1px solid #f8bbd0;">المِثَالُ</th>
+                <th style="padding: 15px; border: 1px solid #f8bbd0;">Translation</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #c2185b;"><strong>شَتَّانَ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">shattāna</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">افْتَرَقَ</span><br><span style="font-family: Georgia; font-size: 13px;">= there is difference</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 20px;">شَتَّانَ الفَقْرُ وَالغِنَى</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">There is a great difference between poverty and richness</td>
+            </tr>
+            <tr style="background: #fce4ec;">
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #c2185b;"><strong>هَيْهَاتَ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">hayhāta</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">بَعُدَ</span><br><span style="font-family: Georgia; font-size: 13px;">= how far, impossible</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 20px;">هَيْهَاتَ مُحَمَّدٌ أَنْ يُصْبِحَ طَبِيبًا</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">It is impossible for Muhammad to become a doctor</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #c2185b;"><strong>سُرْعَانَ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">sur'āna</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">أَسْرَعَ</span><br><span style="font-family: Georgia; font-size: 13px;">= in a short time</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 20px;">سُرْعَانَ مَا دَرَسَ العَرَبِيَّةَ وَسُرْعَانَ مَا فَهِمَهَا</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">He studied Arabic in a short time and understood it quickly</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Table 2: Present Tense Verbal Nouns -->
+    <div class="irab-box" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right-color: #2196f3;">
+        <div class="irab-title" style="color: #1565c0;">جَدْوَلُ أَسْمَاءِ الأَفْعَالِ المُضَارِعَةِ - Present Tense Verbal Nouns Table</div>
+        <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden;">
+            <tr style="background: #2196f3; color: white;">
+                <th style="padding: 15px; border: 1px solid #bbdefb;">اسْمُ الفِعْلِ</th>
+                <th style="padding: 15px; border: 1px solid #bbdefb;">المَعْنَى</th>
+                <th style="padding: 15px; border: 1px solid #bbdefb;">المِثَالُ</th>
+                <th style="padding: 15px; border: 1px solid #bbdefb;">Translation</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #1565c0;"><strong>آهِ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">āhi</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">أَتَوَجَّعُ / أَتَأَلَّمُ</span><br><span style="font-family: Georgia; font-size: 13px;">= I feel pain</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 20px;">آهِ مِنْ آلَامِ البَطْنِ وَالرَّأْسِ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">I suffer from stomach pains and headache</td>
+            </tr>
+            <tr style="background: #e3f2fd;">
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #1565c0;"><strong>أُفٍّ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">uffin</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">أَغْضَبُ / أَتَضَجَّرُ</span><br><span style="font-family: Georgia; font-size: 13px;">= I'm annoyed</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 20px;">أُفٍّ لَكِ يَا لَيْلَى وَلِمَا تَقُولِينَ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">Ugh! I'm fed up with you, Layla, and what you say</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #1565c0;"><strong>وَيْ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">way</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">أَتَعَجَّبُ</span><br><span style="font-family: Georgia; font-size: 13px;">= I'm amazed</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 20px;">وَيْ لِلسَّمَاءِ وَجَمَالِهَا وَاتِّسَاعِهَا!</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">I am amazed at the sky, its beauty and expansion!</td>
+            </tr>
+            <tr style="background: #e3f2fd;">
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #1565c0;"><strong>بَخْ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">bakh</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">أَسْتَحْسِنُ</span><br><span style="font-family: Georgia; font-size: 13px;">= Bravo, I admire</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 20px;">بَخْ رَحْمَتُكَ لِلصِّغَارِ وَاحْتِرَامُكَ لِلْكِبَارِ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">Bravo! Your mercy on kids and respect for elders</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Table 3: Command Verbal Nouns -->
+    <div class="irab-box" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right-color: #ff9800;">
+        <div class="irab-title" style="color: #e65100;">جَدْوَلُ أَسْمَاءِ أَفْعَالِ الأَمْرِ - Command Verbal Nouns Table</div>
+        <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden;">
+            <tr style="background: #ff9800; color: white;">
+                <th style="padding: 15px; border: 1px solid #ffe0b2;">اسْمُ الفِعْلِ</th>
+                <th style="padding: 15px; border: 1px solid #ffe0b2;">المَعْنَى</th>
+                <th style="padding: 15px; border: 1px solid #ffe0b2;">المِثَالُ</th>
+                <th style="padding: 15px; border: 1px solid #ffe0b2;">Translation</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #e65100;"><strong>عَلَيْكَ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">'alayka</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">الْزَمْ</span><br><span style="font-family: Georgia; font-size: 13px;">= adhere to, take care</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 18px;">يَا أَيُّهَا الَّذِينَ آمَنُوا عَلَيْكُمْ أَنفُسَكُمْ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">O you who believe! Take care of your own selves (Quran)</td>
+            </tr>
+            <tr style="background: #fff3e0;">
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #e65100;"><strong>هَلُمَّ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">halumma</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">أَقْبِلْ</span><br><span style="font-family: Georgia; font-size: 13px;">= come quickly</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 18px;">أَيُّهَا الطُّلَّابُ هَلُمُّوا إِلَى مَدَارِسِكُمْ لِطَلَبِ العِلْمِ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">O students, come quickly to your schools to seek knowledge</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #e65100;"><strong>هَاتِ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">hāti</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">أَعْطِنِي</span><br><span style="font-family: Georgia; font-size: 13px;">= give (me)</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 18px;">هَاتِ جُمَلًا كَمَا فِي المِثَالِ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">Give sentences as in the example</td>
+            </tr>
+            <tr style="background: #fff3e0;">
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 24px; color: #e65100;"><strong>دَعْ</strong></span><br><span style="font-family: Georgia; font-size: 12px;">da'</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">اتْرُكْ</span><br><span style="font-family: Georgia; font-size: 13px;">= give up, leave</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text" style="font-size: 18px;">دَعْ كُلَّ مَا يُضَيِّعُ وَقْتَكَ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia; font-size: 14px;">Give up all that wastes your time</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ عَمَلِيَّةٌ - Practical Examples</h3>
+    <div class="dialogue-box">
+        <p class="arabic-text"><span class="speaker-a">هَاتِ الكِتَابَ!</span></p>
+        <p class="english-text">Give me the book!</p>
+        <br>
+        <p class="arabic-text"><span class="speaker-b">عَلَيْكَ بِالصَّبْرِ</span></p>
+        <p class="english-text">You must be patient (Stick to patience)</p>
+        <br>
+        <p class="arabic-text"><span class="speaker-c">هَلُمَّ إِلَى الطَّعَامِ</span></p>
+        <p class="english-text">Come to the food!</p>
+        <br>
+        <p class="arabic-text"><span class="speaker-a">شَتَّانَ بَيْنَ العَالِمِ وَالجَاهِلِ</span></p>
+        <p class="english-text">How different is the scholar from the ignorant!</p>
+    </div>
+</section>
+
+<!-- Section 3: I'rab of Verbal Nouns -->
+<section id="irab" class="section">
+    <h2 class="section-title">إِعْرَابُ أَسْمَاءِ الأَفْعَالِ - I'rab of Verbal Nouns</h2>
+
+    <div class="rule-box">
+        <p class="arabic-text" style="font-size: 26px; text-align: center;"><strong>القَاعِدَةُ الأَسَاسِيَّةُ - The Basic Rule</strong></p>
+        <p class="arabic-text" style="font-size: 24px; text-align: center; margin: 15px 0;">أَسْمَاءُ الأَفْعَالِ مَبْنِيَّةٌ دَائِمًا - لَا تَتَغَيَّرُ!</p>
+        <p class="english-text" style="font-size: 18px; text-align: center;"><strong>Verbal Nouns are ALWAYS indeclinable - they NEVER change!</strong></p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 24px;"><strong>كَيْفَ نُعْرِبُ أَسْمَاءَ الأَفْعَالِ؟ - How Do We Parse Verbal Nouns?</strong></p>
+        <p class="english-text" style="font-size: 18px;">
+            Since verbal nouns are <strong>مَبْنِيَّة</strong> (indeclinable), their I'rab follows a special pattern:
+        </p>
+        <table style="width: 100%; margin: 15px 0; border-collapse: collapse;">
+            <tr style="background: #e8f5e9;">
+                <th style="padding: 12px; border: 1px solid #c8e6c9; text-align: center;">What They're Built On</th>
+                <th style="padding: 12px; border: 1px solid #c8e6c9; text-align: center;">Examples</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">
+                    <span class="arabic-text" style="font-size: 22px;"><strong>مَبْنِيٌّ عَلَى الفَتْحِ</strong></span><br>
+                    <span style="font-family: Georgia; font-size: 14px;">Built on FATHA (ـَ)</span>
+                </td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">
+                    <span class="arabic-text" style="font-size: 22px;">هَيْهَاتَ ، شَتَّانَ ، سُرْعَانَ</span>
+                </td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">
+                    <span class="arabic-text" style="font-size: 22px;"><strong>مَبْنِيٌّ عَلَى الكَسْرِ</strong></span><br>
+                    <span style="font-family: Georgia; font-size: 14px;">Built on KASRA (ـِ)</span>
+                </td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">
+                    <span class="arabic-text" style="font-size: 22px;">آهِ ، أُفٍّ</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">
+                    <span class="arabic-text" style="font-size: 22px;"><strong>مَبْنِيٌّ عَلَى السُّكُونِ</strong></span><br>
+                    <span style="font-family: Georgia; font-size: 14px;">Built on SUKOON (ـْ)</span>
+                </td>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">
+                    <span class="arabic-text" style="font-size: 22px;">بَخْ ، وَيْ</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةُ الإِعْرَابِ - I'rab Examples</h3>
+
+    <!-- Example 1: هَيْهَاتَ -->
+    <div class="irab-box">
+        <div class="irab-title">📝 المِثَالُ الأَوَّلُ - Example 1</div>
+        <p class="arabic-text" style="font-size: 30px; text-align: center; margin-bottom: 15px;">هَيْهَاتَ مُحَمَّدٌ أَنْ يُصْبِحَ طَبِيبًا</p>
+        <p class="english-text" style="text-align: center; font-size: 18px;"><strong>"It is impossible for Muhammad to become a doctor"</strong></p>
+        <hr style="margin: 20px 0; border-color: #f8bbd9;">
+
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #fce4ec;">
+                <th style="padding: 12px; border: 1px solid #f8bbd0; text-align: right;">الكَلِمَةُ</th>
+                <th style="padding: 12px; border: 1px solid #f8bbd0; text-align: right;">الإِعْرَابُ</th>
+                <th style="padding: 12px; border: 1px solid #f8bbd0;">English Explanation</th>
+            </tr>
+            <tr style="background: #fff9c4;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>هَيْهَاتَ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">اسْمُ فِعْلٍ مَاضٍ مَبْنِيٌّ عَلَى الفَتْحِ بِمَعْنَى (بَعُدَ)</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Verbal noun of past tense</strong>, built on fatha, meaning "it is far/impossible"</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>مُحَمَّدٌ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">فَاعِلٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Subject (Faa'il)</strong> - nominative, sign is visible damma</td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>أَنْ يُصْبِحَ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">أَنْ: حَرْفُ مَصْدَرِيٌّ وَنَصْبٌ. يُصْبِحَ: فِعْلٌ مُضَارِعٌ مَنْصُوبٌ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">أَنْ: Particle. يُصْبِحَ: Present verb, accusative (after أَنْ)</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>طَبِيبًا</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">خَبَرُ (يُصْبِحَ) مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Predicate of يُصْبِحَ</strong> - accusative with fatha</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Example 2: شَتَّانَ -->
+    <div class="irab-box">
+        <div class="irab-title">📝 المِثَالُ الثَّانِي - Example 2</div>
+        <p class="arabic-text" style="font-size: 30px; text-align: center; margin-bottom: 15px;">شَتَّانَ الفَقْرُ وَالغِنَى</p>
+        <p class="english-text" style="text-align: center; font-size: 18px;"><strong>"There is a great difference between poverty and richness"</strong></p>
+        <hr style="margin: 20px 0; border-color: #f8bbd9;">
+
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #fce4ec;">
+                <th style="padding: 12px; border: 1px solid #f8bbd0; text-align: right;">الكَلِمَةُ</th>
+                <th style="padding: 12px; border: 1px solid #f8bbd0; text-align: right;">الإِعْرَابُ</th>
+                <th style="padding: 12px; border: 1px solid #f8bbd0;">English Explanation</th>
+            </tr>
+            <tr style="background: #fff9c4;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>شَتَّانَ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">اسْمُ فِعْلٍ مَاضٍ مَبْنِيٌّ عَلَى الفَتْحِ بِمَعْنَى (افْتَرَقَ)</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Verbal noun of past tense</strong>, built on fatha, meaning "they are different"</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>الفَقْرُ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">فَاعِلٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Subject (Faa'il)</strong> - nominative with damma</td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>وَالغِنَى</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">الوَاوُ: حَرْفُ عَطْفٍ. الغِنَى: مَعْطُوفٌ مَرْفُوعٌ بِضَمَّةٍ مُقَدَّرَةٍ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">وَ: Conjunction. الغِنَى: Conjoined noun, nominative (estimated damma)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Example 3: هَاتِ -->
+    <div class="irab-box">
+        <div class="irab-title">📝 المِثَالُ الثَّالِثُ - Example 3</div>
+        <p class="arabic-text" style="font-size: 30px; text-align: center; margin-bottom: 15px;">هَاتِ الكِتَابَ يَا عَلِيُّ</p>
+        <p class="english-text" style="text-align: center; font-size: 18px;"><strong>"Give me the book, O Ali!"</strong></p>
+        <hr style="margin: 20px 0; border-color: #f8bbd9;">
+
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #fce4ec;">
+                <th style="padding: 12px; border: 1px solid #f8bbd0; text-align: right;">الكَلِمَةُ</th>
+                <th style="padding: 12px; border: 1px solid #f8bbd0; text-align: right;">الإِعْرَابُ</th>
+                <th style="padding: 12px; border: 1px solid #f8bbd0;">English Explanation</th>
+            </tr>
+            <tr style="background: #fff9c4;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>هَاتِ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">اسْمُ فِعْلِ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ الْيَاءِ بِمَعْنَى (أَعْطِ)</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Verbal noun of command</strong>, built on deletion of ya, meaning "give!"</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>الكِتَابَ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">مَفْعُولٌ بِهِ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Direct Object</strong> - accusative with visible fatha</td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>يَا</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">حَرْفُ نِدَاءٍ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Vocative particle</strong> - "O"</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>عَلِيُّ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">مُنَادَى مَبْنِيٌّ عَلَى الضَّمِّ فِي مَحَلِّ نَصْبٍ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Called noun (Munaada)</strong> - built on damma, in position of accusative</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Example 4: أُفٍّ -->
+    <div class="irab-box">
+        <div class="irab-title">📝 المِثَالُ الرَّابِعُ - Example 4</div>
+        <p class="arabic-text" style="font-size: 30px; text-align: center; margin-bottom: 15px;">وَلَا تَقُلْ لَهُمَا أُفٍّ</p>
+        <p class="english-text" style="text-align: center; font-size: 18px;"><strong>"And do not say to them 'Uff'" (Surah Al-Isra: 23)</strong></p>
+        <hr style="margin: 20px 0; border-color: #f8bbd9;">
+
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #fce4ec;">
+                <th style="padding: 12px; border: 1px solid #f8bbd0; text-align: right;">الكَلِمَةُ</th>
+                <th style="padding: 12px; border: 1px solid #f8bbd0; text-align: right;">الإِعْرَابُ</th>
+                <th style="padding: 12px; border: 1px solid #f8bbd0;">English Explanation</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>وَلَا</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">الوَاوُ: حَرْفُ عَطْفٍ. لَا: حَرْفُ نَهْيٍ وَجَزْمٍ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">وَ: Conjunction. لَا: Prohibition particle (jussive)</td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>تَقُلْ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">فِعْلٌ مُضَارِعٌ مَجْزُومٌ بِـ(لَا) وَعَلَامَةُ جَزْمِهِ السُّكُونُ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Present verb</strong> - jussive (after لَا), sign is sukoon</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>لَهُمَا</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">اللَّامُ: حَرْفُ جَرٍّ. هُمَا: ضَمِيرٌ مُتَّصِلٌ فِي مَحَلِّ جَرٍّ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">لِـ: Preposition. هُمَا: Attached pronoun, genitive position</td>
+            </tr>
+            <tr style="background: #fff9c4;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text" style="font-size: 24px;"><strong>أُفٍّ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">اسْمُ فِعْلٍ مُضَارِعٍ مَبْنِيٌّ عَلَى الكَسْرِ بِمَعْنَى (أَتَضَجَّرُ)</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Verbal noun of present tense</strong>, built on kasra, meaning "I'm annoyed"</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text" style="font-size: 24px;"><strong>تَذَكَّرْ! - Remember!</strong></p>
+        <p class="english-text" style="font-size: 18px;">
+            <strong>Verbal nouns take a فَاعِل (subject)</strong> just like regular verbs, but they themselves don't change form. The subject after a verbal noun is always in the nominative case (مَرْفُوع).
+        </p>
+        <div style="background: white; padding: 15px; border-radius: 10px; margin-top: 15px;">
+            <p class="arabic-text" style="font-size: 22px; text-align: center;">
+                <span style="color: #c62828;">هَيْهَاتَ</span> <span style="color: #1565c0;">النَّجَاحُ</span> =
+                <span style="color: #c62828;">بَعُدَ</span> <span style="color: #1565c0;">النَّجَاحُ</span>
+            </p>
+            <p class="english-text" style="text-align: center;">"Success is far" - النَّجَاحُ is the subject (فاعل) in both cases</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 4: Numbers Review (I'rab) -->
+<section id="numbers" class="section">
+    <h2 class="section-title">إِعْرَابُ الأَعْدَادِ المُرَكَّبَةِ - I'rab of Compound Numbers</h2>
+
+    <div class="mnemonic-box">
+        <p class="mnemonic-title">مَا هِيَ الأَعْدَادُ المُرَكَّبَةُ؟ - What are Compound Numbers?</p>
+        <p class="english-text" style="font-size: 18px; text-align: right;">
+            <strong>Compound Numbers</strong> are numbers from <strong>11 to 19</strong>. They are called "compound" (مُرَكَّبَة) because they are made of TWO parts joined together:
+        </p>
+        <table style="width: 100%; margin: 15px 0; font-size: 20px;">
+            <tr>
+                <td style="padding: 15px; background: #bbdefb; text-align: center; border-radius: 10px 0 0 10px;">
+                    <strong>خَمْسَةَ</strong><br><span style="font-family: Georgia; font-size: 14px;">First part (5)</span>
+                </td>
+                <td style="padding: 15px; background: #c8e6c9; text-align: center;">
+                    <strong>+</strong>
+                </td>
+                <td style="padding: 15px; background: #fff9c4; text-align: center; border-radius: 0 10px 10px 0;">
+                    <strong>عَشَرَ</strong><br><span style="font-family: Georgia; font-size: 14px;">Second part (10)</span>
+                </td>
+                <td style="padding: 15px; text-align: center;">
+                    <strong>=</strong>
+                </td>
+                <td style="padding: 15px; background: #f8bbd0; text-align: center; border-radius: 10px;">
+                    <strong>خَمْسَةَ عَشَرَ</strong><br><span style="font-family: Georgia; font-size: 14px;">15</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text" style="font-size: 26px; text-align: center;"><strong>القَاعِدَةُ الذَّهَبِيَّةُ - The Golden Rule</strong></p>
+        <p class="arabic-text" style="font-size: 24px; text-align: center; margin: 15px 0;">الأَعْدَادُ المُرَكَّبَةُ (١١-١٩) مَبْنِيَّةٌ عَلَى فَتْحِ الجُزْأَيْنِ</p>
+        <p class="english-text" style="font-size: 18px; text-align: center;"><strong>Compound numbers (11-19) are BUILT on FATHA for BOTH parts</strong></p>
+        <hr style="margin: 15px 0;">
+        <p class="english-text" style="font-size: 16px;">
+            <strong>What does "built on fatha" mean?</strong><br>
+            It means these numbers are <u>indeclinable</u> (مَبْنِيَّة) - they DON'T change their ending based on grammatical position. Both parts ALWAYS end with fatha (ـَ), regardless of whether the number is subject, object, etc.
+        </p>
+        <p class="english-text" style="font-size: 16px; margin-top: 10px;">
+            <strong>Exception:</strong> Number 12 (اثْنَا عَشَرَ) - the first part follows dual noun rules (changes to اثْنَيْ in accusative/genitive)
+        </p>
+    </div>
+
+    <div class="irab-box">
+        <div class="irab-title">الأَعْدَادُ المُرَكَّبَةُ ١١-١٩ - Compound Numbers Table</div>
+        <table class="comparison-table">
+            <tr>
+                <th>العَدَدُ</th>
+                <th>المُذَكَّرُ (Masculine)</th>
+                <th>المُؤَنَّثُ (Feminine)</th>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>أَحَدَ عَشَرَ</td>
+                <td>إِحْدَى عَشْرَةَ</td>
+            </tr>
+            <tr style="background: #fff9c4;">
+                <td>12 ⚠️</td>
+                <td>اثْنَا عَشَرَ / اثْنَيْ عَشَرَ</td>
+                <td>اثْنَتَا عَشْرَةَ / اثْنَتَيْ عَشْرَةَ</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>ثَلَاثَةَ عَشَرَ</td>
+                <td>ثَلَاثَ عَشْرَةَ</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>أَرْبَعَةَ عَشَرَ</td>
+                <td>أَرْبَعَ عَشْرَةَ</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>خَمْسَةَ عَشَرَ</td>
+                <td>خَمْسَ عَشْرَةَ</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 24px;"><strong>التَّمْيِيزُ - The Counted Noun (Tamyeez)</strong></p>
+        <p class="english-text" style="font-size: 18px;">
+            <strong>What comes AFTER the number?</strong> The noun being counted is called <strong>التَّمْيِيز</strong> (tamyeez = specifier/counted noun).
+        </p>
+        <div style="background: #fff9c4; padding: 15px; border-radius: 10px; margin: 15px 0;">
+            <p class="english-text" style="font-size: 18px; margin: 0;">
+                <strong>Rule for numbers 11-99:</strong><br>
+                The tamyeez is <strong>SINGULAR</strong> (not plural!) and <strong>ACCUSATIVE</strong> (منصوب)
+            </p>
+        </div>
+        <table style="width: 100%; margin: 15px 0; border-collapse: collapse;">
+            <tr style="background: #e8f5e9;">
+                <th style="padding: 12px; border: 1px solid #c8e6c9;">Example</th>
+                <th style="padding: 12px; border: 1px solid #c8e6c9;">Translation</th>
+                <th style="padding: 12px; border: 1px solid #c8e6c9;">Tamyeez</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">خَمْسَةَ عَشَرَ <span style="color: #c62828;">طَالِبًا</span></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">15 students</td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">طَالِبًا (singular + accusative)</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">اثْنَيْ عَشَرَ <span style="color: #c62828;">كِتَابًا</span></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">12 books</td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">كِتَابًا (singular + accusative)</td>
+            </tr>
+        </table>
+        <p class="english-text"><strong>Notice:</strong> Even though we're talking about 15 students, we say طَالِبًا (singular), NOT طُلَّابًا (plural)!</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةُ الإِعْرَابِ - Step-by-Step I'rab Examples</h3>
+
+    <div class="grammar-box">
+        <p class="arabic-text" style="font-size: 30px; text-align: center; margin-bottom: 15px;">جَاءَ خَمْسَةَ عَشَرَ طَالِبًا</p>
+        <p class="english-text" style="text-align: center; font-size: 20px;"><strong>"15 students came"</strong></p>
+        <hr style="margin: 20px 0;">
+
+        <p class="english-text" style="font-size: 18px; margin-bottom: 10px;"><strong>Step-by-Step Breakdown:</strong></p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #e0f2f1;">
+                <th style="padding: 12px; border: 1px solid #b2dfdb; text-align: right;">Word</th>
+                <th style="padding: 12px; border: 1px solid #b2dfdb; text-align: right;">I'rab</th>
+                <th style="padding: 12px; border: 1px solid #b2dfdb;">English Explanation</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">جَاءَ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">فِعْلٌ مَاضٍ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">Past tense verb "came"</td>
+            </tr>
+            <tr style="background: #fff9c4;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text"><strong>خَمْسَةَ عَشَرَ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">فَاعِلٌ مَبْنِيٌّ عَلَى فَتْحِ الجُزْأَيْنِ فِي مَحَلِّ رَفْعٍ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Subject</strong> - built on fatha (both parts), in the POSITION of nominative (رفع)</td>
+            </tr>
+            <tr style="background: #ffcdd2;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text"><strong>طَالِبًا</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">تَمْيِيزٌ مَنْصُوبٌ بِالفَتْحَةِ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Tamyeez</strong> (specifier) - accusative, sign is fatha</td>
+            </tr>
+        </table>
+
+        <div style="background: #e3f2fd; padding: 12px; border-radius: 8px; margin-top: 15px;">
+            <p class="english-text" style="margin: 0;"><strong>Key insight:</strong> Even though خَمْسَةَ عَشَرَ is the SUBJECT (فاعل), it doesn't show damma (ُ) because it's INDECLINABLE. Instead, we say it's "in the position of nominative" (في محل رفع).</p>
+        </div>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text" style="font-size: 30px; text-align: center; margin-bottom: 15px;">رَأَيْتُ اثْنَيْ عَشَرَ كِتَابًا</p>
+        <p class="english-text" style="text-align: center; font-size: 20px;"><strong>"I saw 12 books"</strong></p>
+        <hr style="margin: 20px 0;">
+
+        <p class="english-text" style="font-size: 18px; margin-bottom: 10px;"><strong>Step-by-Step Breakdown:</strong></p>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #e0f2f1;">
+                <th style="padding: 12px; border: 1px solid #b2dfdb; text-align: right;">Word</th>
+                <th style="padding: 12px; border: 1px solid #b2dfdb; text-align: right;">I'rab</th>
+                <th style="padding: 12px; border: 1px solid #b2dfdb;">English Explanation</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">رَأَيْتُ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">فِعْلٌ + فَاعِلٌ (تُ)</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;">Verb "I saw" + hidden subject (I)</td>
+            </tr>
+            <tr style="background: #fff9c4;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text"><strong>اثْنَيْ عَشَرَ</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">مَفْعُولٌ بِهِ:<br>الجُزْءُ الأَوَّلُ مَنْصُوبٌ بِالْيَاءِ<br>الجُزْءُ الثَّانِي مَبْنِيٌّ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Direct Object:</strong><br>First part (اثني) accusative with YA (dual)<br>Second part (عشر) built on fatha</td>
+            </tr>
+            <tr style="background: #ffcdd2;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text"><strong>كِتَابًا</strong></span></td>
+                <td style="padding: 12px; border: 1px solid #ddd;"><span class="arabic-text">تَمْيِيزٌ مَنْصُوبٌ بِالفَتْحَةِ</span></td>
+                <td style="padding: 12px; border: 1px solid #ddd; font-family: Georgia;"><strong>Tamyeez</strong> - accusative with fatha</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text" style="font-size: 24px;"><strong>تَنْبِيهٌ خَاصٌّ لِلْعَدَدِ ١٢ - Special Note for Number 12</strong></p>
+        <p class="english-text" style="font-size: 16px;">Number 12 is the ONLY compound number where the first part CHANGES based on grammatical position (because it follows dual noun rules):</p>
+
+        <table style="width: 100%; margin: 15px 0; border-collapse: collapse;">
+            <tr style="background: #ffcdd2;">
+                <th style="padding: 12px; border: 1px solid #ef9a9a;">Case</th>
+                <th style="padding: 12px; border: 1px solid #ef9a9a;">Masculine</th>
+                <th style="padding: 12px; border: 1px solid #ef9a9a;">Feminine</th>
+                <th style="padding: 12px; border: 1px solid #ef9a9a;">Example</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; font-family: Georgia;"><strong>Nominative (رفع)</strong></td>
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">اثْنَ<span style="color: #c62828; font-size: 28px;">ا</span> عَشَرَ</span></td>
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">اثْنَتَ<span style="color: #c62828; font-size: 28px;">ا</span> عَشْرَةَ</span></td>
+                <td style="padding: 10px; border: 1px solid #ddd;"><span class="arabic-text">جَاءَ اثْنَا عَشَرَ طَالِبًا</span></td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+                <td style="padding: 10px; border: 1px solid #ddd; font-family: Georgia;"><strong>Accusative/Genitive (نصب/جر)</strong></td>
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">اثْنَ<span style="color: #1565c0; font-size: 28px;">يْ</span> عَشَرَ</span></td>
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;"><span class="arabic-text">اثْنَتَ<span style="color: #1565c0; font-size: 28px;">يْ</span> عَشْرَةَ</span></td>
+                <td style="padding: 10px; border: 1px solid #ddd;"><span class="arabic-text">رَأَيْتُ اثْنَيْ عَشَرَ كِتَابًا</span></td>
+            </tr>
+        </table>
+
+        <p class="english-text"><strong>Remember:</strong> The ending changes from <span style="color: #c62828;">ـا (alif)</span> to <span style="color: #1565c0;">ـيْ (ya)</span> just like regular dual nouns!</p>
+    </div>
+</section>
+
+<!-- Section 4: Vocabulary Flashcards -->
+<section class="section">
+    <h2 class="section-title">المُفْرَدَاتُ - Vocabulary Flashcards</h2>
+    <p class="english-text" style="text-align: center; margin-bottom: 20px;">Click cards to flip and reveal meanings</p>
+
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">اسْتَيْقَظَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">To wake up</div>
+                    <div class="flashcard-translit">istayqaza</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">هَيْهَاتَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">How far! / Impossible!</div>
+                    <div class="flashcard-translit">hayhaata</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">شَتَّانَ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">How different!</div>
+                    <div class="flashcard-translit">shattaana</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">هَاتِ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Give me!</div>
+                    <div class="flashcard-translit">haati</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">هَلُمَّ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Come here!</div>
+                    <div class="flashcard-translit">halumma</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">أُفٍّ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Uff! (Annoyance)</div>
+                    <div class="flashcard-translit">uff</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">النَّوْمُ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Sleep</div>
+                    <div class="flashcard-translit">an-nawm</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="flashcard-arabic">الفَجْرُ</div>
+                    <div class="flashcard-hint">Click to reveal</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="flashcard-english">Dawn</div>
+                    <div class="flashcard-translit">al-fajr</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 5: Memory Game -->
+<section class="section">
+    <h2 class="section-title">لُعْبَةُ الذَّاكِرَةِ - Memory Game</h2>
+    <p class="english-text" style="text-align: center; margin-bottom: 10px;">Match Arabic words with their meanings!</p>
+    <div class="memory-score">المُحَاوَلَاتُ: <span id="attempts">0</span> | الأَزْوَاجُ: <span id="pairs">0</span>/6</div>
+
+    <div class="memory-game" id="memoryGame">
+        <!-- Cards will be generated by JavaScript -->
+    </div>
+
+    <div style="text-align: center;">
+        <button class="reset-btn" onclick="initMemoryGame()">إِعَادَةُ اللُّعْبَةِ</button>
+    </div>
+</section>
+
+<!-- Section 6: Exercises -->
+<section id="exercises" class="exercise-section">
+    <h2 class="exercise-section-title">التَّمَارِينُ - Exercises</h2>
+    <div class="score-display">النَّتِيجَةُ: <span id="score">0</span> / <span id="total">5</span></div>
+
+    <!-- Exercise 1 -->
+    <div class="exercise-category">
+        <h3 class="exercise-category-title">١. اخْتَرِ الإِجَابَةَ الصَّحِيحَةَ</h3>
+
+        <div class="exercise-item" id="q1">
+            <p class="exercise-question">مَا مَعْنَى "هَيْهَاتَ"؟</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer(1, this, false)">تَعَالَ</button>
+                <button class="option-btn" onclick="checkAnswer(1, this, true)">بَعُدَ / مُسْتَحِيلٌ</button>
+                <button class="option-btn" onclick="checkAnswer(1, this, false)">أَعْطِنِي</button>
+                <button class="option-btn" onclick="checkAnswer(1, this, false)">اسْتَيْقِظْ</button>
+            </div>
+            <div class="explanation" id="exp1">
+                <p class="arabic-text"><strong>الجَوَابُ:</strong> "هَيْهَاتَ" اسْمُ فِعْلٍ مَاضٍ بِمَعْنَى "بَعُدَ" - يُسْتَخْدَمُ لِلتَّعْبِيرِ عَنِ البُعْدِ أَوِ الاسْتِحَالَةِ</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q2">
+            <p class="exercise-question">"هَاتِ" اسْمُ فِعْلِ:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer(2, this, false)">مَاضٍ</button>
+                <button class="option-btn" onclick="checkAnswer(2, this, false)">مُضَارِعٍ</button>
+                <button class="option-btn" onclick="checkAnswer(2, this, true)">أَمْرٍ</button>
+            </div>
+            <div class="explanation" id="exp2">
+                <p class="arabic-text"><strong>الجَوَابُ:</strong> "هَاتِ" اسْمُ فِعْلِ أَمْرٍ بِمَعْنَى "أَعْطِنِي"</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q3">
+            <p class="exercise-question">إِعْرَابُ "طَالِبًا" فِي: "جَاءَ خَمْسَةَ عَشَرَ طَالِبًا"</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer(3, this, false)">فَاعِلٌ</button>
+                <button class="option-btn" onclick="checkAnswer(3, this, true)">تَمْيِيزٌ مَنْصُوبٌ</button>
+                <button class="option-btn" onclick="checkAnswer(3, this, false)">مَفْعُولٌ بِهِ</button>
+                <button class="option-btn" onclick="checkAnswer(3, this, false)">مُضَافٌ إِلَيْهِ</button>
+            </div>
+            <div class="explanation" id="exp3">
+                <p class="arabic-text"><strong>الجَوَابُ:</strong> "طَالِبًا" تَمْيِيزٌ مَنْصُوبٌ - المَعْدُودُ بَعْدَ الأَعْدَادِ ١١-٩٩ يَكُونُ مُفْرَدًا مَنْصُوبًا</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q4">
+            <p class="exercise-question">مَا هُوَ وَزْنُ الفِعْلِ "اسْتَيْقَظَ"؟</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer(4, this, false)">فَعَلَ</button>
+                <button class="option-btn" onclick="checkAnswer(4, this, false)">أَفْعَلَ</button>
+                <button class="option-btn" onclick="checkAnswer(4, this, false)">تَفَعَّلَ</button>
+                <button class="option-btn" onclick="checkAnswer(4, this, true)">اسْتَفْعَلَ</button>
+            </div>
+            <div class="explanation" id="exp4">
+                <p class="arabic-text"><strong>الجَوَابُ:</strong> "اسْتَيْقَظَ" عَلَى وَزْنِ "اسْتَفْعَلَ" (الوَزْنُ العَاشِرُ)</p>
+            </div>
+        </div>
+
+        <div class="exercise-item" id="q5">
+            <p class="exercise-question">"أُفٍّ" فِي القُرْآنِ يُعَبِّرُ عَنْ:</p>
+            <div class="exercise-options">
+                <button class="option-btn" onclick="checkAnswer(5, this, false)">الفَرَحِ</button>
+                <button class="option-btn" onclick="checkAnswer(5, this, true)">التَّضَجُّرِ وَالضِّيقِ</button>
+                <button class="option-btn" onclick="checkAnswer(5, this, false)">التَّعَجُّبِ</button>
+                <button class="option-btn" onclick="checkAnswer(5, this, false)">الأَلَمِ</button>
+            </div>
+            <div class="explanation" id="exp5">
+                <p class="arabic-text"><strong>الجَوَابُ:</strong> "أُفٍّ" اسْمُ فِعْلٍ مُضَارِعٍ بِمَعْنَى "أَتَضَجَّرُ" - نَهَى اللهُ عَنْ قَوْلِهِ لِلْوَالِدَيْنِ</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="reset-btn" onclick="resetExercises()">إِعَادَةُ التَّمَارِينِ</button>
+    </div>
+</section>
+
+<!-- Section 7: Summary -->
+<section id="summary" class="section">
+    <div class="summary-box">
+        <h3>مُلَخَّصُ الوَحْدَةِ - Module Summary</h3>
+        <ul>
+            <li>الفِعْلُ الرَّئِيسِيُّ: اسْتَيْقَظَ - يَسْتَيْقِظُ - اسْتَيْقِظْ (وَزْنُ اسْتَفْعَلَ)</li>
+            <li>أَسْمَاءُ الأَفْعَالِ: كَلِمَاتٌ تَحْمِلُ مَعْنَى الفِعْلِ لَكِنَّهَا مَبْنِيَّةٌ</li>
+            <li>اسْمُ فِعْلٍ مَاضٍ: هَيْهَاتَ، شَتَّانَ، سُرْعَانَ</li>
+            <li>اسْمُ فِعْلٍ مُضَارِعٍ: آهِ، أُفٍّ، وَيْ، بَخْ</li>
+            <li>اسْمُ فِعْلِ أَمْرٍ: هَاتِ، هَلُمَّ، عَلَيْكَ، دُونَكَ</li>
+            <li>الأَعْدَادُ ١١-١٩: مَبْنِيَّةٌ عَلَى فَتْحِ الجُزْأَيْنِ</li>
+            <li>التَّمْيِيزُ بَعْدَ ١١-٩٩: مُفْرَدٌ مَنْصُوبٌ</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="index.html" style="display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; text-decoration: none; border-radius: 10px; font-size: 20px; transition: all 0.3s;">
+            العَوْدَةُ لِلرَّئِيسِيَّةِ
+        </a>
+    </div>
+</section>
+
+<script>
+// Memory Game Logic
+const memoryPairs = [
+    { arabic: 'اسْتَيْقَظَ', english: 'To wake up' },
+    { arabic: 'هَيْهَاتَ', english: 'How far!' },
+    { arabic: 'هَاتِ', english: 'Give me!' },
+    { arabic: 'هَلُمَّ', english: 'Come here!' },
+    { arabic: 'أُفٍّ', english: 'Uff! (annoyed)' },
+    { arabic: 'شَتَّانَ', english: 'How different!' }
+];
+
+let flippedCards = [];
+let matchedPairs = 0;
+let attempts = 0;
+
+function initMemoryGame() {
+    const game = document.getElementById('memoryGame');
+    game.innerHTML = '';
+    flippedCards = [];
+    matchedPairs = 0;
+    attempts = 0;
+    document.getElementById('attempts').textContent = '0';
+    document.getElementById('pairs').textContent = '0';
+
+    // Create cards array with both Arabic and English
+    let cards = [];
+    memoryPairs.forEach((pair, index) => {
+        cards.push({ type: 'arabic', value: pair.arabic, pairId: index });
+        cards.push({ type: 'english', value: pair.english, pairId: index });
+    });
+
+    // Shuffle cards
+    cards.sort(() => Math.random() - 0.5);
+
+    // Create card elements
+    cards.forEach((card, index) => {
+        const cardEl = document.createElement('div');
+        cardEl.className = 'memory-card';
+        cardEl.dataset.pairId = card.pairId;
+        cardEl.dataset.index = index;
+        cardEl.innerHTML = `
+            <div class="memory-card-inner">
+                <div class="memory-card-front">?</div>
+                <div class="memory-card-back" style="${card.type === 'arabic' ? 'font-family: Amiri, serif; font-size: 18px;' : 'font-size: 14px;'}">${card.value}</div>
+            </div>
+        `;
+        cardEl.addEventListener('click', () => flipCard(cardEl));
+        game.appendChild(cardEl);
+    });
+}
+
+function flipCard(card) {
+    if (flippedCards.length >= 2 || card.classList.contains('flipped') || card.classList.contains('matched')) {
+        return;
+    }
+
+    card.classList.add('flipped');
+    flippedCards.push(card);
+
+    if (flippedCards.length === 2) {
+        attempts++;
+        document.getElementById('attempts').textContent = attempts;
+        checkMatch();
+    }
+}
+
+function checkMatch() {
+    const [card1, card2] = flippedCards;
+    const match = card1.dataset.pairId === card2.dataset.pairId;
+
+    if (match) {
+        card1.classList.add('matched');
+        card2.classList.add('matched');
+        matchedPairs++;
+        document.getElementById('pairs').textContent = matchedPairs;
+        flippedCards = [];
+
+        if (matchedPairs === memoryPairs.length) {
+            setTimeout(() => alert('أَحْسَنْتَ! لَقَدْ أَكْمَلْتَ اللُّعْبَةَ! 🎉'), 500);
+        }
+    } else {
+        setTimeout(() => {
+            card1.classList.remove('flipped');
+            card2.classList.remove('flipped');
+            flippedCards = [];
+        }, 1000);
+    }
+}
+
+// Exercise Logic
+let score = 0;
+let answeredQuestions = new Set();
+
+function checkAnswer(questionNum, button, isCorrect) {
+    if (answeredQuestions.has(questionNum)) return;
+
+    answeredQuestions.add(questionNum);
+    const explanation = document.getElementById(`exp${questionNum}`);
+    const buttons = button.parentElement.querySelectorAll('.option-btn');
+
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (isCorrect) {
+        button.classList.add('correct');
+        explanation.classList.add('correct-exp');
+        score++;
+    } else {
+        button.classList.add('incorrect');
+        explanation.classList.add('incorrect-exp');
+        // Show correct answer
+        buttons.forEach(btn => {
+            if (btn.onclick.toString().includes('true')) {
+                btn.classList.add('correct');
+            }
+        });
+    }
+
+    explanation.classList.add('show');
+    document.getElementById('score').textContent = score;
+}
+
+function resetExercises() {
+    score = 0;
+    answeredQuestions.clear();
+    document.getElementById('score').textContent = '0';
+
+    for (let i = 1; i <= 5; i++) {
+        const explanation = document.getElementById(`exp${i}`);
+        explanation.classList.remove('show', 'correct-exp', 'incorrect-exp');
+
+        const buttons = document.querySelectorAll(`#q${i} .option-btn`);
+        buttons.forEach(btn => {
+            btn.disabled = false;
+            btn.classList.remove('correct', 'incorrect');
+        });
+    }
+}
+
+// Initialize memory game on page load
+document.addEventListener('DOMContentLoaded', initMemoryGame);
+</script>
+
+</body>
+</html>

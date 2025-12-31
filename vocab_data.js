@@ -756,6 +756,68 @@ const ARB202_VOCABULARY = {
             { id: "m16_28", arabic: "قَهْوَةٌ - قَهَاوِي", transliteration: "qahwahun - qahaawiy", english: "Coffee shop (pl.)", category: "noun" },
             { id: "m16_29", arabic: "جَيِّدًا", transliteration: "jayidana", english: "Well (adverb)", category: "term" }
         ]
+    },
+
+    module17: {
+        name: { arabic: "الوَحْدَةُ السَّابِعَةَ عَشْرَةَ", english: "Module 17", topic: "Shakara & Inna/Anna" },
+        words: [
+            { id: "m17_01", arabic: "شَكَرَ - يَشْكُرُ - اُشْكُرْ", transliteration: "shakara - yashkuru - ushkur", english: "To thank", category: "verb" },
+            { id: "m17_02", arabic: "رَجَعَ - يَرْجِعُ", transliteration: "raja'a - yarji'u", english: "To return", category: "verb" },
+            { id: "m17_03", arabic: "قَرَأَ - يَقْرَأُ", transliteration: "qara'a - yaqra'u", english: "To read", category: "verb" },
+            { id: "m17_04", arabic: "حَفِظَ - يَحْفَظُ", transliteration: "hafidha - yahfadhu", english: "To memorize", category: "verb" },
+            { id: "m17_05", arabic: "فَرِحَ - يَفْرَحُ", transliteration: "fariha - yafrahu", english: "To be happy", category: "verb" },
+            { id: "m17_06", arabic: "غَسَلَ - يَغْسِلُ", transliteration: "ghasala - yaghsilu", english: "To wash", category: "verb" },
+            { id: "m17_07", arabic: "كَوَى - يَكْوِي", transliteration: "kawaa - yakwee", english: "To iron", category: "verb" },
+            { id: "m17_08", arabic: "أَظُنُّ", transliteration: "adhunnu", english: "I think / I suppose", category: "verb" },
+            { id: "m17_09", arabic: "هَاتِ", transliteration: "haati", english: "Give! (verbal noun)", category: "term" },
+            { id: "m17_10", arabic: "إِنَّ", transliteration: "inna", english: "'that' (after قَالَ - with kasra)", category: "particle" },
+            { id: "m17_11", arabic: "أَنَّ", transliteration: "anna", english: "'that' (after أَظُنُّ - with fatha)", category: "particle" },
+            { id: "m17_12", arabic: "أَيٌّ", transliteration: "ayy", english: "Which? (interrogative)", category: "term" },
+            { id: "m17_13", arabic: "نِصْفُ سَاعَةٍ", transliteration: "nisf saa'ah", english: "Half an hour", category: "noun" },
+            { id: "m17_14", arabic: "الفِقْهُ", transliteration: "al-fiqh", english: "Islamic Jurisprudence", category: "noun" },
+            { id: "m17_15", arabic: "سُورَةٌ", transliteration: "soorah", english: "Chapter (of Quran)", category: "noun" },
+            { id: "m17_16", arabic: "آيَةٌ", transliteration: "aayah", english: "Verse (of Quran)", category: "noun" },
+            { id: "m17_17", arabic: "القَمِيصُ", transliteration: "al-qamees", english: "Shirt", category: "noun" },
+            { id: "m17_18", arabic: "المَكْتَبَةُ", transliteration: "al-maktabah", english: "Library", category: "noun" },
+            { id: "m17_19", arabic: "المُدِيرَةُ", transliteration: "al-mudeerah", english: "Headmistress / Female Director", category: "noun" },
+            { id: "m17_20", arabic: "زَمِيلَةٌ", transliteration: "zameelah", english: "Female colleague/classmate", category: "noun" },
+            { id: "m17_21", arabic: "صَلَاةُ الظُّهْرِ", transliteration: "salaat adh-dhuhr", english: "Dhuhr Prayer (noon)", category: "noun" },
+            { id: "m17_22", arabic: "نِعْمَةٌ - نِعَمٌ", transliteration: "ni'mah - ni'am", english: "Blessing / Blessings", category: "noun" },
+            { id: "m17_23", arabic: "عِلْمٌ", transliteration: "'ilm", english: "Knowledge", category: "noun" },
+            { id: "m17_24", arabic: "مَسْرُورٌ", transliteration: "masroor", english: "Happy / Pleased", category: "adjective" },
+            { id: "m17_25", arabic: "مَا شَاءَ اللهُ", transliteration: "maa shaa'a Allah", english: "What Allah willed (admiration)", category: "phrase" },
+            { id: "m17_26", arabic: "زَادَكَ اللهُ عِلْمًا", transliteration: "zaadaka Allahu 'ilman", english: "May Allah increase you in knowledge", category: "phrase" },
+            { id: "m17_27", arabic: "لِمَ / لِمَهْ", transliteration: "lima / limah", english: "Why?", category: "particle" }
+        ]
+    },
+
+    module18: {
+        name: { arabic: "الوَحْدَةُ الثَّامِنَةَ عَشْرَةَ", english: "Module 18", topic: "Istayqadha & Verbal Nouns" },
+        words: [
+            { id: "m18_01", arabic: "اسْتَيْقَظَ - يَسْتَيْقِظُ - اسْتَيْقِظْ", transliteration: "istayqaza - yastayqizu - istayqiz", english: "To wake up (Form X)", category: "verb" },
+            { id: "m18_02", arabic: "أَسْمَاءُ الأَفْعَالِ", transliteration: "asmaa' al-af'aal", english: "Verbal Nouns", category: "term" },
+            { id: "m18_03", arabic: "هَيْهَاتَ", transliteration: "hayhaata", english: "How far! / Impossible!", category: "term" },
+            { id: "m18_04", arabic: "شَتَّانَ", transliteration: "shattaana", english: "How different!", category: "term" },
+            { id: "m18_05", arabic: "سُرْعَانَ", transliteration: "sur'aana", english: "How quickly! / Soon!", category: "term" },
+            { id: "m18_06", arabic: "آهِ", transliteration: "aah", english: "Ouch! / I feel pain", category: "term" },
+            { id: "m18_07", arabic: "أُفٍّ", transliteration: "uff", english: "Uff! / I'm annoyed", category: "term" },
+            { id: "m18_08", arabic: "وَيْ", transliteration: "way", english: "Wow! / I'm amazed", category: "term" },
+            { id: "m18_09", arabic: "بَخْ", transliteration: "bakh", english: "Excellent! / How good!", category: "term" },
+            { id: "m18_10", arabic: "عَلَيْكَ", transliteration: "'alayka", english: "You must! / Stick to!", category: "term" },
+            { id: "m18_11", arabic: "هَلُمَّ", transliteration: "halumma", english: "Come here! / Come!", category: "term" },
+            { id: "m18_12", arabic: "هَاتِ", transliteration: "haati", english: "Give me!", category: "term" },
+            { id: "m18_13", arabic: "دُونَكَ", transliteration: "doonaka", english: "Take it!", category: "term" },
+            { id: "m18_14", arabic: "النَّوْمُ", transliteration: "an-nawm", english: "Sleep", category: "noun" },
+            { id: "m18_15", arabic: "الفَجْرُ", transliteration: "al-fajr", english: "Dawn", category: "noun" },
+            { id: "m18_16", arabic: "اليَقَظَةُ", transliteration: "al-yaqazah", english: "Wakefulness / Alertness", category: "noun" },
+            { id: "m18_17", arabic: "التَّمْيِيزُ", transliteration: "at-tamyeez", english: "Specifier (grammar)", category: "term" },
+            { id: "m18_18", arabic: "المَعْدُودُ", transliteration: "al-ma'dood", english: "Counted noun", category: "term" },
+            { id: "m18_19", arabic: "الأَعْدَادُ المُرَكَّبَةُ", transliteration: "al-a'daad al-murakkabah", english: "Compound numbers (11-19)", category: "term" },
+            { id: "m18_20", arabic: "مَبْنِيٌّ", transliteration: "mabniyy", english: "Indeclinable / Built", category: "term" },
+            { id: "m18_21", arabic: "مُبَكِّرًا", transliteration: "mubakkiran", english: "Early", category: "adjective" },
+            { id: "m18_22", arabic: "طَالِبًا", transliteration: "taaliban", english: "Student (accusative)", category: "noun" },
+            { id: "m18_23", arabic: "كِتَابًا", transliteration: "kitaaban", english: "Book (accusative)", category: "noun" }
+        ]
     }
 };
 
