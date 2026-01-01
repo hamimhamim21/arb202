@@ -1,7 +1,7 @@
 /**
  * ARB202 Vocabulary Data
  * Extracted from moduleX_study_guide.html files
- * Total: ~670+ words across 16 modules
+ * Total: ~700+ words across 19 modules
  */
 
 const ARB202_VOCABULARY = {
@@ -817,6 +817,53 @@ const ARB202_VOCABULARY = {
             { id: "m18_21", arabic: "مُبَكِّرًا", transliteration: "mubakkiran", english: "Early", category: "adjective" },
             { id: "m18_22", arabic: "طَالِبًا", transliteration: "taaliban", english: "Student (accusative)", category: "noun" },
             { id: "m18_23", arabic: "كِتَابًا", transliteration: "kitaaban", english: "Book (accusative)", category: "noun" }
+        ]
+    },
+
+    module19: {
+        name: { arabic: "الوَحْدَةُ التَّاسِعَةَ عَشْرَةَ", english: "Module 19", topic: "Zara'a & Ayy/Maa" },
+        words: [
+            // Main Verb
+            { id: "m19_01", arabic: "زَرَعَ - يَزْرَعُ - اِزْرَعْ", transliteration: "zara'a - yazra'u - izra'", english: "To plant / To farm", category: "verb" },
+            // Grammar Terms
+            { id: "m19_02", arabic: "أَيّ الاستفهامية", transliteration: "ayy al-istifhaamiyyah", english: "Interrogative 'which' (fully declinable)", category: "term" },
+            { id: "m19_03", arabic: "مَا الاستفهامية", transliteration: "maa al-istifhaamiyyah", english: "Interrogative 'what'", category: "term" },
+            { id: "m19_04", arabic: "الكُسُورُ", transliteration: "al-kusoor", english: "Fractions", category: "term" },
+            { id: "m19_05", arabic: "اسم التصغير", transliteration: "ism at-tasgheer", english: "Diminutive Noun", category: "term" },
+            // ما with Prepositions
+            { id: "m19_06", arabic: "فِيمَ", transliteration: "feema", english: "In what? (فِي + مَا)", category: "particle" },
+            { id: "m19_07", arabic: "مِمَّ", transliteration: "mimma", english: "From what? (مِنْ + مَا)", category: "particle" },
+            { id: "m19_08", arabic: "عَمَّ", transliteration: "'amma", english: "About what? (عَنْ + مَا)", category: "particle" },
+            { id: "m19_09", arabic: "إِلَامَ", transliteration: "ilaama", english: "To what? (إِلَى + مَا)", category: "particle" },
+            { id: "m19_10", arabic: "عَلَامَ", transliteration: "'alaama", english: "Upon what? (عَلَى + مَا)", category: "particle" },
+            { id: "m19_11", arabic: "بِمَ", transliteration: "bima", english: "With what? (بِ + مَا)", category: "particle" },
+            { id: "m19_12", arabic: "لِمَ / لِمَاذَا", transliteration: "lima / limaadha", english: "Why? (لِ + مَا)", category: "particle" },
+            // Fractions
+            { id: "m19_13", arabic: "نِصْفٌ", transliteration: "nisf", english: "Half (1/2)", category: "number" },
+            { id: "m19_14", arabic: "ثُلُثٌ", transliteration: "thuluth", english: "Third (1/3)", category: "number" },
+            { id: "m19_15", arabic: "رُبْعٌ", transliteration: "rub'", english: "Quarter (1/4)", category: "number" },
+            { id: "m19_16", arabic: "خُمْسٌ", transliteration: "khums", english: "Fifth (1/5)", category: "number" },
+            { id: "m19_17", arabic: "سُدُسٌ", transliteration: "sudus", english: "Sixth (1/6)", category: "number" },
+            { id: "m19_18", arabic: "سُبُعٌ", transliteration: "sub'", english: "Seventh (1/7)", category: "number" },
+            { id: "m19_19", arabic: "ثُمُنٌ", transliteration: "thumun", english: "Eighth (1/8)", category: "number" },
+            { id: "m19_20", arabic: "تُسُعٌ", transliteration: "tus'", english: "Ninth (1/9)", category: "number" },
+            { id: "m19_21", arabic: "عُشْرٌ", transliteration: "'ushr", english: "Tenth (1/10)", category: "number" },
+            // Time Vocabulary
+            { id: "m19_22", arabic: "دَقِيقَةٌ", transliteration: "daqeeqah", english: "Minute", category: "noun" },
+            { id: "m19_23", arabic: "ثَانِيَةٌ", transliteration: "thaaniyah", english: "Second", category: "noun" },
+            { id: "m19_24", arabic: "سَاعَةٌ", transliteration: "saa'ah", english: "Hour / Clock", category: "noun" },
+            // Diminutive
+            { id: "m19_25", arabic: "بُنَيَّ", transliteration: "bunayy", english: "My little son (diminutive)", category: "noun" },
+            // Agriculture
+            { id: "m19_26", arabic: "الفَلَّاحُ", transliteration: "al-fallaah", english: "Farmer", category: "noun" },
+            { id: "m19_27", arabic: "الحَقْلُ", transliteration: "al-haql", english: "Field", category: "noun" },
+            { id: "m19_28", arabic: "الأَرْضُ", transliteration: "al-ard", english: "Land / Earth", category: "noun" },
+            { id: "m19_29", arabic: "البَذْرُ", transliteration: "al-badhr", english: "Seed", category: "noun" },
+            // Related Verbs
+            { id: "m19_30", arabic: "قَالَ - يَقُولُ", transliteration: "qaala - yaqoolu", english: "To say (uses إِنَّ)", category: "verb" },
+            { id: "m19_31", arabic: "ظَنَّ - يَظُنُّ", transliteration: "dhanna - yadhunnu", english: "To think/suppose (uses أَنَّ)", category: "verb" },
+            { id: "m19_32", arabic: "عَلِمَ - يَعْلَمُ", transliteration: "'alima - ya'lamu", english: "To know (uses إِنَّ)", category: "verb" },
+            { id: "m19_33", arabic: "حَسِبَ - يَحْسِبُ", transliteration: "hasiba - yahsibu", english: "To reckon/suppose (uses أَنَّ)", category: "verb" }
         ]
     }
 };

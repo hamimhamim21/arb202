@@ -497,6 +497,93 @@
             font-family: Georgia, serif;
         }
 
+        /* Translation Practice Styles */
+        .translation-practice-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .translation-practice-title {
+            font-size: 36px;
+            color: #1565c0;
+            border-bottom: 4px solid #2196f3;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .translation-practice-item {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .translation-number {
+            background: #1565c0;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .translation-english {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            color: #333;
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        .translation-arabic {
+            display: none;
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 28px;
+            color: #004d40;
+            text-align: center;
+            margin-top: 15px;
+            border: 2px solid #00897b;
+        }
+        .translation-arabic.show {
+            display: block;
+        }
+        .show-answer-btn {
+            background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .show-answer-btn:hover {
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+            transform: translateY(-2px);
+        }
+        .hide-answer-btn {
+            background: linear-gradient(135deg, #757575 0%, #9e9e9e 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
         /* Verbal Noun Category Cards */
         .verbal-noun-grid {
             display: grid;
@@ -559,6 +646,10 @@
         <a href="#numbers">
             <span class="nav-ar">الأَعْدَادُ</span>
             <span class="nav-en">Numbers</span>
+        </a>
+        <a href="#translation">
+            <span class="nav-ar">التَّرْجَمَةُ</span>
+            <span class="nav-en">Translation</span>
         </a>
         <a href="#exercises">
             <span class="nav-ar">التَّمَارِينُ</span>
@@ -1579,7 +1670,85 @@
     </div>
 </section>
 
-<!-- Section 6: Exercises -->
+<!-- Section 6: Translation Practice (NEW) -->
+<section id="translation" class="translation-practice-section">
+    <h2 class="translation-practice-title">تَرْجِمْ مِنَ الإِنْجِلِيزِيَّةِ إِلَى العَرَبِيَّةِ</h2>
+    <p class="english-text" style="text-align: center; margin-bottom: 20px; color: #1565c0;">
+        Translate from English to Arabic. Try to write your answer first, then click "Show Answer" to check!
+    </p>
+
+    <div class="translation-practice-item">
+        <div class="translation-number">1</div>
+        <div class="translation-english">I woke up from sleep at dawn.</div>
+        <button class="show-answer-btn" onclick="toggleAnswer('answer1', this)">أَظْهِرِ الإِجَابَةَ</button>
+        <div class="translation-arabic" id="answer1">اسْتَيْقَظْتُ مِنَ النَّوْمِ فِي الفَجْرِ</div>
+    </div>
+
+    <div class="translation-practice-item">
+        <div class="translation-number">2</div>
+        <div class="translation-english">The students wake up early.</div>
+        <button class="show-answer-btn" onclick="toggleAnswer('answer2', this)">أَظْهِرِ الإِجَابَةَ</button>
+        <div class="translation-arabic" id="answer2">يَسْتَيْقِظُ الطُّلَّابُ مُبَكِّرِينَ</div>
+    </div>
+
+    <div class="translation-practice-item">
+        <div class="translation-number">3</div>
+        <div class="translation-english">Wake up, my brother!</div>
+        <button class="show-answer-btn" onclick="toggleAnswer('answer3', this)">أَظْهِرِ الإِجَابَةَ</button>
+        <div class="translation-arabic" id="answer3">اسْتَيْقِظْ يَا أَخِي!</div>
+    </div>
+
+    <div class="translation-practice-item">
+        <div class="translation-number">4</div>
+        <div class="translation-english">It is impossible for Muhammad to become a doctor.</div>
+        <button class="show-answer-btn" onclick="toggleAnswer('answer4', this)">أَظْهِرِ الإِجَابَةَ</button>
+        <div class="translation-arabic" id="answer4">هَيْهَاتَ مُحَمَّدٌ أَنْ يُصْبِحَ طَبِيبًا</div>
+    </div>
+
+    <div class="translation-practice-item">
+        <div class="translation-number">5</div>
+        <div class="translation-english">There is a great difference between poverty and richness.</div>
+        <button class="show-answer-btn" onclick="toggleAnswer('answer5', this)">أَظْهِرِ الإِجَابَةَ</button>
+        <div class="translation-arabic" id="answer5">شَتَّانَ الفَقْرُ وَالغِنَى</div>
+    </div>
+
+    <div class="translation-practice-item">
+        <div class="translation-number">6</div>
+        <div class="translation-english">Give me the book, O Ali!</div>
+        <button class="show-answer-btn" onclick="toggleAnswer('answer6', this)">أَظْهِرِ الإِجَابَةَ</button>
+        <div class="translation-arabic" id="answer6">هَاتِ الكِتَابَ يَا عَلِيُّ</div>
+    </div>
+
+    <div class="translation-practice-item">
+        <div class="translation-number">7</div>
+        <div class="translation-english">Come to the food!</div>
+        <button class="show-answer-btn" onclick="toggleAnswer('answer7', this)">أَظْهِرِ الإِجَابَةَ</button>
+        <div class="translation-arabic" id="answer7">هَلُمَّ إِلَى الطَّعَامِ</div>
+    </div>
+
+    <div class="translation-practice-item">
+        <div class="translation-number">8</div>
+        <div class="translation-english">You must be patient.</div>
+        <button class="show-answer-btn" onclick="toggleAnswer('answer8', this)">أَظْهِرِ الإِجَابَةَ</button>
+        <div class="translation-arabic" id="answer8">عَلَيْكَ بِالصَّبْرِ</div>
+    </div>
+
+    <div class="translation-practice-item">
+        <div class="translation-number">9</div>
+        <div class="translation-english">How different is the scholar from the ignorant!</div>
+        <button class="show-answer-btn" onclick="toggleAnswer('answer9', this)">أَظْهِرِ الإِجَابَةَ</button>
+        <div class="translation-arabic" id="answer9">شَتَّانَ بَيْنَ العَالِمِ وَالجَاهِلِ</div>
+    </div>
+
+    <div class="translation-practice-item">
+        <div class="translation-number">10</div>
+        <div class="translation-english">15 students came.</div>
+        <button class="show-answer-btn" onclick="toggleAnswer('answer10', this)">أَظْهِرِ الإِجَابَةَ</button>
+        <div class="translation-arabic" id="answer10">جَاءَ خَمْسَةَ عَشَرَ طَالِبًا</div>
+    </div>
+</section>
+
+<!-- Section 7: Exercises -->
 <section id="exercises" class="exercise-section">
     <h2 class="exercise-section-title">التَّمَارِينُ - Exercises</h2>
     <div class="score-display">النَّتِيجَةُ: <span id="score">0</span> / <span id="total">5</span></div>
@@ -1681,6 +1850,20 @@
 </section>
 
 <script>
+// Translation Practice Toggle
+function toggleAnswer(id, btn) {
+    const answer = document.getElementById(id);
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        btn.textContent = 'أَظْهِرِ الإِجَابَةَ';
+        btn.className = 'show-answer-btn';
+    } else {
+        answer.classList.add('show');
+        btn.textContent = 'أَخْفِ الإِجَابَةَ';
+        btn.className = 'hide-answer-btn';
+    }
+}
+
 // Memory Game Logic
 const memoryPairs = [
     { arabic: 'اسْتَيْقَظَ', english: 'To wake up' },
