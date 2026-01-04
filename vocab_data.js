@@ -865,6 +865,68 @@ const ARB202_VOCABULARY = {
             { id: "m19_32", arabic: "عَلِمَ - يَعْلَمُ", transliteration: "'alima - ya'lamu", english: "To know (uses إِنَّ)", category: "verb" },
             { id: "m19_33", arabic: "حَسِبَ - يَحْسِبُ", transliteration: "hasiba - yahsibu", english: "To reckon/suppose (uses أَنَّ)", category: "verb" }
         ]
+    },
+
+    module20: {
+        name: { arabic: "الوَحْدَةُ العِشْرُونَ", english: "Module 20", topic: "دَفَعَ وَمَا الاستفهامية" },
+        words: [
+            // Main Verb
+            { id: "m20_01", arabic: "دَفَعَ - يَدْفَعُ - اِدْفَعْ", transliteration: "dafa'a - yadfa'u - idfa'", english: "To pay out / To push", category: "verb" },
+            // Grammar Terms
+            { id: "m20_02", arabic: "أَيّ الاستفهامية", transliteration: "ayy al-istifhaamiyyah", english: "Interrogative 'which' (declinable)", category: "term" },
+            { id: "m20_03", arabic: "\"مَا\" الاستفهامية", transliteration: "maa al-istifhaamiyyah", english: "Interrogative 'what' (MA for questioning)", category: "term" },
+            // ما with Prepositions
+            { id: "m20_04", arabic: "فِيمَ", transliteration: "feema", english: "In what? (فِي + مَا)", category: "particle" },
+            { id: "m20_05", arabic: "مِمَّ", transliteration: "mimma", english: "From what? (مِنْ + مَا)", category: "particle" },
+            { id: "m20_06", arabic: "عَمَّ", transliteration: "'amma", english: "About what? (عَنْ + مَا)", category: "particle" },
+            { id: "m20_07", arabic: "لِمَ", transliteration: "lima", english: "Why? / For what? (لِ + مَا)", category: "particle" },
+            // Nouns
+            { id: "m20_08", arabic: "النُّقُود", transliteration: "an-nuqood", english: "Money", category: "noun" },
+            { id: "m20_09", arabic: "بُنَيَّ", transliteration: "bunayy", english: "My little son (diminutive of ابن)", category: "noun" },
+            { id: "m20_10", arabic: "المَكْتَبَة", transliteration: "al-maktaba", english: "Library", category: "noun" },
+            { id: "m20_11", arabic: "مَجَلَّة", transliteration: "majalla", english: "Magazine", category: "noun" },
+            { id: "m20_12", arabic: "المُدِيرَة", transliteration: "al-mudeera", english: "Female Principal/Director", category: "noun" },
+            { id: "m20_13", arabic: "الخَادِمَة", transliteration: "al-khaadima", english: "Female Servant", category: "noun" },
+            { id: "m20_14", arabic: "قِطْعَة", transliteration: "qit'a", english: "Piece / Slice", category: "noun" },
+            { id: "m20_15", arabic: "الشَّاي", transliteration: "ash-shaay", english: "Tea", category: "noun" },
+            { id: "m20_16", arabic: "خُبْز", transliteration: "khubz", english: "Bread", category: "noun" },
+            { id: "m20_17", arabic: "السَّيَّارَة", transliteration: "as-sayyaara", english: "Car", category: "noun" },
+            { id: "m20_18", arabic: "جُنَيْه", transliteration: "junayh", english: "Pound (currency)", category: "noun" },
+            { id: "m20_19", arabic: "آلَاف", transliteration: "aalaaf", english: "Thousands", category: "noun" },
+            { id: "m20_20", arabic: "التَّاجِر", transliteration: "at-taajir", english: "Merchant / Trader", category: "noun" },
+            { id: "m20_21", arabic: "الفِقْه", transliteration: "al-fiqh", english: "Fiqh / Islamic Jurisprudence", category: "noun" },
+            { id: "m20_22", arabic: "سُورَة", transliteration: "soora", english: "Surah / Chapter (of Quran)", category: "noun" },
+            { id: "m20_23", arabic: "آيَة", transliteration: "aaya", english: "Verse (of Quran)", category: "noun" },
+            { id: "m20_24", arabic: "القَمِيص", transliteration: "al-qamees", english: "Shirt", category: "noun" },
+            { id: "m20_25", arabic: "المِنْدِيل", transliteration: "al-mindeel", english: "Handkerchief", category: "noun" },
+            { id: "m20_26", arabic: "الوَجْه", transliteration: "al-wajh", english: "Face", category: "noun" },
+            { id: "m20_27", arabic: "المَاء", transliteration: "al-maa'", english: "Water", category: "noun" },
+            { id: "m20_28", arabic: "الأُسْبُوع", transliteration: "al-usboo'", english: "Week", category: "noun" },
+            { id: "m20_29", arabic: "زَمِيلَات", transliteration: "zameelaat", english: "Female classmates", category: "noun" },
+            { id: "m20_30", arabic: "الفَصْل", transliteration: "al-fasl", english: "Classroom / Semester", category: "noun" },
+            // Adjectives
+            { id: "m20_31", arabic: "مُجْتَهِد / مُجْتَهِدَة", transliteration: "mujtahid / mujtahida", english: "Diligent / Hardworking (m/f)", category: "adjective" },
+            { id: "m20_32", arabic: "مَسْرُور / مَسْرُورَة", transliteration: "masroor / masroora", english: "Happy / Pleased (m/f)", category: "adjective" },
+            { id: "m20_33", arabic: "جَوْعَى", transliteration: "jaw'aa", english: "Hungry (feminine)", category: "adjective" },
+            { id: "m20_34", arabic: "جَوْعَان", transliteration: "jaw'aan", english: "Hungry (masculine)", category: "adjective" },
+            { id: "m20_35", arabic: "البَارِد", transliteration: "al-baarid", english: "Cold", category: "adjective" },
+            { id: "m20_36", arabic: "الحَارّ / السَّاخِن", transliteration: "al-haarr / as-saakhin", english: "Hot (synonyms)", category: "adjective" },
+            { id: "m20_37", arabic: "أَطْوَل", transliteration: "atwal", english: "Longer / Taller (comparative)", category: "adjective" },
+            { id: "m20_38", arabic: "أَحْسَن", transliteration: "ahsan", english: "Best / Better (comparative)", category: "adjective" },
+            // Related Verbs
+            { id: "m20_39", arabic: "رَأَى - يَرَى", transliteration: "ra'aa - yaraa", english: "To see", category: "verb" },
+            { id: "m20_40", arabic: "غَسَلَ - يَغْسِلُ", transliteration: "ghasala - yaghsilu", english: "To wash", category: "verb" },
+            { id: "m20_41", arabic: "كَوَى - يَكْوِي", transliteration: "kawaa - yakwee", english: "To iron (clothes)", category: "verb" },
+            { id: "m20_42", arabic: "شَرِبَ - يَشْرَبُ", transliteration: "shariba - yashrabu", english: "To drink", category: "verb" },
+            { id: "m20_43", arabic: "فَرِحَ - يَفْرَحُ", transliteration: "fariha - yafrahu", english: "To be happy / rejoice", category: "verb" },
+            { id: "m20_44", arabic: "فَهِمَ - يَفْهَمُ", transliteration: "fahima - yafhamu", english: "To understand", category: "verb" },
+            // Commands
+            { id: "m20_45", arabic: "هَاتِ / هَاتِي", transliteration: "haati / haatee", english: "Give! / Bring! (m/f command)", category: "verb" },
+            // Phrases
+            { id: "m20_46", arabic: "مَا شَاءَ الله", transliteration: "maa shaa' Allah", english: "MashaAllah (as Allah willed)", category: "phrase" },
+            { id: "m20_47", arabic: "زَادَكَ اللهُ عِلْمًا", transliteration: "zaadaka Allahu 'ilman", english: "May Allah increase you in knowledge", category: "phrase" },
+            { id: "m20_48", arabic: "السَّلَامُ عَلَيْكُم", transliteration: "as-salaamu 'alaykum", english: "Peace be upon you (greeting)", category: "phrase" }
+        ]
     }
 };
 
