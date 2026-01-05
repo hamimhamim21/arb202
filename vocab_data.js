@@ -927,6 +927,98 @@ const ARB202_VOCABULARY = {
             { id: "m20_47", arabic: "زَادَكَ اللهُ عِلْمًا", transliteration: "zaadaka Allahu 'ilman", english: "May Allah increase you in knowledge", category: "phrase" },
             { id: "m20_48", arabic: "السَّلَامُ عَلَيْكُم", transliteration: "as-salaamu 'alaykum", english: "Peace be upon you (greeting)", category: "phrase" }
         ]
+    },
+
+    module21: {
+        name: { arabic: "الوَحْدَةُ الحَادِيَةُ وَالعِشْرُونَ", english: "Module 21", topic: "كَوَى والأعداد المركبة" },
+        words: [
+            // Main Verb
+            { id: "m21_01", arabic: "كَوَى - يَكْوِي - اِكْوِ", transliteration: "kawaa - yakwee - ikwi", english: "To iron (clothes)", category: "verb" },
+            { id: "m21_02", arabic: "مِكْوَاة", transliteration: "mikwaah", english: "Iron (device)", category: "noun" },
+            // فَعْلان Pattern - Adjectives
+            { id: "m21_03", arabic: "جَوْعَان / جَوْعَى", transliteration: "jaw'aan / jaw'aa", english: "Hungry (m/f)", category: "adjective" },
+            { id: "m21_04", arabic: "عَطْشَان / عَطْشَى", transliteration: "'atshaan / 'atshaa", english: "Thirsty (m/f)", category: "adjective" },
+            { id: "m21_05", arabic: "شَبْعَان / شَبْعَى", transliteration: "shab'aan / shab'aa", english: "Full/Satisfied (m/f)", category: "adjective" },
+            { id: "m21_06", arabic: "غَضْبَان / غَضْبَى", transliteration: "ghadbaan / ghadbaa", english: "Angry (m/f)", category: "adjective" },
+            { id: "m21_07", arabic: "كَسْلَان / كَسْلَى", transliteration: "kaslaan / kaslaa", english: "Lazy (m/f)", category: "adjective" },
+            // Plurals of فَعْلان
+            { id: "m21_08", arabic: "جِيَاع", transliteration: "jiyaa'", english: "Hungry (plural)", category: "adjective" },
+            { id: "m21_09", arabic: "عِطَاش", transliteration: "'itaash", english: "Thirsty (plural)", category: "adjective" },
+            { id: "m21_10", arabic: "شِبَاع", transliteration: "shibaa'", english: "Full (plural)", category: "adjective" },
+            { id: "m21_11", arabic: "غِضَاب", transliteration: "ghidaab", english: "Angry (plural m)", category: "adjective" },
+            { id: "m21_12", arabic: "كُسَالَى", transliteration: "kusaalaa", english: "Lazy (plural)", category: "adjective" },
+            // Grammar Terms
+            { id: "m21_13", arabic: "أَظُنُّ أَنَّ", transliteration: "adhunnu anna", english: "I think that...", category: "particle" },
+            { id: "m21_14", arabic: "الأَعْدَادُ المُرَكَّبَة", transliteration: "al-a'daad al-murakkabah", english: "Compound Numbers (11-19)", category: "term" },
+            { id: "m21_15", arabic: "وَزْن فَعْلان", transliteration: "wazn fa'laan", english: "Pattern فَعْلان (adjective form)", category: "term" },
+            // Compound Numbers
+            { id: "m21_16", arabic: "أَحَدَ عَشَرَ", transliteration: "ahada 'ashara", english: "Eleven (11) - masculine", category: "number" },
+            { id: "m21_17", arabic: "إِحْدَى عَشْرَةَ", transliteration: "ihdaa 'ashrata", english: "Eleven (11) - feminine", category: "number" },
+            { id: "m21_18", arabic: "اِثْنَا عَشَرَ", transliteration: "ithnaa 'ashara", english: "Twelve (12) - masculine", category: "number" },
+            { id: "m21_19", arabic: "اِثْنَتَا عَشْرَةَ", transliteration: "ithnataa 'ashrata", english: "Twelve (12) - feminine", category: "number" },
+            { id: "m21_20", arabic: "ثَلَاثَةَ عَشَرَ", transliteration: "thalaathata 'ashara", english: "Thirteen (13) - masculine", category: "number" },
+            { id: "m21_21", arabic: "ثَلَاثَ عَشْرَةَ", transliteration: "thalaatha 'ashrata", english: "Thirteen (13) - feminine", category: "number" },
+            // Vocabulary
+            { id: "m21_22", arabic: "المَلَابِس", transliteration: "al-malaabis", english: "Clothes", category: "noun" },
+            { id: "m21_23", arabic: "القَمِيص", transliteration: "al-qamees", english: "Shirt", category: "noun" },
+            { id: "m21_24", arabic: "الخَادِمَة", transliteration: "al-khaadima", english: "Maid servant", category: "noun" },
+            { id: "m21_25", arabic: "بِنَفْسِي", transliteration: "bi-nafsee", english: "By myself / Myself", category: "phrase" }
+        ]
+    },
+
+    module22: {
+        name: { arabic: "الوَحْدَةُ الثَّانِيَةُ وَالعِشْرُونَ", english: "Module 22", topic: "نَظَرَ وحالات الإعراب" },
+        words: [
+            // Main Verb
+            { id: "m22_01", arabic: "نَظَرَ - يَنْظُرُ - اُنْظُرْ", transliteration: "nadhara - yandhuru - undhur", english: "To look at", category: "verb" },
+            { id: "m22_02", arabic: "نَظَرَ إِلَى", transliteration: "nadhara ilaa", english: "To look at (with إِلَى)", category: "verb" },
+            // Vocabulary with Plurals
+            { id: "m22_03", arabic: "مَجَلَّة / مَجَلَّات", transliteration: "majalla / majallaat", english: "Magazine", category: "noun" },
+            { id: "m22_04", arabic: "عِمَارَة / عَمَائِر", transliteration: "'imaara / 'amaa'ir", english: "Building", category: "noun" },
+            { id: "m22_05", arabic: "سُورَة / سُوَر", transliteration: "soora / suwar", english: "Surah (chapter of Quran)", category: "noun" },
+            { id: "m22_06", arabic: "شُقَّة / شُقَق", transliteration: "shuqqa / shuqaq", english: "Flat / Apartment", category: "noun" },
+            { id: "m22_07", arabic: "سِنّ / أَسْنَان", transliteration: "sinn / asnaan", english: "Tooth / Age", category: "noun" },
+            { id: "m22_08", arabic: "كَلِمَة / كَلِمَات", transliteration: "kalima / kalimaat", english: "Word", category: "noun" },
+            { id: "m22_09", arabic: "زَمِيل / زُمَلَاء", transliteration: "zameel / zumalaa'", english: "Colleague (m)", category: "noun" },
+            { id: "m22_10", arabic: "زَمِيلَة / زَمِيلَات", transliteration: "zameela / zameelaat", english: "Colleague (f)", category: "noun" },
+            { id: "m22_11", arabic: "عُمْر / أَعْمَار", transliteration: "'umr / a'maar", english: "Age / Lifetime", category: "noun" },
+            { id: "m22_12", arabic: "رَاكِب / رُكَّاب", transliteration: "raakib / rukkaab", english: "Passenger", category: "noun" },
+            { id: "m22_13", arabic: "مَسْرُور", transliteration: "masroor", english: "Pleased / Happy", category: "adjective" },
+            { id: "m22_14", arabic: "خَادِمَة", transliteration: "khaadima", english: "Maid servant", category: "noun" },
+            // Grammar - ذُو وَ ذَات
+            { id: "m22_15", arabic: "ذُو", transliteration: "dhoo", english: "Possessor of (m) - marfoo'", category: "noun" },
+            { id: "m22_16", arabic: "ذَا", transliteration: "dhaa", english: "Possessor of (m) - mansoob", category: "noun" },
+            { id: "m22_17", arabic: "ذِي", transliteration: "dhee", english: "Possessor of (m) - majroor", category: "noun" },
+            { id: "m22_18", arabic: "ذَات", transliteration: "dhaat", english: "Possessor of (f)", category: "noun" },
+            // Grammar - هَاتِ
+            { id: "m22_19", arabic: "هَاتِ", transliteration: "haati", english: "Give! / Bring! (m.s.)", category: "verb" },
+            { id: "m22_20", arabic: "هَاتِي", transliteration: "haatee", english: "Give! / Bring! (f.s.)", category: "verb" },
+            { id: "m22_21", arabic: "هَاتُوا", transliteration: "haatoo", english: "Give! / Bring! (m.pl.)", category: "verb" },
+            { id: "m22_22", arabic: "هَاتِينَ", transliteration: "haateena", english: "Give! / Bring! (f.pl.)", category: "verb" },
+            // Grammar - آمين
+            { id: "m22_23", arabic: "آمِين", transliteration: "aameen", english: "Amin (O Lord, accept)", category: "term" },
+            { id: "m22_24", arabic: "اللَّهُمَّ اسْتَجِبْ", transliteration: "allaahumma istajib", english: "O Allah, accept (meaning of آمين)", category: "phrase" },
+            // Grammar - لِمَ
+            { id: "m22_25", arabic: "لِمَ / لِمَاذَا", transliteration: "lima / limaadha", english: "Why?", category: "particle" },
+            { id: "m22_26", arabic: "لِمَهْ", transliteration: "limah", english: "Why? (with هاء السكت)", category: "particle" },
+            // Case Endings Terms
+            { id: "m22_27", arabic: "المَرْفُوع", transliteration: "al-marfoo'", english: "Nominative case (ـُ)", category: "term" },
+            { id: "m22_28", arabic: "المَجْرُور", transliteration: "al-majroor", english: "Genitive case (ـِ)", category: "term" },
+            { id: "m22_29", arabic: "المَنْصُوب", transliteration: "al-mansoob", english: "Accusative case (ـَ)", category: "term" },
+            // Phrases
+            { id: "m22_30", arabic: "شَفَاهُ اللهُ", transliteration: "shafaahu Allah", english: "May Allah heal him", category: "phrase" },
+            { id: "m22_31", arabic: "زَادَكَ اللهُ عِلْمًا", transliteration: "zaadaka Allahu 'ilman", english: "May Allah increase you in knowledge", category: "phrase" },
+            { id: "m22_32", arabic: "مَا شَاءَ اللهُ", transliteration: "maa shaa' Allah", english: "What Allah willed (expression of admiration)", category: "phrase" },
+            // Dialogue Vocabulary
+            { id: "m22_33", arabic: "المَلْعَب", transliteration: "al-mal'ab", english: "Playground / Stadium", category: "noun" },
+            { id: "m22_34", arabic: "كُرَة القَدَم", transliteration: "kurat al-qadam", english: "Football / Soccer", category: "noun" },
+            { id: "m22_35", arabic: "كُرَة السَّلَّة", transliteration: "kurat as-salla", english: "Basketball", category: "noun" },
+            { id: "m22_36", arabic: "الصُّحُف", transliteration: "as-suhuf", english: "Newspapers", category: "noun" },
+            { id: "m22_37", arabic: "الإِذَاعَة", transliteration: "al-idhaa'a", english: "Radio / Broadcasting", category: "noun" },
+            { id: "m22_38", arabic: "الأَخْبَار", transliteration: "al-akhbaar", english: "News", category: "noun" },
+            { id: "m22_39", arabic: "المُسْتَشْفَى", transliteration: "al-mustashfa", english: "Hospital", category: "noun" },
+            { id: "m22_40", arabic: "الغِلَاف", transliteration: "al-ghilaaf", english: "Cover (of book)", category: "noun" }
+        ]
     }
 };
 

@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 22 - المحاضرة الثانية والعشرون | ARB202 Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00695c;
+            --primary-light: #4db6ac;
+            --primary-dark: #004d40;
+            --accent-color: #009688;
+            --bg-light: #e0f2f1;
+            --bg-lighter: #b2dfdb;
+            --text-dark: #1a1a2e;
+            --success-color: #4caf50;
+            --error-color: #f44336;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-lighter) 100%);
+            color: var(--text-dark);
+            line-height: 2;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 105, 92, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .main-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 105, 92, 0.3);
+        }
+
+        .main-header h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .main-header .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.5rem;
+        }
+
+        .main-header .verb-display {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+            display: inline-block;
+        }
+
+        .main-header .verb-display span {
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* Section Styles */
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title-en {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        /* Conjugation Table */
+        .conjugation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .conjugation-table th {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1rem;
+            font-weight: 700;
+        }
+
+        .conjugation-table td {
+            padding: 0.8rem;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .conjugation-table tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .conjugation-table tr:hover {
+            background: #b2dfdb;
+        }
+
+        /* Grammar Box */
+        .grammar-box {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #fff 100%);
+            border-right: 5px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+        }
+
+        .grammar-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .example {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 0.5rem 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .example .arabic {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .example .english {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Dialogue Section */
+        .dialogue-container {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .dialogue-line {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .speaker {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 10px;
+            font-weight: bold;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .speech {
+            flex: 1;
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .speech .arabic-text {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .speech .english-text {
+            color: #666;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        /* Flashcards */
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        .flashcard {
+            perspective: 1000px;
+            height: 180px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .flashcard-front {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .flashcard-back {
+            background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
+            color: var(--primary-dark);
+            transform: rotateY(180deg);
+            font-size: 1.2rem;
+            border: 2px solid var(--primary-color);
+        }
+
+        /* Memory Game */
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        .memory-card {
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        .memory-card.revealed {
+            background: white;
+            color: var(--primary-dark);
+            border: 2px solid var(--primary-color);
+        }
+
+        .memory-card.matched {
+            background: var(--success-color);
+            color: white;
+            cursor: default;
+        }
+
+        /* Exercises */
+        .exercise-container {
+            margin: 1rem 0;
+        }
+
+        .question {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .question p {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .option {
+            padding: 1rem;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .option:hover {
+            border-color: var(--primary-color);
+            background: #e0f2f1;
+        }
+
+        .option.correct {
+            background: #c8e6c9;
+            border-color: var(--success-color);
+        }
+
+        .option.incorrect {
+            background: #ffcdd2;
+            border-color: var(--error-color);
+        }
+
+        .score-display {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            margin-top: 1rem;
+        }
+
+        /* Case Endings Table */
+        .case-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .case-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem;
+        }
+
+        .case-table td {
+            padding: 0.8rem;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .case-table tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .marfoo { color: #1565c0; font-weight: bold; }
+        .majroor { color: #c62828; font-weight: bold; }
+        .mansoob { color: #2e7d32; font-weight: bold; }
+
+        /* Summary Box */
+        .summary-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+        }
+
+        .summary-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .summary-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-box li {
+            padding: 0.5rem 0;
+            padding-right: 1.5rem;
+            position: relative;
+        }
+
+        .summary-box li::before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .main-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .memory-game {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flashcard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .dialogue-line {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-title">المحاضرة ٢٢</div>
+            <div class="nav-links">
+                <a href="#verb">الفعل</a>
+                <a href="#cases">الإعراب</a>
+                <a href="#lima">لِمَ</a>
+                <a href="#dhoo">ذُو/ذَات</a>
+                <a href="#dialogue">الحوار</a>
+                <a href="#flashcards">البطاقات</a>
+                <a href="#exercises">تمارين</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <h1>المحاضرة الثانية والعشرون</h1>
+            <p class="subtitle">Module 22 - Lecture Twenty-Two</p>
+            <div class="verb-display">
+                <span>نَظَرَ - يَنْظُرُ - اُنْظُرْ</span>
+            </div>
+            <p style="color: rgba(255,255,255,0.8); margin-top: 0.5rem;">To Look At</p>
+        </header>
+
+        <!-- Verb Conjugation Section -->
+        <section id="verb" class="section">
+            <h2 class="section-title">تَصْرِيفُ الفِعْلِ <span class="section-title-en">Verb Conjugation</span></h2>
+
+            <table class="conjugation-table">
+                <thead>
+                    <tr>
+                        <th>الضمير</th>
+                        <th>الماضي</th>
+                        <th>المضارع</th>
+                        <th>الأمر</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>أَنَا</td>
+                        <td>نَظَرْتُ</td>
+                        <td>أَنْظُرُ</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>نَحْنُ</td>
+                        <td>نَظَرْنَا</td>
+                        <td>نَنْظُرُ</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>أَنْتَ</td>
+                        <td>نَظَرْتَ</td>
+                        <td>تَنْظُرُ</td>
+                        <td>اُنْظُرْ</td>
+                    </tr>
+                    <tr>
+                        <td>أَنْتِ</td>
+                        <td>نَظَرْتِ</td>
+                        <td>تَنْظُرِينَ</td>
+                        <td>اُنْظُرِي</td>
+                    </tr>
+                    <tr>
+                        <td>أَنْتُمَا</td>
+                        <td>نَظَرْتُمَا</td>
+                        <td>تَنْظُرَانِ</td>
+                        <td>اُنْظُرَا</td>
+                    </tr>
+                    <tr>
+                        <td>أَنْتُمْ</td>
+                        <td>نَظَرْتُمْ</td>
+                        <td>تَنْظُرُونَ</td>
+                        <td>اُنْظُرُوا</td>
+                    </tr>
+                    <tr>
+                        <td>أَنْتُنَّ</td>
+                        <td>نَظَرْتُنَّ</td>
+                        <td>تَنْظُرْنَ</td>
+                        <td>اُنْظُرْنَ</td>
+                    </tr>
+                    <tr>
+                        <td>هُوَ</td>
+                        <td>نَظَرَ</td>
+                        <td>يَنْظُرُ</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>هِيَ</td>
+                        <td>نَظَرَتْ</td>
+                        <td>تَنْظُرُ</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>هُمَا (م)</td>
+                        <td>نَظَرَا</td>
+                        <td>يَنْظُرَانِ</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>هُمَا (م)</td>
+                        <td>نَظَرَتَا</td>
+                        <td>تَنْظُرَانِ</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>هُمْ</td>
+                        <td>نَظَرُوا</td>
+                        <td>يَنْظُرُونَ</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>هُنَّ</td>
+                        <td>نَظَرْنَ</td>
+                        <td>يَنْظُرْنَ</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="grammar-box">
+                <h4>أمثلة - Examples</h4>
+                <div class="example">
+                    <p class="arabic">يَا أَوْلَادُ، اُنْظُرُوا إِلَى هَذِهِ السَّيَّارَةِ الجَمِيلَةِ</p>
+                    <p class="english">O children, look at this beautiful car!</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">نَظَرَ الأُسْتَاذُ إِلَى الطَّالِبِ وَقَالَ: أَيْنَ كِتَابُكَ؟</p>
+                    <p class="english">The teacher looked at the student and said: Where is your book?</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">الأَوْلَادُ يَنْظُرُونَ إِلَى المَسْجِدِ الكَبِيرِ</p>
+                    <p class="english">The children are looking at the big mosque</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Endings Section -->
+        <section id="cases" class="section">
+            <h2 class="section-title">حَالَاتُ الإِعْرَاب <span class="section-title-en">Case Endings</span></h2>
+
+            <div class="grammar-box">
+                <h4>القاعدة - The Rule</h4>
+                <p>الأسماء في اللغة العربية لها ثلاث حالات إعرابية:</p>
+                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                    <li><span class="marfoo">المرفوع</span>: علامته الضمة (ـُ) - للفاعل والمبتدأ والخبر</li>
+                    <li><span class="majroor">المجرور</span>: علامته الكسرة (ـِ) - بعد حروف الجر</li>
+                    <li><span class="mansoob">المنصوب</span>: علامته الفتحة (ـَ) - للمفعول به</li>
+                </ul>
+            </div>
+
+            <table class="case-table">
+                <thead>
+                    <tr>
+                        <th>الكلمة</th>
+                        <th class="marfoo">المرفوع (ـُ)</th>
+                        <th class="majroor">المجرور (ـِ)</th>
+                        <th class="mansoob">المنصوب (ـَ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>كِتَاب</td>
+                        <td class="marfoo">كِتَابٌ</td>
+                        <td class="majroor">كِتَابٍ</td>
+                        <td class="mansoob">كِتَاباً</td>
+                    </tr>
+                    <tr>
+                        <td>حَامِد</td>
+                        <td class="marfoo">حَامِدٌ</td>
+                        <td class="majroor">حَامِدٍ</td>
+                        <td class="mansoob">حَامِداً</td>
+                    </tr>
+                    <tr>
+                        <td>سَيَّارَة</td>
+                        <td class="marfoo">سَيَّارَةٌ</td>
+                        <td class="majroor">سَيَّارَةٍ</td>
+                        <td class="mansoob">سَيَّارَةً</td>
+                    </tr>
+                    <tr>
+                        <td>مِكْوَاة</td>
+                        <td class="marfoo">مِكْوَاةٌ</td>
+                        <td class="majroor">مِكْوَاةٍ</td>
+                        <td class="mansoob">مِكْوَاةً</td>
+                    </tr>
+                    <tr>
+                        <td>بَيْت</td>
+                        <td class="marfoo">بَيْتٌ</td>
+                        <td class="majroor">بَيْتٍ</td>
+                        <td class="mansoob">بَيْتاً</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="grammar-box">
+                <h4>أمثلة - Examples</h4>
+                <div class="example">
+                    <p class="arabic">جَاءَ <span class="marfoo">حَامِدٌ</span> (فاعل - مرفوع)</p>
+                    <p class="english">Hamid came (subject - marfoo')</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">ذَهَبْتُ إِلَى <span class="majroor">المَسْجِدِ</span> (مجرور بـ إلى)</p>
+                    <p class="english">I went to the mosque (majroor after ilā)</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">قَرَأْتُ <span class="mansoob">كِتَاباً</span> (مفعول به - منصوب)</p>
+                    <p class="english">I read a book (object - mansoob)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lima Section -->
+        <section id="lima" class="section">
+            <h2 class="section-title">لِمَ = لِمَاذَا <span class="section-title-en">Why</span></h2>
+
+            <div class="grammar-box">
+                <h4>القاعدة - The Rule</h4>
+                <p><strong>لِمَ</strong> هي اختصار لـ <strong>لِمَاذَا</strong> وتعني "Why" في اللغة الإنجليزية</p>
+                <p>عند الوقف نضيف <strong>هاء السكت</strong>: <strong>لِمَهْ؟</strong></p>
+            </div>
+
+            <div class="grammar-box">
+                <h4>أمثلة - Examples</h4>
+                <div class="example">
+                    <p class="arabic">لِمَ خَرَجْتَ مِنَ الفَصْلِ؟</p>
+                    <p class="english">Why did you leave the class?</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">لِمَ تَأَخَّرْتَ؟</p>
+                    <p class="english">Why were you late?</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">لِمَهْ؟ (عِنْدَ الوَقْفِ)</p>
+                    <p class="english">Why? (when pausing - with هاء السكت)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dhoo and Dhaat Section -->
+        <section id="dhoo" class="section">
+            <h2 class="section-title">ذُو وَ ذَات <span class="section-title-en">Possessor of</span></h2>
+
+            <div class="grammar-box">
+                <h4>القاعدة - The Rule</h4>
+                <p><strong>ذُو</strong> للمذكر و<strong>ذَات</strong> للمؤنث، ومعناهما "صاحب" أي الذي يملك شيئاً</p>
+                <ul style="margin: 1rem 0; padding-right: 2rem;">
+                    <li><span class="marfoo">ذُو</span> (marfoo') → <span class="mansoob">ذَا</span> (mansoob) → <span class="majroor">ذِي</span> (majroor)</li>
+                    <li>إذا كان ما قبل ذو نكرة → يجب أن يكون ما بعدها نكرة</li>
+                    <li>إذا كان ما قبل ذو معرفة → يجب أن يكون ما بعدها معرفة</li>
+                </ul>
+            </div>
+
+            <div class="grammar-box">
+                <h4>أمثلة - Examples</h4>
+                <div class="example">
+                    <p class="arabic">رَجُلٌ <span class="marfoo">ذُو</span> عِلْمٍ</p>
+                    <p class="english">A man possessing knowledge (a knowledgeable man)</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">رَأَيْتُ رَجُلاً <span class="mansoob">ذَا</span> عِلْمٍ</p>
+                    <p class="english">I saw a man possessing knowledge</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">مَرَرْتُ بِرَجُلٍ <span class="majroor">ذِي</span> عِلْمٍ</p>
+                    <p class="english">I passed by a man possessing knowledge</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">هِيَ اِمْرَأَةٌ <strong>ذَاتُ</strong> خُلُقٍ حَسَنٍ</p>
+                    <p class="english">She is a woman of good character</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">الكِتَابُ <strong>ذُو</strong> الغِلَافِ الأَحْمَرِ جَدِيدٌ</p>
+                    <p class="english">The book with the red cover is new</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">المَجَلَّةُ <strong>ذَاتُ</strong> الغِلَافِ الأَصْفَرِ</p>
+                    <p class="english">The magazine with the yellow cover</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amin Section -->
+        <section class="section">
+            <h2 class="section-title">اسْمُ فِعْلِ الدُّعَاءِ: آمِين <span class="section-title-en">Verbal Noun for Supplication</span></h2>
+
+            <div class="grammar-box">
+                <h4>القاعدة - The Rule</h4>
+                <p>لفظ <strong>آمِين</strong> هو اسم فعل الدعاء، ومعناه: <strong>اللَّهُمَّ اسْتَجِبْ</strong> (O Allah, accept)</p>
+                <p>يُقال بعد الدعاء وبعد قراءة سورة الفاتحة في الصلاة</p>
+            </div>
+
+            <div class="grammar-box">
+                <h4>أمثلة - Examples</h4>
+                <div class="example">
+                    <p class="arabic">يَا اللهُ ارْحَمْنِي وَأَدْخِلْنِي الجَنَّةَ، <strong>آمِين</strong></p>
+                    <p class="english">O Allah, have mercy on me and enter me into Paradise, Amin</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">شَفَاهُ اللهُ - <strong>آمِين</strong></p>
+                    <p class="english">May Allah heal him - Amin</p>
+                </div>
+                <div class="example">
+                    <p class="arabic">زَادَكَ اللهُ عِلْماً - <strong>آمِين</strong></p>
+                    <p class="english">May Allah increase your knowledge - Amin</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Haat Verb Section -->
+        <section class="section">
+            <h2 class="section-title">فِعْلُ الأَمْر: هَاتِ <span class="section-title-en">Imperative: Give/Bring</span></h2>
+
+            <div class="grammar-box">
+                <h4>تصريف هَاتِ - Conjugation</h4>
+                <table class="case-table">
+                    <thead>
+                        <tr>
+                            <th>الضمير</th>
+                            <th>الأمر</th>
+                            <th>المثال</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>أَنْتَ</td>
+                            <td>هَاتِ</td>
+                            <td>هَاتِ الكِتَابَ يَا أَحْمَدُ</td>
+                        </tr>
+                        <tr>
+                            <td>أَنْتِ</td>
+                            <td>هَاتِي</td>
+                            <td>هَاتِي القَلَمَ يَا سُعَادُ</td>
+                        </tr>
+                        <tr>
+                            <td>أَنْتُمْ</td>
+                            <td>هَاتُوا</td>
+                            <td>هَاتُوا كُتُبَكُمْ يَا إِخْوَانُ</td>
+                        </tr>
+                        <tr>
+                            <td>أَنْتُنَّ</td>
+                            <td>هَاتِينَ</td>
+                            <td>هَاتِينَ الدَّفَاتِرَ يَا أَخَوَاتُ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Dialogue Section -->
+        <section id="dialogue" class="section">
+            <h2 class="section-title">الحِوَار <span class="section-title-en">Dialogue - Family Conversation</span></h2>
+
+            <div class="dialogue-container">
+                <div class="dialogue-line">
+                    <span class="speaker">الأَب</span>
+                    <div class="speech">
+                        <p class="arabic-text">أَيْنَ ذَهَبْتُمْ بَعْدَ الدَّرْسِ يَا أَبْنَائِي؟</p>
+                        <p class="english-text">Where did you go after class, my sons?</p>
+                    </div>
+                </div>
+                <div class="dialogue-line">
+                    <span class="speaker">الأَبْنَاء</span>
+                    <div class="speech">
+                        <p class="arabic-text">ذَهَبْنَا إِلَى المَلْعَبِ.</p>
+                        <p class="english-text">We went to the playground.</p>
+                    </div>
+                </div>
+                <div class="dialogue-line">
+                    <span class="speaker">الأَب</span>
+                    <div class="speech">
+                        <p class="arabic-text">أَكُرَةَ القَدَمِ لَعِبْتُمْ أَمْ كُرَةَ السَّلَّةِ؟</p>
+                        <p class="english-text">Did you play football or basketball?</p>
+                    </div>
+                </div>
+                <div class="dialogue-line">
+                    <span class="speaker">الأَبْنَاء</span>
+                    <div class="speech">
+                        <p class="arabic-text">لَعِبْنَا اليَوْمَ كُرَةَ القَدَمِ. لَعِبْنَا كُرَةَ السَّلَّةِ فِي الأُسْبُوعِ المَاضِي.</p>
+                        <p class="english-text">We played football today. We played basketball last week.</p>
+                    </div>
+                </div>
+                <div class="dialogue-line">
+                    <span class="speaker">الأَب</span>
+                    <div class="speech">
+                        <p class="arabic-text">أَمَا ذَهَبْتُمْ إِلَى المَكْتَبَةِ اليَوْمَ؟</p>
+                        <p class="english-text">Didn't you go to the library today?</p>
+                    </div>
+                </div>
+                <div class="dialogue-line">
+                    <span class="speaker">الأَبْنَاء</span>
+                    <div class="speech">
+                        <p class="arabic-text">بَلَى، ذَهَبْنَا. قَرَأْنَا الصُّحُفَ.</p>
+                        <p class="english-text">Yes, we did. We read the newspapers.</p>
+                    </div>
+                </div>
+                <div class="dialogue-line">
+                    <span class="speaker">الأَب</span>
+                    <div class="speech">
+                        <p class="arabic-text">أَسَمِعْتُمُ الأَخْبَارَ مِنَ الإِذَاعَةِ اليَوْمَ؟</p>
+                        <p class="english-text">Did you hear the news from the radio today?</p>
+                    </div>
+                </div>
+                <div class="dialogue-line">
+                    <span class="speaker">الأَبْنَاء</span>
+                    <div class="speech">
+                        <p class="arabic-text">نَعَمْ، سَمِعْنَاهَا مِنْ ثَلَاثِ إِذَاعَاتٍ: مِنْ إِذَاعَةِ الرِّيَاضِ وَإِذَاعَةِ القَاهِرَةِ وَإِذَاعَةِ لَنْدَن.</p>
+                        <p class="english-text">Yes, we heard it from three stations: Riyadh Radio, Cairo Radio, and London Radio.</p>
+                    </div>
+                </div>
+                <div class="dialogue-line">
+                    <span class="speaker">الأَب</span>
+                    <div class="speech">
+                        <p class="arabic-text">سَمِعْتُ أَنَّ بِلَالاً مَرِيضٌ وَأَنَّهُ فِي المُسْتَشْفَى. أَصَحِيحٌ هَذَا؟</p>
+                        <p class="english-text">I heard that Bilal is sick and in the hospital. Is this true?</p>
+                    </div>
+                </div>
+                <div class="dialogue-line">
+                    <span class="speaker">الأَبْنَاء</span>
+                    <div class="speech">
+                        <p class="arabic-text">نَعَمْ، هَذَا صَحِيحٌ. شَفَاهُ اللهُ.</p>
+                        <p class="english-text">Yes, that's true. May Allah heal him.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flashcards Section -->
+        <section id="flashcards" class="section">
+            <h2 class="section-title">بِطَاقَاتُ المُفْرَدَات <span class="section-title-en">Vocabulary Flashcards</span></h2>
+            <p style="text-align: center; color: #666; margin-bottom: 1rem;">اضغط على البطاقة لرؤية المعنى | Click card to reveal meaning</p>
+
+            <div class="flashcard-container">
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">مَجَلَّة</div>
+                        <div class="flashcard-back">Magazine</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">عِمَارَة</div>
+                        <div class="flashcard-back">Building</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">سُورَة</div>
+                        <div class="flashcard-back">Surah (chapter)</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">شُقَّة</div>
+                        <div class="flashcard-back">Flat/Apartment</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">سِنّ</div>
+                        <div class="flashcard-back">Tooth / Age</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">كَلِمَة</div>
+                        <div class="flashcard-back">Word</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">مَسْرُور</div>
+                        <div class="flashcard-back">Pleased/Happy</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">خَادِمَة</div>
+                        <div class="flashcard-back">Maid Servant</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">رَاكِب</div>
+                        <div class="flashcard-back">Passenger</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">آمِين</div>
+                        <div class="flashcard-back">Amin (O Lord accept)</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">زَمِيل</div>
+                        <div class="flashcard-back">Colleague (m)</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">عُمْر</div>
+                        <div class="flashcard-back">Age</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">ذُو</div>
+                        <div class="flashcard-back">Possessor of (m)</div>
+                    </div>
+                </div>
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">ذَات</div>
+                        <div class="flashcard-back">Possessor of (f)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Game Section -->
+        <section id="memory" class="section">
+            <h2 class="section-title">لُعْبَةُ المُطَابَقَة <span class="section-title-en">Memory Match Game</span></h2>
+            <p style="text-align: center; color: #666; margin-bottom: 1rem;">طابق الكلمات العربية مع معانيها الإنجليزية</p>
+
+            <div class="memory-game" id="memoryGame">
+                <!-- Cards will be generated by JavaScript -->
+            </div>
+            <button onclick="initMemoryGame()" style="display: block; margin: 1rem auto; padding: 0.8rem 2rem; background: var(--primary-color); color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1.1rem; font-family: 'Amiri', serif;">إعادة اللعبة</button>
+        </section>
+
+        <!-- Exercises Section -->
+        <section id="exercises" class="section">
+            <h2 class="section-title">تَمَارِين <span class="section-title-en">Exercises</span></h2>
+
+            <div class="exercise-container" id="exerciseContainer">
+                <!-- Questions will be generated by JavaScript -->
+            </div>
+            <div class="score-display" id="scoreDisplay" style="display: none;">
+                النتيجة: <span id="score">0</span> / <span id="total">0</span>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <div class="summary-box">
+            <h3>مُلَخَّصُ الدَّرْس - Lesson Summary</h3>
+            <ul>
+                <li>الفعل: نَظَرَ - يَنْظُرُ - اُنْظُرْ (To look at) - يُستخدم مع "إِلَى"</li>
+                <li>حالات الإعراب: المرفوع (ـُ)، المجرور (ـِ)، المنصوب (ـَ)</li>
+                <li>لِمَ = لِمَاذَا (Why) - عند الوقف: لِمَهْ؟</li>
+                <li>ذُو (مذكر) / ذَات (مؤنث) بمعنى "صاحب"</li>
+                <li>فعل الأمر هَاتِ: هَاتِ، هَاتِي، هَاتُوا، هَاتِينَ</li>
+                <li>كلمة "آمِين" تُقال عند الدعاء ومعناها "اللهم استجب"</li>
+                <li>المفردات الجديدة: مَجَلَّة، عِمَارَة، سُورَة، شُقَّة، سِنّ، كَلِمَة</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Memory Game
+        const memoryPairs = [
+            { arabic: 'مَجَلَّة', english: 'Magazine' },
+            { arabic: 'عِمَارَة', english: 'Building' },
+            { arabic: 'شُقَّة', english: 'Apartment' },
+            { arabic: 'نَظَرَ', english: 'To look' },
+            { arabic: 'ذُو', english: 'Possessor (m)' },
+            { arabic: 'آمِين', english: 'O Lord accept' }
+        ];
+
+        let flippedCards = [];
+        let matchedPairs = 0;
+
+        function initMemoryGame() {
+            const gameContainer = document.getElementById('memoryGame');
+            gameContainer.innerHTML = '';
+            flippedCards = [];
+            matchedPairs = 0;
+
+            const cards = [];
+            memoryPairs.forEach((pair, index) => {
+                cards.push({ text: pair.arabic, pairId: index, type: 'arabic' });
+                cards.push({ text: pair.english, pairId: index, type: 'english' });
+            });
+
+            // Shuffle cards
+            for (let i = cards.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [cards[i], cards[j]] = [cards[j], cards[i]];
+            }
+
+            cards.forEach((card, index) => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'memory-card';
+                cardElement.textContent = '?';
+                cardElement.dataset.pairId = card.pairId;
+                cardElement.dataset.text = card.text;
+                cardElement.dataset.index = index;
+                cardElement.onclick = () => flipCard(cardElement);
+                gameContainer.appendChild(cardElement);
+            });
+        }
+
+        function flipCard(card) {
+            if (card.classList.contains('revealed') || card.classList.contains('matched') || flippedCards.length >= 2) {
+                return;
+            }
+
+            card.classList.add('revealed');
+            card.textContent = card.dataset.text;
+            flippedCards.push(card);
+
+            if (flippedCards.length === 2) {
+                setTimeout(checkMatch, 800);
+            }
+        }
+
+        function checkMatch() {
+            const [card1, card2] = flippedCards;
+
+            if (card1.dataset.pairId === card2.dataset.pairId) {
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                matchedPairs++;
+
+                if (matchedPairs === memoryPairs.length) {
+                    setTimeout(() => alert('أحسنت! لقد أكملت اللعبة! 🎉'), 300);
+                }
+            } else {
+                card1.classList.remove('revealed');
+                card2.classList.remove('revealed');
+                card1.textContent = '?';
+                card2.textContent = '?';
+            }
+
+            flippedCards = [];
+        }
+
+        // Exercises
+        const questions = [
+            {
+                question: 'ما هو أمر الفعل "نَظَرَ" للمخاطب المفرد (أنتَ)؟',
+                options: ['نَظِرْ', 'اُنْظُرْ', 'نْظُرْ', 'اِنْظَرْ'],
+                correct: 1
+            },
+            {
+                question: 'ما هي علامة الاسم المجرور؟',
+                options: ['الضمة', 'الفتحة', 'الكسرة', 'السكون'],
+                correct: 2
+            },
+            {
+                question: 'أكمل: "ذَهَبْتُ إِلَى المَسْجِدِ _____"',
+                options: ['الكَبِيرُ', 'الكَبِيرِ', 'الكَبِيرَ', 'الكَبِيرْ'],
+                correct: 1
+            },
+            {
+                question: 'ما معنى كلمة "آمِين"؟',
+                options: ['نعم', 'اللهم استجب', 'شكراً', 'إن شاء الله'],
+                correct: 1
+            },
+            {
+                question: 'أكمل: "قَرَأْتُ كِتَاباً _____"',
+                options: ['جَدِيدٌ', 'جَدِيدٍ', 'جَدِيداً', 'جَدِيدْ'],
+                correct: 2
+            },
+            {
+                question: 'ما هو جمع "مَجَلَّة"؟',
+                options: ['مَجَلَّات', 'مَجَالّ', 'مُجَلَّدَات', 'مَجَالِس'],
+                correct: 0
+            },
+            {
+                question: 'أكمل: "رَجُلٌ _____ عِلْمٍ"',
+                options: ['ذَا', 'ذُو', 'ذِي', 'ذَات'],
+                correct: 1
+            },
+            {
+                question: 'ما معنى "لِمَ"؟',
+                options: ['متى', 'أين', 'لماذا', 'كيف'],
+                correct: 2
+            }
+        ];
+
+        let currentScore = 0;
+        let answeredQuestions = 0;
+
+        function initExercises() {
+            const container = document.getElementById('exerciseContainer');
+            container.innerHTML = '';
+
+            questions.forEach((q, qIndex) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `<p>${qIndex + 1}. ${q.question}</p>`;
+
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'options';
+
+                q.options.forEach((option, oIndex) => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.className = 'option';
+                    optionDiv.textContent = option;
+                    optionDiv.onclick = () => checkAnswer(optionDiv, qIndex, oIndex);
+                    optionsDiv.appendChild(optionDiv);
+                });
+
+                questionDiv.appendChild(optionsDiv);
+                container.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswer(element, questionIndex, optionIndex) {
+            const questionDiv = element.parentElement.parentElement;
+            const options = questionDiv.querySelectorAll('.option');
+
+            if (questionDiv.dataset.answered) return;
+            questionDiv.dataset.answered = 'true';
+
+            options.forEach((opt, idx) => {
+                opt.style.pointerEvents = 'none';
+                if (idx === questions[questionIndex].correct) {
+                    opt.classList.add('correct');
+                }
+            });
+
+            if (optionIndex === questions[questionIndex].correct) {
+                currentScore++;
+            } else {
+                element.classList.add('incorrect');
+            }
+
+            answeredQuestions++;
+
+            if (answeredQuestions === questions.length) {
+                document.getElementById('scoreDisplay').style.display = 'block';
+                document.getElementById('score').textContent = currentScore;
+                document.getElementById('total').textContent = questions.length;
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initMemoryGame();
+            initExercises();
+        });
+    </script>
+</body>
+</html>
