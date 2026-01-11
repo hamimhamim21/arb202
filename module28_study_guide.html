@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 28 - Arabic Study Guide | الوحدة الثامنة والعشرون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            min-height: 100vh;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #880e4f 0%, #c2185b 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px;
+            color: #c2185b;
+            border-bottom: 4px solid #e91e63;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .section-subtitle { font-size: 28px; color: #e91e63; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #880e4f; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .translit-text { font-family: Georgia, serif; font-style: italic; color: #888; direction: ltr; text-align: left; font-size: 16px; }
+        .grammar-box {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border-right: 5px solid #e91e63;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-right: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-right: 5px solid #f44336;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 5px solid #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #fce4ec; }
+        tr:hover { background: #f8bbd9; }
+        .pronoun-cell { background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%); font-weight: bold; color: #c2185b; }
+
+        /* Tree Diagram Styles */
+        .tree-diagram {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+            overflow-x: auto;
+        }
+        .tree-title {
+            text-align: center;
+            font-size: 32px;
+            color: #1565c0;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        .tree-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .tree-root {
+            background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(194, 24, 91, 0.4);
+        }
+        .tree-connector {
+            width: 3px;
+            height: 30px;
+            background: #c2185b;
+        }
+        .tree-branches {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .tree-branches::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 25%;
+            right: 25%;
+            height: 3px;
+            background: #c2185b;
+        }
+        .tree-branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 250px;
+        }
+        .branch-connector {
+            width: 3px;
+            height: 30px;
+            background: #c2185b;
+        }
+        .branch-node {
+            padding: 12px 25px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        .branch-node.mabni { background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%); color: white; }
+        .branch-node.murab { background: linear-gradient(135deg, #388e3c 0%, #4caf50 100%); color: white; }
+        .sub-branches {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .sub-branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sub-node {
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .example-box {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .example-box .ar { color: #1b5e20; font-size: 20px; }
+        .example-box .en { color: #666; font-size: 14px; font-family: Georgia, serif; direction: ltr; }
+
+        /* Exercise Styles */
+        .exercise-section {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .exercise-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .exercise-question {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .exercise-options { display: flex; flex-direction: column; gap: 10px; }
+        .option-btn {
+            padding: 15px 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            background: white;
+            font-size: 22px;
+            font-family: 'Amiri', serif;
+            cursor: pointer;
+            text-align: right;
+            transition: all 0.3s;
+        }
+        .option-btn:hover:not(:disabled) { border-color: #e91e63; background: #fce4ec; }
+        .option-btn.correct { border-color: #27ae60; background: #d5f4e6; color: #1e8449; }
+        .option-btn.incorrect { border-color: #e74c3c; background: #fadbd8; color: #c0392b; }
+        .option-btn:disabled { cursor: not-allowed; opacity: 0.8; }
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .explanation.show { display: block; }
+        .explanation.correct-exp { background: linear-gradient(135deg, #d5f4e6 0%, #a9dfbf 100%); border-right: 5px solid #27ae60; }
+        .explanation.incorrect-exp { background: linear-gradient(135deg, #fadbd8 0%, #f5b7b1 100%); border-right: 5px solid #e74c3c; }
+        .reset-btn {
+            background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .score-display {
+            text-align: center;
+            font-size: 24px;
+            color: #c2185b;
+            padding: 15px;
+            background: #fce4ec;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Flashcard Styles */
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .flashcard {
+            height: 180px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .flashcard-front {
+            background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%);
+            color: white;
+        }
+        .flashcard-back {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            transform: rotateY(180deg);
+            color: #333;
+        }
+        .flashcard-arabic { font-size: 28px; font-weight: bold; }
+        .flashcard-hint { font-size: 12px; opacity: 0.8; font-family: Georgia, serif; }
+        .flashcard-english { font-size: 16px; font-family: Georgia, serif; text-align: center; }
+        .flashcard-translit { font-size: 14px; font-style: italic; color: #666; margin-top: 8px; }
+
+        /* Summary Box */
+        .summary-box {
+            background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .summary-box h3 { color: #ffeb3b; font-size: 28px; margin-bottom: 20px; }
+        .summary-box ul { list-style: none; padding: 0; }
+        .summary-box li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 20px; }
+
+        /* Progress Bar */
+        .progress-container { background: #e0e0e0; border-radius: 10px; margin: 20px 0; overflow: hidden; }
+        .progress-bar { height: 20px; background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%); border-radius: 10px; transition: width 0.5s; }
+        .progress-text { text-align: center; font-family: Georgia, serif; color: #555; margin-top: 5px; }
+
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(194, 24, 91, 0.4);
+            z-index: 1001;
+            transition: all 0.3s;
+        }
+        .home-btn:hover { transform: scale(1.1); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+
+        /* Quran Box */
+        .quran-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 3px solid #4caf50;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .quran-header {
+            text-align: center;
+            font-size: 24px;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .quran-verse {
+            font-size: 32px;
+            color: #1b5e20;
+            text-align: center;
+            line-height: 2;
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+        }
+        .quran-translation {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            color: #555;
+            text-align: center;
+            direction: ltr;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .main-title h1 { font-size: 32px; }
+            .section-title { font-size: 28px; }
+            .arabic-large { font-size: 32px; }
+            .tree-branches { flex-direction: column; align-items: center; }
+            .tree-branches::before { display: none; }
+            table { font-size: 18px; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Home Button -->
+<a href="index.html" class="home-btn" title="Back to Home">
+    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+</a>
+
+<!-- Navigation -->
+<nav class="nav-container">
+    <div class="nav-title">الوَحْدَةُ الثَّامِنَةُ وَالعِشْرُونَ - Module 28</div>
+    <div class="nav-links">
+        <a href="#aada"><span class="nav-ar">عَادَ</span><span class="nav-en">To Return</span></a>
+        <a href="#rajaa"><span class="nav-ar">رَجَعَ</span><span class="nav-en">To Return</span></a>
+        <a href="#nida"><span class="nav-ar">النِّدَاء</span><span class="nav-en">Vocative</span></a>
+        <a href="#munada"><span class="nav-ar">المُنَادَى</span><span class="nav-en">Types</span></a>
+        <a href="#vocabulary"><span class="nav-ar">المُفْرَدَاتُ</span><span class="nav-en">Vocabulary</span></a>
+        <a href="#exercises"><span class="nav-ar">التَّمَارِينُ</span><span class="nav-en">Exercises</span></a>
+    </div>
+</nav>
+
+<!-- Main Title -->
+<div class="main-title">
+    <h1>الوَحْدَةُ الثَّامِنَةُ وَالعِشْرُونَ</h1>
+    <div class="subtitle">Module 28 - الدَّرْسُ التَّاسِعُ (تَابِع)</div>
+    <div style="margin-top: 10px; font-size: 20px; opacity: 0.9;">مِنْ كِتَابِ المَدِينَةِ - From the Madinah Book</div>
+    <div style="margin-top: 20px; font-size: 36px; font-weight: bold;">عَادَ - رَجَعَ + أُسْلُوبُ النِّدَاءِ</div>
+    <div style="font-family: Georgia, serif; font-size: 18px; margin-top: 10px;">Return Verbs + Comprehensive Vocative Style</div>
+</div>
+
+<!-- Progress Bar -->
+<div class="progress-container">
+    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+</div>
+<div class="progress-text">Sections Completed: <span id="sectionsCompleted">0</span>/6</div>
+
+<!-- Section 1: عَادَ -->
+<section id="aada" class="section">
+    <h2 class="section-title">الفِعْلُ الأَوَّلُ: عَادَ - To Return</h2>
+
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align: center;">عَادَ - يَعُودُ - عُدْ</p>
+        <p class="english-text" style="text-align: center; font-size: 20px;"><strong>To return / To come back</strong> - Hollow Verb (أَجْوَف)</p>
+        <p class="translit-text" style="text-align: center;">'aada - ya'uudu - 'ud</p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text" style="font-size: 24px; text-align: center;"><strong>قَاعِدَةٌ مُهِمَّةٌ!</strong></p>
+        <p class="arabic-text" style="font-size: 22px; text-align: center; margin: 15px 0;">
+            عَادَ مِثْلُ قَامَ - فِعْلٌ أَجْوَفُ، الأَلِفُ تُحْذَفُ عِنْدَ اتِّصَالِ ضَمِيرٍ سَاكِنٍ
+        </p>
+        <p class="english-text" style="text-align: center;">عَادَ is like قَامَ - hollow verb, the alif is deleted when a silent pronoun attaches</p>
+    </div>
+
+    <h3 class="section-subtitle">الفِعْلُ المَاضِي - Past Tense</h3>
+    <table>
+        <tr>
+            <th>الضَّمِيرُ</th>
+            <th>المُفْرَدُ</th>
+            <th>المُثَنَّى</th>
+            <th>الجَمْعُ</th>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">هُوَ / هِيَ</td>
+            <td>عَادَ / عَادَتْ</td>
+            <td>عَادَا / عَادَتَا</td>
+            <td>عَادُوا / عُدْنَ</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنْتَ / أَنْتِ</td>
+            <td><span style="color: #c62828;">عُدْتَ</span> / <span style="color: #c62828;">عُدْتِ</span></td>
+            <td>عُدْتُمَا</td>
+            <td>عُدْتُمْ / عُدْتُنَّ</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنَا / نَحْنُ</td>
+            <td><span style="color: #c62828;">عُدْتُ</span></td>
+            <td>-</td>
+            <td><span style="color: #c62828;">عُدْنَا</span></td>
+        </tr>
+    </table>
+
+    <h3 class="section-subtitle">الفِعْلُ المُضَارِعُ وَالأَمْرُ</h3>
+    <table>
+        <tr>
+            <th>الضَّمِيرُ</th>
+            <th>المُضَارِعُ</th>
+            <th>الأَمْرُ</th>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">هُوَ / هِيَ</td>
+            <td>يَعُودُ / تَعُودُ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنْتَ / أَنْتِ</td>
+            <td>تَعُودُ / تَعُودِينَ</td>
+            <td>عُدْ / عُودِي</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنْتُمْ</td>
+            <td>تَعُودُونَ</td>
+            <td>عُودُوا</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنَا / نَحْنُ</td>
+            <td>أَعُودُ / نَعُودُ</td>
+            <td>-</td>
+        </tr>
+    </table>
+
+    <!-- MCQ for Section 1 -->
+    <div class="exercise-item" id="q1">
+        <p class="exercise-question">١. صَرِّفْ "عَادَ" لِلْمُتَكَلِّمِ (أَنَا) فِي المَاضِي:</p>
+        <div class="exercise-options">
+            <button class="option-btn" onclick="checkAnswer(1, this, false)">عَادْتُ</button>
+            <button class="option-btn" onclick="checkAnswer(1, this, true)">عُدْتُ</button>
+            <button class="option-btn" onclick="checkAnswer(1, this, false)">أَعُودُ</button>
+        </div>
+        <div class="explanation" id="exp1">
+            <p class="arabic-text"><strong>الجَوَابُ:</strong> عُدْتُ - الأَلِفُ حُذِفَتْ لِأَنَّ السَّاكِنَيْنِ لَا يَلْتَقِيَانِ</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 2: رَجَعَ -->
+<section id="rajaa" class="section">
+    <h2 class="section-title">الفِعْلُ الثَّانِي: رَجَعَ - To Return</h2>
+
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align: center;">رَجَعَ - يَرْجِعُ - اِرْجِعْ</p>
+        <p class="english-text" style="text-align: center; font-size: 20px;"><strong>To return / To go back</strong> - Sound Verb (صَحِيح)</p>
+        <p class="translit-text" style="text-align: center;">raja'a - yarji'u - irji'</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 22px;"><strong>الفَرْقُ بَيْنَ عَادَ وَرَجَعَ:</strong></p>
+        <ul style="margin: 15px 30px; font-size: 20px;">
+            <li><strong>عَادَ:</strong> أَجْوَف (فِيهِ أَلِف) - يُسْتَعْمَلُ مَعَ "إِلَى"</li>
+            <li><strong>رَجَعَ:</strong> صَحِيح - يُسْتَعْمَلُ مَعَ "إِلَى" أَوْ "مِنْ"</li>
+        </ul>
+        <p class="english-text">Both mean "to return" but عَادَ is a hollow verb while رَجَعَ is a sound verb</p>
+    </div>
+
+    <h3 class="section-subtitle">الفِعْلُ المَاضِي - Past Tense</h3>
+    <table>
+        <tr>
+            <th>الضَّمِيرُ</th>
+            <th>المُفْرَدُ</th>
+            <th>المُثَنَّى</th>
+            <th>الجَمْعُ</th>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">هُوَ / هِيَ</td>
+            <td>رَجَعَ / رَجَعَتْ</td>
+            <td>رَجَعَا / رَجَعَتَا</td>
+            <td>رَجَعُوا / رَجَعْنَ</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنْتَ / أَنْتِ</td>
+            <td>رَجَعْتَ / رَجَعْتِ</td>
+            <td>رَجَعْتُمَا</td>
+            <td>رَجَعْتُمْ / رَجَعْتُنَّ</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنَا / نَحْنُ</td>
+            <td>رَجَعْتُ</td>
+            <td>-</td>
+            <td>رَجَعْنَا</td>
+        </tr>
+    </table>
+
+    <h3 class="section-subtitle">الفِعْلُ المُضَارِعُ وَالأَمْرُ</h3>
+    <table>
+        <tr>
+            <th>الضَّمِيرُ</th>
+            <th>المُضَارِعُ</th>
+            <th>الأَمْرُ</th>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">هُوَ / هِيَ</td>
+            <td>يَرْجِعُ / تَرْجِعُ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنْتَ / أَنْتِ</td>
+            <td>تَرْجِعُ / تَرْجِعِينَ</td>
+            <td>اِرْجِعْ / اِرْجِعِي</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنْتُمْ</td>
+            <td>تَرْجِعُونَ</td>
+            <td>اِرْجِعُوا</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">أَنَا / نَحْنُ</td>
+            <td>أَرْجِعُ / نَرْجِعُ</td>
+            <td>-</td>
+        </tr>
+    </table>
+
+    <div class="grammar-box">
+        <p class="arabic-text" style="font-size: 24px;"><strong>أَمْثِلَةٌ:</strong></p>
+        <p class="arabic-text" style="font-size: 26px; text-align: center; margin: 15px 0;">رَجَعْتُ مِنَ المَدْرَسَةِ</p>
+        <p class="english-text" style="text-align: center;">I returned from school</p>
+        <p class="arabic-text" style="font-size: 26px; text-align: center; margin: 15px 0;">مَتَى تَرْجِعُ إِلَى البَيْتِ؟</p>
+        <p class="english-text" style="text-align: center;">When will you return home?</p>
+    </div>
+
+    <!-- MCQ for Section 2 -->
+    <div class="exercise-item" id="q2">
+        <p class="exercise-question">٢. مَا فِعْلُ الأَمْرِ مِنْ "رَجَعَ" لِلْمُفْرَدِ المُذَكَّرِ؟</p>
+        <div class="exercise-options">
+            <button class="option-btn" onclick="checkAnswer(2, this, false)">رَجَعْ</button>
+            <button class="option-btn" onclick="checkAnswer(2, this, true)">اِرْجِعْ</button>
+            <button class="option-btn" onclick="checkAnswer(2, this, false)">يَرْجِعُ</button>
+        </div>
+        <div class="explanation" id="exp2">
+            <p class="arabic-text"><strong>الجَوَابُ:</strong> اِرْجِعْ - فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 3: أُسْلُوب النِّدَاء -->
+<section id="nida" class="section">
+    <h2 class="section-title">أُسْلُوبُ النِّدَاءِ - The Vocative Style</h2>
+    <p class="english-text" style="font-size: 20px; text-align: center; margin-bottom: 20px;">Calling/Addressing Someone</p>
+
+    <div class="rule-box">
+        <p class="arabic-text" style="font-size: 24px; text-align: center;">
+            <strong>يَتَكَوَّنُ أُسْلُوبُ النِّدَاءِ مِنْ:</strong>
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
+            <div style="background: white; padding: 20px 40px; border-radius: 15px; text-align: center; border: 3px solid #e91e63;">
+                <p style="font-size: 28px; color: #c2185b; margin: 0; font-weight: bold;">أَدَاةُ النِّدَاءِ</p>
+                <p style="font-size: 22px; margin: 10px 0;">يَا، أَيَا، الهَمْزَة</p>
+                <p class="english-text" style="text-align: center;">Particle of calling</p>
+            </div>
+            <div style="font-size: 36px; display: flex; align-items: center;">+</div>
+            <div style="background: white; padding: 20px 40px; border-radius: 15px; text-align: center; border: 3px solid #4caf50;">
+                <p style="font-size: 28px; color: #2e7d32; margin: 0; font-weight: bold;">المُنَادَى</p>
+                <p style="font-size: 22px; margin: 10px 0;">الاسْمُ المُنَادَى</p>
+                <p class="english-text" style="text-align: center;">The one being called</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 24px;"><strong>أَدَوَاتُ النِّدَاءِ:</strong></p>
+        <ul style="margin: 15px 30px; font-size: 22px;">
+            <li><strong>يَا:</strong> لِلْقَرِيبِ وَالبَعِيدِ (أَشْهَرُ أَدَوَاتِ النِّدَاءِ)</li>
+            <li><strong>أَيَا:</strong> لِلْبَعِيدِ</li>
+            <li><strong>الهَمْزَةُ (أَ):</strong> لِلْقَرِيبِ</li>
+        </ul>
+    </div>
+
+    <div class="quran-box">
+        <div class="quran-header">مِنَ القُرْآنِ الكَرِيمِ</div>
+        <p class="quran-verse">يَا أَيُّهَا النَّاسُ اعْبُدُوا رَبَّكُمُ</p>
+        <p class="quran-translation">"O mankind, worship your Lord" (Al-Baqarah: 21)</p>
+    </div>
+
+    <!-- MCQ for Section 3 -->
+    <div class="exercise-item" id="q3">
+        <p class="exercise-question">٣. مَا أَشْهَرُ أَدَوَاتِ النِّدَاءِ؟</p>
+        <div class="exercise-options">
+            <button class="option-btn" onclick="checkAnswer(3, this, true)">يَا</button>
+            <button class="option-btn" onclick="checkAnswer(3, this, false)">أَيَا</button>
+            <button class="option-btn" onclick="checkAnswer(3, this, false)">الهَمْزَة</button>
+        </div>
+        <div class="explanation" id="exp3">
+            <p class="arabic-text"><strong>الجَوَابُ:</strong> يَا - أَشْهَرُ أَدَوَاتِ النِّدَاءِ، تُسْتَعْمَلُ لِلْقَرِيبِ وَالبَعِيدِ</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 4: أَنْوَاعُ المُنَادَى -->
+<section id="munada" class="section">
+    <h2 class="section-title">أَنْوَاعُ المُنَادَى - Types of Vocative</h2>
+
+    <!-- Tree Diagram for Munada -->
+    <div class="tree-diagram">
+        <div class="tree-title">أَنْوَاعُ المُنَادَى - Types of Vocative</div>
+        <div class="tree-container">
+            <div class="tree-root">المُنَادَى</div>
+            <div class="tree-connector"></div>
+            <div class="tree-branches">
+                <!-- Branch 1: المَبْنِي -->
+                <div class="tree-branch">
+                    <div class="branch-connector"></div>
+                    <div class="branch-node mabni">المُنَادَى المَبْنِيُّ</div>
+                    <div style="font-size: 16px; color: #1565c0; margin-bottom: 10px;">Fixed Vocative (مَبْنِيٌّ عَلَى الضَّمِّ)</div>
+                    <div class="sub-branches">
+                        <div class="sub-branch">
+                            <div class="sub-node" style="background: #e3f2fd; border: 2px solid #2196f3;">العَلَمُ المُفْرَدُ</div>
+                            <div class="example-box">
+                                <div class="ar">يَا مُحَمَّدُ!</div>
+                                <div class="en">O Muhammad!</div>
+                            </div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-node" style="background: #e3f2fd; border: 2px solid #2196f3;">النَّكِرَةُ المَقْصُودَةُ</div>
+                            <div class="example-box">
+                                <div class="ar">يَا رَجُلُ!</div>
+                                <div class="en">O man! (specific)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branch 2: المُعْرَب -->
+                <div class="tree-branch">
+                    <div class="branch-connector"></div>
+                    <div class="branch-node murab">المُنَادَى المُعْرَبُ</div>
+                    <div style="font-size: 16px; color: #2e7d32; margin-bottom: 10px;">Inflected Vocative (مَنْصُوب)</div>
+                    <div class="sub-branches">
+                        <div class="sub-branch">
+                            <div class="sub-node" style="background: #e8f5e9; border: 2px solid #4caf50;">المُضَافُ</div>
+                            <div class="example-box">
+                                <div class="ar">يَا عَبْدَ اللَّهِ!</div>
+                                <div class="en">O servant of Allah!</div>
+                            </div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-node" style="background: #e8f5e9; border: 2px solid #4caf50;">النَّكِرَةُ غَيْرُ المَقْصُودَةِ</div>
+                            <div class="example-box">
+                                <div class="ar">يَا رَجُلاً!</div>
+                                <div class="en">O (any) man!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="section-subtitle">القِسْمُ الأَوَّلُ: المُنَادَى المَبْنِيُّ</h3>
+    <div class="info-box">
+        <p class="arabic-text" style="font-size: 22px;"><strong>يُبْنَى عَلَى مَا يُرْفَعُ بِهِ:</strong></p>
+        <ul style="margin: 15px 30px; font-size: 20px;">
+            <li><strong>المُفْرَد:</strong> يُبْنَى عَلَى الضَّمِّ (يَا مُحَمَّدُ)</li>
+            <li><strong>المُثَنَّى:</strong> يُبْنَى عَلَى الأَلِفِ (يَا مُحَمَّدَانِ)</li>
+            <li><strong>جَمْعُ المُذَكَّرِ:</strong> يُبْنَى عَلَى الوَاوِ (يَا مُحَمَّدُونَ)</li>
+        </ul>
+    </div>
+
+    <table>
+        <tr>
+            <th>المِثَالُ</th>
+            <th>الإِعْرَابُ</th>
+        </tr>
+        <tr>
+            <td style="font-size: 26px;">يَا مُحَمَّدُ</td>
+            <td>مُنَادَى مَبْنِيٌّ عَلَى الضَّمِّ فِي مَحَلِّ نَصْبٍ</td>
+        </tr>
+        <tr>
+            <td style="font-size: 26px;">يَا فَاطِمَةُ</td>
+            <td>مُنَادَى مَبْنِيٌّ عَلَى الضَّمِّ فِي مَحَلِّ نَصْبٍ</td>
+        </tr>
+        <tr>
+            <td style="font-size: 26px;">يَا رَجُلُ</td>
+            <td>مُنَادَى نَكِرَةٌ مَقْصُودَةٌ مَبْنِيٌّ عَلَى الضَّمِّ</td>
+        </tr>
+        <tr>
+            <td style="font-size: 26px;">يَا مُسْلِمُونَ</td>
+            <td>مُنَادَى مَبْنِيٌّ عَلَى الوَاوِ فِي مَحَلِّ نَصْبٍ</td>
+        </tr>
+    </table>
+
+    <h3 class="section-subtitle">القِسْمُ الثَّانِي: المُنَادَى المُعْرَبُ (المَنْصُوب)</h3>
+    <div class="warning-box">
+        <p class="arabic-text" style="font-size: 22px;"><strong>يُنْصَبُ المُنَادَى إِذَا كَانَ:</strong></p>
+        <ul style="margin: 15px 30px; font-size: 20px;">
+            <li><strong>مُضَافًا:</strong> يَا عَبْدَ اللَّهِ</li>
+            <li><strong>شَبِيهًا بِالمُضَافِ:</strong> يَا طَالِبًا العِلْمَ</li>
+            <li><strong>نَكِرَةً غَيْرَ مَقْصُودَةٍ:</strong> يَا رَجُلاً سَاعِدْنِي</li>
+        </ul>
+    </div>
+
+    <table>
+        <tr>
+            <th>المِثَالُ</th>
+            <th>الإِعْرَابُ</th>
+        </tr>
+        <tr>
+            <td style="font-size: 26px;">يَا عَبْدَ اللَّهِ</td>
+            <td>مُنَادَى مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ</td>
+        </tr>
+        <tr>
+            <td style="font-size: 26px;">يَا رَجُلاً</td>
+            <td>مُنَادَى مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ</td>
+        </tr>
+        <tr>
+            <td style="font-size: 26px;">يَا بَنَاتِ</td>
+            <td>مُنَادَى مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الكَسْرَةُ</td>
+        </tr>
+        <tr>
+            <td style="font-size: 26px;">يَا مُهَنْدِسِينَ</td>
+            <td>مُنَادَى مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ اليَاءُ</td>
+        </tr>
+    </table>
+
+    <!-- MCQ for Section 4 -->
+    <div class="exercise-item" id="q4">
+        <p class="exercise-question">٤. مَا نَوْعُ المُنَادَى فِي "يَا عَبْدَ اللَّهِ"؟</p>
+        <div class="exercise-options">
+            <button class="option-btn" onclick="checkAnswer(4, this, false)">مَبْنِيٌّ عَلَى الضَّمِّ</button>
+            <button class="option-btn" onclick="checkAnswer(4, this, true)">مُعْرَبٌ مَنْصُوبٌ (لِأَنَّهُ مُضَاف)</button>
+            <button class="option-btn" onclick="checkAnswer(4, this, false)">نَكِرَةٌ مَقْصُودَةٌ</button>
+        </div>
+        <div class="explanation" id="exp4">
+            <p class="arabic-text"><strong>الجَوَابُ:</strong> مُنَادَى مَنْصُوبٌ لِأَنَّهُ مُضَافٌ (عَبْدَ + اللَّهِ)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 5: Vocabulary -->
+<section id="vocabulary" class="section">
+    <h2 class="section-title">المُفْرَدَاتُ - Vocabulary</h2>
+
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><div class="flashcard-arabic">عَادَ</div><div class="flashcard-hint">Click to flip</div></div>
+                <div class="flashcard-back"><div class="flashcard-english">To return (hollow)</div><div class="flashcard-translit">'aada - ya'uudu</div></div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><div class="flashcard-arabic">رَجَعَ</div><div class="flashcard-hint">Click to flip</div></div>
+                <div class="flashcard-back"><div class="flashcard-english">To return (sound)</div><div class="flashcard-translit">raja'a - yarji'u</div></div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><div class="flashcard-arabic">المُنَادَى</div><div class="flashcard-hint">Click to flip</div></div>
+                <div class="flashcard-back"><div class="flashcard-english">The one being called</div><div class="flashcard-translit">al-munada</div></div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><div class="flashcard-arabic">أَدَاةُ النِّدَاءِ</div><div class="flashcard-hint">Click to flip</div></div>
+                <div class="flashcard-back"><div class="flashcard-english">Particle of calling</div><div class="flashcard-translit">adat an-nida'</div></div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><div class="flashcard-arabic">العَلَمُ المُفْرَدُ</div><div class="flashcard-hint">Click to flip</div></div>
+                <div class="flashcard-back"><div class="flashcard-english">Singular proper noun</div><div class="flashcard-translit">al-'alam al-mufrad</div></div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><div class="flashcard-arabic">المُضَافُ</div><div class="flashcard-hint">Click to flip</div></div>
+                <div class="flashcard-back"><div class="flashcard-english">Annexed/Constructed</div><div class="flashcard-translit">al-mudaf</div></div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><div class="flashcard-arabic">المَبْنِيُّ</div><div class="flashcard-hint">Click to flip</div></div>
+                <div class="flashcard-back"><div class="flashcard-english">Fixed/Indeclinable</div><div class="flashcard-translit">al-mabniyy</div></div>
+            </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><div class="flashcard-arabic">المُعْرَبُ</div><div class="flashcard-hint">Click to flip</div></div>
+                <div class="flashcard-back"><div class="flashcard-english">Inflected/Declinable</div><div class="flashcard-translit">al-mu'rab</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MCQ for Section 5 -->
+    <div class="exercise-item" id="q5">
+        <p class="exercise-question">٥. مَا مَعْنَى "المُنَادَى المَبْنِيُّ"؟</p>
+        <div class="exercise-options">
+            <button class="option-btn" onclick="checkAnswer(5, this, true)">Fixed vocative (built on damma)</button>
+            <button class="option-btn" onclick="checkAnswer(5, this, false)">Inflected vocative (accusative)</button>
+            <button class="option-btn" onclick="checkAnswer(5, this, false)">Indefinite noun</button>
+        </div>
+        <div class="explanation" id="exp5">
+            <p class="arabic-text"><strong>الجَوَابُ:</strong> المُنَادَى المَبْنِيُّ = Fixed vocative - مَبْنِيٌّ عَلَى مَا يُرْفَعُ بِهِ</p>
+        </div>
+    </div>
+</section>
+
+<!-- Exercises Section -->
+<section id="exercises" class="exercise-section">
+    <h2 class="section-title" style="text-align: center; border: none;">التَّمَارِينُ الشَّامِلَةُ - Comprehensive Exercises</h2>
+    <div class="score-display">النَّتِيجَةُ: <span id="score">0</span> / <span id="total">10</span></div>
+
+    <div class="exercise-item" id="q6">
+        <p class="exercise-question">٦. مَا الفَرْقُ بَيْنَ "يَا مُحَمَّدُ" وَ"يَا عَبْدَ اللَّهِ"؟</p>
+        <div class="exercise-options">
+            <button class="option-btn" onclick="checkAnswer(6, this, true)">الأَوَّلُ مَبْنِيٌّ وَالثَّانِي مَنْصُوبٌ</button>
+            <button class="option-btn" onclick="checkAnswer(6, this, false)">كِلَاهُمَا مَبْنِيٌّ</button>
+            <button class="option-btn" onclick="checkAnswer(6, this, false)">كِلَاهُمَا مَنْصُوبٌ</button>
+        </div>
+        <div class="explanation" id="exp6">
+            <p class="arabic-text"><strong>الجَوَابُ:</strong> "مُحَمَّدُ" عَلَمٌ مُفْرَدٌ فَهُوَ مَبْنِيٌّ، أَمَّا "عَبْدَ اللَّهِ" فَهُوَ مُضَافٌ فَهُوَ مَنْصُوبٌ</p>
+        </div>
+    </div>
+
+    <div class="exercise-item" id="q7">
+        <p class="exercise-question">٧. صَرِّفْ "رَجَعَ" لِـ"نَحْنُ" فِي المَاضِي:</p>
+        <div class="exercise-options">
+            <button class="option-btn" onclick="checkAnswer(7, this, false)">رَجَعُوا</button>
+            <button class="option-btn" onclick="checkAnswer(7, this, true)">رَجَعْنَا</button>
+            <button class="option-btn" onclick="checkAnswer(7, this, false)">نَرْجِعُ</button>
+        </div>
+        <div class="explanation" id="exp7">
+            <p class="arabic-text"><strong>الجَوَابُ:</strong> رَجَعْنَا - الفِعْلُ المَاضِي لِـ"نَحْنُ"</p>
+        </div>
+    </div>
+
+    <div class="exercise-item" id="q8">
+        <p class="exercise-question">٨. مَا إِعْرَابُ "فَاطِمَةُ" فِي "يَا فَاطِمَةُ"؟</p>
+        <div class="exercise-options">
+            <button class="option-btn" onclick="checkAnswer(8, this, true)">مُنَادَى مَبْنِيٌّ عَلَى الضَّمِّ فِي مَحَلِّ نَصْبٍ</button>
+            <button class="option-btn" onclick="checkAnswer(8, this, false)">مُنَادَى مَنْصُوبٌ بِالفَتْحَةِ</button>
+            <button class="option-btn" onclick="checkAnswer(8, this, false)">فَاعِلٌ مَرْفُوعٌ</button>
+        </div>
+        <div class="explanation" id="exp8">
+            <p class="arabic-text"><strong>الجَوَابُ:</strong> مُنَادَى مَبْنِيٌّ عَلَى الضَّمِّ فِي مَحَلِّ نَصْبٍ - لِأَنَّهُ عَلَمٌ مُفْرَدٌ</p>
+        </div>
+    </div>
+
+    <div class="exercise-item" id="q9">
+        <p class="exercise-question">٩. لِمَاذَا نَقُولُ "عُدْتُ" وَلَيْسَ "عَادْتُ"؟</p>
+        <div class="exercise-options">
+            <button class="option-btn" onclick="checkAnswer(9, this, true)">لِأَنَّ السَّاكِنَيْنِ لَا يَلْتَقِيَانِ</button>
+            <button class="option-btn" onclick="checkAnswer(9, this, false)">لِأَنَّهُ فِعْلٌ مَاضٍ</button>
+            <button class="option-btn" onclick="checkAnswer(9, this, false)">لِأَنَّهُ صَحِيحٌ</button>
+        </div>
+        <div class="explanation" id="exp9">
+            <p class="arabic-text"><strong>الجَوَابُ:</strong> لَا يَجْتَمِعُ سَاكِنَانِ - فَتُحْذَفُ الأَلِفُ مِنَ الفِعْلِ الأَجْوَفِ</p>
+        </div>
+    </div>
+
+    <div class="exercise-item" id="q10">
+        <p class="exercise-question">١٠. مَا نَوْعُ المُنَادَى فِي "يَا رَجُلُ اتَّقِ اللَّهَ"؟</p>
+        <div class="exercise-options">
+            <button class="option-btn" onclick="checkAnswer(10, this, false)">عَلَمٌ مُفْرَدٌ</button>
+            <button class="option-btn" onclick="checkAnswer(10, this, true)">نَكِرَةٌ مَقْصُودَةٌ (مَبْنِيٌّ)</button>
+            <button class="option-btn" onclick="checkAnswer(10, this, false)">نَكِرَةٌ غَيْرُ مَقْصُودَةٍ (مَنْصُوب)</button>
+        </div>
+        <div class="explanation" id="exp10">
+            <p class="arabic-text"><strong>الجَوَابُ:</strong> نَكِرَةٌ مَقْصُودَةٌ - "رَجُلُ" نَكِرَةٌ لَكِنَّهَا مَقْصُودَةٌ (شَخْصٌ مُعَيَّنٌ)</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="reset-btn" onclick="resetExercises()">إِعَادَةُ التَّمَارِينِ - Reset Exercises</button>
+    </div>
+</section>
+
+<!-- Summary -->
+<section class="section">
+    <div class="summary-box">
+        <h3>مُلَخَّصُ الوَحْدَةِ - Module 28 Summary</h3>
+        <ul>
+            <li><strong>عَادَ - يَعُودُ - عُدْ:</strong> فِعْلٌ أَجْوَفُ (To return) - الأَلِفُ تُحْذَفُ</li>
+            <li><strong>رَجَعَ - يَرْجِعُ - اِرْجِعْ:</strong> فِعْلٌ صَحِيحٌ (To return)</li>
+            <li><strong>أُسْلُوبُ النِّدَاءِ:</strong> أَدَاةُ نِدَاءٍ (يَا) + المُنَادَى</li>
+            <li><strong>المُنَادَى المَبْنِيُّ:</strong> العَلَمُ المُفْرَدُ وَالنَّكِرَةُ المَقْصُودَةُ (يُبْنَى عَلَى الضَّمِّ)</li>
+            <li><strong>المُنَادَى المُعْرَبُ:</strong> المُضَافُ وَالنَّكِرَةُ غَيْرُ المَقْصُودَةِ (يُنْصَبُ)</li>
+            <li><strong>أَدَوَاتُ النِّدَاءِ:</strong> يَا (الأَشْهَر)، أَيَا، الهَمْزَة</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="module27_study_guide.html" style="display: inline-block; padding: 15px 30px; background: linear-gradient(135deg, #757575 0%, #9e9e9e 100%); color: white; text-decoration: none; border-radius: 10px; font-size: 18px; margin: 5px;">
+            ← الوَحْدَةُ السَّابِقَةُ (27)
+        </a>
+        <a href="index.html" style="display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%); color: white; text-decoration: none; border-radius: 10px; font-size: 20px; margin: 5px;">
+            العَوْدَةُ لِلرَّئِيسِيَّةِ - Back to Home
+        </a>
+        <a href="module29_study_guide.html" style="display: inline-block; padding: 15px 30px; background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%); color: white; text-decoration: none; border-radius: 10px; font-size: 18px; margin: 5px;">
+            الوَحْدَةُ التَّالِيَةُ (29) →
+        </a>
+    </div>
+</section>
+
+<script>
+let score = 0;
+let answeredQuestions = new Set();
+const totalQuestions = 10;
+
+function checkAnswer(questionNum, button, isCorrect) {
+    if (answeredQuestions.has(questionNum)) return;
+    answeredQuestions.add(questionNum);
+
+    const explanation = document.getElementById(`exp${questionNum}`);
+    const buttons = button.parentElement.querySelectorAll('.option-btn');
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (isCorrect) {
+        button.classList.add('correct');
+        explanation.classList.add('correct-exp');
+        score++;
+    } else {
+        button.classList.add('incorrect');
+        explanation.classList.add('incorrect-exp');
+        buttons.forEach(btn => {
+            if (btn.onclick.toString().includes('true')) btn.classList.add('correct');
+        });
+    }
+
+    explanation.classList.add('show');
+    document.getElementById('score').textContent = score;
+    updateProgress();
+}
+
+function resetExercises() {
+    score = 0;
+    answeredQuestions.clear();
+    document.getElementById('score').textContent = '0';
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        const explanation = document.getElementById(`exp${i}`);
+        if (explanation) {
+            explanation.classList.remove('show', 'correct-exp', 'incorrect-exp');
+        }
+        const buttons = document.querySelectorAll(`#q${i} .option-btn`);
+        buttons.forEach(btn => {
+            btn.disabled = false;
+            btn.classList.remove('correct', 'incorrect');
+        });
+    }
+    updateProgress();
+}
+
+function updateProgress() {
+    const sectionsCompleted = Math.floor(answeredQuestions.size / 1.7);
+    const progressPercent = (answeredQuestions.size / totalQuestions) * 100;
+    document.getElementById('progressBar').style.width = progressPercent + '%';
+    document.getElementById('sectionsCompleted').textContent = Math.min(sectionsCompleted, 6);
+}
+
+document.addEventListener('DOMContentLoaded', updateProgress);
+</script>
+
+</body>
+</html>

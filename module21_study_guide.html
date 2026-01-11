@@ -447,9 +447,35 @@
                 padding: 1rem;
             }
         }
+
+        /* Home Button */
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(106, 27, 154, 0.4);
+            z-index: 1001;
+            transition: all 0.3s;
+        }
+        .home-btn:hover { transform: scale(1.1); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
     </style>
 </head>
 <body>
+
+<!-- Home Button -->
+<a href="index.html" class="home-btn" title="Back to Home">
+    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+</a>
+
     <!-- Navigation -->
     <nav class="nav-bar">
         <div class="nav-container">
