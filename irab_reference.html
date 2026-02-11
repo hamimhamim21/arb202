@@ -103,6 +103,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            flex-wrap: wrap;
         }
         .section-title-en {
             font-family: Georgia, serif;
@@ -117,6 +118,9 @@
         .section-4 .section-title { color: #b7950b; border-bottom: 4px solid #f1c40f; }
         .section-5 .section-title { color: #c0392b; border-bottom: 4px solid #e74c3c; }
         .section-6 .section-title { color: #2874a6; border-bottom: 4px solid #3498db; }
+        .section-7 .section-title { color: #117a65; border-bottom: 4px solid #1abc9c; }
+        .section-8 .section-title { color: #d35400; border-bottom: 4px solid #e67e22; }
+        .section-9 .section-title { color: #5d6d7e; border-bottom: 4px solid #85929e; }
 
         /* Concept Cards */
         .concept-card {
@@ -150,7 +154,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
         }
         .concept-title-ar {
@@ -336,12 +340,15 @@
         <a href="index.html" class="back-link">← العودة للرئيسية | Back to Home</a>
         <div class="nav-title">أَقْسَامُ الإِعْرَابِ | I'RAB Sections</div>
         <div class="nav-links">
-            <a href="#section1">أَنْوَاعُ الجُمَلِ</a>
-            <a href="#section2">الحُرُوفُ النَّاسِخَةُ</a>
-            <a href="#section3">الأَسْمَاءُ الخَاصَّةُ</a>
-            <a href="#section4">الأَعْدَادُ</a>
-            <a href="#section5">أَسَالِيبُ التَّعْبِيرِ</a>
-            <a href="#section6">الضَّمَائِرُ</a>
+            <a href="#section1">الجُمَل</a>
+            <a href="#section2">النَّواسِخ</a>
+            <a href="#section3">الأَسْمَاء الخَاصَّة</a>
+            <a href="#section4">الجُمُوع</a>
+            <a href="#section5">الأَعْدَاد</a>
+            <a href="#section6">المَنْصُوبَات</a>
+            <a href="#section7">الأَسَالِيب</a>
+            <a href="#section8">الضَّمَائِر</a>
+            <a href="#section9">أَدَوَات أُخْرَى</a>
         </div>
     </nav>
 
@@ -349,7 +356,7 @@
     <header class="main-title">
         <h1>مَرْجِعُ الإِعْرَابِ السَّرِيعِ</h1>
         <div class="subtitle">I'RAB Quick Reference</div>
-        <div class="desc">١٩ مفهومًا نحويًا من ٣٠ وحدة | 19 Grammar Concepts from 30 Modules</div>
+        <div class="desc">٣٥ مفهومًا نحويًا من ٣٠ وحدة | 35 Grammar Concepts from 30 Modules</div>
     </header>
 
     <!-- Section 1: Sentence Types -->
@@ -405,8 +412,8 @@
                 <span class="concept-title-en">Verbal Sentence</span>
             </div>
             <div class="explanation">
-                <div class="explanation-ar">جملة تبدأ بفعل، وتتكون من فعل وفاعل، وقد يكون لها مفعول به.</div>
-                <div class="explanation-en">A sentence that begins with a verb, consisting of a verb, subject (doer), and optionally a direct object.</div>
+                <div class="explanation-ar">جملة تبدأ بفعل، وتتكون من فعل وفاعل، وقد يكون لها مفعول به إذا كان الفعل متعديًا.</div>
+                <div class="explanation-en">A sentence that begins with a verb, consisting of a verb, subject (doer), and optionally a direct object if the verb is transitive.</div>
             </div>
             <div class="formula-box">
                 فِعْل + فَاعِل (مَرْفُوع) + مَفْعُول بِهِ (مَنْصُوب)
@@ -441,19 +448,54 @@
                 </div>
             </div>
         </div>
+
+        <!-- Concept 3: Transitive & Intransitive -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٣</span>
+                <span class="concept-title-ar">الفِعْلُ اللَّازِمُ وَالمُتَعَدِّي</span>
+                <span class="concept-title-en">Intransitive & Transitive Verbs</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">الفعل اللازم لا يحتاج مفعولًا به (مثل: جَلَسَ، ذَهَبَ). الفعل المتعدي يحتاج مفعولًا به أو أكثر (مثل: كَتَبَ، أَعْطَى).</div>
+                <div class="explanation-en">Intransitive verbs don't need an object (e.g., sat, went). Transitive verbs need one or more objects (e.g., wrote, gave).</div>
+            </div>
+            <table class="mini-table">
+                <tr>
+                    <th>النوع | Type</th>
+                    <th>التعريف | Definition</th>
+                    <th>المثال | Example</th>
+                </tr>
+                <tr>
+                    <td>لَازِم (Intransitive)</td>
+                    <td>لا يحتاج مفعولًا به</td>
+                    <td>جَلَسَ الطَّالِبُ</td>
+                </tr>
+                <tr>
+                    <td>مُتَعَدٍّ لِوَاحِد</td>
+                    <td>يحتاج مفعولًا به واحدًا</td>
+                    <td>قَرَأَ الطَّالِبُ الكِتَابَ</td>
+                </tr>
+                <tr>
+                    <td>مُتَعَدٍّ لِاثْنَيْنِ</td>
+                    <td>يحتاج مفعولين</td>
+                    <td>أَعْطَى المُعَلِّمُ الطَّالِبَ كِتَابًا</td>
+                </tr>
+            </table>
+        </div>
     </section>
 
     <!-- Section 2: Case-Changing Particles -->
     <section id="section2" class="section section-2">
         <h2 class="section-title">
-            ٢. الحُرُوفُ النَّاسِخَةُ
-            <span class="section-title-en">Case-Changing Particles</span>
+            ٢. الحُرُوفُ وَالأَفْعَالُ النَّاسِخَةُ
+            <span class="section-title-en">Case-Changing Particles & Verbs</span>
         </h2>
 
-        <!-- Concept 3: Inna & Sisters -->
+        <!-- Concept 4: Inna & Sisters -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">٣</span>
+                <span class="concept-number">٤</span>
                 <span class="concept-title-ar">إِنَّ وَأَخَوَاتُهَا</span>
                 <span class="concept-title-en">Inna & Its Sisters</span>
             </div>
@@ -503,10 +545,10 @@
             </div>
         </div>
 
-        <!-- Concept 4: Kaana & Sisters -->
+        <!-- Concept 5: Kaana & Sisters -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">٤</span>
+                <span class="concept-number">٥</span>
                 <span class="concept-title-ar">كَانَ وَأَخَوَاتُهَا</span>
                 <span class="concept-title-en">Kaana & Its Sisters</span>
             </div>
@@ -556,10 +598,10 @@
             </div>
         </div>
 
-        <!-- Concept 5: Extra Baa -->
+        <!-- Concept 6: Extra Baa -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">٥</span>
+                <span class="concept-number">٦</span>
                 <span class="concept-title-ar">البَاءُ الزَّائِدَةُ</span>
                 <span class="concept-title-en">Extra Baa (for Emphasis)</span>
             </div>
@@ -567,29 +609,12 @@
                 <div class="explanation-ar">باء تدخل على خبر "ليس" للتوكيد، والاسم بعدها يكون مجرورًا لفظًا منصوبًا محلًا.</div>
                 <div class="explanation-en">A baa that enters upon the khabar of "laysa" for emphasis. The noun after it is genitive in pronunciation but accusative in grammatical position.</div>
             </div>
-            <div class="formula-box">
-                لَيْسَ + اسم لَيْسَ (مَرْفُوع) + بِ + خَبَر لَيْسَ (مَجْرُور لَفْظًا، مَنْصُوب مَحَلًّا)
-            </div>
             <div class="example-section">
                 <div class="example-label">المِثَالُ | Example:</div>
                 <div class="example-sentence">لَيْسَ الأَمْرُ بِصَعْبٍ</div>
                 <div class="example-translation">"The matter is not difficult (at all)."</div>
                 <div class="irab-breakdown">
                     <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">لَيْسَ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">فِعْلٌ مَاضٍ نَاقِصٌ جَامِدٌ</div>
-                            <div class="irab-en">Incomplete, inert past tense verb (negation)</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">الأَمْرُ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">اسْمُ لَيْسَ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ</div>
-                            <div class="irab-en">Ism of laysa - nominative, marked with visible damma</div>
-                        </div>
-                    </div>
                     <div class="irab-item">
                         <span class="irab-word">بِـ</span>
                         <div class="irab-details">
@@ -607,6 +632,93 @@
                 </div>
             </div>
         </div>
+
+        <!-- Concept 7: Lam of Beginning & Sliding Lam -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٧</span>
+                <span class="concept-title-ar">لَامُ الابْتِدَاءِ وَاللَّامُ المُزَحْلَقَةُ</span>
+                <span class="concept-title-en">Lam of Beginning & Sliding Lam</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">لام الابتداء تدخل على المبتدأ للتوكيد. عند دخول "إنّ" تنتقل اللام إلى الخبر وتسمى "المزحلقة".</div>
+                <div class="explanation-en">Lam of beginning enters on the mubtada' for emphasis. When "inna" is added, the lam shifts to khabar and is called "sliding lam".</div>
+            </div>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">إِنَّ الطَّالِبَ لَمُجْتَهِدٌ</div>
+                <div class="example-translation">"Indeed, the student is certainly hardworking."</div>
+                <div class="irab-breakdown">
+                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
+                    <div class="irab-item">
+                        <span class="irab-word">لَـ</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">اللَّامُ المُزَحْلَقَةُ (لَامُ الابْتِدَاءِ انْتَقَلَتْ إِلَى الخَبَرِ)</div>
+                            <div class="irab-en">Sliding Lam - shifted from mubtada' to khabar for emphasis</div>
+                        </div>
+                    </div>
+                    <div class="irab-item">
+                        <span class="irab-word">مُجْتَهِدٌ</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">خَبَرُ إِنَّ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ</div>
+                            <div class="irab-en">Khabar of inna - nominative with damma</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 8: Negation of Past -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٨</span>
+                <span class="concept-title-ar">نَفْيُ الفِعْلِ المَاضِي</span>
+                <span class="concept-title-en">Negation of Past Tense</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">يُنفى الفعل الماضي بـ "مَا" أو "لَمْ" (مع المضارع المجزوم بمعنى الماضي).</div>
+                <div class="explanation-en">Past tense is negated with "maa" or "lam" (with jussive present tense carrying past meaning).</div>
+            </div>
+            <table class="mini-table">
+                <tr>
+                    <th>الأداة | Particle</th>
+                    <th>الاستخدام | Usage</th>
+                    <th>المثال | Example</th>
+                </tr>
+                <tr>
+                    <td>مَا</td>
+                    <td>مَا + الفعل الماضي</td>
+                    <td>مَا ذَهَبَ الطَّالِبُ</td>
+                </tr>
+                <tr>
+                    <td>لَمْ</td>
+                    <td>لَمْ + المضارع المجزوم</td>
+                    <td>لَمْ يَذْهَبْ الطَّالِبُ</td>
+                </tr>
+            </table>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">لَمْ يَكْتُبْ مُحَمَّدٌ الدَّرْسَ</div>
+                <div class="example-translation">"Muhammad did not write the lesson."</div>
+                <div class="irab-breakdown">
+                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
+                    <div class="irab-item">
+                        <span class="irab-word">لَمْ</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">حَرْفُ نَفْيٍ وَجَزْمٍ وَقَلْبٍ</div>
+                            <div class="irab-en">Particle of negation, jussive, and conversion (to past meaning)</div>
+                        </div>
+                    </div>
+                    <div class="irab-item">
+                        <span class="irab-word">يَكْتُبْ</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">فِعْلٌ مُضَارِعٌ مَجْزُومٌ بِـ"لَمْ" وَعَلَامَةُ جَزْمِهِ السُّكُونُ</div>
+                            <div class="irab-en">Present tense verb - jussive with sukoon (meaning past)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Section 3: Special Noun Categories -->
@@ -616,10 +728,10 @@
             <span class="section-title-en">Special Noun Categories</span>
         </h2>
 
-        <!-- Concept 6: Five Nouns -->
+        <!-- Concept 9: Five Nouns -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">٦</span>
+                <span class="concept-number">٩</span>
                 <span class="concept-title-ar">الأَسْمَاءُ الخَمْسَةُ</span>
                 <span class="concept-title-en">The Five Nouns</span>
             </div>
@@ -656,43 +768,18 @@
                     <td>مَرَرْتُ بِأَبِيكَ</td>
                 </tr>
             </table>
-            <div class="example-section">
-                <div class="example-label">المِثَالُ | Example:</div>
-                <div class="example-sentence">جَاءَ أَخُو مُحَمَّدٍ</div>
-                <div class="example-translation">"Muhammad's brother came."</div>
-                <div class="irab-breakdown">
-                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">أَخُو</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">فَاعِلٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الوَاوُ لِأَنَّهُ مِنَ الأَسْمَاءِ الخَمْسَةِ، وَهُوَ مُضَافٌ</div>
-                            <div class="irab-en">Subject - nominative, marked with waaw (Five Nouns), mudaaf</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">مُحَمَّدٍ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">مُضَافٌ إِلَيْهِ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ الظَّاهِرَةُ</div>
-                            <div class="irab-en">Mudaaf ilayhi - genitive, marked with visible kasra</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <!-- Concept 7: Dhu & Dhat -->
+        <!-- Concept 10: Dhu & Dhat -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">٧</span>
+                <span class="concept-number">١٠</span>
                 <span class="concept-title-ar">ذُو وَذَاتُ</span>
                 <span class="concept-title-en">Possessor Nouns (Dhu & Dhat)</span>
             </div>
             <div class="explanation">
                 <div class="explanation-ar">"ذُو" للمذكر و"ذَاتُ" للمؤنث بمعنى "صاحب". "ذُو" من الأسماء الخمسة، و"ذَات" تُعرب بالحركات.</div>
                 <div class="explanation-en">"Dhu" (masc.) and "Dhaat" (fem.) mean "possessor of". Dhu follows Five Nouns rules; Dhaat takes regular case endings.</div>
-            </div>
-            <div class="formula-box">
-                ذُو / ذَاتُ + مُضَاف إِلَيْهِ (مَجْرُور)
             </div>
             <div class="example-section">
                 <div class="example-label">المِثَالُ | Example:</div>
@@ -707,21 +794,182 @@
                             <div class="irab-en">Adjective - nominative with waaw (Five Nouns), mudaaf</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 11: Defective Noun -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">١١</span>
+                <span class="concept-title-ar">الاِسْمُ المَنْقُوصُ</span>
+                <span class="concept-title-en">Defective Noun (Ending in Yaa)</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">اسم معرب آخره ياء لازمة مكسور ما قبلها. تُحذف الياء في حالتي الرفع والجر إذا كان نكرة، وتبقى في حالة النصب.</div>
+                <div class="explanation-en">A declinable noun ending in a permanent yaa with kasra before it. The yaa is dropped in nominative/genitive if indefinite, but kept in accusative.</div>
+            </div>
+            <table class="mini-table">
+                <tr>
+                    <th>الحالة | Case</th>
+                    <th>نكرة | Indefinite</th>
+                    <th>معرفة | Definite</th>
+                </tr>
+                <tr>
+                    <td>رفع (Nominative)</td>
+                    <td>قَاضٍ (تُحذف الياء)</td>
+                    <td>القَاضِي</td>
+                </tr>
+                <tr>
+                    <td>نصب (Accusative)</td>
+                    <td>قَاضِيًا</td>
+                    <td>القَاضِيَ</td>
+                </tr>
+                <tr>
+                    <td>جر (Genitive)</td>
+                    <td>قَاضٍ (تُحذف الياء)</td>
+                    <td>القَاضِي</td>
+                </tr>
+            </table>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">جَاءَ قَاضٍ عَادِلٌ</div>
+                <div class="example-translation">"A just judge came."</div>
+            </div>
+        </div>
+
+        <!-- Concept 12: Diptotes -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">١٢</span>
+                <span class="concept-title-ar">المَمْنُوعُ مِنَ الصَّرْفِ</span>
+                <span class="concept-title-en">Diptotes (Partially Declinable)</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">اسم لا يقبل التنوين ولا الكسرة، ويُجر بالفتحة بدلًا من الكسرة. مثل: أسماء الأنبياء، صيغة أفعل، جمع التكسير على وزن مَفَاعِل.</div>
+                <div class="explanation-en">Nouns that don't accept tanween or kasra, and take fatha in genitive instead of kasra. Examples: prophet names, af'al pattern, broken plurals.</div>
+            </div>
+            <div class="sisters-list">
+                <span class="sister-item">أَحْمَد، إِبْرَاهِيم</span>
+                <span class="sister-item">أَكْبَر، أَصْغَر</span>
+                <span class="sister-item">مَسَاجِد، مَدَارِس</span>
+                <span class="sister-item">صَحْرَاء، حَمْرَاء</span>
+            </div>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">سَلَّمْتُ عَلَى إِبْرَاهِيمَ</div>
+                <div class="example-translation">"I greeted Ibrahim."</div>
+                <div class="irab-breakdown">
+                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
                     <div class="irab-item">
-                        <span class="irab-word">عِلْمٍ</span>
+                        <span class="irab-word">إِبْرَاهِيمَ</span>
                         <div class="irab-details">
-                            <div class="irab-ar">مُضَافٌ إِلَيْهِ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ</div>
-                            <div class="irab-en">Mudaaf ilayhi - genitive, marked with kasra</div>
+                            <div class="irab-ar">اسْمٌ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الفَتْحَةُ نِيَابَةً عَنِ الكَسْرَةِ لِأَنَّهُ مَمْنُوعٌ مِنَ الصَّرْفِ</div>
+                            <div class="irab-en">Genitive noun - marked with fatha (instead of kasra) because it's a diptote</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Concept 8: Dual -->
+        <!-- Concept 13: Mudaaf Ilayhi -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">٨</span>
+                <span class="concept-number">١٣</span>
+                <span class="concept-title-ar">المُضَافُ إِلَيْهِ</span>
+                <span class="concept-title-en">Genitive Construct (Idaafa)</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">الاسم الثاني في الإضافة يكون دائمًا مجرورًا. المضاف يُحذف منه التنوين والنون.</div>
+                <div class="explanation-en">The second noun in idaafa is always genitive. The mudaaf loses its tanween and noon.</div>
+            </div>
+            <div class="formula-box">
+                مُضَاف (بدون تنوين) + مُضَاف إِلَيْهِ (مَجْرُور دَائِمًا)
+            </div>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">كِتَابُ الطَّالِبِ جَدِيدٌ</div>
+                <div class="example-translation">"The student's book is new."</div>
+            </div>
+        </div>
+
+        <!-- Concept 14: Relative Pronouns -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">١٤</span>
+                <span class="concept-title-ar">الأَسْمَاءُ المَوْصُولَةُ</span>
+                <span class="concept-title-en">Relative Pronouns</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">أسماء تربط بين جملتين، وتحتاج إلى صلة الموصول (جملة تكمل معناها). الموصول مبني في محل رفع أو نصب أو جر حسب موقعه.</div>
+                <div class="explanation-en">Pronouns connecting two clauses, requiring a relative clause (sila) to complete meaning. Built (indeclinable) but take position of raf', nasb, or jarr.</div>
+            </div>
+            <table class="mini-table">
+                <tr>
+                    <th>الموصول | Pronoun</th>
+                    <th>الاستخدام | Usage</th>
+                </tr>
+                <tr>
+                    <td>الَّذِي</td>
+                    <td>للمفرد المذكر (who/which - masc. sing.)</td>
+                </tr>
+                <tr>
+                    <td>الَّتِي</td>
+                    <td>للمفرد المؤنث (who/which - fem. sing.)</td>
+                </tr>
+                <tr>
+                    <td>الَّذِينَ</td>
+                    <td>لجمع المذكر (who - masc. pl.)</td>
+                </tr>
+                <tr>
+                    <td>اللَّاتِي / اللَّوَاتِي</td>
+                    <td>لجمع المؤنث (who - fem. pl.)</td>
+                </tr>
+                <tr>
+                    <td>مَنْ</td>
+                    <td>للعاقل (who - rational)</td>
+                </tr>
+                <tr>
+                    <td>مَا</td>
+                    <td>لغير العاقل (what/which - non-rational)</td>
+                </tr>
+            </table>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">جَاءَ الطَّالِبُ الَّذِي نَجَحَ</div>
+                <div class="example-translation">"The student who passed came."</div>
+                <div class="irab-breakdown">
+                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
+                    <div class="irab-item">
+                        <span class="irab-word">الَّذِي</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">اسْمٌ مَوْصُولٌ مَبْنِيٌّ عَلَى السُّكُونِ فِي مَحَلِّ رَفْعٍ صِفَة</div>
+                            <div class="irab-en">Relative pronoun - built on sukoon, in position of nominative (adjective)</div>
+                        </div>
+                    </div>
+                    <div class="irab-item">
+                        <span class="irab-word">نَجَحَ</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">جُمْلَةُ صِلَةِ المَوْصُولِ لَا مَحَلَّ لَهَا مِنَ الإِعْرَابِ</div>
+                            <div class="irab-en">Relative clause (sila) - no grammatical position</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Plurals -->
+    <section id="section4" class="section section-4">
+        <h2 class="section-title">
+            ٤. الجُمُوعُ
+            <span class="section-title-en">Plurals</span>
+        </h2>
+
+        <!-- Concept 15: Dual -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">١٥</span>
                 <span class="concept-title-ar">المُثَنَّى</span>
                 <span class="concept-title-en">The Dual</span>
             </div>
@@ -736,42 +984,22 @@
                     <th>المثال | Example</th>
                 </tr>
                 <tr>
-                    <td>رفع (Nominative)</td>
-                    <td>الألف</td>
-                    <td>جَاءَ الطَّالِبَانِ</td>
+                    <td>رفع</td>
+                    <td>الألف + ن</td>
+                    <td>الطَّالِبَانِ</td>
                 </tr>
                 <tr>
-                    <td>نصب (Accusative)</td>
-                    <td>الياء</td>
-                    <td>رَأَيْتُ الطَّالِبَيْنِ</td>
-                </tr>
-                <tr>
-                    <td>جر (Genitive)</td>
-                    <td>الياء</td>
-                    <td>مَرَرْتُ بِالطَّالِبَيْنِ</td>
+                    <td>نصب / جر</td>
+                    <td>الياء + ن</td>
+                    <td>الطَّالِبَيْنِ</td>
                 </tr>
             </table>
-            <div class="example-section">
-                <div class="example-label">المِثَالُ | Example:</div>
-                <div class="example-sentence">نَجَحَ الطَّالِبَانِ</div>
-                <div class="example-translation">"The two students passed."</div>
-                <div class="irab-breakdown">
-                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">الطَّالِبَانِ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">فَاعِلٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الأَلِفُ لِأَنَّهُ مُثَنَّى، والنُّونُ عِوَضٌ عَنِ التَّنْوِينِ</div>
-                            <div class="irab-en">Subject - nominative with alif (dual), noon replaces tanween</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <!-- Concept 9: Sound Masculine Plural -->
+        <!-- Concept 16: Sound Masculine Plural -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">٩</span>
+                <span class="concept-number">١٦</span>
                 <span class="concept-title-ar">جَمْعُ المُذَكَّرِ السَّالِمِ</span>
                 <span class="concept-title-en">Sound Masculine Plural</span>
             </div>
@@ -786,125 +1014,62 @@
                     <th>المثال | Example</th>
                 </tr>
                 <tr>
-                    <td>رفع (Nominative)</td>
-                    <td>الواو</td>
-                    <td>جَاءَ المُسْلِمُونَ</td>
+                    <td>رفع</td>
+                    <td>الواو + ن</td>
+                    <td>المُسْلِمُونَ</td>
                 </tr>
                 <tr>
-                    <td>نصب (Accusative)</td>
-                    <td>الياء</td>
-                    <td>رَأَيْتُ المُسْلِمِينَ</td>
+                    <td>نصب / جر</td>
+                    <td>الياء + ن</td>
+                    <td>المُسْلِمِينَ</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Concept 17: Sound Feminine Plural -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">١٧</span>
+                <span class="concept-title-ar">جَمْعُ المُؤَنَّثِ السَّالِمِ</span>
+                <span class="concept-title-en">Sound Feminine Plural</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">جمع يدل على أكثر من اثنتين من الإناث. يُرفع بالضمة على التاء، ويُنصب ويُجر بالكسرة (علامة فرعية).</div>
+                <div class="explanation-en">Plural for more than two females. Nominative with damma on taa, accusative AND genitive with kasra (substitute marker).</div>
+            </div>
+            <table class="mini-table">
+                <tr>
+                    <th>الحالة | Case</th>
+                    <th>العلامة | Marker</th>
+                    <th>المثال | Example</th>
                 </tr>
                 <tr>
-                    <td>جر (Genitive)</td>
-                    <td>الياء</td>
-                    <td>مَرَرْتُ بِالمُسْلِمِينَ</td>
+                    <td>رفع</td>
+                    <td>الضمة</td>
+                    <td>المُسْلِمَاتُ</td>
+                </tr>
+                <tr>
+                    <td>نصب</td>
+                    <td>الكسرة (نيابة عن الفتحة)</td>
+                    <td>رَأَيْتُ المُسْلِمَاتِ</td>
+                </tr>
+                <tr>
+                    <td>جر</td>
+                    <td>الكسرة</td>
+                    <td>مَرَرْتُ بِالمُسْلِمَاتِ</td>
                 </tr>
             </table>
             <div class="example-section">
                 <div class="example-label">المِثَالُ | Example:</div>
-                <div class="example-sentence">فَازَ المُجْتَهِدُونَ</div>
-                <div class="example-translation">"The hardworking ones won."</div>
+                <div class="example-sentence">شَاهَدْتُ الطَّالِبَاتِ</div>
+                <div class="example-translation">"I saw the (female) students."</div>
                 <div class="irab-breakdown">
                     <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
                     <div class="irab-item">
-                        <span class="irab-word">المُجْتَهِدُونَ</span>
+                        <span class="irab-word">الطَّالِبَاتِ</span>
                         <div class="irab-details">
-                            <div class="irab-ar">فَاعِلٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الوَاوُ لِأَنَّهُ جَمْعُ مُذَكَّرٍ سَالِمٌ، والنُّونُ عِوَضٌ عَنِ التَّنْوِينِ</div>
-                            <div class="irab-en">Subject - nominative with waaw (sound masc. plural), noon replaces tanween</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Concept 10: Mudaaf Ilayhi -->
-        <div class="concept-card">
-            <div class="concept-header">
-                <span class="concept-number">١٠</span>
-                <span class="concept-title-ar">مُضَافٌ إِلَيْهِ</span>
-                <span class="concept-title-en">Genitive Construct (Idaafa)</span>
-            </div>
-            <div class="explanation">
-                <div class="explanation-ar">الاسم الثاني في الإضافة يكون دائمًا مجرورًا. الإضافة تربط بين اسمين: المضاف والمضاف إليه.</div>
-                <div class="explanation-en">The second noun in idaafa (possessive construction) is always genitive. Idaafa connects two nouns: mudaaf and mudaaf ilayhi.</div>
-            </div>
-            <div class="formula-box">
-                مُضَاف (حسب موقعه) + مُضَاف إِلَيْهِ (مَجْرُور دَائِمًا)
-            </div>
-            <div class="example-section">
-                <div class="example-label">المِثَالُ | Example:</div>
-                <div class="example-sentence">كِتَابُ الطَّالِبِ جَدِيدٌ</div>
-                <div class="example-translation">"The student's book is new."</div>
-                <div class="irab-breakdown">
-                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">كِتَابُ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">مُبْتَدَأٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ، وَهُوَ مُضَافٌ</div>
-                            <div class="irab-en">Subject - nominative with damma, mudaaf</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">الطَّالِبِ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">مُضَافٌ إِلَيْهِ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ الظَّاهِرَةُ</div>
-                            <div class="irab-en">Mudaaf ilayhi - genitive, marked with visible kasra</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Concept 11: Prepositional Phrases -->
-        <div class="concept-card">
-            <div class="concept-header">
-                <span class="concept-number">١١</span>
-                <span class="concept-title-ar">شِبْهُ الجُمْلَةِ</span>
-                <span class="concept-title-en">Prepositional Phrases (Jar & Majroor)</span>
-            </div>
-            <div class="explanation">
-                <div class="explanation-ar">تركيب من حرف جر واسم مجرور. الاسم بعد حرف الجر يكون مجرورًا دائمًا.</div>
-                <div class="explanation-en">A construction of a preposition and a genitive noun. The noun after a preposition is always in the genitive case.</div>
-            </div>
-            <div class="sisters-list">
-                <span class="sister-item">مِنْ (from)</span>
-                <span class="sister-item">إِلَى (to)</span>
-                <span class="sister-item">عَنْ (about)</span>
-                <span class="sister-item">عَلَى (on)</span>
-                <span class="sister-item">فِي (in)</span>
-                <span class="sister-item">بِـ (with/by)</span>
-                <span class="sister-item">لِـ (for)</span>
-                <span class="sister-item">كَـ (like)</span>
-            </div>
-            <div class="formula-box">
-                حَرْفُ جَرٍّ + اسْم مَجْرُور
-            </div>
-            <div class="example-section">
-                <div class="example-label">المِثَالُ | Example:</div>
-                <div class="example-sentence">الكِتَابُ عَلَى المَكْتَبِ</div>
-                <div class="example-translation">"The book is on the desk."</div>
-                <div class="irab-breakdown">
-                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">عَلَى</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">حَرْفُ جَرٍّ مَبْنِيٌّ عَلَى السُّكُونِ</div>
-                            <div class="irab-en">Preposition - indeclinable, built on sukoon</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">المَكْتَبِ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">اسْمٌ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ الظَّاهِرَةُ</div>
-                            <div class="irab-en">Genitive noun - marked with visible kasra</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">عَلَى المَكْتَبِ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">شِبْهُ جُمْلَةٍ (جَارٌّ وَمَجْرُورٌ) فِي مَحَلِّ رَفْعِ خَبَر</div>
-                            <div class="irab-en">Prepositional phrase in the position of khabar (predicate)</div>
+                            <div class="irab-ar">مَفْعُولٌ بِهِ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الكَسْرَةُ نِيَابَةً عَنِ الفَتْحَةِ لِأَنَّهُ جَمْعُ مُؤَنَّثٍ سَالِمٌ</div>
+                            <div class="irab-en">Direct object - accusative with kasra (instead of fatha) because it's sound feminine plural</div>
                         </div>
                     </div>
                 </div>
@@ -912,19 +1077,19 @@
         </div>
     </section>
 
-    <!-- Section 4: Numbers & Comparison -->
-    <section id="section4" class="section section-4">
+    <!-- Section 5: Numbers -->
+    <section id="section5" class="section section-5">
         <h2 class="section-title">
-            ٤. الأَعْدَادُ وَالتَّفْضِيلُ
-            <span class="section-title-en">Numbers & Comparison</span>
+            ٥. الأَعْدَادُ
+            <span class="section-title-en">Numbers</span>
         </h2>
 
-        <!-- Concept 12: Numbers -->
+        <!-- Concept 18: Cardinal Numbers -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">١٢</span>
-                <span class="concept-title-ar">الأَعْدَادُ</span>
-                <span class="concept-title-en">Numbers (Cardinal)</span>
+                <span class="concept-number">١٨</span>
+                <span class="concept-title-ar">الأَعْدَادُ الأَصْلِيَّةُ</span>
+                <span class="concept-title-en">Cardinal Numbers</span>
             </div>
             <div class="explanation">
                 <div class="explanation-ar">للأعداد قواعد خاصة في التذكير والتأنيث والإعراب حسب مدى العدد.</div>
@@ -948,62 +1113,125 @@
                 </tr>
                 <tr>
                     <td>١١-١٩</td>
-                    <td>مبني على الفتح + المعدود مفرد منصوب (تمييز)</td>
+                    <td>مبني على الفتح + تمييز مفرد منصوب</td>
                     <td>أَحَدَ عَشَرَ طَالِبًا</td>
                 </tr>
                 <tr>
                     <td>٢٠-٩٩</td>
-                    <td>ألفاظ العقود + المعدود مفرد منصوب</td>
+                    <td>ألفاظ العقود + تمييز مفرد منصوب</td>
                     <td>عِشْرُونَ طَالِبًا</td>
                 </tr>
                 <tr>
                     <td>١٠٠، ١٠٠٠</td>
-                    <td>مِائَة، أَلْف + المعدود مفرد مجرور</td>
+                    <td>+ المعدود مفرد مجرور</td>
                     <td>مِائَةُ طَالِبٍ / أَلْفُ كِتَابٍ</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Concept 19: Ordinal Numbers -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">١٩</span>
+                <span class="concept-title-ar">العَدَدُ التَّرْتِيبِيُّ</span>
+                <span class="concept-title-en">Ordinal Numbers</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">يدل على ترتيب المعدود. يوافق المعدود في التذكير والتأنيث. يكون على وزن "فَاعِل" للمذكر و"فَاعِلَة" للمؤنث.</div>
+                <div class="explanation-en">Indicates order/rank. Agrees with the counted noun in gender. Pattern: "faa'il" for masculine, "faa'ila" for feminine.</div>
+            </div>
+            <table class="mini-table">
+                <tr>
+                    <th>العدد | Number</th>
+                    <th>مذكر | Masculine</th>
+                    <th>مؤنث | Feminine</th>
+                </tr>
+                <tr>
+                    <td>1st</td>
+                    <td>أَوَّل / الأَوَّلُ</td>
+                    <td>أُولَى / الأُولَى</td>
+                </tr>
+                <tr>
+                    <td>2nd</td>
+                    <td>ثَانٍ / الثَّانِي</td>
+                    <td>ثَانِيَة / الثَّانِيَة</td>
+                </tr>
+                <tr>
+                    <td>3rd</td>
+                    <td>ثَالِث</td>
+                    <td>ثَالِثَة</td>
+                </tr>
+                <tr>
+                    <td>4th</td>
+                    <td>رَابِع</td>
+                    <td>رَابِعَة</td>
+                </tr>
+                <tr>
+                    <td>5th</td>
+                    <td>خَامِس</td>
+                    <td>خَامِسَة</td>
                 </tr>
             </table>
             <div class="example-section">
                 <div class="example-label">المِثَالُ | Example:</div>
-                <div class="example-sentence">فِي الفَصْلِ خَمْسَةُ طُلَّابٍ</div>
-                <div class="example-translation">"In the classroom are five students."</div>
+                <div class="example-sentence">هٰذَا الدَّرْسُ الخَامِسُ</div>
+                <div class="example-translation">"This is the fifth lesson."</div>
                 <div class="irab-breakdown">
                     <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
                     <div class="irab-item">
-                        <span class="irab-word">خَمْسَةُ</span>
+                        <span class="irab-word">الخَامِسُ</span>
                         <div class="irab-details">
-                            <div class="irab-ar">مُبْتَدَأٌ مُؤَخَّرٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ، وَهُوَ مُضَافٌ</div>
-                            <div class="irab-en">Delayed subject - nominative with damma, mudaaf</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">طُلَّابٍ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">مُضَافٌ إِلَيْهِ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ (مَعْدُود ٣-١٠: جَمْع مَجْرُور)</div>
-                            <div class="irab-en">Mudaaf ilayhi - genitive (counted noun 3-10: genitive plural)</div>
+                            <div class="irab-ar">صِفَةٌ مَرْفُوعَةٌ وَعَلَامَةُ رَفْعِهَا الضَّمَّةُ (عَدَدٌ تَرْتِيبِيٌّ)</div>
+                            <div class="irab-en">Adjective - nominative with damma (ordinal number)</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Concept 13: Comparative/Superlative -->
+        <!-- Concept 20: Tamyeez with Numbers -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">١٣</span>
+                <span class="concept-number">٢٠</span>
+                <span class="concept-title-ar">التَّمْيِيزُ مَعَ الأَعْدَادِ</span>
+                <span class="concept-title-en">Tamyeez with Numbers</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">التمييز هو الاسم الذي يوضح المعدود. يكون منصوبًا مفردًا مع الأعداد ١١-٩٩، ومجرورًا جمعًا مع ٣-١٠، ومجرورًا مفردًا مع ١٠٠ و١٠٠٠.</div>
+                <div class="explanation-en">Tamyeez clarifies what is counted. It's accusative singular with 11-99, genitive plural with 3-10, and genitive singular with 100 and 1000.</div>
+            </div>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">فِي المَدْرَسَةِ ثَلَاثُونَ طَالِبًا</div>
+                <div class="example-translation">"In the school are thirty students."</div>
+                <div class="irab-breakdown">
+                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
+                    <div class="irab-item">
+                        <span class="irab-word">طَالِبًا</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">تَمْيِيزٌ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ</div>
+                            <div class="irab-en">Tamyeez (specifier) - accusative with fatha</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 21: Comparative/Superlative -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٢١</span>
                 <span class="concept-title-ar">اِسْمُ التَّفْضِيلِ</span>
                 <span class="concept-title-en">Comparative & Superlative</span>
             </div>
             <div class="explanation">
-                <div class="explanation-ar">اسم على وزن "أَفْعَل" يدل على أن شيئًا زاد على غيره في صفة. يُستخدم للمقارنة والتفضيل.</div>
-                <div class="explanation-en">A noun on the pattern "af'al" indicating that something exceeds another in a quality. Used for comparison and superlatives.</div>
-            </div>
-            <div class="formula-box">
-                أَفْعَل + مِنْ (comparative) | أَفْعَل + definite noun (superlative)
+                <div class="explanation-ar">اسم على وزن "أَفْعَل" يدل على أن شيئًا زاد على غيره في صفة. مع "مِنْ" للمقارنة، مع المعرفة للتفضيل المطلق.</div>
+                <div class="explanation-en">A noun on the pattern "af'al" indicating that something exceeds another in a quality. With "min" for comparison, with definite article for superlative.</div>
             </div>
             <div class="sisters-list">
-                <span class="sister-item">أَكْبَر (bigger/biggest)</span>
+                <span class="sister-item">أَكْبَر (bigger)</span>
                 <span class="sister-item">أَصْغَر (smaller)</span>
-                <span class="sister-item">أَحْسَن (better/best)</span>
+                <span class="sister-item">أَحْسَن (better)</span>
                 <span class="sister-item">أَجْمَل (more beautiful)</span>
                 <span class="sister-item">أَفْضَل (better/best)</span>
             </div>
@@ -1011,45 +1239,174 @@
                 <div class="example-label">المِثَالُ | Example:</div>
                 <div class="example-sentence">عَلِيٌّ أَكْبَرُ مِنْ أَحْمَدَ</div>
                 <div class="example-translation">"Ali is older than Ahmad."</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Accusative Nouns -->
+    <section id="section6" class="section section-6">
+        <h2 class="section-title">
+            ٦. المَنْصُوبَاتُ
+            <span class="section-title-en">Accusative Nouns</span>
+        </h2>
+
+        <!-- Concept 22: Direct Object -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٢٢</span>
+                <span class="concept-title-ar">المَفْعُولُ بِهِ</span>
+                <span class="concept-title-en">Direct Object</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">اسم منصوب يدل على من وقع عليه فعل الفاعل. يأتي مع الفعل المتعدي.</div>
+                <div class="explanation-en">An accusative noun indicating the recipient of the action. Comes with transitive verbs.</div>
+            </div>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">قَرَأَ الطَّالِبُ الكِتَابَ</div>
+                <div class="example-translation">"The student read the book."</div>
                 <div class="irab-breakdown">
                     <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
                     <div class="irab-item">
-                        <span class="irab-word">أَكْبَرُ</span>
+                        <span class="irab-word">الكِتَابَ</span>
                         <div class="irab-details">
-                            <div class="irab-ar">خَبَرٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ (اسْمُ تَفْضِيلٍ)</div>
-                            <div class="irab-en">Predicate - nominative with damma (comparative noun)</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">مِنْ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">حَرْفُ جَرٍّ</div>
-                            <div class="irab-en">Preposition (used with comparative)</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">أَحْمَدَ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">اسْمٌ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الفَتْحَةُ لِأَنَّهُ مَمْنُوعٌ مِنَ الصَّرْفِ</div>
-                            <div class="irab-en">Genitive noun - marked with fatha (diptote)</div>
+                            <div class="irab-ar">مَفْعُولٌ بِهِ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ</div>
+                            <div class="irab-en">Direct object - accusative, marked with visible fatha</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Concept 23: Absolute Object -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٢٣</span>
+                <span class="concept-title-ar">المَفْعُولُ المُطْلَقُ</span>
+                <span class="concept-title-en">Absolute Object (Cognate Accusative)</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">مصدر منصوب من لفظ الفعل يأتي لتأكيد الفعل أو بيان نوعه أو عدده.</div>
+                <div class="explanation-en">An accusative masdar (verbal noun) from the same root as the verb, used to emphasize the verb or specify its type or number.</div>
+            </div>
+            <div class="formula-box">
+                فِعْل + مَصْدَر مِنْ نَفْسِ الفِعْل (مَنْصُوب)
+            </div>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">ضَرَبْتُهُ ضَرْبًا شَدِيدًا</div>
+                <div class="example-translation">"I hit him a severe hitting." (I hit him severely)</div>
+                <div class="irab-breakdown">
+                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
+                    <div class="irab-item">
+                        <span class="irab-word">ضَرْبًا</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">مَفْعُولٌ مُطْلَقٌ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ</div>
+                            <div class="irab-en">Absolute object - accusative, marked with fatha</div>
+                        </div>
+                    </div>
+                    <div class="irab-item">
+                        <span class="irab-word">شَدِيدًا</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">صِفَةٌ مَنْصُوبَةٌ</div>
+                            <div class="irab-en">Adjective - accusative (describing the maf'ool mutlaq)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 24: Hal (State) -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٢٤</span>
+                <span class="concept-title-ar">الحَالُ</span>
+                <span class="concept-title-en">Hal (State/Condition)</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">اسم منصوب يبين هيئة صاحبه وقت وقوع الفعل. يكون نكرة، وصاحب الحال معرفة.</div>
+                <div class="explanation-en">An accusative noun describing the state/condition of its owner at the time of the action. It's indefinite, while its owner is definite.</div>
+            </div>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">جَاءَ الطَّالِبُ مُسْرِعًا</div>
+                <div class="example-translation">"The student came hurrying."</div>
+                <div class="irab-breakdown">
+                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
+                    <div class="irab-item">
+                        <span class="irab-word">مُسْرِعًا</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">حَالٌ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ</div>
+                            <div class="irab-en">Hal (state) - accusative, marked with visible fatha</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 25: Tamyeez -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٢٥</span>
+                <span class="concept-title-ar">التَّمْيِيزُ</span>
+                <span class="concept-title-en">Tamyeez (Specification)</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">اسم نكرة منصوب يوضح المبهم قبله. يأتي بعد الأعداد، والمقادير، وأسماء التفضيل، والتعجب.</div>
+                <div class="explanation-en">An indefinite accusative noun that clarifies what is ambiguous before it. Comes after numbers, measurements, comparatives, and exclamations.</div>
+            </div>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">اشْتَرَيْتُ كِيلُوغْرَامًا تُفَّاحًا</div>
+                <div class="example-translation">"I bought a kilogram (of) apples."</div>
+                <div class="irab-breakdown">
+                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
+                    <div class="irab-item">
+                        <span class="irab-word">تُفَّاحًا</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">تَمْيِيزٌ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ</div>
+                            <div class="irab-en">Tamyeez (specifier) - accusative with fatha</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 26: Prepositional Phrases -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٢٦</span>
+                <span class="concept-title-ar">الجَارُّ وَالمَجْرُورُ</span>
+                <span class="concept-title-en">Prepositional Phrases</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">تركيب من حرف جر واسم مجرور. الاسم بعد حرف الجر يكون مجرورًا دائمًا.</div>
+                <div class="explanation-en">A construction of a preposition and a genitive noun. The noun after a preposition is always in the genitive case.</div>
+            </div>
+            <div class="sisters-list">
+                <span class="sister-item">مِنْ (from)</span>
+                <span class="sister-item">إِلَى (to)</span>
+                <span class="sister-item">عَنْ (about)</span>
+                <span class="sister-item">عَلَى (on)</span>
+                <span class="sister-item">فِي (in)</span>
+                <span class="sister-item">بِـ (with)</span>
+                <span class="sister-item">لِـ (for)</span>
+                <span class="sister-item">كَـ (like)</span>
+            </div>
+        </div>
     </section>
 
-    <!-- Section 5: Expression Styles -->
-    <section id="section5" class="section section-5">
+    <!-- Section 7: Expression Styles -->
+    <section id="section7" class="section section-7">
         <h2 class="section-title">
-            ٥. أَسَالِيبُ التَّعْبِيرِ
+            ٧. أَسَالِيبُ التَّعْبِيرِ
             <span class="section-title-en">Expression Styles</span>
         </h2>
 
-        <!-- Concept 14: Exclamation -->
+        <!-- Concept 27: Exclamation -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">١٤</span>
+                <span class="concept-number">٢٧</span>
                 <span class="concept-title-ar">أُسْلُوبُ التَّعَجُّبِ</span>
                 <span class="concept-title-en">Exclamation Style</span>
             </div>
@@ -1061,7 +1418,7 @@
                 مَا أَفْعَلَ + المُتَعَجَّب مِنْهُ (مَنْصُوب) | أَفْعِلْ + بِـ + المُتَعَجَّب مِنْهُ
             </div>
             <div class="example-section">
-                <div class="example-label">المِثَالُ ١ | Example 1:</div>
+                <div class="example-label">المِثَالُ | Example:</div>
                 <div class="example-sentence">مَا أَجْمَلَ السَّمَاءَ!</div>
                 <div class="example-translation">"How beautiful the sky is!"</div>
                 <div class="irab-breakdown">
@@ -1069,67 +1426,45 @@
                     <div class="irab-item">
                         <span class="irab-word">مَا</span>
                         <div class="irab-details">
-                            <div class="irab-ar">مَا التَّعَجُّبِيَّةُ: اسْمٌ مَبْنِيٌّ فِي مَحَلِّ رَفْعٍ مُبْتَدَأ</div>
-                            <div class="irab-en">Exclamatory maa - indeclinable, in position of subject</div>
+                            <div class="irab-ar">مَا التَّعَجُّبِيَّةُ: نَكِرَةٌ تَامَّةٌ بِمَعْنَى "شَيْءٌ" فِي مَحَلِّ رَفْعٍ مُبْتَدَأ</div>
+                            <div class="irab-en">Exclamatory maa - in position of subject</div>
                         </div>
                     </div>
                     <div class="irab-item">
                         <span class="irab-word">أَجْمَلَ</span>
                         <div class="irab-details">
-                            <div class="irab-ar">فِعْلٌ مَاضٍ جَامِدٌ لِإِنْشَاءِ التَّعَجُّبِ، والفَاعِلُ ضَمِيرٌ مُسْتَتِرٌ</div>
-                            <div class="irab-en">Inert past verb for exclamation, hidden pronoun as subject</div>
+                            <div class="irab-ar">فِعْلٌ مَاضٍ جَامِدٌ لِإِنْشَاءِ التَّعَجُّبِ</div>
+                            <div class="irab-en">Inert past verb for exclamation</div>
                         </div>
                     </div>
                     <div class="irab-item">
                         <span class="irab-word">السَّمَاءَ</span>
                         <div class="irab-details">
-                            <div class="irab-ar">مَفْعُولٌ بِهِ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ (المُتَعَجَّبُ مِنْهُ)</div>
-                            <div class="irab-en">Direct object - accusative (the thing being exclaimed about)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="example-section">
-                <div class="example-label">المِثَالُ ٢ | Example 2:</div>
-                <div class="example-sentence">أَجْمِلْ بِالسَّمَاءِ!</div>
-                <div class="example-translation">"How beautiful the sky is!"</div>
-                <div class="irab-breakdown">
-                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">أَجْمِلْ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">فِعْلُ أَمْرٍ لِإِنْشَاءِ التَّعَجُّبِ مَبْنِيٌّ عَلَى السُّكُونِ</div>
-                            <div class="irab-en">Imperative verb for exclamation - built on sukoon</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">بِالسَّمَاءِ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">الباءُ حَرْفُ جَرٍّ زَائِدٌ، السَّمَاءِ: فَاعِلٌ مَجْرُورٌ لَفْظًا مَرْفُوعٌ مَحَلًّا</div>
-                            <div class="irab-en">Baa is extra preposition; as-samaa'i: subject, genitive in form, nominative in position</div>
+                            <div class="irab-ar">مَفْعُولٌ بِهِ مَنْصُوبٌ (المُتَعَجَّبُ مِنْهُ)</div>
+                            <div class="irab-en">Direct object - accusative (the exclaimed about)</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Concept 15: Vocative -->
+        <!-- Concept 28: Vocative -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">١٥</span>
+                <span class="concept-number">٢٨</span>
                 <span class="concept-title-ar">أُسْلُوبُ النِّدَاءِ</span>
                 <span class="concept-title-en">Vocative Style</span>
             </div>
             <div class="explanation">
-                <div class="explanation-ar">أسلوب لنداء شخص أو شيء باستخدام أداة نداء. أشهر الأدوات: "يَا". المنادى له حالات إعرابية مختلفة.</div>
-                <div class="explanation-en">A style for calling someone or something using a vocative particle. Most common: "yaa". The called noun has different case rules.</div>
+                <div class="explanation-ar">أسلوب لنداء شخص أو شيء باستخدام أداة نداء. أشهر الأدوات: "يَا".</div>
+                <div class="explanation-en">A style for calling someone using a vocative particle. Most common: "yaa".</div>
             </div>
             <div class="sisters-list">
                 <span class="sister-item">يَا (O!)</span>
-                <span class="sister-item">أَيَا (O!)</span>
-                <span class="sister-item">هَيَا (O!)</span>
-                <span class="sister-item">أَيْ (O!)</span>
-                <span class="sister-item">أَ (O!)</span>
+                <span class="sister-item">أَيَا</span>
+                <span class="sister-item">هَيَا</span>
+                <span class="sister-item">أَيْ</span>
+                <span class="sister-item">أَ</span>
             </div>
             <table class="mini-table">
                 <tr>
@@ -1157,32 +1492,71 @@
                     <td>مَنْصُوب</td>
                     <td>يَا طَالِبًا لِلْعِلْمِ</td>
                 </tr>
+                <tr>
+                    <td>نَكِرَة غَيْر مَقْصُودَة</td>
+                    <td>مَنْصُوب</td>
+                    <td>يَا رَجُلًا خُذْ بِيَدِي</td>
+                </tr>
             </table>
+        </div>
+
+        <!-- Concept 29: Built Vocative -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٢٩</span>
+                <span class="concept-title-ar">المُنَادَى المَبْنِيُّ</span>
+                <span class="concept-title-en">Built (Indeclinable) Vocative</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">المنادى العَلَم المفرد والنكرة المقصودة يُبنى على ما يُرفع به في محل نصب.</div>
+                <div class="explanation-en">Proper nouns and intended indefinite nouns as vocative are built on their nominative form but in accusative position.</div>
+            </div>
             <div class="example-section">
                 <div class="example-label">المِثَالُ | Example:</div>
-                <div class="example-sentence">يَا أَيُّهَا الطَّالِبُ، اجْتَهِدْ!</div>
-                <div class="example-translation">"O student, work hard!"</div>
+                <div class="example-sentence">يَا مُحَمَّدُ، تَعَالَ!</div>
+                <div class="example-translation">"O Muhammad, come!"</div>
                 <div class="irab-breakdown">
                     <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
                     <div class="irab-item">
-                        <span class="irab-word">يَا</span>
+                        <span class="irab-word">مُحَمَّدُ</span>
                         <div class="irab-details">
-                            <div class="irab-ar">حَرْفُ نِدَاءٍ مَبْنِيٌّ عَلَى السُّكُونِ</div>
-                            <div class="irab-en">Vocative particle - indeclinable</div>
+                            <div class="irab-ar">مُنَادَى مَبْنِيٌّ عَلَى الضَّمِّ فِي مَحَلِّ نَصْبٍ (عَلَمٌ مُفْرَد)</div>
+                            <div class="irab-en">Vocative - built on damma, in position of accusative (proper noun)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concept 30: Inflected Vocative -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٣٠</span>
+                <span class="concept-title-ar">المُنَادَى المُعْرَبُ</span>
+                <span class="concept-title-en">Inflected (Declinable) Vocative</span>
+            </div>
+            <div class="explanation">
+                <div class="explanation-ar">المنادى المضاف والشبيه بالمضاف والنكرة غير المقصودة يكون منصوبًا.</div>
+                <div class="explanation-en">Vocatives that are mudaaf, similar to mudaaf, or unintended indefinite are accusative (nasb).</div>
+            </div>
+            <div class="example-section">
+                <div class="example-label">المِثَالُ | Example:</div>
+                <div class="example-sentence">يَا عَبْدَ اللهِ!</div>
+                <div class="example-translation">"O servant of Allah!"</div>
+                <div class="irab-breakdown">
+                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
+                    <div class="irab-item">
+                        <span class="irab-word">عَبْدَ</span>
+                        <div class="irab-details">
+                            <div class="irab-ar">مُنَادَى مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ (مُنَادَى مُضَاف)</div>
+                            <div class="irab-en">Vocative - accusative with fatha (mudaaf vocative)</div>
                         </div>
                     </div>
                     <div class="irab-item">
-                        <span class="irab-word">أَيُّهَا</span>
+                        <span class="irab-word">اللهِ</span>
                         <div class="irab-details">
-                            <div class="irab-ar">أَيُّ: مُنَادَى مَبْنِيٌّ عَلَى الضَّمِّ، هَا: لِلتَّنْبِيهِ</div>
-                            <div class="irab-en">Ayyu: called noun built on damma; haa: for alerting</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">الطَّالِبُ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">نَعْتٌ مَرْفُوعٌ عَلَى لَفْظِ "أَيّ"</div>
-                            <div class="irab-en">Adjective - nominative following "ayy"</div>
+                            <div class="irab-ar">مُضَافٌ إِلَيْهِ مَجْرُورٌ</div>
+                            <div class="irab-en">Mudaaf ilayhi - genitive</div>
                         </div>
                     </div>
                 </div>
@@ -1190,23 +1564,23 @@
         </div>
     </section>
 
-    <!-- Section 6: Pronouns & Questions -->
-    <section id="section6" class="section section-6">
+    <!-- Section 8: Pronouns & Questions -->
+    <section id="section8" class="section section-8">
         <h2 class="section-title">
-            ٦. الضَّمَائِرُ وَالاسْتِفْهَامُ
+            ٨. الضَّمَائِرُ وَالاسْتِفْهَامُ
             <span class="section-title-en">Pronouns & Questions</span>
         </h2>
 
-        <!-- Concept 16: Connected Pronouns -->
+        <!-- Concept 31: Connected Pronouns -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">١٦</span>
+                <span class="concept-number">٣١</span>
                 <span class="concept-title-ar">الضَّمَائِرُ المُتَّصِلَةُ</span>
                 <span class="concept-title-en">Connected (Attached) Pronouns</span>
             </div>
             <div class="explanation">
-                <div class="explanation-ar">ضمائر تتصل بالفعل أو الاسم أو الحرف ولا تستقل بذاتها. تُقسم حسب موقعها الإعرابي.</div>
-                <div class="explanation-en">Pronouns that attach to verbs, nouns, or particles. They cannot stand alone. Divided by grammatical position.</div>
+                <div class="explanation-ar">ضمائر تتصل بالفعل أو الاسم أو الحرف ولا تستقل بذاتها.</div>
+                <div class="explanation-en">Pronouns that attach to verbs, nouns, or particles. They cannot stand alone.</div>
             </div>
             <table class="mini-table">
                 <tr>
@@ -1216,121 +1590,45 @@
                 </tr>
                 <tr>
                     <td>رفع (فاعل)</td>
-                    <td>تُ، تَ، تِ، نَا، تُمْ، تُنَّ، ا، وا، نَ</td>
+                    <td>تُ، تَ، تِ، نَا، وا، ا، نَ</td>
                     <td>كَتَبْتُ، كَتَبُوا</td>
                 </tr>
                 <tr>
                     <td>نصب/جر</td>
-                    <td>ـهُ، ـهَا، ـهُمْ، ـكَ، ـكِ، ـكُمْ، ـنَا، ـي</td>
+                    <td>ـهُ، ـهَا، ـكَ، ـكِ، ـنَا، ـي</td>
                     <td>كِتَابُهُ، رَآنِي</td>
                 </tr>
             </table>
-            <div class="example-section">
-                <div class="example-label">المِثَالُ | Example:</div>
-                <div class="example-sentence">أَعْطَيْتُهُ كِتَابِي</div>
-                <div class="example-translation">"I gave him my book."</div>
-                <div class="irab-breakdown">
-                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">ـتُ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">ضَمِيرٌ مُتَّصِلٌ مَبْنِيٌّ فِي مَحَلِّ رَفْعٍ فَاعِل</div>
-                            <div class="irab-en">Connected pronoun - in position of nominative (subject)</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">ـهُ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">ضَمِيرٌ مُتَّصِلٌ مَبْنِيٌّ فِي مَحَلِّ نَصْبٍ مَفْعُولٌ بِهِ أَوَّل</div>
-                            <div class="irab-en">Connected pronoun - in position of accusative (first object)</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">ـي (كِتَابِي)</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">ضَمِيرٌ مُتَّصِلٌ مَبْنِيٌّ فِي مَحَلِّ جَرٍّ مُضَافٌ إِلَيْهِ</div>
-                            <div class="irab-en">Connected pronoun - in position of genitive (mudaaf ilayhi)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <!-- Concept 17: Separate Pronouns -->
+        <!-- Concept 32: Separate Pronouns -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">١٧</span>
+                <span class="concept-number">٣٢</span>
                 <span class="concept-title-ar">الضَّمَائِرُ المُنْفَصِلَةُ</span>
                 <span class="concept-title-en">Separate (Independent) Pronouns</span>
             </div>
             <div class="explanation">
-                <div class="explanation-ar">ضمائر تستقل بذاتها ولا تتصل بكلمة أخرى. تُقسم إلى ضمائر رفع وضمائر نصب.</div>
-                <div class="explanation-en">Pronouns that stand independently. Divided into nominative pronouns and accusative pronouns.</div>
+                <div class="explanation-ar">ضمائر تستقل بذاتها. ضمائر الرفع: أَنَا، نَحْنُ، أَنْتَ، هُوَ... ضمائر النصب: إِيَّاكَ، إِيَّاهُ...</div>
+                <div class="explanation-en">Pronouns that stand independently. Nominative: ana, nahnu, anta, huwa... Accusative: iyyaaka, iyyaahu...</div>
             </div>
-            <table class="mini-table">
-                <tr>
-                    <th>الضمير | Pronoun</th>
-                    <th>المعنى | Meaning</th>
-                    <th>الموقع | Position</th>
-                </tr>
-                <tr>
-                    <td>أَنَا، نَحْنُ</td>
-                    <td>I, We</td>
-                    <td>رفع (Nominative)</td>
-                </tr>
-                <tr>
-                    <td>أَنْتَ، أَنْتِ، أَنْتُمْ، أَنْتُنَّ</td>
-                    <td>You (m/f/pl)</td>
-                    <td>رفع (Nominative)</td>
-                </tr>
-                <tr>
-                    <td>هُوَ، هِيَ، هُمْ، هُنَّ</td>
-                    <td>He, She, They</td>
-                    <td>رفع (Nominative)</td>
-                </tr>
-                <tr>
-                    <td>إِيَّاكَ، إِيَّاهُ، إِيَّانَا</td>
-                    <td>You (obj), Him, Us</td>
-                    <td>نصب (Accusative)</td>
-                </tr>
-            </table>
             <div class="example-section">
                 <div class="example-label">المِثَالُ | Example:</div>
                 <div class="example-sentence">هُوَ طَالِبٌ مُجْتَهِدٌ</div>
                 <div class="example-translation">"He is a hardworking student."</div>
-                <div class="irab-breakdown">
-                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">هُوَ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">ضَمِيرٌ مُنْفَصِلٌ مَبْنِيٌّ عَلَى الفَتْحِ فِي مَحَلِّ رَفْعٍ مُبْتَدَأ</div>
-                            <div class="irab-en">Separate pronoun - built on fatha, in position of nominative (subject)</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">طَالِبٌ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">خَبَرٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ</div>
-                            <div class="irab-en">Predicate - nominative with visible damma</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <!-- Concept 18: Interrogative Ayy -->
+        <!-- Concept 33: Interrogative Ayy -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">١٨</span>
+                <span class="concept-number">٣٣</span>
                 <span class="concept-title-ar">أَيُّ الاِسْتِفْهَامِيَّةُ</span>
                 <span class="concept-title-en">Interrogative Ayy (Which?)</span>
             </div>
             <div class="explanation">
-                <div class="explanation-ar">"أَيّ" اسم استفهام مُعرَب يتغير حسب موقعه في الجملة. يُضاف دائمًا إلى اسم بعده.</div>
-                <div class="explanation-en">"Ayy" is a declinable interrogative noun that changes based on its position. It is always in idaafa with a following noun.</div>
-            </div>
-            <div class="formula-box">
-                أَيُّ/أَيَّ/أَيِّ (حسب الموقع) + مُضَاف إِلَيْهِ
+                <div class="explanation-ar">"أَيّ" اسم استفهام مُعرَب يتغير حسب موقعه: أَيُّ (رفع)، أَيَّ (نصب)، أَيِّ (جر). يُضاف دائمًا.</div>
+                <div class="explanation-en">"Ayy" is a declinable interrogative: Ayyu (nominative), Ayya (accusative), Ayyi (genitive). Always in idaafa.</div>
             </div>
             <table class="mini-table">
                 <tr>
@@ -1340,54 +1638,32 @@
                 </tr>
                 <tr>
                     <td>مبتدأ / خبر</td>
-                    <td>أَيُّ (مرفوع)</td>
+                    <td>أَيُّ</td>
                     <td>أَيُّ كِتَابٍ هٰذَا؟</td>
                 </tr>
                 <tr>
                     <td>مفعول به</td>
-                    <td>أَيَّ (منصوب)</td>
+                    <td>أَيَّ</td>
                     <td>أَيَّ كِتَابٍ قَرَأْتَ؟</td>
                 </tr>
                 <tr>
                     <td>بعد حرف جر</td>
-                    <td>أَيِّ (مجرور)</td>
+                    <td>أَيِّ</td>
                     <td>فِي أَيِّ فَصْلٍ أَنْتَ؟</td>
                 </tr>
             </table>
-            <div class="example-section">
-                <div class="example-label">المِثَالُ | Example:</div>
-                <div class="example-sentence">أَيَّ لُغَةٍ تَتَكَلَّمُ؟</div>
-                <div class="example-translation">"Which language do you speak?"</div>
-                <div class="irab-breakdown">
-                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">أَيَّ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">اسْمُ اسْتِفْهَامٍ مَنْصُوبٌ عَلَى أَنَّهُ مَفْعُولٌ بِهِ مُقَدَّمٌ، وَهُوَ مُضَافٌ</div>
-                            <div class="irab-en">Interrogative noun - accusative (fronted object), mudaaf</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">لُغَةٍ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">مُضَافٌ إِلَيْهِ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ</div>
-                            <div class="irab-en">Mudaaf ilayhi - genitive with kasra</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <!-- Concept 19: Interrogative MA -->
+        <!-- Concept 34: Interrogative MA -->
         <div class="concept-card">
             <div class="concept-header">
-                <span class="concept-number">١٩</span>
-                <span class="concept-title-ar">مَا الاِسْتِفْهَامِيَّةُ</span>
-                <span class="concept-title-en">Interrogative MA (What?)</span>
+                <span class="concept-number">٣٤</span>
+                <span class="concept-title-ar">مَا الاِسْتِفْهَامِيَّةُ مَعَ حُرُوفِ الجَرِّ</span>
+                <span class="concept-title-en">Interrogative MA with Prepositions</span>
             </div>
             <div class="explanation">
-                <div class="explanation-ar">"مَا" الاستفهامية تُحذف ألفها عند اتصالها بحروف الجر، وتُدغم مع بعض الحروف.</div>
-                <div class="explanation-en">"Maa" (interrogative) drops its alif when connected to prepositions, and merges with some particles.</div>
+                <div class="explanation-ar">"مَا" الاستفهامية تُحذف ألفها عند اتصالها بحروف الجر.</div>
+                <div class="explanation-en">"Maa" (interrogative) drops its alif when connected to prepositions.</div>
             </div>
             <div class="sisters-list">
                 <span class="sister-item">لِمَ (why?)</span>
@@ -1398,60 +1674,61 @@
                 <span class="sister-item">إِلَامَ (to what?)</span>
                 <span class="sister-item">عَلَامَ (for what?)</span>
             </div>
-            <div class="formula-box">
-                حَرْفُ جَرٍّ + مَا (مَحْذُوفَة الأَلِف) = لِمَ، فِيمَ، عَمَّ...
-            </div>
             <div class="example-section">
                 <div class="example-label">المِثَالُ | Example:</div>
                 <div class="example-sentence">لِمَ تَأَخَّرْتَ؟</div>
                 <div class="example-translation">"Why are you late?"</div>
-                <div class="irab-breakdown">
-                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">لِـ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">حَرْفُ جَرٍّ</div>
-                            <div class="irab-en">Preposition</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">ـمَ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">مَا الاسْتِفْهَامِيَّةُ مَحْذُوفَةُ الأَلِفِ، اسْمٌ مَبْنِيٌّ فِي مَحَلِّ جَرٍّ</div>
-                            <div class="irab-en">Interrogative maa (alif dropped) - indeclinable, in position of genitive</div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="example-section">
-                <div class="example-label">المِثَالُ ٢ | Example 2:</div>
-                <div class="example-sentence">عَمَّ تَبْحَثُ؟</div>
-                <div class="example-translation">"What are you searching for?"</div>
-                <div class="irab-breakdown">
-                    <div class="irab-title">الإِعْرَابُ | I'RAB Analysis:</div>
-                    <div class="irab-item">
-                        <span class="irab-word">عَنْ</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">حَرْفُ جَرٍّ (أُدْغِمَتِ النُّونُ فِي المِيمِ)</div>
-                            <div class="irab-en">Preposition (noon merged with meem)</div>
-                        </div>
-                    </div>
-                    <div class="irab-item">
-                        <span class="irab-word">مَا</span>
-                        <div class="irab-details">
-                            <div class="irab-ar">مَا الاسْتِفْهَامِيَّةُ، اسْمٌ مَبْنِيٌّ فِي مَحَلِّ جَرٍّ بِـ"عَنْ"</div>
-                            <div class="irab-en">Interrogative maa - indeclinable, in position of genitive</div>
-                        </div>
-                    </div>
-                </div>
+        </div>
+    </section>
+
+    <!-- Section 9: Other Tools -->
+    <section id="section9" class="section section-9">
+        <h2 class="section-title">
+            ٩. أَدَوَاتٌ وَمَفَاهِيمُ أُخْرَى
+            <span class="section-title-en">Other Tools & Concepts</span>
+        </h2>
+
+        <!-- Concept 35: Na'am vs Bala -->
+        <div class="concept-card">
+            <div class="concept-header">
+                <span class="concept-number">٣٥</span>
+                <span class="concept-title-ar">نَعَمْ وَبَلَى</span>
+                <span class="concept-title-en">Na'am vs Bala (Yes Responses)</span>
             </div>
+            <div class="explanation">
+                <div class="explanation-ar">"نَعَمْ" للإجابة على السؤال المثبت. "بَلَى" للإجابة على السؤال المنفي بالإيجاب (أي نفي النفي).</div>
+                <div class="explanation-en">"Na'am" answers affirmative questions. "Bala" affirms a negative question (negates the negation).</div>
+            </div>
+            <table class="mini-table">
+                <tr>
+                    <th>السؤال | Question</th>
+                    <th>الإجابة | Answer</th>
+                    <th>المعنى | Meaning</th>
+                </tr>
+                <tr>
+                    <td>أَذَهَبْتَ؟ (Did you go?)</td>
+                    <td>نَعَمْ</td>
+                    <td>Yes, I went</td>
+                </tr>
+                <tr>
+                    <td>أَلَمْ تَذْهَبْ؟ (Didn't you go?)</td>
+                    <td>بَلَى</td>
+                    <td>Yes, I did go (negating "didn't")</td>
+                </tr>
+                <tr>
+                    <td>أَلَمْ تَذْهَبْ؟ (Didn't you go?)</td>
+                    <td>نَعَمْ</td>
+                    <td>No, I didn't go (confirming "didn't")</td>
+                </tr>
+            </table>
         </div>
     </section>
 
     <!-- Footer -->
     <footer style="text-align: center; padding: 30px; color: #666; font-family: Georgia, serif;">
         <p>مَرْجِعُ الإِعْرَابِ السَّرِيعِ | I'RAB Quick Reference</p>
-        <p style="margin-top: 10px;">من دورة ARB202 - الجزء الثاني من كتاب المدينة</p>
+        <p style="margin-top: 10px;">٣٥ مفهومًا من دورة ARB202 - الجزء الثاني من كتاب المدينة</p>
         <p style="margin-top: 10px;"><a href="index.html" style="color: #9b59b6;">← العودة للرئيسية | Back to Home</a></p>
     </footer>
 </body>
