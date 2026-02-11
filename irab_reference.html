@@ -63,6 +63,59 @@
         }
         .back-link:hover { text-decoration: underline; }
 
+        /* Concept Index */
+        .concept-index {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .index-section {
+            margin-bottom: 10px;
+        }
+        .index-section-title {
+            color: #f1c40f;
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .index-concepts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .index-concepts a {
+            color: white;
+            text-decoration: none;
+            padding: 4px 10px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 15px;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        .index-concepts a:hover {
+            background: rgba(255,255,255,0.35);
+        }
+        .toggle-index {
+            background: #f1c40f;
+            color: #333;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Amiri', serif;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .toggle-index:hover {
+            background: #f39c12;
+        }
+        .concept-index.hidden {
+            display: none;
+        }
+
         /* Main Title */
         .main-title {
             text-align: center;
@@ -350,6 +403,95 @@
             <a href="#section8">الضَّمَائِر</a>
             <a href="#section9">أَدَوَات أُخْرَى</a>
         </div>
+        <button class="toggle-index" onclick="document.getElementById('conceptIndex').classList.toggle('hidden')">📋 فهرس المفاهيم | Concept Index</button>
+        <div id="conceptIndex" class="concept-index hidden">
+            <div class="index-section">
+                <div class="index-section-title">١. أنواع الجمل</div>
+                <div class="index-concepts">
+                    <a href="#c1">١ الجملة الاسمية</a>
+                    <a href="#c2">٢ الجملة الفعلية</a>
+                    <a href="#c3">٣ اللازم والمتعدي</a>
+                </div>
+            </div>
+            <div class="index-section">
+                <div class="index-section-title">٢. النواسخ</div>
+                <div class="index-concepts">
+                    <a href="#c4">٤ إنّ وأخواتها</a>
+                    <a href="#c5">٥ كان وأخواتها</a>
+                    <a href="#c6">٦ الباء الزائدة</a>
+                    <a href="#c7">٧ لام الابتداء</a>
+                    <a href="#c8">٨ نفي الماضي</a>
+                </div>
+            </div>
+            <div class="index-section">
+                <div class="index-section-title">٣. الأسماء الخاصة</div>
+                <div class="index-concepts">
+                    <a href="#c9">٩ الأسماء الخمسة</a>
+                    <a href="#c10">١٠ ذو وذات</a>
+                    <a href="#c11">١١ الاسم المنقوص</a>
+                    <a href="#c12">١٢ الممنوع من الصرف</a>
+                    <a href="#c13">١٣ المضاف إليه</a>
+                    <a href="#c14">١٤ الأسماء الموصولة</a>
+                </div>
+            </div>
+            <div class="index-section">
+                <div class="index-section-title">٤. الجموع</div>
+                <div class="index-concepts">
+                    <a href="#c15">١٥ المثنى</a>
+                    <a href="#c16">١٦ جمع المذكر السالم</a>
+                    <a href="#c17">١٧ جمع المؤنث السالم</a>
+                </div>
+            </div>
+            <div class="index-section">
+                <div class="index-section-title">٥. الأعداد</div>
+                <div class="index-concepts">
+                    <a href="#c18">١٨ الأعداد الأصلية</a>
+                    <a href="#c19">١٩ العدد الترتيبي</a>
+                    <a href="#c20">٢٠ التمييز مع الأعداد</a>
+                    <a href="#c21">٢١ اسم التفضيل</a>
+                </div>
+            </div>
+            <div class="index-section">
+                <div class="index-section-title">٦. المنصوبات</div>
+                <div class="index-concepts">
+                    <a href="#c22">٢٢ المفعول به</a>
+                    <a href="#c23">٢٣ المفعول المطلق</a>
+                    <a href="#c24">٢٤ الحال</a>
+                    <a href="#c25">٢٥ التمييز</a>
+                    <a href="#c26">٢٦ الجار والمجرور</a>
+                </div>
+            </div>
+            <div class="index-section">
+                <div class="index-section-title">٧. أساليب التعبير</div>
+                <div class="index-concepts">
+                    <a href="#c27">٢٧ أسلوب التعجب</a>
+                    <a href="#c28">٢٨ أسلوب النداء</a>
+                    <a href="#c29">٢٩ المنادى المبني</a>
+                    <a href="#c30">٣٠ المنادى المعرب</a>
+                </div>
+            </div>
+            <div class="index-section">
+                <div class="index-section-title">٨. الضمائر والاستفهام</div>
+                <div class="index-concepts">
+                    <a href="#c31">٣١ الضمائر المتصلة</a>
+                    <a href="#c32">٣٢ الضمائر المنفصلة</a>
+                    <a href="#c33">٣٣ أيّ الاستفهامية</a>
+                    <a href="#c34">٣٤ ما الاستفهامية</a>
+                </div>
+            </div>
+            <div class="index-section">
+                <div class="index-section-title">٩. أدوات أخرى</div>
+                <div class="index-concepts">
+                    <a href="#c35">٣٥ نعم وبلى</a>
+                    <a href="#c36">٣٦ إعراب الفعل الماضي</a>
+                    <a href="#c37">٣٧ الأعداد المركبة</a>
+                    <a href="#c38">٣٨ أسماء الأفعال</a>
+                    <a href="#c39">٣٩ الكسور</a>
+                    <a href="#c40">٤٠ أنواع خبر كان</a>
+                    <a href="#c41">٤١ حذف النون</a>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <!-- Main Title -->
@@ -367,7 +509,7 @@
         </h2>
 
         <!-- Concept 1: Nominal Sentence -->
-        <div class="concept-card">
+        <div id="c1" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١</span>
                 <span class="concept-title-ar">الجُمْلَةُ الاِسْمِيَّةُ</span>
@@ -405,7 +547,7 @@
         </div>
 
         <!-- Concept 2: Verbal Sentence -->
-        <div class="concept-card">
+        <div id="c2" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢</span>
                 <span class="concept-title-ar">الجُمْلَةُ الفِعْلِيَّةُ</span>
@@ -450,7 +592,7 @@
         </div>
 
         <!-- Concept 3: Transitive & Intransitive -->
-        <div class="concept-card">
+        <div id="c3" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣</span>
                 <span class="concept-title-ar">الفِعْلُ اللَّازِمُ وَالمُتَعَدِّي</span>
@@ -493,7 +635,7 @@
         </h2>
 
         <!-- Concept 4: Inna & Sisters -->
-        <div class="concept-card">
+        <div id="c4" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٤</span>
                 <span class="concept-title-ar">إِنَّ وَأَخَوَاتُهَا</span>
@@ -546,7 +688,7 @@
         </div>
 
         <!-- Concept 5: Kaana & Sisters -->
-        <div class="concept-card">
+        <div id="c5" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٥</span>
                 <span class="concept-title-ar">كَانَ وَأَخَوَاتُهَا</span>
@@ -599,7 +741,7 @@
         </div>
 
         <!-- Concept 6: Extra Baa -->
-        <div class="concept-card">
+        <div id="c6" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٦</span>
                 <span class="concept-title-ar">البَاءُ الزَّائِدَةُ</span>
@@ -634,7 +776,7 @@
         </div>
 
         <!-- Concept 7: Lam of Beginning & Sliding Lam -->
-        <div class="concept-card">
+        <div id="c7" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٧</span>
                 <span class="concept-title-ar">لَامُ الابْتِدَاءِ وَاللَّامُ المُزَحْلَقَةُ</span>
@@ -669,7 +811,7 @@
         </div>
 
         <!-- Concept 8: Negation of Past -->
-        <div class="concept-card">
+        <div id="c8" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٨</span>
                 <span class="concept-title-ar">نَفْيُ الفِعْلِ المَاضِي</span>
@@ -729,7 +871,7 @@
         </h2>
 
         <!-- Concept 9: Five Nouns -->
-        <div class="concept-card">
+        <div id="c9" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٩</span>
                 <span class="concept-title-ar">الأَسْمَاءُ الخَمْسَةُ</span>
@@ -771,7 +913,7 @@
         </div>
 
         <!-- Concept 10: Dhu & Dhat -->
-        <div class="concept-card">
+        <div id="c10" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١٠</span>
                 <span class="concept-title-ar">ذُو وَذَاتُ</span>
@@ -799,7 +941,7 @@
         </div>
 
         <!-- Concept 11: Defective Noun -->
-        <div class="concept-card">
+        <div id="c11" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١١</span>
                 <span class="concept-title-ar">الاِسْمُ المَنْقُوصُ</span>
@@ -839,7 +981,7 @@
         </div>
 
         <!-- Concept 12: Diptotes -->
-        <div class="concept-card">
+        <div id="c12" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١٢</span>
                 <span class="concept-title-ar">المَمْنُوعُ مِنَ الصَّرْفِ</span>
@@ -873,7 +1015,7 @@
         </div>
 
         <!-- Concept 13: Mudaaf Ilayhi -->
-        <div class="concept-card">
+        <div id="c13" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١٣</span>
                 <span class="concept-title-ar">المُضَافُ إِلَيْهِ</span>
@@ -894,7 +1036,7 @@
         </div>
 
         <!-- Concept 14: Relative Pronouns -->
-        <div class="concept-card">
+        <div id="c14" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١٤</span>
                 <span class="concept-title-ar">الأَسْمَاءُ المَوْصُولَةُ</span>
@@ -967,7 +1109,7 @@
         </h2>
 
         <!-- Concept 15: Dual -->
-        <div class="concept-card">
+        <div id="c15" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١٥</span>
                 <span class="concept-title-ar">المُثَنَّى</span>
@@ -997,7 +1139,7 @@
         </div>
 
         <!-- Concept 16: Sound Masculine Plural -->
-        <div class="concept-card">
+        <div id="c16" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١٦</span>
                 <span class="concept-title-ar">جَمْعُ المُذَكَّرِ السَّالِمِ</span>
@@ -1027,7 +1169,7 @@
         </div>
 
         <!-- Concept 17: Sound Feminine Plural -->
-        <div class="concept-card">
+        <div id="c17" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١٧</span>
                 <span class="concept-title-ar">جَمْعُ المُؤَنَّثِ السَّالِمِ</span>
@@ -1085,7 +1227,7 @@
         </h2>
 
         <!-- Concept 18: Cardinal Numbers -->
-        <div class="concept-card">
+        <div id="c18" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١٨</span>
                 <span class="concept-title-ar">الأَعْدَادُ الأَصْلِيَّةُ</span>
@@ -1130,7 +1272,7 @@
         </div>
 
         <!-- Concept 19: Ordinal Numbers -->
-        <div class="concept-card">
+        <div id="c19" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">١٩</span>
                 <span class="concept-title-ar">العَدَدُ التَّرْتِيبِيُّ</span>
@@ -1190,7 +1332,7 @@
         </div>
 
         <!-- Concept 20: Tamyeez with Numbers -->
-        <div class="concept-card">
+        <div id="c20" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢٠</span>
                 <span class="concept-title-ar">التَّمْيِيزُ مَعَ الأَعْدَادِ</span>
@@ -1218,7 +1360,7 @@
         </div>
 
         <!-- Concept 21: Comparative/Superlative -->
-        <div class="concept-card">
+        <div id="c21" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢١</span>
                 <span class="concept-title-ar">اِسْمُ التَّفْضِيلِ</span>
@@ -1251,7 +1393,7 @@
         </h2>
 
         <!-- Concept 22: Direct Object -->
-        <div class="concept-card">
+        <div id="c22" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢٢</span>
                 <span class="concept-title-ar">المَفْعُولُ بِهِ</span>
@@ -1279,7 +1421,7 @@
         </div>
 
         <!-- Concept 23: Absolute Object -->
-        <div class="concept-card">
+        <div id="c23" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢٣</span>
                 <span class="concept-title-ar">المَفْعُولُ المُطْلَقُ</span>
@@ -1317,7 +1459,7 @@
         </div>
 
         <!-- Concept 24: Hal (State) -->
-        <div class="concept-card">
+        <div id="c24" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢٤</span>
                 <span class="concept-title-ar">الحَالُ</span>
@@ -1345,7 +1487,7 @@
         </div>
 
         <!-- Concept 25: Tamyeez -->
-        <div class="concept-card">
+        <div id="c25" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢٥</span>
                 <span class="concept-title-ar">التَّمْيِيزُ</span>
@@ -1373,7 +1515,7 @@
         </div>
 
         <!-- Concept 26: Prepositional Phrases -->
-        <div class="concept-card">
+        <div id="c26" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢٦</span>
                 <span class="concept-title-ar">الجَارُّ وَالمَجْرُورُ</span>
@@ -1404,7 +1546,7 @@
         </h2>
 
         <!-- Concept 27: Exclamation -->
-        <div class="concept-card">
+        <div id="c27" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢٧</span>
                 <span class="concept-title-ar">أُسْلُوبُ التَّعَجُّبِ</span>
@@ -1449,7 +1591,7 @@
         </div>
 
         <!-- Concept 28: Vocative -->
-        <div class="concept-card">
+        <div id="c28" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢٨</span>
                 <span class="concept-title-ar">أُسْلُوبُ النِّدَاءِ</span>
@@ -1501,7 +1643,7 @@
         </div>
 
         <!-- Concept 29: Built Vocative -->
-        <div class="concept-card">
+        <div id="c29" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٢٩</span>
                 <span class="concept-title-ar">المُنَادَى المَبْنِيُّ</span>
@@ -1529,7 +1671,7 @@
         </div>
 
         <!-- Concept 30: Inflected Vocative -->
-        <div class="concept-card">
+        <div id="c30" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣٠</span>
                 <span class="concept-title-ar">المُنَادَى المُعْرَبُ</span>
@@ -1572,7 +1714,7 @@
         </h2>
 
         <!-- Concept 31: Connected Pronouns -->
-        <div class="concept-card">
+        <div id="c31" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣١</span>
                 <span class="concept-title-ar">الضَّمَائِرُ المُتَّصِلَةُ</span>
@@ -1602,7 +1744,7 @@
         </div>
 
         <!-- Concept 32: Separate Pronouns -->
-        <div class="concept-card">
+        <div id="c32" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣٢</span>
                 <span class="concept-title-ar">الضَّمَائِرُ المُنْفَصِلَةُ</span>
@@ -1620,7 +1762,7 @@
         </div>
 
         <!-- Concept 33: Interrogative Ayy -->
-        <div class="concept-card">
+        <div id="c33" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣٣</span>
                 <span class="concept-title-ar">أَيُّ الاِسْتِفْهَامِيَّةُ</span>
@@ -1655,7 +1797,7 @@
         </div>
 
         <!-- Concept 34: Interrogative MA -->
-        <div class="concept-card">
+        <div id="c34" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣٤</span>
                 <span class="concept-title-ar">مَا الاِسْتِفْهَامِيَّةُ مَعَ حُرُوفِ الجَرِّ</span>
@@ -1690,7 +1832,7 @@
         </h2>
 
         <!-- Concept 35: Na'am vs Bala -->
-        <div class="concept-card">
+        <div id="c35" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣٥</span>
                 <span class="concept-title-ar">نَعَمْ وَبَلَى</span>
@@ -1724,7 +1866,7 @@
             </table>
         </div>
         <!-- Concept 36: Past Verb I'RAB -->
-        <div class="concept-card">
+        <div id="c36" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣٦</span>
                 <span class="concept-title-ar">إِعْرَابُ الفِعْلِ المَاضِي</span>
@@ -1774,7 +1916,7 @@
         </div>
 
         <!-- Concept 37: Compound Numbers -->
-        <div class="concept-card">
+        <div id="c37" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣٧</span>
                 <span class="concept-title-ar">الأَعْدَادُ المُرَكَّبَةُ (١١-١٩)</span>
@@ -1836,7 +1978,7 @@
         </div>
 
         <!-- Concept 38: Verbal Nouns -->
-        <div class="concept-card">
+        <div id="c38" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣٨</span>
                 <span class="concept-title-ar">أَسْمَاءُ الأَفْعَالِ</span>
@@ -1891,7 +2033,7 @@
         </div>
 
         <!-- Concept 39: Fractions -->
-        <div class="concept-card">
+        <div id="c39" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٣٩</span>
                 <span class="concept-title-ar">الكُسُورُ</span>
@@ -1956,7 +2098,7 @@
         </div>
 
         <!-- Concept 40: Types of Khabar Kaana -->
-        <div class="concept-card">
+        <div id="c40" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٤٠</span>
                 <span class="concept-title-ar">أَنْوَاعُ خَبَرِ كَانَ</span>
@@ -1995,7 +2137,7 @@
         </div>
 
         <!-- Concept 41: Deletion of Noon -->
-        <div class="concept-card">
+        <div id="c41" class="concept-card">
             <div class="concept-header">
                 <span class="concept-number">٤١</span>
                 <span class="concept-title-ar">حَذْفُ النُّونِ</span>
